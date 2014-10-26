@@ -26,7 +26,7 @@ public class PlextParserTest {
 		List<LogEntry> logs = parser.extractLogEntries();
 
 		Assert.assertEquals(50, logs.size());
-		Assert.assertEquals("Palais", logs.get(0).getPortalName());
+		Assert.assertEquals("Palais", logs.get(0).getPortal().getPortalName());
 
 		for (LogEntry logEntry : logs) {
 			System.out.println("logEntry: " + logEntry);

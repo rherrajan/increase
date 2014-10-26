@@ -72,9 +72,9 @@ public class PlextParser {
 			if (logIdentification.equals("PLAYER")) {
 				log.setPlayerName(logPart.getJSONObject(1).getString("plain"));
 			} else if (logIdentification.equals("PORTAL")) {
-				log.setPortalName(logPart.getJSONObject(1).getString("name"));
-				log.setLatE6(logPart.getJSONObject(1).getInt("latE6"));
-				log.setLngE6(logPart.getJSONObject(1).getInt("lngE6"));
+				log.getPortal().setPortalName(logPart.getJSONObject(1).getString("name"));
+				log.getPortal().setLatE6(logPart.getJSONObject(1).getInt("latE6"));
+				log.getPortal().setLngE6(logPart.getJSONObject(1).getInt("lngE6"));
 			} else if (logIdentification.equals("TEXT")) {
 				// no important information
 			} else if (logIdentification.equals("SENDER")) {

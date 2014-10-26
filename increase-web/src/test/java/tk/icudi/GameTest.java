@@ -2,7 +2,8 @@ package tk.icudi;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,11 +27,16 @@ public class GameTest {
 
 		Game game = getGame();
 
-		Set<String> portals = game.getPortals();
+		Map<Portal, String> portals = game.getPortals();
 
 		Assert.assertEquals(13, portals.size());
 
 		System.out.println("portals: " + portals);
+
+		Entry<Portal, String> first = portals.entrySet().iterator().next();
+
+		System.out.println("first: " + first);
+
 	}
 
 }

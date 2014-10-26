@@ -1,8 +1,8 @@
 package tk.icudi;
 
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 public class Game {
 
@@ -12,13 +12,14 @@ public class Game {
 		this.logs = logs;
 	}
 
-	public Set<String> getPortals() {
+	public Map<Portal, String> getPortals() {
 
-		Set<String> portals = new HashSet<String>();
+		Map<Portal, String> portals = new HashMap<Portal, String>();
 
 		for (LogEntry logEntry : logs) {
-			if (logEntry.getPortalName() != null) {
-				portals.add(logEntry.getPortalName());
+			Portal portal = logEntry.getPortal();
+			if (portal.getPortalName() != null) {
+				portals.put(portal, logEntry.getPlayerName());
 			}
 		}
 
