@@ -9,7 +9,7 @@ public class Game {
 	private List<LogEntry> logs;
 	private Map<Portal, String> portals = new HashMap<Portal, String>();
 
-	public void appendLogs(List<LogEntry> logs) {
+	void appendLogs(List<LogEntry> logs) {
 		this.logs = logs;
 		portals.putAll(createPortalList());
 	}
@@ -23,7 +23,7 @@ public class Game {
 
 		for (LogEntry logEntry : logs) {
 			Portal portal = logEntry.getPortal();
-			if (portal.getPortalName() != null) {
+			if (portal.getPortalName() != null && logEntry.getPlayerName() != null) {
 				portals.put(portal, logEntry.getPlayerName());
 			}
 		}

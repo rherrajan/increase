@@ -1,7 +1,6 @@
 package tk.icudi;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -10,11 +9,8 @@ import org.junit.Test;
 public class GameTest {
 
 	private Game getGame(String file) throws IOException {
-
-		List<LogEntry> logs = PlextParserTest.parseLogs(file);
-
 		Game game = new Game();
-		game.appendLogs(logs);
+		game.appendLogs(PlextParserTest.parseLogs(file));
 		return game;
 	}
 
@@ -24,14 +20,11 @@ public class GameTest {
 		Game game = getGame("realdata.json");
 		Map<Portal, String> portals = game.getPortals();
 
-		Assert.assertEquals(13, portals.size());
+		Assert.assertEquals(11, portals.size());
 	}
 
 	@Test
 	public void testParseOrder() throws Exception {
-
-		// 2: 1414324155453
-		// 1: 1414324152066
 
 		Game game = getGame("doubleAttack.json");
 		Map<Portal, String> portals = game.getPortals();
@@ -57,12 +50,8 @@ public class GameTest {
 		Game game = new Game();
 
 		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
-		Assert.assertEquals(13, game.getPortals().size());
-
 		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
-		Assert.assertEquals(31, game.getPortals().size());
-
-		System.out.println(" --- portals: \n" + game.getPortals());
+		Assert.assertEquals(11 + 18, game.getPortals().size());
 	}
 
 	@Test
