@@ -1,0 +1,2521 @@
+{
+   "success":[
+      [
+         "c62f7a17eee94661a633474d1b54f0f9.d",
+         1414324155453,
+         {
+            "plext":{
+               "text":"suchef linked Kinder Museum Frankfurt (Zeil 127, 60313 Frankfurt, Germany) to Palais (Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Kinder Museum Frankfurt",
+                        "plain":"Kinder Museum Frankfurt (Zeil 127, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113731,
+                        "address":"Zeil 127, 60313 Frankfurt, Germany",
+                        "lngE6":8678958
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Palais",
+                        "plain":"Palais (Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50115222,
+                        "address":"Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany",
+                        "lngE6":8679836
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "920716121cc14cbfb034cb365bb6a662.d",
+         1414324152066,
+         {
+            "plext":{
+               "text":"anniesa deployed an L5 Resonator on GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"GPS Referenz Punkt Frankfurt Am Main",
+                        "plain":"GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110975,
+                        "address":"Neue Kr\u00e4me 2, 60311 Frankfurt, Germany",
+                        "lngE6":8681788
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "369df40922164edc876f4fb84ea71c6d.d",
+         1414324150314,
+         {
+            "plext":{
+               "text":"anniesa deployed an L5 Resonator on GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"GPS Referenz Punkt Frankfurt Am Main",
+                        "plain":"GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110975,
+                        "address":"Neue Kr\u00e4me 2, 60311 Frankfurt, Germany",
+                        "lngE6":8681788
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "00be030302024da59f2880d9d861a442.d",
+         1414324146578,
+         {
+            "plext":{
+               "text":"anniesa deployed an L6 Resonator on GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"GPS Referenz Punkt Frankfurt Am Main",
+                        "plain":"GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110975,
+                        "address":"Neue Kr\u00e4me 2, 60311 Frankfurt, Germany",
+                        "lngE6":8681788
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "7f9f94efe40d487a80d290258891379f.d",
+         1414324143362,
+         {
+            "plext":{
+               "text":"suchef linked Kinder Museum Frankfurt (Zeil 127, 60313 Frankfurt, Germany) to Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Kinder Museum Frankfurt",
+                        "plain":"Kinder Museum Frankfurt (Zeil 127, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113731,
+                        "address":"Zeil 127, 60313 Frankfurt, Germany",
+                        "lngE6":8678958
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "df06d061c5a84a97b13738fbcc1c43f3.d",
+         1414324143190,
+         {
+            "plext":{
+               "text":"anniesa deployed an L6 Resonator on GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"GPS Referenz Punkt Frankfurt Am Main",
+                        "plain":"GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110975,
+                        "address":"Neue Kr\u00e4me 2, 60311 Frankfurt, Germany",
+                        "lngE6":8681788
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "d3024255189d4f92a6d14f05c63195bd.d",
+         1414324141355,
+         {
+            "plext":{
+               "text":"anniesa deployed an L7 Resonator on GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"GPS Referenz Punkt Frankfurt Am Main",
+                        "plain":"GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110975,
+                        "address":"Neue Kr\u00e4me 2, 60311 Frankfurt, Germany",
+                        "lngE6":8681788
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "5e09b6db4db844aab83bb556b361eabe.d",
+         1414324138545,
+         {
+            "plext":{
+               "text":"anniesa deployed an L8 Resonator on GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"GPS Referenz Punkt Frankfurt Am Main",
+                        "plain":"GPS Referenz Punkt Frankfurt Am Main (Neue Kr\u00e4me 2, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110975,
+                        "address":"Neue Kr\u00e4me 2, 60311 Frankfurt, Germany",
+                        "lngE6":8681788
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "b9859f09a32442d8a487ca67d2b39c85.d",
+         1414324136966,
+         {
+            "plext":{
+               "text":"Your L8 Resonator on Zeichen des Dachdeckerhandwerks (Am Hain 31, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Zeichen des Dachdeckerhandwerks",
+                        "plain":"Zeichen des Dachdeckerhandwerks (Am Hain 31, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50296544,
+                        "address":"Am Hain 31, 61194 Niddatal, Germany",
+                        "lngE6":8814762
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "bd6cf03541254a86b97a7a1a9e20fa03.d",
+         1414324132482,
+         {
+            "plext":{
+               "text":"suchef deployed an L4 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "fd6140bd67cc419285234a1abcfacffe.d",
+         1414324131783,
+         {
+            "plext":{
+               "text":"MeisterRados: @FrankDrebin2 gerade in Niederrad?",
+               "markup":[
+                  [
+                     "SENDER",
+                     {
+                        "plain":"MeisterRados: ",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":""
+                     }
+                  ],
+                  [
+                     "AT_PLAYER",
+                     {
+                        "plain":"@FrankDrebin2",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" gerade in Niederrad?"
+                     }
+                  ]
+               ],
+               "plextType":"PLAYER_GENERATED",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "1588ffb6976145baaf4e944cf19e2a87.d",
+         1414324131388,
+         {
+            "plext":{
+               "text":"suchef deployed an L4 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "d0660e47af394c60be9e64d58650d789.d",
+         1414324129910,
+         {
+            "plext":{
+               "text":"suchef deployed an L5 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "5be29e65e246471ab0f4f680c415e920.d",
+         1414324129486,
+         {
+            "plext":{
+               "text":"Blutfaust linked Iron Man (Magic Holidays Travel Services, Frankfurt Airport (FRA), 60549 Frankfurt - Flughafen, Germany) to Frankfurt Airport DB Railway Station (Hugo-Eckener-Ring 15, Frankfurt Airport (FRA), 60549 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Blutfaust",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Iron Man",
+                        "plain":"Iron Man (Magic Holidays Travel Services, Frankfurt Airport (FRA), 60549 Frankfurt - Flughafen, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50050881,
+                        "address":"Magic Holidays Travel Services, Frankfurt Airport (FRA), 60549 Frankfurt - Flughafen, Germany",
+                        "lngE6":8574182
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurt Airport DB Railway Station",
+                        "plain":"Frankfurt Airport DB Railway Station (Hugo-Eckener-Ring 15, Frankfurt Airport (FRA), 60549 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50051125,
+                        "address":"Hugo-Eckener-Ring 15, Frankfurt Airport (FRA), 60549 Frankfurt, Germany",
+                        "lngE6":8570698
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "c073af4cfe8f4d528d32d391979f80d9.d",
+         1414324128621,
+         {
+            "plext":{
+               "text":"suchef deployed an L5 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "f9fbb063d08e4159a566fd20cca08f2e.d",
+         1414324127080,
+         {
+            "plext":{
+               "text":"suchef deployed an L6 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "c4afd2bdf01e4b31aa2d39731b7fc6e0.d",
+         1414324125370,
+         {
+            "plext":{
+               "text":"suchef deployed an L6 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "0e65278807f243b2ab9cea79895d38e2.d",
+         1414324123366,
+         {
+            "plext":{
+               "text":"ioii destroyed an L6 Resonator on Bunny &amp; Snake  (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Bunny &amp; Snake ",
+                        "plain":"Bunny &amp; Snake  (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116600,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692881
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "21b3192abf9845f3b339303ee7061040.d",
+         1414324122576,
+         {
+            "plext":{
+               "text":"anniesa linked Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany) to Goldener Vogel (R\u00f6merberg 36, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Goldener Vogel",
+                        "plain":"Goldener Vogel (R\u00f6merberg 36, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110842,
+                        "address":"R\u00f6merberg 36, 60311 Frankfurt, Germany",
+                        "lngE6":8682130
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "51fb0c022ae04b59b35e8a8f931b62bf.d",
+         1414324122576,
+         {
+            "plext":{
+               "text":"anniesa created a Control Field @Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany) +1 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"1"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "0573c24c64e34dff80f3764ceb8818f4.d",
+         1414324120134,
+         {
+            "plext":{
+               "text":"ioii destroyed an L6 Resonator on Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Rinz Denkmal",
+                        "plain":"Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116517,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692612
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "4a39f6d5256e4c428237426961e092a0.d",
+         1414324113953,
+         {
+            "plext":{
+               "text":"ioii destroyed an L6 Resonator on Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schmetterling Mit Qualle ",
+                        "plain":"Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116192,
+                        "address":"Friedberger Anlage 20, 60316 Frankfurt, Germany",
+                        "lngE6":8693140
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "3f0f1ac5ed5e4720b6070bc4202fa9b0.d",
+         1414324112096,
+         {
+            "plext":{
+               "text":"Your L4 Resonator on Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jupiter Information Board ",
+                        "plain":"Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50295621,
+                        "address":"B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany",
+                        "lngE6":8824346
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "561c8adfce9c4fd6bec529e63496a12e.d",
+         1414324112096,
+         {
+            "plext":{
+               "text":"Your L5 Resonator on Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jupiter Information Board ",
+                        "plain":"Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50295621,
+                        "address":"B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany",
+                        "lngE6":8824346
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "7d6d8fa3e46144e1a4ec267bac780249.d",
+         1414324112096,
+         {
+            "plext":{
+               "text":"Your L7 Resonator on Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jupiter Information Board ",
+                        "plain":"Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50295621,
+                        "address":"B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany",
+                        "lngE6":8824346
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "8a47edd979024f26a55fb2e7cd592f7b.d",
+         1414324112096,
+         {
+            "plext":{
+               "text":"Your L6 Resonator on Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jupiter Information Board ",
+                        "plain":"Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50295621,
+                        "address":"B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany",
+                        "lngE6":8824346
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "a6de85f4d5e64537af597ce75135118a.d",
+         1414324112096,
+         {
+            "plext":{
+               "text":"Your L5 Resonator on Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jupiter Information Board ",
+                        "plain":"Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50295621,
+                        "address":"B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany",
+                        "lngE6":8824346
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "abc50cf6c81e47d1857445e88f45b0be.d",
+         1414324112096,
+         {
+            "plext":{
+               "text":"Your L4 Resonator on Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jupiter Information Board ",
+                        "plain":"Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50295621,
+                        "address":"B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany",
+                        "lngE6":8824346
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "b73c2e0a8bdb4edf9f8af8d667ab4f02.d",
+         1414324112096,
+         {
+            "plext":{
+               "text":"Your L6 Resonator on Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jupiter Information Board ",
+                        "plain":"Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50295621,
+                        "address":"B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany",
+                        "lngE6":8824346
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "baecc6a68b6f445580301ffcfeb3315a.d",
+         1414324112096,
+         {
+            "plext":{
+               "text":"Your L4 Resonator on Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany) has decayed",
+               "markup":[
+                  [
+                     "TEXT",
+                     {
+                        "plain":"Your "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jupiter Information Board ",
+                        "plain":"Jupiter Information Board  (B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50295621,
+                        "address":"B\u00f6nst\u00e4dter Stra\u00dfe 38, 61194 Niddatal, Germany",
+                        "lngE6":8824346
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" has decayed"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_NARROWCAST",
+               "categories":4,
+               "team":"NEUTRAL"
+            }
+         }
+      ],
+      [
+         "422cd526a3f54222bad39b28eb947298.d",
+         1414324111601,
+         {
+            "plext":{
+               "text":"ioii destroyed an L6 Resonator on Bunny &amp; Snake  (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Bunny &amp; Snake ",
+                        "plain":"Bunny &amp; Snake  (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116600,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692881
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "45e3961e93e246aaa2a66968763da3a5.d",
+         1414324111601,
+         {
+            "plext":{
+               "text":"ioii destroyed an L6 Resonator on Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schmetterling Mit Qualle ",
+                        "plain":"Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116192,
+                        "address":"Friedberger Anlage 20, 60316 Frankfurt, Germany",
+                        "lngE6":8693140
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "f7c48213b6dd4f79a53e13c5f764830d.d",
+         1414324111601,
+         {
+            "plext":{
+               "text":"ioii destroyed an L5 Resonator on Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schmetterling Mit Qualle ",
+                        "plain":"Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116192,
+                        "address":"Friedberger Anlage 20, 60316 Frankfurt, Germany",
+                        "lngE6":8693140
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "fa9521d85a1b401783b596eb2a7ed14e.d",
+         1414324111601,
+         {
+            "plext":{
+               "text":"ioii destroyed an L5 Resonator on Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schmetterling Mit Qualle ",
+                        "plain":"Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116192,
+                        "address":"Friedberger Anlage 20, 60316 Frankfurt, Germany",
+                        "lngE6":8693140
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "1e6d3431d3604413af38ce7808cdb3fd.d",
+         1414324110798,
+         {
+            "plext":{
+               "text":"ioii destroyed an L5 Resonator on Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Rinz Denkmal",
+                        "plain":"Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116517,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692612
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "21e6c5d2c8b4493a91040b1b260f5b96.d",
+         1414324110798,
+         {
+            "plext":{
+               "text":"ioii destroyed an L6 Resonator on Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schmetterling Mit Qualle ",
+                        "plain":"Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116192,
+                        "address":"Friedberger Anlage 20, 60316 Frankfurt, Germany",
+                        "lngE6":8693140
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "fb84b966694a43e3847434794960706d.d",
+         1414324110798,
+         {
+            "plext":{
+               "text":"ioii destroyed an L7 Resonator on Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schmetterling Mit Qualle ",
+                        "plain":"Schmetterling Mit Qualle  (Friedberger Anlage 20, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116192,
+                        "address":"Friedberger Anlage 20, 60316 Frankfurt, Germany",
+                        "lngE6":8693140
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "c01fc40e41d14b3a9f892f6aa83b7fc8.d",
+         1414324109865,
+         {
+            "plext":{
+               "text":"ioii destroyed an L6 Resonator on Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Rinz Denkmal",
+                        "plain":"Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116517,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692612
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "fc0b9baec9664521ab7116ae1300eb1d.d",
+         1414324109865,
+         {
+            "plext":{
+               "text":"ioii destroyed an L6 Resonator on Bunny &amp; Snake  (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Bunny &amp; Snake ",
+                        "plain":"Bunny &amp; Snake  (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116600,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692881
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "ec2ed0cb0607473eb2fbed250ea4302f.d",
+         1414324105861,
+         {
+            "plext":{
+               "text":"anniesa linked Wandmalerei (R\u00f6merberg 27, 60311 Frankfurt, Germany) to Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Wandmalerei",
+                        "plain":"Wandmalerei (R\u00f6merberg 27, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110749,
+                        "address":"R\u00f6merberg 27, 60311 Frankfurt, Germany",
+                        "lngE6":8681880
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "6b72dfe77285439a8cd08075a5e4d4b8.d",
+         1414324097617,
+         {
+            "plext":{
+               "text":"suchef deployed an L7 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "3def8532c7fd4a3dbcb46b68a4b8e2c2.d",
+         1414324096943,
+         {
+            "plext":{
+               "text":"ioii destroyed an L5 Resonator on Bunny &amp; Snake  (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Bunny &amp; Snake ",
+                        "plain":"Bunny &amp; Snake  (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116600,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692881
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "76538ace5b9b44018887ea2f57a4ad65.d",
+         1414324095986,
+         {
+            "plext":{
+               "text":"suchef deployed an L8 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "a93a1531e8c0459fbb5856a5709c7cf9.d",
+         1414324095986,
+         {
+            "plext":{
+               "text":"suchef captured Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "bcdb0747da0b49d880a8afcbb3547e7c.d",
+         1414324094652,
+         {
+            "plext":{
+               "text":"ioii destroyed an L5 Resonator on Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Rinz Denkmal",
+                        "plain":"Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116517,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692612
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "2eb94212a9334dfb99da3d61d8545a68.d",
+         1414324092777,
+         {
+            "plext":{
+               "text":"knsmvrwgr created a Control Field @Jazz Bar (Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany) +26 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"knsmvrwgr",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jazz Bar",
+                        "plain":"Jazz Bar (Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50124373,
+                        "address":"Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany",
+                        "lngE6":8710733
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"26"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "727beac426ab4eccb237b30f1413f83e.d",
+         1414324092777,
+         {
+            "plext":{
+               "text":"knsmvrwgr linked Jazz Bar (Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany) to Portal Bornheim (Berger Stra\u00dfe 188-190, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"knsmvrwgr",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jazz Bar",
+                        "plain":"Jazz Bar (Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50124373,
+                        "address":"Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany",
+                        "lngE6":8710733
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Portal Bornheim",
+                        "plain":"Portal Bornheim (Berger Stra\u00dfe 188-190, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50125364,
+                        "address":"Berger Stra\u00dfe 188-190, 60385 Frankfurt, Germany",
+                        "lngE6":8706548
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "7fac561fdb9d491d9b53af3dfc05921c.d",
+         1414324092777,
+         {
+            "plext":{
+               "text":"knsmvrwgr created a Control Field @Jazz Bar (Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany) +27 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"knsmvrwgr",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Jazz Bar",
+                        "plain":"Jazz Bar (Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50124373,
+                        "address":"Freiligrathstra\u00dfe 55, 60385 Frankfurt, Germany",
+                        "lngE6":8710733
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"27"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "bba4e36faafa40eca42601a32b5fff8a.d",
+         1414324086620,
+         {
+            "plext":{
+               "text":"suchef destroyed an L6 Resonator on Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Struwwelpeter und Co.",
+                        "plain":"Struwwelpeter und Co. (Hauptwache 7, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50113902,
+                        "address":"Hauptwache 7, 60313 Frankfurt, Germany",
+                        "lngE6":8678541
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "d4be8763e808400a9c91f87c8c75b880.d",
+         1414324082779,
+         {
+            "plext":{
+               "text":"anniesa deployed an L4 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"anniesa",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ]
+   ]
+}
