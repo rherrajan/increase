@@ -14,7 +14,7 @@ public class GameTest {
 		List<LogEntry> logs = PlextParserTest.parseLogs(file);
 
 		Game game = new Game();
-		game.setLogs(logs);
+		game.appendLogs(logs);
 		return game;
 	}
 
@@ -38,9 +38,28 @@ public class GameTest {
 
 		Assert.assertEquals(1, portals.size());
 
-		String owner = portals.entrySet().iterator().next().getValue();
-
-		Assert.assertEquals("Attacker2", owner);
+		Assert.assertEquals("Attacker2", game.getFirstPortalsOwner());
 	}
 
+	@Test
+	public void test_append() throws Exception {
+		Game game = new Game();
+
+		game.appendLogs(PlextParserTest.parseLogs("doubleAttack.json"));
+		Assert.assertEquals(1, game.getPortals().size());
+
+		game.appendLogs(PlextParserTest.parseLogs("anotherPortal.json"));
+		Assert.assertEquals(2, game.getPortals().size());
+	}
+
+	@Test
+	public void test_append_changeOwner() throws Exception {
+		Game game = new Game();
+
+		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
+		Assert.assertEquals("Attacker1", game.getFirstPortalsOwner());
+
+		game.appendLogs(PlextParserTest.parseLogs("attack2.json"));
+		Assert.assertEquals("Attacker2", game.getFirstPortalsOwner());
+	}
 }

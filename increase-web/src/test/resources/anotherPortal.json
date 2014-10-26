@@ -1,0 +1,54 @@
+{
+   "success":[
+   [
+         "bcdb0747da0b49d880a8afcbb3547e7c.d",
+         1414324094652,
+         {
+            "plext":{
+               "text":"ioii destroyed an L5 Resonator on Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ioii",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Rinz Denkmal",
+                        "plain":"Rinz Denkmal (Palmstra\u00dfe 5, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116517,
+                        "address":"Palmstra\u00dfe 5, 60316 Frankfurt, Germany",
+                        "lngE6":8692612
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ]
+   ]
+}

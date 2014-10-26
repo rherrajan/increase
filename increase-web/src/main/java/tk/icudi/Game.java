@@ -7,13 +7,18 @@ import java.util.Map;
 public class Game {
 
 	private List<LogEntry> logs;
+	private Map<Portal, String> portals = new HashMap<Portal, String>();
 
-	public void setLogs(List<LogEntry> logs) {
+	public void appendLogs(List<LogEntry> logs) {
 		this.logs = logs;
+		portals.putAll(createPortalList());
 	}
 
 	public Map<Portal, String> getPortals() {
+		return portals;
+	}
 
+	private Map<Portal, String> createPortalList() {
 		Map<Portal, String> portals = new HashMap<Portal, String>();
 
 		for (LogEntry logEntry : logs) {
@@ -24,6 +29,10 @@ public class Game {
 		}
 
 		return portals;
+	}
+
+	public Object getFirstPortalsOwner() {
+		return portals.entrySet().iterator().next().getValue();
 	}
 
 }
