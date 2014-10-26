@@ -1,17 +1,26 @@
 package tk.icudi;
 
+import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+
 public class LogEntry {
 
-	private int id;
 	private String playerName;
 	private Portal portal = new Portal();
+	private GregorianCalendar date;
 
-	public int getId() {
-		return id;
+	public void setTimeStamp(long timestamp) {
+		this.date = new GregorianCalendar(Locale.GERMAN);
+		date.setTimeInMillis(timestamp);
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public GregorianCalendar getDate() {
+		return date;
+	}
+
+	public String getFormattedDate() {
+		return new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(date.getTime());
 	}
 
 	public String getPlayerName() {
@@ -32,7 +41,7 @@ public class LogEntry {
 
 	@Override
 	public String toString() {
-		return "LogEntry [id=" + id + ", playerName=" + playerName + ", portal=" + portal + "]";
+		return "LogEntry [time=" + getFormattedDate() + ", playerName=" + playerName + ", portal=" + portal + "]";
 	}
 
 }

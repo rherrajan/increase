@@ -1,5 +1,6 @@
 package tk.icudi;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
@@ -17,13 +18,18 @@ public class PlextParserTest {
 		Assert.assertEquals("Inhalt der Testdatei\n", parser.readInputStream(in));
 	}
 
-	@Test
-	public void testParse() throws Exception {
-
-		PlextParser parser = new PlextParser(new LogProviderFile("result.json"));
+	private List<LogEntry> parseLogs(String file) throws IOException {
+		PlextParser parser = new PlextParser(new LogProviderFile(file));
 
 		parser.updateLogs();
 		List<LogEntry> logs = parser.extractLogEntries();
+		return logs;
+	}
+
+	@Test
+	public void testParsePortal() throws Exception {
+
+		List<LogEntry> logs = parseLogs("result.json");
 
 		Assert.assertEquals(50, logs.size());
 		Assert.assertEquals("Palais", logs.get(0).getPortal().getPortalName());
@@ -31,6 +37,14 @@ public class PlextParserTest {
 		for (LogEntry logEntry : logs) {
 			System.out.println("logEntry: " + logEntry);
 		}
+	}
+
+	@Test
+	public void testParseTime() throws Exception {
+
+		List<LogEntry> logs = parseLogs("result.json");
+
+		Assert.assertEquals("26.10.2014 12:49:15", logs.get(0).getFormattedDate());
 	}
 
 }

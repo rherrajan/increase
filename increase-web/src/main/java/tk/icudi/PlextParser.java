@@ -61,10 +61,10 @@ public class PlextParser {
 		JSONObject innerLogEntry = logEntry.getJSONObject(2);
 		JSONArray markup = innerLogEntry.getJSONObject("plext").getJSONArray("markup");
 
-		int id = logEntry.getInt(1);
+		long id = logEntry.getLong(1);
 
 		LogEntry log = new LogEntry();
-		log.setId(id);
+		log.setTimeStamp(id);
 
 		for (int i = 0; i < markup.length(); i++) {
 			JSONArray logPart = markup.getJSONArray(i);
