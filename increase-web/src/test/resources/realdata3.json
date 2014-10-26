@@ -1,0 +1,2529 @@
+{
+   "c":[
+      [
+         "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"
+      ],
+      [
+         "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"
+      ]
+   ],
+   "b":"X5kdUZyupC9KX_WeU5hfyWt7lhUmYshtOfLiEn645Y4",
+   "success":[
+      [
+         "c7fa655d5254436b88b07173154bf811.d",
+         1414338860065,
+         {
+            "plext":{
+               "text":"cennet linked Wandmalerei Zum Storch (Saalgasse 22, 60311 Frankfurt, Germany) to Einhorn Und Drache Im Giebel (Saalgasse 16, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"cennet",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Wandmalerei Zum Storch",
+                        "plain":"Wandmalerei Zum Storch (Saalgasse 22, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110093,
+                        "address":"Saalgasse 22, 60311 Frankfurt, Germany",
+                        "lngE6":8684097
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Einhorn Und Drache Im Giebel",
+                        "plain":"Einhorn Und Drache Im Giebel (Saalgasse 16, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110058,
+                        "address":"Saalgasse 16, 60311 Frankfurt, Germany",
+                        "lngE6":8683790
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "9f80cb4ae18c4452a6747576e6be07b7.d",
+         1414338852633,
+         {
+            "plext":{
+               "text":"suchef linked Frankfurt am Main, Ro\u00dfmarkt (Ro\u00dfmarkt 14, 60311 Frankfurt, Germany) to Hauptwache (Steinweg 4, Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurt am Main, Ro\u00dfmarkt",
+                        "plain":"Frankfurt am Main, Ro\u00dfmarkt (Ro\u00dfmarkt 14, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50112317,
+                        "address":"Ro\u00dfmarkt 14, 60311 Frankfurt, Germany",
+                        "lngE6":8676450
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptwache",
+                        "plain":"Hauptwache (Steinweg 4, Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113399,
+                        "address":"Steinweg 4, Frankfurt, Germany",
+                        "lngE6":8678743
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "97ac83b9fc714022ab42cd9c7f9a6d96.d",
+         1414338849536,
+         {
+            "plext":{
+               "text":"Pingtux deployed an L1 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L1"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "7ffb5da004e34dfcb03d67c6a4e92411.d",
+         1414338847705,
+         {
+            "plext":{
+               "text":"MrUnknow linked Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany) to Carolus Brunnen (Darmst\u00e4dter Landstra\u00dfe 78, 60598 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Maison Lanz",
+                        "plain":"Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50098994,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany",
+                        "lngE6":8691013
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Carolus Brunnen",
+                        "plain":"Carolus Brunnen (Darmst\u00e4dter Landstra\u00dfe 78, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50100210,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 78, 60598 Frankfurt, Germany",
+                        "lngE6":8691196
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "78e13c0d22b04c479e852cfad5eb2f27.d",
+         1414338847287,
+         {
+            "plext":{
+               "text":"Pingtux deployed an L1 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L1"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "ee69a1d1d8c147f6b00297a14da62477.d",
+         1414338845521,
+         {
+            "plext":{
+               "text":"Pingtux deployed an L1 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L1"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "03488c864aaf4974ab990dc768ae183a.d",
+         1414338843959,
+         {
+            "plext":{
+               "text":"suchef linked Frankfurt am Main, Ro\u00dfmarkt (Ro\u00dfmarkt 14, 60311 Frankfurt, Germany) to Goethe Statue (Goetheplatz 6, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"suchef",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurt am Main, Ro\u00dfmarkt",
+                        "plain":"Frankfurt am Main, Ro\u00dfmarkt (Ro\u00dfmarkt 14, 60311 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50112317,
+                        "address":"Ro\u00dfmarkt 14, 60311 Frankfurt, Germany",
+                        "lngE6":8676450
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Goethe Statue",
+                        "plain":"Goethe Statue (Goetheplatz 6, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113276,
+                        "address":"Goetheplatz 6, 60313 Frankfurt, Germany",
+                        "lngE6":8676608
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "0f52420da0344e8a85cd7d469e53f5d0.d",
+         1414338836790,
+         {
+            "plext":{
+               "text":"MrUnknow linked Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany) to Haus Der Familie (Darmst\u00e4dter Landstra\u00dfe 83, 60598 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Maison Lanz",
+                        "plain":"Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50098994,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany",
+                        "lngE6":8691013
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Haus Der Familie",
+                        "plain":"Haus Der Familie (Darmst\u00e4dter Landstra\u00dfe 83, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50099842,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 83, 60598 Frankfurt, Germany",
+                        "lngE6":8691551
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "632d70fe66434faa9ebd2593dd1b8aa1.d",
+         1414338834297,
+         {
+            "plext":{
+               "text":"Pingtux deployed an L1 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L1"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "03c7b5b8eee34f609b17f416005ec028.d",
+         1414338833980,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L3 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "8092fb57460b451a9488b2eeda94c8b1.d",
+         1414338832213,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L3 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "2b99067edad94e92a810dca622e6917b.d",
+         1414338829918,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L5 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "ae28b2b85aab4eeb9ae861a6f8d261cb.d",
+         1414338829792,
+         {
+            "plext":{
+               "text":"Pingtux deployed an L5 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "b82f5a29a8e74676beb249a0f4f26f0b.d",
+         1414338827449,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L5 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "07145f3cb02a42cb85a06e7ed39c96b7.d",
+         1414338827388,
+         {
+            "plext":{
+               "text":"Pingtux deployed an L6 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "7f332a9b2ec14ea1882e124ca334585b.d",
+         1414338827199,
+         {
+            "plext":{
+               "text":"ANLAC linked Martin Luther Kirche (Luisenstra\u00dfe 39, 60316 Frankfurt, Germany) to Mainova Stromgeb\u00e4ude Nordend (Schopenhauerstra\u00dfe 19, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ANLAC",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Martin Luther Kirche",
+                        "plain":"Martin Luther Kirche (Luisenstra\u00dfe 39, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50123852,
+                        "address":"Luisenstra\u00dfe 39, 60316 Frankfurt, Germany",
+                        "lngE6":8697565
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Mainova Stromgeb\u00e4ude Nordend",
+                        "plain":"Mainova Stromgeb\u00e4ude Nordend (Schopenhauerstra\u00dfe 19, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50122941,
+                        "address":"Schopenhauerstra\u00dfe 19, 60316 Frankfurt, Germany",
+                        "lngE6":8698469
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "a745fb31b36f448a839be5facbe27585.d",
+         1414338827199,
+         {
+            "plext":{
+               "text":"ANLAC created a Control Field @Martin Luther Kirche (Luisenstra\u00dfe 39, 60316 Frankfurt, Germany) +3 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"ANLAC",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Martin Luther Kirche",
+                        "plain":"Martin Luther Kirche (Luisenstra\u00dfe 39, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50123852,
+                        "address":"Luisenstra\u00dfe 39, 60316 Frankfurt, Germany",
+                        "lngE6":8697565
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "3f0c07537b4a4b009c8566ace69ac2a5.d",
+         1414338826191,
+         {
+            "plext":{
+               "text":"MrUnknow linked Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany) to Antenna (Darmst\u00e4dter Landstra\u00dfe 119, 60598 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Maison Lanz",
+                        "plain":"Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50098994,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany",
+                        "lngE6":8691013
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Antenna",
+                        "plain":"Antenna (Darmst\u00e4dter Landstra\u00dfe 119, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50097174,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 119, 60598 Frankfurt, Germany",
+                        "lngE6":8691175
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "04e15d65fde0414c9be6dd1bee9e30e8.d",
+         1414338825783,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L6 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "5e1f0f3ebe844bfb9ac49e62267b05e4.d",
+         1414338825575,
+         {
+            "plext":{
+               "text":"Pingtux deployed an L7 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "97f49317eaa24b22919c7d47f6c8e2b9.d",
+         1414338824103,
+         {
+            "plext":{
+               "text":"Pingtux captured Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "c65fb1c507de448db0cea82b822d368e.d",
+         1414338824103,
+         {
+            "plext":{
+               "text":"Pingtux deployed an L8 Resonator on Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Frankfurter Ratskeller",
+                        "plain":"Frankfurter Ratskeller (Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110758,
+                        "address":"Bethmannstra\u00dfe 3, 60311 Frankfurt, Germany",
+                        "lngE6":8681577
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "ca6bb02b69934e37abb9870622458df9.d",
+         1414338823417,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L6 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "49543da403ee487d97e6ab87509d0c3b.d",
+         1414338821490,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L7 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "5a8c3749ac3b4e829a940bf788bc370e.d",
+         1414338817978,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L8 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "bb9e67196c094c3fae881b991fc69330.d",
+         1414338817978,
+         {
+            "plext":{
+               "text":"Schuchi captured Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "05d895ac1f234bb7bdb54eb8ad79ae7f.d",
+         1414338816808,
+         {
+            "plext":{
+               "text":"misfitss destroyed an L8 Resonator on Hammering Man (Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"misfitss",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hammering Man",
+                        "plain":"Hammering Man (Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50112774,
+                        "address":"Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany",
+                        "lngE6":8652542
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "0fc7868960a24b06b97e417a54ea6d66.d",
+         1414338814421,
+         {
+            "plext":{
+               "text":"cennet linked Wandgem\u00e4lde an der Schirn (Bendergasse 3, 60311 Frankfurt, Germany) to Wandmalerei Zum Storch (Saalgasse 22, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"cennet",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Wandgem\u00e4lde an der Schirn",
+                        "plain":"Wandgem\u00e4lde an der Schirn (Bendergasse 3, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110471,
+                        "address":"Bendergasse 3, 60311 Frankfurt, Germany",
+                        "lngE6":8684047
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Wandmalerei Zum Storch",
+                        "plain":"Wandmalerei Zum Storch (Saalgasse 22, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110093,
+                        "address":"Saalgasse 22, 60311 Frankfurt, Germany",
+                        "lngE6":8684097
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "9c478750c9134f05ab9c3e2a6670ee6e.d",
+         1414338809061,
+         {
+            "plext":{
+               "text":"misfitss destroyed an L8 Resonator on Hammering Man (Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"misfitss",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hammering Man",
+                        "plain":"Hammering Man (Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50112774,
+                        "address":"Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany",
+                        "lngE6":8652542
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "a1ecad706fa2478a82c6d47d98f65d32.d",
+         1414338809061,
+         {
+            "plext":{
+               "text":"misfitss destroyed an L8 Resonator on Hammering Man (Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"misfitss",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hammering Man",
+                        "plain":"Hammering Man (Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50112774,
+                        "address":"Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany",
+                        "lngE6":8652542
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "fc10724a7f2d497ebdff450d20017777.d",
+         1414338809061,
+         {
+            "plext":{
+               "text":"misfitss destroyed an L8 Resonator on Hammering Man (Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"misfitss",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hammering Man",
+                        "plain":"Hammering Man (Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50112774,
+                        "address":"Friedrich-Ebert-Anlage 49, 60327 Frankfurt, Germany",
+                        "lngE6":8652542
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "6bb029a0c6914d528d76603e57e186b9.d",
+         1414338806631,
+         {
+            "plext":{
+               "text":"[secure] larun: @greetz Verbesserung XM",
+               "markup":[
+                  [
+                     "SECURE",
+                     {
+                        "plain":"[secure] "
+                     }
+                  ],
+                  [
+                     "SENDER",
+                     {
+                        "plain":"larun: ",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":""
+                     }
+                  ],
+                  [
+                     "AT_PLAYER",
+                     {
+                        "plain":"@greetz",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Verbesserung XM"
+                     }
+                  ]
+               ],
+               "plextType":"PLAYER_GENERATED",
+               "categories":2,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "3156e05e47be40a2a5dd1c977a6a42c7.d",
+         1414338803124,
+         {
+            "plext":{
+               "text":"Schuchi destroyed an L5 Resonator on S\u00fcdostportal Hbf (Bahnhofshalle, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"S\u00fcdostportal Hbf",
+                        "plain":"S\u00fcdostportal Hbf (Bahnhofshalle, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50106708,
+                        "address":"Bahnhofshalle, 60329 Frankfurt, Germany",
+                        "lngE6":8664306
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "8c4e83ba50ef4a12b8a1e8bd335b5848.d",
+         1414338803124,
+         {
+            "plext":{
+               "text":"Schuchi destroyed an L6 Resonator on S\u00fcdostportal Hbf (Bahnhofshalle, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"S\u00fcdostportal Hbf",
+                        "plain":"S\u00fcdostportal Hbf (Bahnhofshalle, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50106708,
+                        "address":"Bahnhofshalle, 60329 Frankfurt, Germany",
+                        "lngE6":8664306
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "90f79684e2aa4d6284ac3dbdfc76b7df.d",
+         1414338801963,
+         {
+            "plext":{
+               "text":"Pingtux linked Wandmalerei (R\u00f6merberg 27, 60311 Frankfurt, Germany) to Goldener Vogel (R\u00f6merberg 36, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Pingtux",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Wandmalerei",
+                        "plain":"Wandmalerei (R\u00f6merberg 27, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110749,
+                        "address":"R\u00f6merberg 27, 60311 Frankfurt, Germany",
+                        "lngE6":8681880
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Goldener Vogel",
+                        "plain":"Goldener Vogel (R\u00f6merberg 36, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50110842,
+                        "address":"R\u00f6merberg 36, 60311 Frankfurt, Germany",
+                        "lngE6":8682130
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "7bc42c32102146c98a11c41f88978176.d",
+         1414338799745,
+         {
+            "plext":{
+               "text":"Schuchi destroyed an L7 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "2bc1bd694a8a439e9a821141d15a6569.d",
+         1414338799428,
+         {
+            "plext":{
+               "text":"Schuchi destroyed an L7 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "62d489d0877f4498a63781eba0f5dd63.d",
+         1414338799428,
+         {
+            "plext":{
+               "text":"Schuchi destroyed an L8 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "bfa80fb7d6bf419eb8cb1ceda1e34bb4.d",
+         1414338799428,
+         {
+            "plext":{
+               "text":"Schuchi destroyed an L6 Resonator on S\u00fcdostportal Hbf (Bahnhofshalle, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"S\u00fcdostportal Hbf",
+                        "plain":"S\u00fcdostportal Hbf (Bahnhofshalle, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50106708,
+                        "address":"Bahnhofshalle, 60329 Frankfurt, Germany",
+                        "lngE6":8664306
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "5bc26d65e33d43298a81e48baa18f289.d",
+         1414338796543,
+         {
+            "plext":{
+               "text":"bumblecrumble linked Martin Luther Kirche (Luisenstra\u00dfe 39, 60316 Frankfurt, Germany) to Tic Tac Toe Streetart (Luisenstra\u00dfe 39, 60316 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"bumblecrumble",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Martin Luther Kirche",
+                        "plain":"Martin Luther Kirche (Luisenstra\u00dfe 39, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50123852,
+                        "address":"Luisenstra\u00dfe 39, 60316 Frankfurt, Germany",
+                        "lngE6":8697565
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tic Tac Toe Streetart",
+                        "plain":"Tic Tac Toe Streetart (Luisenstra\u00dfe 39, 60316 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50123602,
+                        "address":"Luisenstra\u00dfe 39, 60316 Frankfurt, Germany",
+                        "lngE6":8697240
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "c0585e0175594463916f93f8febb543c.d",
+         1414338795213,
+         {
+            "plext":{
+               "text":"knaffzahn deployed an L1 Resonator on Kakao-Kaffee Haus NUSSKNACKER (Karlsruher Street 5, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"knaffzahn",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L1"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Kakao-Kaffee Haus NUSSKNACKER",
+                        "plain":"Kakao-Kaffee Haus NUSSKNACKER (Karlsruher Street 5, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50104208,
+                        "address":"Karlsruher Street 5, 60329 Frankfurt, Germany",
+                        "lngE6":8663903
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "fb0dae75bff54668a782a821db166851.d",
+         1414338794757,
+         {
+            "plext":{
+               "text":"Schuchi destroyed an L5 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "5379c83085874a2dab869647ca8284d8.d",
+         1414338794343,
+         {
+            "plext":{
+               "text":"MrUnknow deployed an L4 Resonator on Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Maison Lanz",
+                        "plain":"Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50098994,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany",
+                        "lngE6":8691013
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "d0406ed467cd4f73956ee392b793475a.d",
+         1414338792915,
+         {
+            "plext":{
+               "text":"MrUnknow deployed an L4 Resonator on Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Maison Lanz",
+                        "plain":"Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50098994,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany",
+                        "lngE6":8691013
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "a2b70bb9c93648228fb5d4e51dc8094d.d",
+         1414338791705,
+         {
+            "plext":{
+               "text":"MrUnknow deployed an L5 Resonator on Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Maison Lanz",
+                        "plain":"Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50098994,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany",
+                        "lngE6":8691013
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "0a861b2e78d94c0b8b0f0e908ae88a2f.d",
+         1414338791540,
+         {
+            "plext":{
+               "text":"knaffzahn deployed an L1 Resonator on Kakao-Kaffee Haus NUSSKNACKER (Karlsruher Street 5, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"knaffzahn",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L1"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Kakao-Kaffee Haus NUSSKNACKER",
+                        "plain":"Kakao-Kaffee Haus NUSSKNACKER (Karlsruher Street 5, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50104208,
+                        "address":"Karlsruher Street 5, 60329 Frankfurt, Germany",
+                        "lngE6":8663903
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "fd2714d8b01a408e94f4688c5c6adb8c.d",
+         1414338790217,
+         {
+            "plext":{
+               "text":"MrUnknow deployed an L5 Resonator on Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L5"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Maison Lanz",
+                        "plain":"Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50098994,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany",
+                        "lngE6":8691013
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "a427eb76ddd14472aa0a5ab76ae5dae1.d",
+         1414338790006,
+         {
+            "plext":{
+               "text":"Schuchi deployed an L7 Resonator on Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "d1b0d2682ef446a388a99413bcc45f2b.d",
+         1414338790006,
+         {
+            "plext":{
+               "text":"Schuchi captured Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Schuchi",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "8093f3401a9b41a7a79aa75d3f2d6302.d",
+         1414338788072,
+         {
+            "plext":{
+               "text":"MrUnknow deployed an L6 Resonator on Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Maison Lanz",
+                        "plain":"Maison Lanz (Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50098994,
+                        "address":"Darmst\u00e4dter Landstra\u00dfe 92, 60598 Frankfurt, Germany",
+                        "lngE6":8691013
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ]
+   ]
+}
