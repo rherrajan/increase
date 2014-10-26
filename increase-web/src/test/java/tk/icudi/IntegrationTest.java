@@ -29,23 +29,30 @@ public class IntegrationTest {
 	@Test
 	public void test_append() throws Exception {
 
+		LogProvider provider = new LogProviderCurl();
 		Game game = new Game();
 
-		// game.start();
+		GameUpdater updater = new GameUpdater(game, provider);
 
-		Thread.sleep(30 * 1000);
-		int portalsOnTime1 = game.getPortals().size();
-		for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
-			System.out.println(entry.getValue() + " owns " + entry.getKey());
+		try {
+			updater.start();
+
+			int portalsOnTime1 = game.getPortals().size();
+			for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
+				System.out.println(entry.getValue() + " owns " + entry.getKey());
+			}
+
+			Thread.sleep(90 * 1000);
+			int portalsOnTime2 = game.getPortals().size();
+			for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
+				System.out.println(entry.getValue() + " owns " + entry.getKey());
+			}
+
+			Assert.assertThat(portalsOnTime2, Matchers.greaterThan(portalsOnTime1));
+
+		} finally {
+			updater.stop();
 		}
-
-		Thread.sleep(90 * 1000);
-		int portalsOnTime2 = game.getPortals().size();
-		for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
-			System.out.println(entry.getValue() + " owns " + entry.getKey());
-		}
-
-		Assert.assertThat(portalsOnTime2, Matchers.greaterThan(portalsOnTime1));
 
 	}
 

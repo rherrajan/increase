@@ -1,5 +1,6 @@
 package tk.icudi;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,13 @@ public class Game {
 
 	private List<LogEntry> logs;
 	private Map<Portal, String> portals = new HashMap<Portal, String>();
+
+	public void appendLogsFrom(LogProvider provider) throws IOException {
+		PlextParser parser = new PlextParser(provider);
+		parser.updateLogs();
+		List<LogEntry> logs = parser.extractLogEntries();
+		appendLogs(logs);
+	}
 
 	void appendLogs(List<LogEntry> logs) {
 		this.logs = logs;
@@ -31,7 +39,7 @@ public class Game {
 		return portals;
 	}
 
-	public Object getFirstPortalsOwner() {
+	public String getFirstPortalsOwner() {
 		return portals.entrySet().iterator().next().getValue();
 	}
 

@@ -82,6 +82,8 @@ public class PlextParser {
 				// message between Players
 			} else if (logIdentification.equals("AT_PLAYER")) {
 				// message between Players
+			} else if (logIdentification.equals("SECURE")) {
+				// message between Players
 
 			} else {
 				System.err.println("unnkown log identifikation '" + logIdentification + "'");
