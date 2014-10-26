@@ -21,7 +21,7 @@ public class GameTest {
 	@Test
 	public void testPortals() throws Exception {
 
-		Game game = getGame("result.json");
+		Game game = getGame("realdata.json");
 		Map<Portal, String> portals = game.getPortals();
 
 		Assert.assertEquals(13, portals.size());
@@ -50,6 +50,19 @@ public class GameTest {
 
 		game.appendLogs(PlextParserTest.parseLogs("anotherPortal.json"));
 		Assert.assertEquals(2, game.getPortals().size());
+	}
+
+	@Test
+	public void test_append_realdata() throws Exception {
+		Game game = new Game();
+
+		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
+		Assert.assertEquals(13, game.getPortals().size());
+
+		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
+		Assert.assertEquals(31, game.getPortals().size());
+
+		System.out.println(" --- portals: \n" + game.getPortals());
 	}
 
 	@Test

@@ -29,7 +29,7 @@ public class PlextParserTest {
 	@Test
 	public void testParsePortal() throws Exception {
 
-		List<LogEntry> logs = parseLogs("result.json");
+		List<LogEntry> logs = parseLogs("realdata.json");
 
 		Assert.assertEquals(50, logs.size());
 		Assert.assertEquals("Frankfurter Ratskeller", logs.get(0).getPortal().getPortalName());
@@ -42,7 +42,7 @@ public class PlextParserTest {
 	@Test
 	public void testParseTime() throws Exception {
 
-		List<LogEntry> logs = parseLogs("result.json");
+		List<LogEntry> logs = parseLogs("realdata.json");
 
 		Assert.assertEquals("26.10.2014 12:48:02", logs.get(0).getFormattedDate());
 	}

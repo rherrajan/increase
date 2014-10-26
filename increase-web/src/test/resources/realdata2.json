@@ -1,0 +1,2499 @@
+{
+   "success":[
+      [
+         "2e1bdcdd993d4f3596f19d349b0edf23.d",
+         1414335481800,
+         {
+            "plext":{
+               "text":"MrUnknow captured Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Krawall Schachtel Kneipe",
+                        "plain":"Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50117463,
+                        "address":"Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany",
+                        "lngE6":8685938
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "4b88048319454126b5960682539e0091.d",
+         1414335481800,
+         {
+            "plext":{
+               "text":"MrUnknow deployed an L8 Resonator on Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Krawall Schachtel Kneipe",
+                        "plain":"Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50117463,
+                        "address":"Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany",
+                        "lngE6":8685938
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "5f43cd38c9aa486fa5d7f19175d5a0ec.d",
+         1414335477193,
+         {
+            "plext":{
+               "text":"MrUnknow destroyed an L7 Resonator on Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Krawall Schachtel Kneipe",
+                        "plain":"Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50117463,
+                        "address":"Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany",
+                        "lngE6":8685938
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "83ff6489ee9a4602bead8a0e1b6723d3.d",
+         1414335457714,
+         {
+            "plext":{
+               "text":"neueheimat2 destroyed an L8 Resonator on Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"neueheimat2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tiki Sign",
+                        "plain":"Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50134789,
+                        "address":"Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany",
+                        "lngE6":8713211
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "902a223ce0fc4427a6c8d9f820d1608f.d",
+         1414335453929,
+         {
+            "plext":{
+               "text":"neueheimat2 destroyed an L7 Resonator on Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"neueheimat2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tiki Sign",
+                        "plain":"Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50134789,
+                        "address":"Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany",
+                        "lngE6":8713211
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "1ffffd82cc9543d3b7f0f5940dfeae08.d",
+         1414335449889,
+         {
+            "plext":{
+               "text":"neueheimat2 destroyed an L6 Resonator on Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"neueheimat2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tiki Sign",
+                        "plain":"Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50134789,
+                        "address":"Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany",
+                        "lngE6":8713211
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "4afcc0d750af4e92bdcd7abd8e7e8885.d",
+         1414335445340,
+         {
+            "plext":{
+               "text":"neueheimat2 destroyed an L8 Resonator on Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"neueheimat2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tiki Sign",
+                        "plain":"Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50134789,
+                        "address":"Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany",
+                        "lngE6":8713211
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "e05d4a091d474889b8671df75d4aed50.d",
+         1414335445340,
+         {
+            "plext":{
+               "text":"neueheimat2 destroyed an L6 Resonator on Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"neueheimat2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tiki Sign",
+                        "plain":"Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50134789,
+                        "address":"Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany",
+                        "lngE6":8713211
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "170e33e1970640dda78e7aeb4fbd2efa.d",
+         1414335442313,
+         {
+            "plext":{
+               "text":"poka68 deployed an L2 Resonator on Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"poka68",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L2"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schutzengel",
+                        "plain":"Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50099560,
+                        "address":"Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany",
+                        "lngE6":8677472
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "bf807e808c3543998f424f98ec6f3204.d",
+         1414335433026,
+         {
+            "plext":{
+               "text":"neueheimat2 destroyed an L7 Resonator on Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"neueheimat2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tiki Sign",
+                        "plain":"Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50134789,
+                        "address":"Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany",
+                        "lngE6":8713211
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "d5d743fbebdb469d9467ed64f17cd689.d",
+         1414335433026,
+         {
+            "plext":{
+               "text":"neueheimat2 destroyed an L6 Resonator on Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"neueheimat2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tiki Sign",
+                        "plain":"Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50134789,
+                        "address":"Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany",
+                        "lngE6":8713211
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "892266f9ef4545cfa9d5fc9fd87ebc36.d",
+         1414335432796,
+         {
+            "plext":{
+               "text":"MrUnknow captured Goldschmidt-Stolpersteine (Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Goldschmidt-Stolpersteine",
+                        "plain":"Goldschmidt-Stolpersteine (Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50116936,
+                        "address":"Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany",
+                        "lngE6":8686052
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "d408a5afc3904f9cb664783f61c3baf2.d",
+         1414335432796,
+         {
+            "plext":{
+               "text":"MrUnknow deployed an L8 Resonator on Goldschmidt-Stolpersteine (Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Goldschmidt-Stolpersteine",
+                        "plain":"Goldschmidt-Stolpersteine (Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50116936,
+                        "address":"Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany",
+                        "lngE6":8686052
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "a0408209141b4131925d544c2fe8b605.d",
+         1414335428969,
+         {
+            "plext":{
+               "text":"neueheimat2 destroyed an L6 Resonator on Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"neueheimat2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Tiki Sign",
+                        "plain":"Tiki Sign (Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50134789,
+                        "address":"Ilbenst\u00e4dter Stra\u00dfe 35, 60385 Frankfurt, Germany",
+                        "lngE6":8713211
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "bf5f2f2ee142487388b3c0b561cd772b.d",
+         1414335427580,
+         {
+            "plext":{
+               "text":"MrUnknow destroyed an L4 Resonator on Gitta und Toni Landau Stolpersteine (Vilbeler Stra\u00dfe 29, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Gitta und Toni Landau Stolpersteine",
+                        "plain":"Gitta und Toni Landau Stolpersteine (Vilbeler Stra\u00dfe 29, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116889,
+                        "address":"Vilbeler Stra\u00dfe 29, 60313 Frankfurt, Germany",
+                        "lngE6":8686508
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "c20d7e20eeae4d508c4613caf1e92be0.d",
+         1414335427580,
+         {
+            "plext":{
+               "text":"MrUnknow destroyed an L7 Resonator on Goldschmidt-Stolpersteine (Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Goldschmidt-Stolpersteine",
+                        "plain":"Goldschmidt-Stolpersteine (Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116936,
+                        "address":"Vilbeler Stra\u00dfe 36, 60313 Frankfurt, Germany",
+                        "lngE6":8686052
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "50d1abf8fda4486db2d9ef605d51d23c.d",
+         1414335426897,
+         {
+            "plext":{
+               "text":"poka68 deployed an L3 Resonator on Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"poka68",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schutzengel",
+                        "plain":"Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50099560,
+                        "address":"Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany",
+                        "lngE6":8677472
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "0a280b6237374e94a33d0e4ca61a0be0.d",
+         1414335423946,
+         {
+            "plext":{
+               "text":"MrUnknow destroyed an L3 Resonator on Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Krawall Schachtel Kneipe",
+                        "plain":"Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50117463,
+                        "address":"Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany",
+                        "lngE6":8685938
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "598b4559db954c2b947990a18afbdca8.d",
+         1414335414999,
+         {
+            "plext":{
+               "text":"MrUnknow destroyed an L3 Resonator on Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Krawall Schachtel Kneipe",
+                        "plain":"Krawall Schachtel Kneipe (Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50117463,
+                        "address":"Rosenbergerstra\u00dfe 6, 60313 Frankfurt, Germany",
+                        "lngE6":8685938
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "33067f1fc79d4ec58d848a81ea96a4f1.d",
+         1414335414247,
+         {
+            "plext":{
+               "text":"poka68 deployed an L3 Resonator on Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"poka68",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schutzengel",
+                        "plain":"Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50099560,
+                        "address":"Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany",
+                        "lngE6":8677472
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "a0d8326e6b9f406db529a0d05c2ff7a1.d",
+         1414335411965,
+         {
+            "plext":{
+               "text":"MrUnknow destroyed an L3 Resonator on Gitta und Toni Landau Stolpersteine (Vilbeler Stra\u00dfe 29, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Gitta und Toni Landau Stolpersteine",
+                        "plain":"Gitta und Toni Landau Stolpersteine (Vilbeler Stra\u00dfe 29, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116889,
+                        "address":"Vilbeler Stra\u00dfe 29, 60313 Frankfurt, Germany",
+                        "lngE6":8686508
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "4884cd0060fc46eda0a0020be2ff0be6.d",
+         1414335409702,
+         {
+            "plext":{
+               "text":"Ebermann deployed an L7 Resonator on Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Atlas, griechischer Held, Auf FFM HBF",
+                        "plain":"Atlas, griechischer Held, Auf FFM HBF (Frankfurt Hbf (tief), 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50107356,
+                        "address":"Frankfurt Hbf (tief), 60329 Frankfurt, Germany",
+                        "lngE6":8664123
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "66b49375d12640769c64f5b741e8db16.d",
+         1414335407476,
+         {
+            "plext":{
+               "text":"Zucker1909 created a Control Field @Haus Der Ch\u00f6re (Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany) +2 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Zucker1909",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Haus Der Ch\u00f6re",
+                        "plain":"Haus Der Ch\u00f6re (Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50138867,
+                        "address":"Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany",
+                        "lngE6":8678982
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"2"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "a2c6db8c06dc4071bf2c96d2b95250a7.d",
+         1414335407476,
+         {
+            "plext":{
+               "text":"Zucker1909 linked Haus Der Ch\u00f6re (Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany) to Skulptur Im Bertramshof  (Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Zucker1909",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Haus Der Ch\u00f6re",
+                        "plain":"Haus Der Ch\u00f6re (Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50138867,
+                        "address":"Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany",
+                        "lngE6":8678982
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Skulptur Im Bertramshof ",
+                        "plain":"Skulptur Im Bertramshof  (Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50138287,
+                        "address":"Kaiser-Sigmund-Stra\u00dfe 49, 60320 Frankfurt, Germany",
+                        "lngE6":8679668
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "fba57e758b45444283700b69fd4f2771.d",
+         1414335406069,
+         {
+            "plext":{
+               "text":"poka68 deployed an L3 Resonator on Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"poka68",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schutzengel",
+                        "plain":"Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50099560,
+                        "address":"Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany",
+                        "lngE6":8677472
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "d2376e9d081445e3a1b6d8c08d628544.d",
+         1414335397000,
+         {
+            "plext":{
+               "text":"poka68 deployed an L3 Resonator on Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"poka68",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Schutzengel",
+                        "plain":"Schutzengel (Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50099560,
+                        "address":"Schwanthalerstra\u00dfe 74, 60596 Frankfurt, Germany",
+                        "lngE6":8677472
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "a8684c2837ce40b890a622d69c0c554b.d",
+         1414335391723,
+         {
+            "plext":{
+               "text":"Ebermann deployed an L7 Resonator on Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "d3ff660adff742e9a216e31c52848adb.d",
+         1414335391723,
+         {
+            "plext":{
+               "text":"Ebermann captured Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "c1c2414ae24f4996b4c316bf6649ac2b.d",
+         1414335378737,
+         {
+            "plext":{
+               "text":"Ebermann destroyed an L4 Resonator on Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "d20d751d630d45c58915dbbbd9220772.d",
+         1414335378737,
+         {
+            "plext":{
+               "text":"Ebermann destroyed an L4 Resonator on Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "17fcd6afc0394c878ce67a2a77efe941.d",
+         1414335345209,
+         {
+            "plext":{
+               "text":"DerThomass created a Control Field @F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany) +8 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"DerThomass",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"F\u00fc\u00dfe im Asphalt",
+                        "plain":"F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50139444,
+                        "address":"Helfmann-Park 10, 65760 Eschborn, Germany",
+                        "lngE6":8585620
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "8ca7a4b43d6f4541ad2adafaf661e49c.d",
+         1414335345209,
+         {
+            "plext":{
+               "text":"DerThomass linked F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany) to Kaiser Wilhelm War Memorial (Hunsr\u00fcckstra\u00dfe 10, 65760 Eschborn, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"DerThomass",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"F\u00fc\u00dfe im Asphalt",
+                        "plain":"F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50139444,
+                        "address":"Helfmann-Park 10, 65760 Eschborn, Germany",
+                        "lngE6":8585620
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Kaiser Wilhelm War Memorial",
+                        "plain":"Kaiser Wilhelm War Memorial (Hunsr\u00fcckstra\u00dfe 10, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50146833,
+                        "address":"Hunsr\u00fcckstra\u00dfe 10, 65760 Eschborn, Germany",
+                        "lngE6":8573376
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "4cbd820f73334daaa58c6af341e73d7a.d",
+         1414335343861,
+         {
+            "plext":{
+               "text":"Ebermann deployed an L7 Resonator on Giant Clock (Am Hauptbahnhof 1, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Giant Clock",
+                        "plain":"Giant Clock (Am Hauptbahnhof 1, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50106829,
+                        "address":"Am Hauptbahnhof 1, 60329 Frankfurt, Germany",
+                        "lngE6":8662974
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "e289f9c4d6db4970ad96250838a8a7c9.d",
+         1414335343861,
+         {
+            "plext":{
+               "text":"Ebermann captured Giant Clock (Am Hauptbahnhof 1, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Giant Clock",
+                        "plain":"Giant Clock (Am Hauptbahnhof 1, 60329 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50106829,
+                        "address":"Am Hauptbahnhof 1, 60329 Frankfurt, Germany",
+                        "lngE6":8662974
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "45473adec84c46ba92630f35cf19c631.d",
+         1414335330747,
+         {
+            "plext":{
+               "text":"DerThomass created a Control Field @F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany) +69 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"DerThomass",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"F\u00fc\u00dfe im Asphalt",
+                        "plain":"F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50139444,
+                        "address":"Helfmann-Park 10, 65760 Eschborn, Germany",
+                        "lngE6":8585620
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"69"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "cc5323483d3a4c10b873a9e6907f278c.d",
+         1414335330747,
+         {
+            "plext":{
+               "text":"DerThomass linked F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany) to Brunnen Rathausplatz Eschborn (Rathausplatz 12-14, 65760 Eschborn, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"DerThomass",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"F\u00fc\u00dfe im Asphalt",
+                        "plain":"F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50139444,
+                        "address":"Helfmann-Park 10, 65760 Eschborn, Germany",
+                        "lngE6":8585620
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Brunnen Rathausplatz Eschborn",
+                        "plain":"Brunnen Rathausplatz Eschborn (Rathausplatz 12-14, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50140719,
+                        "address":"Rathausplatz 12-14, 65760 Eschborn, Germany",
+                        "lngE6":8572412
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "63664e2bf29245a1ba2c08cedf80d2aa.d",
+         1414335321649,
+         {
+            "plext":{
+               "text":"Ebermann destroyed an L3 Resonator on Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "abdf9682e3934329b56736a0cb9e3530.d",
+         1414335321649,
+         {
+            "plext":{
+               "text":"Ebermann destroyed an L3 Resonator on Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "df149a97e92b4e10b517ca497123aab7.d",
+         1414335321649,
+         {
+            "plext":{
+               "text":"Ebermann destroyed an L3 Resonator on Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L3"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Hauptbahnhof Frankfurt Am Main ",
+                        "plain":"Hauptbahnhof Frankfurt Am Main  (Frankfurt (Main) Hbf, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50107054,
+                        "address":"Frankfurt (Main) Hbf, 60329 Frankfurt, Germany",
+                        "lngE6":8663217
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "20bc53c75d034e3db5265e57c124480c.d",
+         1414335318908,
+         {
+            "plext":{
+               "text":"cennet linked Birmingham Pub  (Zeil 92, 60313 Frankfurt, Germany) to Old Jewish Cemetery Entrance (Battonnstra\u00dfe 19, 60311 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"cennet",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Birmingham Pub ",
+                        "plain":"Birmingham Pub  (Zeil 92, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50112737,
+                        "address":"Zeil 92, 60313 Frankfurt, Germany",
+                        "lngE6":8687736
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Old Jewish Cemetery Entrance",
+                        "plain":"Old Jewish Cemetery Entrance (Battonnstra\u00dfe 19, 60311 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50112549,
+                        "address":"Battonnstra\u00dfe 19, 60311 Frankfurt, Germany",
+                        "lngE6":8690260
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "f615dcd1e22942ee8020c0d7676cbef1.d",
+         1414335318908,
+         {
+            "plext":{
+               "text":"cennet created a Control Field @Birmingham Pub  (Zeil 92, 60313 Frankfurt, Germany) +26 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"cennet",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Birmingham Pub ",
+                        "plain":"Birmingham Pub  (Zeil 92, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50112737,
+                        "address":"Zeil 92, 60313 Frankfurt, Germany",
+                        "lngE6":8687736
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"26"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "066e15483c5a4a9889f11cc2db9763cd.d",
+         1414335316693,
+         {
+            "plext":{
+               "text":"MrUnknow deployed an L8 Resonator on Petersfriedhof (Stephanstra\u00dfe 15, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L8"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Petersfriedhof",
+                        "plain":"Petersfriedhof (Stephanstra\u00dfe 15, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50116681,
+                        "address":"Stephanstra\u00dfe 15, 60313 Frankfurt, Germany",
+                        "lngE6":8683419
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "685ab3756293453998a6aec79e5c414c.d",
+         1414335316693,
+         {
+            "plext":{
+               "text":"MrUnknow captured Petersfriedhof (Stephanstra\u00dfe 15, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" captured "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Petersfriedhof",
+                        "plain":"Petersfriedhof (Stephanstra\u00dfe 15, 60313 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50116681,
+                        "address":"Stephanstra\u00dfe 15, 60313 Frankfurt, Germany",
+                        "lngE6":8683419
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "23977e8d39494b169bb2c5643f2c2227.d",
+         1414335316507,
+         {
+            "plext":{
+               "text":"Knosch deployed an L6 Resonator on Quirins Pforte (Offenbacher Landstra\u00dfe, 60599 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Knosch",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L6"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Quirins Pforte",
+                        "plain":"Quirins Pforte (Offenbacher Landstra\u00dfe, 60599 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50100878,
+                        "address":"Offenbacher Landstra\u00dfe, 60599 Frankfurt, Germany",
+                        "lngE6":8692539
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "e1f75811bf9c40c28cc51030981898a5.d",
+         1414335315162,
+         {
+            "plext":{
+               "text":"Knosch deployed an L7 Resonator on Quirins Pforte (Offenbacher Landstra\u00dfe, 60599 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Knosch",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" deployed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Quirins Pforte",
+                        "plain":"Quirins Pforte (Offenbacher Landstra\u00dfe, 60599 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50100878,
+                        "address":"Offenbacher Landstra\u00dfe, 60599 Frankfurt, Germany",
+                        "lngE6":8692539
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "d4089dd6fdfe480d9862177ef3156a9f.d",
+         1414335311835,
+         {
+            "plext":{
+               "text":"MrUnknow destroyed an L7 Resonator on Petersfriedhof (Stephanstra\u00dfe 15, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"MrUnknow",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L7"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Petersfriedhof",
+                        "plain":"Petersfriedhof (Stephanstra\u00dfe 15, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50116681,
+                        "address":"Stephanstra\u00dfe 15, 60313 Frankfurt, Germany",
+                        "lngE6":8683419
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "6642e5cd20b6412bbcbd4e76dc10161b.d",
+         1414335310671,
+         {
+            "plext":{
+               "text":"DerThomass created a Control Field @F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany) +41 MUs",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"DerThomass",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" created a Control Field @"
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"F\u00fc\u00dfe im Asphalt",
+                        "plain":"F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50139444,
+                        "address":"Helfmann-Park 10, 65760 Eschborn, Germany",
+                        "lngE6":8585620
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" +"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"41"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" MUs"
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "a5037f4c5a4e428b8b8cd08dc111e564.d",
+         1414335310671,
+         {
+            "plext":{
+               "text":"DerThomass linked F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany) to Partnerschaft Eschborn-Montgeron (Niederurseler Allee, 65760 Eschborn, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"DerThomass",
+                        "team":"ENLIGHTENED"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"F\u00fc\u00dfe im Asphalt",
+                        "plain":"F\u00fc\u00dfe im Asphalt (Helfmann-Park 10, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50139444,
+                        "address":"Helfmann-Park 10, 65760 Eschborn, Germany",
+                        "lngE6":8585620
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Partnerschaft Eschborn-Montgeron",
+                        "plain":"Partnerschaft Eschborn-Montgeron (Niederurseler Allee, 65760 Eschborn, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50142362,
+                        "address":"Niederurseler Allee, 65760 Eschborn, Germany",
+                        "lngE6":8576418
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"ENLIGHTENED"
+            }
+         }
+      ],
+      [
+         "dd3ea05f63c443c98c2d529c6213eaf7.d",
+         1414335307850,
+         {
+            "plext":{
+               "text":"Ebermann destroyed an L4 Resonator on Giant Clock (Am Hauptbahnhof 1, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Giant Clock",
+                        "plain":"Giant Clock (Am Hauptbahnhof 1, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50106829,
+                        "address":"Am Hauptbahnhof 1, 60329 Frankfurt, Germany",
+                        "lngE6":8662974
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "fea301cd7b844d768516e0294e1d2fd9.d",
+         1414335307850,
+         {
+            "plext":{
+               "text":"Ebermann destroyed an L4 Resonator on Giant Clock (Am Hauptbahnhof 1, 60329 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Ebermann",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" destroyed an "
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":"L4"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" Resonator on "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Giant Clock",
+                        "plain":"Giant Clock (Am Hauptbahnhof 1, 60329 Frankfurt, Germany)",
+                        "team":"ENLIGHTENED",
+                        "latE6":50106829,
+                        "address":"Am Hauptbahnhof 1, 60329 Frankfurt, Germany",
+                        "lngE6":8662974
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ]
+   ]
+}
