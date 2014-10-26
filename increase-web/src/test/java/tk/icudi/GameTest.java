@@ -3,19 +3,15 @@ package tk.icudi;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 public class GameTest {
 
-	private Game getGame() throws IOException {
+	private Game getGame(String file) throws IOException {
 
-		PlextParser parser = new PlextParser(new LogProviderFile("result.json"));
-
-		parser.updateLogs();
-		List<LogEntry> logs = parser.extractLogEntries();
+		List<LogEntry> logs = PlextParserTest.parseLogs(file);
 
 		Game game = new Game();
 		game.setLogs(logs);
@@ -25,18 +21,26 @@ public class GameTest {
 	@Test
 	public void testPortals() throws Exception {
 
-		Game game = getGame();
-
+		Game game = getGame("result.json");
 		Map<Portal, String> portals = game.getPortals();
 
 		Assert.assertEquals(13, portals.size());
+	}
 
-		System.out.println("portals: " + portals);
+	@Test
+	public void testParseOrder() throws Exception {
 
-		Entry<Portal, String> first = portals.entrySet().iterator().next();
+		// 2: 1414324155453
+		// 1: 1414324152066
 
-		System.out.println("first: " + first);
+		Game game = getGame("attack.json");
+		Map<Portal, String> portals = game.getPortals();
 
+		Assert.assertEquals(1, portals.size());
+
+		String owner = portals.entrySet().iterator().next().getValue();
+
+		Assert.assertEquals("Attacker2", owner);
 	}
 
 }

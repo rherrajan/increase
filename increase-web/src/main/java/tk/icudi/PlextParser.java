@@ -48,7 +48,8 @@ public class PlextParser {
 
 		List<LogEntry> logs = new ArrayList<LogEntry>();
 
-		for (int i = 0; i < success.length(); i++) {
+		for (int i = success.length() - 1; i >= 0; i--) {
+			// reverse order, because we get the newest data on top of the json
 			JSONArray logEntry = success.getJSONArray(i);
 			LogEntry log = extractLogEntry(logEntry);
 			logs.add(log);

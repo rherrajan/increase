@@ -1,0 +1,114 @@
+{
+   "success":[
+      [
+         "c62f7a17eee94661a633474d1b54f0f9.d",
+         1414324155453,
+         {
+            "plext":{
+               "text":"suchef linked Kinder Museum Frankfurt (Zeil 127, 60313 Frankfurt, Germany) to Palais (Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Attacker2",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Kinder Museum Frankfurt",
+                        "plain":"Kinder Museum Frankfurt (Zeil 127, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113731,
+                        "address":"Zeil 127, 60313 Frankfurt, Germany",
+                        "lngE6":8678958
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Palais",
+                        "plain":"Palais (Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50115222,
+                        "address":"Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany",
+                        "lngE6":8679836
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ],
+      [
+         "c62f7a17eee94661a633474d1b54f0f9.d",
+         1414324152066,
+         {
+            "plext":{
+               "text":"suchef linked Kinder Museum Frankfurt (Zeil 127, 60313 Frankfurt, Germany) to Palais (Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany)",
+               "markup":[
+                  [
+                     "PLAYER",
+                     {
+                        "plain":"Attacker1",
+                        "team":"RESISTANCE"
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" linked "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Kinder Museum Frankfurt",
+                        "plain":"Kinder Museum Frankfurt (Zeil 127, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50113731,
+                        "address":"Zeil 127, 60313 Frankfurt, Germany",
+                        "lngE6":8678958
+                     }
+                  ],
+                  [
+                     "TEXT",
+                     {
+                        "plain":" to "
+                     }
+                  ],
+                  [
+                     "PORTAL",
+                     {
+                        "name":"Palais",
+                        "plain":"Palais (Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany)",
+                        "team":"RESISTANCE",
+                        "latE6":50115222,
+                        "address":"Gro\u00dfe Eschenheimer Stra\u00dfe 14, 60313 Frankfurt, Germany",
+                        "lngE6":8679836
+                     }
+                  ]
+               ],
+               "plextType":"SYSTEM_BROADCAST",
+               "categories":1,
+               "team":"RESISTANCE"
+            }
+         }
+      ]
+   ]
+}

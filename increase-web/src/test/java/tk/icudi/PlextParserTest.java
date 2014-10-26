@@ -18,7 +18,7 @@ public class PlextParserTest {
 		Assert.assertEquals("Inhalt der Testdatei\n", parser.readInputStream(in));
 	}
 
-	private List<LogEntry> parseLogs(String file) throws IOException {
+	static List<LogEntry> parseLogs(String file) throws IOException {
 		PlextParser parser = new PlextParser(new LogProviderFile(file));
 
 		parser.updateLogs();
@@ -32,7 +32,7 @@ public class PlextParserTest {
 		List<LogEntry> logs = parseLogs("result.json");
 
 		Assert.assertEquals(50, logs.size());
-		Assert.assertEquals("Palais", logs.get(0).getPortal().getPortalName());
+		Assert.assertEquals("Frankfurter Ratskeller", logs.get(0).getPortal().getPortalName());
 
 		for (LogEntry logEntry : logs) {
 			System.out.println("logEntry: " + logEntry);
@@ -44,7 +44,7 @@ public class PlextParserTest {
 
 		List<LogEntry> logs = parseLogs("result.json");
 
-		Assert.assertEquals("26.10.2014 12:49:15", logs.get(0).getFormattedDate());
+		Assert.assertEquals("26.10.2014 12:48:02", logs.get(0).getFormattedDate());
 	}
 
 }
