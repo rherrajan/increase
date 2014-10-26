@@ -33,7 +33,7 @@ public class GameTest {
 		// 2: 1414324155453
 		// 1: 1414324152066
 
-		Game game = getGame("attack.json");
+		Game game = getGame("doubleAttack.json");
 		Map<Portal, String> portals = game.getPortals();
 
 		Assert.assertEquals(1, portals.size());
