@@ -74,8 +74,16 @@ public class IntegrationTest {
 
 		Location userLoc = getPortalMainStation();
 
-		for (Player player : game.getPlayers()) {
-			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastPortal().getName() + " " + player.getLastPortal().getLocation().distanceTo(userLoc));
+		long now = System.currentTimeMillis();
+		for (Player player : game.sortPlayers(game.getPlayers(), userLoc, now)) {
+			StringBuilder builder = new StringBuilder();
+			builder.append(player.getName() + ": ");
+			builder.append(" in " + player.getLastPortal().getLocation().distanceTo(userLoc) + "meter distance");
+			builder.append(player.getPassedSeconds() + " seconds ago");
+			builder.append(" on '" + player.getLastPortal().getName() + "'");
+			builder.append(" (rank " + player.getRank(userLoc, now) + ")");
+
+			System.out.println(builder.toString());
 		}
 	}
 
