@@ -65,8 +65,8 @@ public class Player {
 	public String getMessage(Location userLoc, long time) {
 		StringBuilder builder = new StringBuilder();
 		builder.append(this.getName() + ": ");
-		builder.append(" in " + this.getLastPortal().getLocation().distanceTo(userLoc) + " meter distance");
-		builder.append(" " + this.getPassedSeconds(time) + " seconds ago");
+		builder.append(" in " + this.getLastPortal().getLocation().distanceTo(userLoc) + "m distance");
+		builder.append(" " + Math.round(this.getPassedSeconds(time) / 60.0) + " min ago");
 		builder.append(" on '" + this.getLastPortal().getName() + "'");
 		builder.append(" (rank " + this.getRank(userLoc, time) + ")");
 		return builder.toString();

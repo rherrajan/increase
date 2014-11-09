@@ -12,7 +12,7 @@ public class Game {
 
 	private List<LogEntry> logs;
 	private Map<Portal, String> portals = new HashMap<Portal, String>();
-	private List<Player> players = new ArrayList<Player>();
+	private Map<String, Player> players = new HashMap<String, Player>();
 
 	public void appendLogsFrom(LogProvider provider) throws IOException {
 		PlextParser parser = new PlextParser(provider);
@@ -24,10 +24,10 @@ public class Game {
 	void appendLogs(List<LogEntry> logs) {
 		this.logs = logs;
 		portals.putAll(createPortalList());
-		players = createPlayerlist();
+		players.putAll(createPlayerlist());
 	}
 
-	List<Player> createPlayerlist() {
+	Map<String, Player> createPlayerlist() {
 		Map<String, Player> players = new HashMap<String, Player>();
 
 		for (LogEntry logEntry : logs) {
@@ -36,7 +36,8 @@ public class Game {
 				players.put(player.getName(), player);
 			}
 		}
-		return new ArrayList<Player>(players.values());
+
+		return players;
 	}
 
 	public Map<Portal, String> getPortalOwners() {
@@ -61,7 +62,7 @@ public class Game {
 	}
 
 	public List<Player> getPlayers() {
-		return players;
+		return new ArrayList<Player>(players.values());
 	}
 
 	public static void main(String[] args) throws Exception {

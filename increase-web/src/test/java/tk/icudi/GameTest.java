@@ -66,10 +66,9 @@ public class GameTest {
 		Game game = new Game();
 
 		Location userLoc = getPortalMainStation();
-		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
-
 		long time = 1414335481800L + (1000 * 60 * 15);
 
+		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
 		for (Player player : game.getSortetPlayers(userLoc, time)) {
 			System.out.println(player.getMessage(userLoc, time));
 		}
@@ -79,7 +78,7 @@ public class GameTest {
 			System.out.println(player.getMessage(userLoc, time));
 		}
 
-		// assertEquals(5 + 8, game.getPortalOwners().size());
+		assertEquals(5 + 8, game.getPlayers().size());
 	}
 
 	@Test
@@ -110,7 +109,8 @@ public class GameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Location location = game.createPlayerlist().get(0).getLastPortal().getLocation();
+		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Location location = firstPlayer.getLastPortal().getLocation();
 		assertThat(location.getLat(), is(50113731));
 		assertThat(location.getLng(), is(8678958));
 	}
@@ -120,7 +120,8 @@ public class GameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		GregorianCalendar time = game.createPlayerlist().get(0).getTime();
+		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		GregorianCalendar time = firstPlayer.getTime();
 		assertThat(time.get(Calendar.HOUR_OF_DAY), is(12));
 	}
 
@@ -129,7 +130,8 @@ public class GameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		int passedSeconds = game.createPlayerlist().get(0).getPassedSeconds();
+		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		int passedSeconds = firstPlayer.getPassedSeconds();
 		assertThat(passedSeconds, notNullValue());
 	}
 
@@ -138,7 +140,8 @@ public class GameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		int distance_meter = game.createPlayerlist().get(0).getLastPortal().getDistance(getPortalMainStation());
+		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		int distance_meter = firstPlayer.getLastPortal().getDistance(getPortalMainStation());
 		assertThat(distance_meter, is(1784));
 	}
 
