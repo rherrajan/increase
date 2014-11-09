@@ -1,6 +1,7 @@
 package tk.icudi;
 
 import java.io.IOException;
+import java.util.Map.Entry;
 
 public class GameUpdater implements Runnable {
 
@@ -36,6 +37,9 @@ public class GameUpdater implements Runnable {
 						game.appendLogsFrom(provider);
 					} catch (IOException e) {
 						throw new RuntimeException("error during game", e);
+					}
+					for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
+						System.out.println(entry.getValue() + " owns " + entry.getKey());
 					}
 					Thread.sleep(60 * 1000);
 				} else {

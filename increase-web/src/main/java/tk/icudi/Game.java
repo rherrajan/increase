@@ -43,4 +43,12 @@ public class Game {
 		return portals.entrySet().iterator().next().getValue();
 	}
 
+	public static void main(String[] args) throws Exception {
+		LogProvider provider = new LogProviderCurl();
+		Game game = new Game();
+
+		GameUpdater updater = new GameUpdater(game, provider);
+		updater.start();
+	}
+
 }
