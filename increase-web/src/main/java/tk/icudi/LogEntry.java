@@ -8,19 +8,19 @@ public class LogEntry {
 
 	private String playerName;
 	private Portal portal = new Portal();
-	private GregorianCalendar date;
+	private GregorianCalendar time;
 
 	public void setTimeStamp(long timestamp) {
-		this.date = new GregorianCalendar(Locale.GERMAN);
-		date.setTimeInMillis(timestamp);
+		this.time = new GregorianCalendar(Locale.GERMAN);
+		time.setTimeInMillis(timestamp);
 	}
 
-	public GregorianCalendar getDate() {
-		return date;
+	public GregorianCalendar getTime() {
+		return time;
 	}
 
 	public String getFormattedDate() {
-		return new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(date.getTime());
+		return new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(time.getTime());
 	}
 
 	public String getPlayerName() {
@@ -31,7 +31,7 @@ public class LogEntry {
 		Player player = new Player();
 		player.setName(playerName);
 		player.setLocation(portal.getLocation());
-
+		player.setTime(time);
 		return player;
 	}
 

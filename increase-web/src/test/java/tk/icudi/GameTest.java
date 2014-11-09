@@ -1,6 +1,7 @@
 package tk.icudi;
 
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
@@ -100,6 +101,15 @@ public class GameTest {
 
 		GregorianCalendar time = game.createPlayerlist().get(0).getTime();
 		assertThat(time.get(Calendar.HOUR_OF_DAY), is(12));
+	}
+
+	@Test
+	public void test_players_passed_time() throws Exception {
+		Game game = new Game();
+		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
+
+		int passed_seconds = game.createPlayerlist().get(0).getPassedSeconds();
+		assertThat(passed_seconds, notNullValue());
 	}
 
 }
