@@ -39,14 +39,16 @@ public class IntegrationTest {
 
 			int portalsOnTime1 = game.getPortals().size();
 			for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
-				System.out.println(entry.getValue() + " owns " + entry.getKey());
+				System.out.println(entry.getValue() + ": " + entry.getKey());
 			}
+			System.out.println(portalsOnTime1 + " portals");
 
 			Thread.sleep(90 * 1000);
 			int portalsOnTime2 = game.getPortals().size();
 			for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
-				System.out.println(entry.getValue() + " owns " + entry.getKey());
+				System.out.println(entry.getValue() + ": " + entry.getKey());
 			}
+			System.out.println(portalsOnTime2 + " portals");
 
 			Assert.assertThat(portalsOnTime2, Matchers.greaterThan(portalsOnTime1));
 
