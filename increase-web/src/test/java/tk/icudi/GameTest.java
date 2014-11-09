@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
@@ -82,14 +84,22 @@ public class GameTest {
 	}
 
 	@Test
-	public void test_players_time() throws Exception {
+	public void test_players_location() throws Exception {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
 		Location location = game.createPlayerlist().get(0).getLocation();
 		assertThat(location.getLat(), is(50113731));
 		assertThat(location.getLng(), is(8678958));
+	}
 
+	@Test
+	public void test_players_time() throws Exception {
+		Game game = new Game();
+		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
+
+		GregorianCalendar time = game.createPlayerlist().get(0).getTime();
+		assertThat(time.get(Calendar.HOUR_OF_DAY), is(12));
 	}
 
 }
