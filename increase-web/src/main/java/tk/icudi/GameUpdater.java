@@ -1,7 +1,7 @@
 package tk.icudi;
 
 import java.io.IOException;
-import java.util.Map.Entry;
+import java.util.Date;
 
 public class GameUpdater implements Runnable {
 
@@ -34,10 +34,22 @@ public class GameUpdater implements Runnable {
 			while (true) {
 				if (this.running) {
 					update();
-					for (Entry<Portal, String> entry : game.getPortalOwners().entrySet()) {
-						System.out.println(entry.getValue() + " owns " + entry.getKey());
+
+					// for (Entry<Portal, String> entry :
+					// game.getPortalOwners().entrySet()) {
+					// System.out.println(entry.getValue() + " owns " +
+					// entry.getKey());
+					// }
+
+					Location userLoc = getPortalMainStation();
+					long now = System.currentTimeMillis();
+					System.out.println("");
+					System.out.println(new Date(now));
+					for (Player player : game.getSortetPlayers(userLoc, now)) {
+						System.out.println(player.getMessage(userLoc, now));
 					}
-					Thread.sleep(60 * 1000);
+
+					Thread.sleep(5 * 60 * 1000);
 				} else {
 					System.out.println("game stopped");
 					break;
@@ -46,6 +58,14 @@ public class GameUpdater implements Runnable {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private Location getPortalMainStation() {
+		Location userLoc = new Location();
+		userLoc.setLat(50107356);
+		userLoc.setLng(8664123);
+
+		return userLoc;
 	}
 
 	void update() {
