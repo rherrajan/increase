@@ -22,7 +22,9 @@ public class PlextParser {
 	public void updateLogs() throws IOException {
 		InputStream logInput = provider.provideLogs();
 		this.rawLogs = readInputStream(logInput);
-		System.out.println("new raw logs: \n" + rawLogs);
+		if (rawLogs.contains("\n") == false) {
+			System.out.println("new raw logs: \n" + rawLogs);
+		}
 	}
 
 	public List<LogEntry> extractLogEntries() {

@@ -53,12 +53,33 @@ public class GameTest {
 	}
 
 	@Test
-	public void test_append_realdata() throws Exception {
+	public void test_append_realdata_portals() throws Exception {
 		Game game = new Game();
 
 		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
 		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
 		assertEquals(10 + 13, game.getPortalOwners().size());
+	}
+
+	@Test
+	public void test_append_realdata_player() throws Exception {
+		Game game = new Game();
+
+		Location userLoc = getPortalMainStation();
+		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
+
+		long time = 1414335481800L + (1000 * 60 * 15);
+
+		for (Player player : game.getSortetPlayers(userLoc, time)) {
+			System.out.println(player.getMessage(userLoc, time));
+		}
+
+		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
+		for (Player player : game.getSortetPlayers(userLoc, time)) {
+			System.out.println(player.getMessage(userLoc, time));
+		}
+
+		// assertEquals(5 + 8, game.getPortalOwners().size());
 	}
 
 	@Test
@@ -117,9 +138,7 @@ public class GameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Location userLoc = getPortalMainStation();
-
-		int distance_meter = game.createPlayerlist().get(0).getLastPortal().getDistance(userLoc);
+		int distance_meter = game.createPlayerlist().get(0).getLastPortal().getDistance(getPortalMainStation());
 		assertThat(distance_meter, is(1784));
 	}
 

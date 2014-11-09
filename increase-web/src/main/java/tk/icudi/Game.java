@@ -76,7 +76,12 @@ public class Game {
 		return logs;
 	}
 
-	public List<Player> sortPlayers(final List<Player> players, final Location userLoc, final long now) {
+	List<Player> getSortetPlayers(final Location userLoc, final long time) {
+		List<Player> players2 = getPlayers();
+		return sortPlayers(players2, userLoc, time);
+	}
+
+	List<Player> sortPlayers(final List<Player> players, final Location userLoc, final long now) {
 
 		Comparator<Player> comperator = new Comparator<Player>() {
 
