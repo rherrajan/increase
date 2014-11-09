@@ -1,8 +1,11 @@
 package tk.icudi;
 
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
@@ -19,7 +22,7 @@ public class GameTest {
 	public void testPortals() throws Exception {
 
 		Game game = getGame("realdata.json");
-		Map<Portal, String> portals = game.getPortals();
+		Map<Portal, String> portals = game.getPortalOwners();
 
 		assertEquals(11, portals.size());
 	}
@@ -28,7 +31,7 @@ public class GameTest {
 	public void testParseOrder() throws Exception {
 
 		Game game = getGame("doubleAttack.json");
-		Map<Portal, String> portals = game.getPortals();
+		Map<Portal, String> portals = game.getPortalOwners();
 
 		assertEquals(1, portals.size());
 
@@ -40,10 +43,10 @@ public class GameTest {
 		Game game = new Game();
 
 		game.appendLogs(PlextParserTest.parseLogs("doubleAttack.json"));
-		assertEquals(1, game.getPortals().size());
+		assertEquals(1, game.getPortalOwners().size());
 
 		game.appendLogs(PlextParserTest.parseLogs("anotherPortal.json"));
-		assertEquals(2, game.getPortals().size());
+		assertEquals(2, game.getPortalOwners().size());
 	}
 
 	@Test
@@ -52,7 +55,7 @@ public class GameTest {
 
 		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
 		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
-		assertEquals(11 + 18, game.getPortals().size());
+		assertEquals(11 + 18, game.getPortalOwners().size());
 	}
 
 	@Test
@@ -64,6 +67,18 @@ public class GameTest {
 
 		game.appendLogs(PlextParserTest.parseLogs("attack2.json"));
 		assertEquals("Attacker2", game.getFirstPortalsOwner());
+	}
+
+	@Test
+	public void test_players_name() throws Exception {
+		Game game = new Game();
+		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
+
+		List<Player> players = game.getPlayers();
+		assertThat(players.size(), is(1));
+
+		Player firstPlayer = players.get(0);
+		assertThat(firstPlayer.getName(), is("Attacker1"));
 	}
 
 }

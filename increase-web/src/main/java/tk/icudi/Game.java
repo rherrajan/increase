@@ -1,6 +1,7 @@
 package tk.icudi;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ public class Game {
 
 	private List<LogEntry> logs;
 	private Map<Portal, String> portals = new HashMap<Portal, String>();
+	private List<Player> players = new ArrayList<Player>();
 
 	public void appendLogsFrom(LogProvider provider) throws IOException {
 		PlextParser parser = new PlextParser(provider);
@@ -20,9 +22,20 @@ public class Game {
 	void appendLogs(List<LogEntry> logs) {
 		this.logs = logs;
 		portals.putAll(createPortalList());
+		players = createPlayerlist();
 	}
 
-	public Map<Portal, String> getPortals() {
+	private List<Player> createPlayerlist() {
+		List<Player> players = new ArrayList<Player>();
+
+		for (LogEntry logEntry : logs) {
+			players.add(logEntry.getPlayer());
+		}
+
+		return players;
+	}
+
+	public Map<Portal, String> getPortalOwners() {
 		return portals;
 	}
 
@@ -41,6 +54,10 @@ public class Game {
 
 	public String getFirstPortalsOwner() {
 		return portals.entrySet().iterator().next().getValue();
+	}
+
+	public List<Player> getPlayers() {
+		return players;
 	}
 
 	public static void main(String[] args) throws Exception {

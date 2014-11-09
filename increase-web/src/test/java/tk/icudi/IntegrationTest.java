@@ -39,15 +39,15 @@ public class IntegrationTest {
 		try {
 			updater.start();
 
-			int portalsOnTime1 = game.getPortals().size();
-			for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
+			int portalsOnTime1 = game.getPortalOwners().size();
+			for (Entry<Portal, String> entry : game.getPortalOwners().entrySet()) {
 				System.out.println(entry.getValue() + ": " + entry.getKey());
 			}
 			System.out.println(portalsOnTime1 + " portals");
 
 			Thread.sleep(90 * 1000);
-			int portalsOnTime2 = game.getPortals().size();
-			for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
+			int portalsOnTime2 = game.getPortalOwners().size();
+			for (Entry<Portal, String> entry : game.getPortalOwners().entrySet()) {
 				System.out.println(entry.getValue() + ": " + entry.getKey());
 			}
 			System.out.println(portalsOnTime2 + " portals");

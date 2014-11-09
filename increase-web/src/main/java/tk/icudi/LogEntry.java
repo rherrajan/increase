@@ -27,6 +27,12 @@ public class LogEntry {
 		return playerName;
 	}
 
+	public Player getPlayer() {
+		Player player = new Player();
+		player.setName(playerName);
+		return player;
+	}
+
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
 	}

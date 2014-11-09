@@ -38,7 +38,7 @@ public class GameUpdater implements Runnable {
 					} catch (IOException e) {
 						throw new RuntimeException("error during game", e);
 					}
-					for (Entry<Portal, String> entry : game.getPortals().entrySet()) {
+					for (Entry<Portal, String> entry : game.getPortalOwners().entrySet()) {
 						System.out.println(entry.getValue() + " owns " + entry.getKey());
 					}
 					Thread.sleep(60 * 1000);
