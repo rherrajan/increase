@@ -124,15 +124,20 @@ public class GameTest {
 	}
 
 	@Test
-	public void test_players() throws Exception {
+	public void test_only_the_last() throws Exception {
 
-		Game game = getGame("realdata2.json");
+		// 1225040 anniesa GPS Referenz Punkt Frankfurt Am Main 1994
+
+		Game game = getGame("move.json");
 
 		Location userLoc = getPortalMainStation();
 
 		for (Player player : game.getPlayers()) {
 			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastPortal().getName() + " " + player.getLastPortal().getLocation().distanceTo(userLoc));
 		}
+
+		assertThat(game.getPlayers().get(0).getLastPortal().getName(), is("Kinder Museum Frankfurt"));
+		assertThat(game.getPlayers().size(), is(1));
 	}
 
 	private Location getPortalMainStation() {

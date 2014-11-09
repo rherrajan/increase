@@ -26,13 +26,13 @@ public class Game {
 	}
 
 	List<Player> createPlayerlist() {
-		List<Player> players = new ArrayList<Player>();
+		Map<String, Player> players = new HashMap<String, Player>();
 
 		for (LogEntry logEntry : logs) {
-			players.add(logEntry.getPlayer());
+			Player player = logEntry.getPlayer();
+			players.put(player.getName(), player);
 		}
-
-		return players;
+		return new ArrayList<Player>(players.values());
 	}
 
 	public Map<Portal, String> getPortalOwners() {
@@ -66,6 +66,10 @@ public class Game {
 
 		GameUpdater updater = new GameUpdater(game, provider);
 		updater.start();
+	}
+
+	public List<LogEntry> getLogs() {
+		return logs;
 	}
 
 }

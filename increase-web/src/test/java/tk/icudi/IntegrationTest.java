@@ -68,6 +68,10 @@ public class IntegrationTest {
 		GameUpdater updater = new GameUpdater(game, provider);
 		updater.update();
 
+		for (LogEntry logEntry : game.getLogs()) {
+			System.out.println("logEntry: " + logEntry);
+		}
+
 		Location userLoc = getPortalMainStation();
 
 		for (Player player : game.getPlayers()) {
