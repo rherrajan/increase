@@ -1,10 +1,11 @@
 package tk.icudi;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import tk.icudi.objects.LogProviderFile;
@@ -17,7 +18,7 @@ public class PlextParserTest {
 		PlextParser parser = new PlextParser(null);
 		InputStream in = this.getClass().getClassLoader().getResourceAsStream("test.txt");
 
-		Assert.assertEquals("Inhalt der Testdatei\n", parser.readInputStream(in));
+		assertEquals("Inhalt der Testdatei\n", parser.readInputStream(in));
 	}
 
 	static List<LogEntry> parseLogs(String file) throws IOException {
@@ -33,8 +34,8 @@ public class PlextParserTest {
 
 		List<LogEntry> logs = parseLogs("realdata.json");
 
-		Assert.assertEquals(50, logs.size());
-		Assert.assertEquals("Frankfurter Ratskeller", logs.get(0).getPortal().getPortalName());
+		assertEquals(50, logs.size());
+		assertEquals("Frankfurter Ratskeller", logs.get(0).getPortal().getPortalName());
 
 		for (LogEntry logEntry : logs) {
 			System.out.println("logEntry: " + logEntry);
@@ -46,7 +47,7 @@ public class PlextParserTest {
 
 		List<LogEntry> logs = parseLogs("realdata.json");
 
-		Assert.assertEquals("26.10.2014 12:48:02", logs.get(0).getFormattedDate());
+		assertEquals("26.10.2014 12:48:02", logs.get(0).getFormattedDate());
 	}
 
 }

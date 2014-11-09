@@ -1,9 +1,10 @@
 package tk.icudi;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.Map;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class GameTest {
@@ -20,7 +21,7 @@ public class GameTest {
 		Game game = getGame("realdata.json");
 		Map<Portal, String> portals = game.getPortals();
 
-		Assert.assertEquals(11, portals.size());
+		assertEquals(11, portals.size());
 	}
 
 	@Test
@@ -29,9 +30,9 @@ public class GameTest {
 		Game game = getGame("doubleAttack.json");
 		Map<Portal, String> portals = game.getPortals();
 
-		Assert.assertEquals(1, portals.size());
+		assertEquals(1, portals.size());
 
-		Assert.assertEquals("Attacker2", game.getFirstPortalsOwner());
+		assertEquals("Attacker2", game.getFirstPortalsOwner());
 	}
 
 	@Test
@@ -39,10 +40,10 @@ public class GameTest {
 		Game game = new Game();
 
 		game.appendLogs(PlextParserTest.parseLogs("doubleAttack.json"));
-		Assert.assertEquals(1, game.getPortals().size());
+		assertEquals(1, game.getPortals().size());
 
 		game.appendLogs(PlextParserTest.parseLogs("anotherPortal.json"));
-		Assert.assertEquals(2, game.getPortals().size());
+		assertEquals(2, game.getPortals().size());
 	}
 
 	@Test
@@ -51,7 +52,7 @@ public class GameTest {
 
 		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
 		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
-		Assert.assertEquals(11 + 18, game.getPortals().size());
+		assertEquals(11 + 18, game.getPortals().size());
 	}
 
 	@Test
@@ -59,9 +60,10 @@ public class GameTest {
 		Game game = new Game();
 
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
-		Assert.assertEquals("Attacker1", game.getFirstPortalsOwner());
+		assertEquals("Attacker1", game.getFirstPortalsOwner());
 
 		game.appendLogs(PlextParserTest.parseLogs("attack2.json"));
-		Assert.assertEquals("Attacker2", game.getFirstPortalsOwner());
+		assertEquals("Attacker2", game.getFirstPortalsOwner());
 	}
+
 }

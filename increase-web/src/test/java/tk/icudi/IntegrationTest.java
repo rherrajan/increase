@@ -1,5 +1,7 @@
 package tk.icudi;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -19,7 +21,7 @@ public class IntegrationTest {
 		parser.updateLogs();
 		List<LogEntry> logs = parser.extractLogEntries();
 
-		Assert.assertEquals(50, logs.size());
+		assertEquals(50, logs.size());
 
 		for (LogEntry logEntry : logs) {
 			System.out.println("logEntry: " + logEntry);
