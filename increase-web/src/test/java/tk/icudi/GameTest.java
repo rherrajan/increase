@@ -140,6 +140,23 @@ public class GameTest {
 		assertThat(game.getPlayers().size(), is(1));
 	}
 
+	@Test
+	public void test_player_sort() throws Exception {
+
+		Game game = getGame("realdata.json");
+		Location userLoc = getPortalMainStation();
+
+		long time = 1414324082779L + (1000 * 60 * 5);
+
+		List<Player> players = game.getPlayers();
+		List<Player> sortedPlayers = game.sortPlayers(players, getPortalMainStation(), time);
+
+		for (Player player : sortedPlayers) {
+			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastPortal().getName() + " "
+					+ player.getLastPortal().getLocation().distanceTo(userLoc));
+		}
+	}
+
 	private Location getPortalMainStation() {
 		Location userLoc = new Location();
 		userLoc.setLat(50107356);

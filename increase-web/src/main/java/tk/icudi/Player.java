@@ -1,6 +1,5 @@
 package tk.icudi;
 
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Player {
@@ -26,8 +25,11 @@ public class Player {
 	}
 
 	public int getPassedSeconds() {
+		return getPassedSeconds(System.currentTimeMillis());
+	}
 
-		long durationMsec = new Date().getTime() - time.getTimeInMillis();
+	public int getPassedSeconds(long now) {
+		long durationMsec = now - time.getTimeInMillis();
 
 		return (int) (durationMsec / 1000);
 	}
@@ -38,6 +40,20 @@ public class Player {
 
 	public void setLastPortal(Portal portal) {
 		this.lastPortal = portal;
+	}
+
+	public int getRank(Location userLoc, long now) {
+
+		int distance = getLastPortal().getLocation().distanceTo(userLoc);
+		int passedTime = getPassedSeconds(now);
+		int rank = distance + passedTime;
+
+		return rank;
+	}
+
+	@Override
+	public String toString() {
+		return name;
 	}
 
 }
