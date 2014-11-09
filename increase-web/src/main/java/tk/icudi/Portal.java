@@ -2,16 +2,16 @@ package tk.icudi;
 
 public class Portal {
 
-	private String portalName;
+	private String name;
 
 	private Location loc = new Location();
 
-	public String getPortalName() {
-		return portalName;
+	public String getName() {
+		return name;
 	}
 
-	public void setPortalName(String portalName) {
-		this.portalName = portalName;
+	public void setName(String portalName) {
+		this.name = portalName;
 	}
 
 	public void setLocation(Location loc) {
@@ -22,9 +22,13 @@ public class Portal {
 		return loc;
 	}
 
+	public int getDistance(Location otherLoc) {
+		return loc.distanceTo(otherLoc);
+	}
+
 	@Override
 	public String toString() {
-		return portalName;
+		return name;
 	}
 
 	@Override
@@ -32,7 +36,7 @@ public class Portal {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((loc == null) ? 0 : loc.hashCode());
-		result = prime * result + ((portalName == null) ? 0 : portalName.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -50,10 +54,10 @@ public class Portal {
 				return false;
 		} else if (!loc.equals(other.loc))
 			return false;
-		if (portalName == null) {
-			if (other.portalName != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!portalName.equals(other.portalName))
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}

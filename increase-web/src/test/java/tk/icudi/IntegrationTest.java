@@ -60,4 +60,27 @@ public class IntegrationTest {
 
 	}
 
+	@Test
+	public void test_players() throws Exception {
+
+		LogProvider provider = new LogProviderCurl();
+		Game game = new Game();
+		GameUpdater updater = new GameUpdater(game, provider);
+		updater.update();
+
+		Location userLoc = getPortalMainStation();
+
+		for (Player player : game.getPlayers()) {
+			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastPortal().getName() + " " + player.getLastPortal().getLocation().distanceTo(userLoc));
+		}
+	}
+
+	private Location getPortalMainStation() {
+		Location userLoc = new Location();
+		userLoc.setLat(50107356);
+		userLoc.setLng(8664123);
+
+		return userLoc;
+	}
+
 }

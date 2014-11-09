@@ -35,7 +35,7 @@ public class PlextParserTest {
 		List<LogEntry> logs = parseLogs("realdata.json");
 
 		assertEquals(50, logs.size());
-		assertEquals("Frankfurter Ratskeller", logs.get(0).getPortal().getPortalName());
+		assertEquals("Frankfurter Ratskeller", logs.get(0).getPortal().getName());
 
 		for (LogEntry logEntry : logs) {
 			System.out.println("logEntry: " + logEntry);

@@ -30,7 +30,7 @@ public class LogEntry {
 	public Player getPlayer() {
 		Player player = new Player();
 		player.setName(playerName);
-		player.setLocation(portal.getLocation());
+		player.setLastPortal(portal);
 		player.setTime(time);
 		return player;
 	}

@@ -89,7 +89,7 @@ public class GameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Location location = game.createPlayerlist().get(0).getLocation();
+		Location location = game.createPlayerlist().get(0).getLastPortal().getLocation();
 		assertThat(location.getLat(), is(50113731));
 		assertThat(location.getLng(), is(8678958));
 	}
@@ -108,8 +108,39 @@ public class GameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		int passed_seconds = game.createPlayerlist().get(0).getPassedSeconds();
-		assertThat(passed_seconds, notNullValue());
+		int passedSeconds = game.createPlayerlist().get(0).getPassedSeconds();
+		assertThat(passedSeconds, notNullValue());
+	}
+
+	@Test
+	public void test_players_distance() throws Exception {
+		Game game = new Game();
+		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
+
+		Location userLoc = getPortalMainStation();
+
+		int distance_meter = game.createPlayerlist().get(0).getLastPortal().getDistance(userLoc);
+		assertThat(distance_meter, is(1784));
+	}
+
+	@Test
+	public void test_players() throws Exception {
+
+		Game game = getGame("realdata2.json");
+
+		Location userLoc = getPortalMainStation();
+
+		for (Player player : game.getPlayers()) {
+			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastPortal().getName() + " " + player.getLastPortal().getLocation().distanceTo(userLoc));
+		}
+	}
+
+	private Location getPortalMainStation() {
+		Location userLoc = new Location();
+		userLoc.setLat(50107356);
+		userLoc.setLng(8664123);
+
+		return userLoc;
 	}
 
 }

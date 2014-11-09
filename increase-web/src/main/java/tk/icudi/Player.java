@@ -6,8 +6,8 @@ import java.util.GregorianCalendar;
 public class Player {
 
 	private String name;
-	private Location location;
 	private GregorianCalendar time;
+	private Portal lastPortal;
 
 	public String getName() {
 		return name;
@@ -15,14 +15,6 @@ public class Player {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Location getLocation() {
-		return location;
-	}
-
-	public void setLocation(Location location) {
-		this.location = location;
 	}
 
 	public GregorianCalendar getTime() {
@@ -38,6 +30,14 @@ public class Player {
 		long durationMsec = new Date().getTime() - time.getTimeInMillis();
 
 		return (int) (durationMsec / 1000);
+	}
+
+	public Portal getLastPortal() {
+		return lastPortal;
+	}
+
+	public void setLastPortal(Portal portal) {
+		this.lastPortal = portal;
 	}
 
 }

@@ -33,11 +33,7 @@ public class GameUpdater implements Runnable {
 		try {
 			while (true) {
 				if (this.running) {
-					try {
-						game.appendLogsFrom(provider);
-					} catch (IOException e) {
-						throw new RuntimeException("error during game", e);
-					}
+					update();
 					for (Entry<Portal, String> entry : game.getPortalOwners().entrySet()) {
 						System.out.println(entry.getValue() + " owns " + entry.getKey());
 					}
@@ -49,6 +45,14 @@ public class GameUpdater implements Runnable {
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+		}
+	}
+
+	void update() {
+		try {
+			game.appendLogsFrom(provider);
+		} catch (IOException e) {
+			throw new RuntimeException("error during game", e);
 		}
 	}
 

@@ -44,7 +44,7 @@ public class Game {
 
 		for (LogEntry logEntry : logs) {
 			Portal portal = logEntry.getPortal();
-			if (portal.getPortalName() != null && logEntry.getPlayerName() != null) {
+			if (portal.getName() != null && logEntry.getPlayerName() != null) {
 				portals.put(portal, logEntry.getPlayerName());
 			}
 		}
