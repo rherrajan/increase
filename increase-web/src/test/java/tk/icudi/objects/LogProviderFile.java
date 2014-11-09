@@ -1,7 +1,9 @@
-package tk.icudi;
+package tk.icudi.objects;
 
 import java.io.IOException;
 import java.io.InputStream;
+
+import tk.icudi.LogProvider;
 
 public class LogProviderFile implements LogProvider {
 
