@@ -24,7 +24,7 @@ public class GameTest {
 		Game game = getGame("realdata.json");
 		Map<Portal, String> portals = game.getPortalOwners();
 
-		assertEquals(11, portals.size());
+		assertEquals(10, portals.size());
 	}
 
 	@Test
@@ -55,7 +55,7 @@ public class GameTest {
 
 		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
 		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
-		assertEquals(11 + 18, game.getPortalOwners().size());
+		assertEquals(10 + 13, game.getPortalOwners().size());
 	}
 
 	@Test
@@ -79,6 +79,17 @@ public class GameTest {
 
 		Player firstPlayer = players.get(0);
 		assertThat(firstPlayer.getName(), is("Attacker1"));
+	}
+
+	@Test
+	public void test_players_time() throws Exception {
+		Game game = new Game();
+		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
+
+		Location location = game.createPlayerlist().get(0).getLocation();
+		assertThat(location.getLat(), is(50113731));
+		assertThat(location.getLng(), is(8678958));
+
 	}
 
 }

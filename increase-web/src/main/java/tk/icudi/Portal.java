@@ -3,8 +3,8 @@ package tk.icudi;
 public class Portal {
 
 	private String portalName;
-	private int latE6;
-	private int lngE6;
+
+	private Location loc = new Location();
 
 	public String getPortalName() {
 		return portalName;
@@ -14,20 +14,12 @@ public class Portal {
 		this.portalName = portalName;
 	}
 
-	public int getLatE6() {
-		return latE6;
+	public void setLocation(Location loc) {
+		this.loc = loc;
 	}
 
-	public void setLatE6(int latE6) {
-		this.latE6 = latE6;
-	}
-
-	public int getLngE6() {
-		return lngE6;
-	}
-
-	public void setLngE6(int lngE6) {
-		this.lngE6 = lngE6;
+	public Location getLocation() {
+		return loc;
 	}
 
 	@Override
@@ -39,8 +31,7 @@ public class Portal {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + latE6;
-		result = prime * result + lngE6;
+		result = prime * result + ((loc == null) ? 0 : loc.hashCode());
 		result = prime * result + ((portalName == null) ? 0 : portalName.hashCode());
 		return result;
 	}
@@ -54,9 +45,10 @@ public class Portal {
 		if (getClass() != obj.getClass())
 			return false;
 		Portal other = (Portal) obj;
-		if (latE6 != other.latE6)
-			return false;
-		if (lngE6 != other.lngE6)
+		if (loc == null) {
+			if (other.loc != null)
+				return false;
+		} else if (!loc.equals(other.loc))
 			return false;
 		if (portalName == null) {
 			if (other.portalName != null)
@@ -65,5 +57,4 @@ public class Portal {
 			return false;
 		return true;
 	}
-
 }

@@ -25,7 +25,7 @@ public class Game {
 		players = createPlayerlist();
 	}
 
-	private List<Player> createPlayerlist() {
+	List<Player> createPlayerlist() {
 		List<Player> players = new ArrayList<Player>();
 
 		for (LogEntry logEntry : logs) {
