@@ -1,31 +1,47 @@
 package tk.icudi;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map.Entry;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
-@Ignore("curls ingress. not to be used often")
+//@Ignore("curls ingress. not to be used often")
 public class IntegrationTest {
+
+	@Test
+	public void test_provide_not() throws Exception {
+
+		LogProviderWeb provider = new LogProviderWeb();
+
+		try {
+			PlextParser.streamToString(provider.provideLogs());
+			fail("No Exception on input errors");
+
+		} catch (IllegalArgumentException e) {
+			// good
+		}
+
+	}
+
+	private List<LogEntry> getLogsFromProvider(LogProvider provider) throws IOException {
+		PlextParser parser = new PlextParser(provider);
+		parser.updateLogs();
+		List<LogEntry> logs = parser.extractLogEntries();
+		return logs;
+	}
 
 	@Test
 	public void test_parse() throws Exception {
 
-		PlextParser parser = new PlextParser(new LogProviderCurl());
-
-		parser.updateLogs();
-		List<LogEntry> logs = parser.extractLogEntries();
+		List<LogEntry> logs = getLogsFromProvider(new LogProviderCurl());
 
 		assertEquals(50, logs.size());
-
-		for (LogEntry logEntry : logs) {
-			System.out.println("logEntry: " + logEntry);
-		}
 	}
 
 	@Test
@@ -63,7 +79,7 @@ public class IntegrationTest {
 	@Test
 	public void test_players() throws Exception {
 
-		LogProvider provider = new LogProviderCurl();
+		LogProvider provider = new LogProviderWeb();
 		Game game = new Game();
 		GameUpdater updater = new GameUpdater(game, provider);
 		updater.update();

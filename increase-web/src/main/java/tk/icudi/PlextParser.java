@@ -21,7 +21,7 @@ public class PlextParser {
 
 	public void updateLogs() throws IOException {
 		InputStream logInput = provider.provideLogs();
-		this.rawLogs = readInputStream(logInput);
+		this.rawLogs = streamToString(logInput);
 		if (rawLogs.contains("\n") == false) {
 			System.out.println("new raw logs: \n" + rawLogs);
 		}
@@ -31,7 +31,7 @@ public class PlextParser {
 		return extractLogEntries(rawLogs);
 	}
 
-	String readInputStream(InputStream inputStream) throws IOException {
+	public static String streamToString(InputStream inputStream) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 		StringBuilder builder = new StringBuilder();
 		String strLine;

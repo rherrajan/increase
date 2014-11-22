@@ -14,11 +14,9 @@ public class PlextParserTest {
 
 	@Test
 	public void testUpdateLogsFromFile() throws Exception {
-
-		PlextParser parser = new PlextParser(null);
 		InputStream in = this.getClass().getClassLoader().getResourceAsStream("test.txt");
 
-		assertEquals("Inhalt der Testdatei\n", parser.readInputStream(in));
+		assertEquals("Inhalt der Testdatei\n", PlextParser.streamToString(in));
 	}
 
 	static List<LogEntry> parseLogs(String file) throws IOException {
