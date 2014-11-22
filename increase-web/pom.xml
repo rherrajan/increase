@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tk.icudi</groupId>
 	<artifactId>increase-web</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>increase-web</name>
 	<url>http://maven.apache.org</url>
