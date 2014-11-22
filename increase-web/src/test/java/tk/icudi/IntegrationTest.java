@@ -1,6 +1,7 @@
 package tk.icudi;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
@@ -9,9 +10,10 @@ import java.util.Map.Entry;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
-//@Ignore("curls ingress. not to be used often")
+@Ignore("curls ingress. not to be used often")
 public class IntegrationTest {
 
 	@Test
@@ -41,7 +43,7 @@ public class IntegrationTest {
 
 		List<LogEntry> logs = getLogsFromProvider(new LogProviderCurl());
 
-		assertEquals(50, logs.size());
+		assertThat(logs.size(), is(50));
 	}
 
 	@Test
@@ -79,7 +81,7 @@ public class IntegrationTest {
 	@Test
 	public void test_players() throws Exception {
 
-		LogProvider provider = new LogProviderWeb();
+		LogProvider provider = new LogProviderCurl();
 		Game game = new Game();
 		GameUpdater updater = new GameUpdater(game, provider);
 		updater.update();

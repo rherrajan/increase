@@ -10,7 +10,7 @@ import java.util.zip.GZIPInputStream;
 public class LogProviderWeb implements LogProvider {
 
 	private String csrftoken;
-	private String cookie;
+	private String sacsid;
 	private String v;
 	private String b;
 	private String c;
@@ -19,8 +19,8 @@ public class LogProviderWeb implements LogProvider {
 		this.csrftoken = csrftoken;
 	}
 
-	public void setCookie(String cookie) {
-		this.cookie = cookie;
+	public void setSacsid(String cookie) {
+		this.sacsid = cookie;
 	}
 
 	public void setV(String v) {
@@ -40,7 +40,7 @@ public class LogProviderWeb implements LogProvider {
 			throw new IllegalArgumentException("Input-Parameter is missing: csrftoken");
 		}
 
-		if (cookie == null) {
+		if (sacsid == null) {
 			throw new IllegalArgumentException("Input-Parameter is missing: cookie");
 		}
 
@@ -48,13 +48,13 @@ public class LogProviderWeb implements LogProvider {
 			throw new IllegalArgumentException("Input-Parameter is missing: v");
 		}
 
-		if (b == null) {
-			throw new IllegalArgumentException("Input-Parameter is missing: b");
-		}
+		// if (b == null) {
+		// throw new IllegalArgumentException("Input-Parameter is missing: b");
+		// }
 
-		if (c == null) {
-			throw new IllegalArgumentException("Input-Parameter is missing: c");
-		}
+		// if (c == null) {
+		// throw new IllegalArgumentException("Input-Parameter is missing: c");
+		// }
 
 	}
 
@@ -62,6 +62,11 @@ public class LogProviderWeb implements LogProvider {
 	public InputStream provideLogs() throws IOException {
 
 		assertInputComplete();
+
+		String cookie = "csrftoken="
+				+ csrftoken
+				+ "; __utma=24037858.253737590.1413652003.1416056245.1416650976.48; __utmc=24037858; __utmz=24037858.1413652003.1.1.utmcsr=duckduckgo.com|utmccn=(referral)|utmcmd=referral|utmcct=/; SACSID="
+				+ sacsid + "; ingress.intelmap.lat=50.1025584721709; ingress.intelmap.lng=8.663159608840942; ingress.intelmap.zoom=17";
 
 		URL plexts = new URL("https://www.ingress.com/r/getPlexts");
 		HttpURLConnection myURLConnection = (HttpURLConnection) plexts.openConnection();

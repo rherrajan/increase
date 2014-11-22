@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class PlextParser {
@@ -44,20 +45,27 @@ public class PlextParser {
 	private List<LogEntry> extractLogEntries(String result) {
 
 		JSONObject obj = new JSONObject(result);
-		JSONArray success = obj.getJSONArray("success");
+		try {
+			JSONArray success = obj.getJSONArray("success");
 
-		System.out.println("reading " + success.length() + " logentries");
+			System.out.println("reading " + success.length() + " logentries");
 
-		List<LogEntry> logs = new ArrayList<LogEntry>();
+			List<LogEntry> logs = new ArrayList<LogEntry>();
 
-		for (int i = success.length() - 1; i >= 0; i--) {
-			// reverse order, because we get the newest data on top of the json
-			JSONArray logEntry = success.getJSONArray(i);
-			LogEntry log = extractLogEntry(logEntry);
-			logs.add(log);
+			for (int i = success.length() - 1; i >= 0; i--) {
+				// reverse order, because we get the newest data on top of the
+				// json
+				JSONArray logEntry = success.getJSONArray(i);
+				LogEntry log = extractLogEntry(logEntry);
+				logs.add(log);
+			}
+
+			return logs;
+
+		} catch (JSONException e) {
+			throw new RuntimeException("no success json: \n" + result, e);
 		}
 
-		return logs;
 	}
 
 	private LogEntry extractLogEntry(JSONArray logEntry) {
