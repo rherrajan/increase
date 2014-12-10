@@ -41,7 +41,7 @@ public class IntegrationTest {
 	@Test
 	public void test_parse() throws Exception {
 
-		List<LogEntry> logs = getLogsFromProvider(new LogProviderCurl());
+		List<LogEntry> logs = getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
 
 		assertThat(logs.size(), is(50));
 	}
@@ -49,7 +49,7 @@ public class IntegrationTest {
 	@Test
 	public void test_append() throws Exception {
 
-		LogProvider provider = new LogProviderCurl();
+		LogProvider provider = new LogProviderWeb(new RequestDataRherrajan());
 		Game game = new Game();
 
 		GameUpdater updater = new GameUpdater(game, provider);
@@ -81,7 +81,7 @@ public class IntegrationTest {
 	@Test
 	public void test_players() throws Exception {
 
-		LogProvider provider = new LogProviderCurl();
+		LogProvider provider = new LogProviderWeb(new RequestDataRherrajan());
 		Game game = new Game();
 		GameUpdater updater = new GameUpdater(game, provider);
 		updater.update();

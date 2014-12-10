@@ -66,7 +66,7 @@ public class Game {
 	}
 
 	public static void main(String[] args) throws Exception {
-		LogProvider provider = new LogProviderCurl();
+		LogProvider provider = new LogProviderWeb(new RequestDataRherrajan());
 		Game game = new Game();
 
 		GameUpdater updater = new GameUpdater(game, provider);
