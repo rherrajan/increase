@@ -22,12 +22,23 @@ public class RequestData {
 
 	public static RequestData fromParmeter(Map<String, String[]> parameter) {
 		RequestData data = new RequestData();
-		data.csrftoken = parameter.get("csrftoken")[0];
-		data.sacsid = parameter.get("sacsid")[0];
-		data.v = parameter.get("v")[0];
-		data.b = parameter.get("b")[0];
-		data.c = parameter.get("c")[0];
+		data.csrftoken = getValue(parameter, "csrftoken");
+		data.sacsid = getValue(parameter, "sacsid");
+		data.v = getValue(parameter, "v");
+		data.b = getValue(parameter, "b");
+		data.c = getValue(parameter, "c");
+
 		return data;
+	}
+
+	private static String getValue(Map<String, String[]> parameter, String key) {
+		String[] strings = parameter.get(key);
+
+		if (strings != null && strings.length == 1) {
+			return strings[0];
+		} else {
+			return null;
+		}
 	}
 
 	public String getCsrftoken() {
@@ -73,6 +84,14 @@ public class RequestData {
 	@Override
 	public String toString() {
 		return "RequestData [csrftoken=" + csrftoken + ", sacsid=" + sacsid + ", v=" + v + ", b=" + b + ", c=" + c + "]";
+	}
+
+	public boolean isEmpty() {
+
+		if (csrftoken != null && csrftoken.isEmpty() == false) {
+			return true;
+		}
+		return false;
 	}
 
 }

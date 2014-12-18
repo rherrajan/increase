@@ -33,48 +33,31 @@ window.plugin.increaseFeeder.handleData = function(data) {
   if(window.map.getZoom() < window.plugin.increaseFeeder.minZoom) {
       return;
   }
-
-  var newestTime = 0;
-  var oldestTime = new Date().getTime() + 1000;
+  
+    var url = "https://sylvan-dragon-772.appspot.com/main";
+    var jqxhr = $.post(url);
     
-  $.each(data.raw.success, function(ind, json) {
-      
-    var logTime = json[1];
-      
-      if(logTime > newestTime){
-          newestTime = logTime;
-      }
-      
-      if(logTime < oldestTime){
-          oldestTime = logTime;
-      }
-      
-    // alert(" --- logTime: " + logTime);
-      
-    // skip old data
-    // if(json[1] < limit) return true;
-
-  });
+    jqxhr.done(function() {
+    	alert( " --- done" );
+    });
     
-    var ago = plugin.playerTracker.ago;
-    var now = new Date().getTime();
+    jqxhr.fail(function() {
+    	alert( " --- fail" );
+    });
     
-    alert(" --- length: " + data.raw.success.length);
-    alert(" --- zoom1: " + window.map.getZoom());
-    alert(" --- oldestTime: " + ago(oldestTime, now));
-    alert(" --- newestTime: " + ago(newestTime, now));
+    jqxhr.always(function() {
+    	alert( " --- always" );
+    });
+        
+    alert(" --- sending request... --- ");
 
-}
+// $.post( "test.php", { func: "getNameAndTime" }, function( data ) {
+// console.log( data.name ); // John
+// console.log( data.time ); // 2pm
+// }, "json");
+    
+//  $.each(data.raw.success, function(ind, json) {	});
 
-window.plugin.increaseFeeder.ago = function(time, now) {
-  var s = (now-time) / 1000;
-  var h = Math.floor(s / 3600);
-  var m = Math.floor((s % 3600) / 60);
-  var returnVal = m + 'm';
-  if(h > 0) {
-    returnVal = h + 'h' + returnVal;
-  }
-  return returnVal;
 }
 
 var setup = plugin.increaseFeeder.setup;
