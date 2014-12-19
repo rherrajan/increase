@@ -132,7 +132,7 @@
 			<plugin>
 				<groupId>com.google.appengine</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
-				<version>1.9.0-maven3.0</version>
+				<version>1.9.0</version>
 				<configuration>
 					<fullScanSeconds>1</fullScanSeconds>
 					<server>preview.appengine.google.com</server>
