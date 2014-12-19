@@ -1,6 +1,12 @@
 // ==UserScript==
-// @name       IITC Plugin: Increase-Feeder
-// @version    0.1
+// @id             iitc-plugin-increase@rherrajan
+// @name		   IITC Plugin: Increase
+// @category       Layer
+// @version    	   0.0.6
+// @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
+// @updateURL      https://sylvan-dragon-772.appspot.com/increase.user.js
+// @downloadURL    https://sylvan-dragon-772.appspot.com/increase.user.js
+// @description    
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
 // @match          https://www.ingress.com/intel*
@@ -8,34 +14,38 @@
 // @grant          none
 // ==/UserScript==
 
-
 function wrapper(plugin_info) {
 // ensure plugin framework is there, even if iitc is not yet loaded
 if(typeof window.plugin !== 'function') window.plugin = function() {};
 
 // PLUGIN START ////////////////////////////////////////////////////////
 
-
 // use own namespace for plugin
-window.plugin.increaseFeeder = function() {};
+window.plugin.increase = function() {};
+window.plugin.increase.feeder = function() {};
 
-window.plugin.increaseFeeder.minZoom = 9;
+window.plugin.increase.feeder.minZoom = 9;
     
-window.plugin.increaseFeeder.setup = function() {
-  addHook('publicChatDataAvailable', window.plugin.increaseFeeder.handleData);
+window.plugin.increase.feeder.setup = function() {
+  
+  addHook('publicChatDataAvailable', window.plugin.increase.feeder.handleData);
+  
+  var refreshMinutes = 60;
+  setInterval ( window.plugin.increase.feeder.wakeup, refreshMinutes*60*1000 );
+  
 };
 
-window.plugin.increaseFeeder.stored = {};
+window.plugin.increase.feeder.stored = {};
 
 
-window.plugin.increaseFeeder.handleData = function(data) {
+window.plugin.increase.feeder.handleData = function(data) {
     
-  if(window.map.getZoom() < window.plugin.increaseFeeder.minZoom) {
+  if(window.map.getZoom() < window.plugin.increase.feeder.minZoom) {
       return;
   }
   
     var url = "https://sylvan-dragon-772.appspot.com/feeder";
-    var inputData = "{value:test}";
+    var inputData = JSON.stringify(data.raw);
     var jqxhr = $.post(url, inputData);
     
     jqxhr.done(function(responseData) {
@@ -49,7 +59,12 @@ window.plugin.increaseFeeder.handleData = function(data) {
         
 }
 
-var setup = plugin.increaseFeeder.setup;
+window.plugin.increase.feeder.wakeup = function() {
+  console.log('periodicRefresh: timer fired - leaving idle mode');
+  idleReset();
+}
+
+var setup = plugin.increase.feeder.setup;
 
 // PLUGIN END //////////////////////////////////////////////////////////
 
