@@ -3,6 +3,7 @@ package tk.icudi;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,8 +22,7 @@ public class FeederServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
 		String postData = extractPostData(req);
-		postData = URLDecoder.decode(postData, "UTF-8");
-		System.out.println(" --- postData: " + postData.substring(0, 100) + "...");
+
 		
 		resp.setHeader("Access-Control-Allow-Origin", "*"); // CORS
 		resp.setContentType("application/json");
@@ -30,13 +30,16 @@ public class FeederServlet extends HttpServlet {
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"success\"");
 		
-//		if(postData != null && postData.isEmpty() == false){
-//			JSONObject jsonObject = new JSONObject(postData);
-//			System.out.println(" --- jsonObject: " + jsonObject);
-//			if(jsonObject != null){
-//				resp.getWriter().println(",\"jsonObject\": \"" + URLEncoder.encode(jsonObject.toString(), "UTF-8") + "\"");
-//			}
-//		}
+		if(postData != null && postData.isEmpty() == false){
+			
+			postData = URLDecoder.decode(postData, "UTF-8");
+			System.out.println(" --- postData: " + postData.substring(0, 100) + "...");
+					
+			Game game = new Game();
+			game.appendLogsFrom(new LogProviderString(postData));
+			
+			resp.getWriter().println(",\"firstPortalsOwner\": \"" + URLEncoder.encode(game.getFirstPortalsOwner(), "UTF-8") + "\"");
+		}
 
 		resp.getWriter().println("}");
 

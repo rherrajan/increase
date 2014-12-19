@@ -1,11 +1,9 @@
-package tk.icudi.objects;
+package tk.icudi;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-
-import tk.icudi.LogProvider;
 
 public class LogProviderString implements LogProvider {
 
