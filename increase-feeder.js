@@ -34,30 +34,19 @@ window.plugin.increaseFeeder.handleData = function(data) {
       return;
   }
   
-    var url = "https://sylvan-dragon-772.appspot.com/main";
-    var jqxhr = $.post(url);
+    var url = "https://sylvan-dragon-772.appspot.com/feeder";
+    var inputData = "{value:test}";
+    var jqxhr = $.post(url, inputData);
     
-    jqxhr.done(function() {
-    	alert( " --- done" );
+    jqxhr.done(function(responseData) {
+        console.log(" --- done: ", responseData);
     });
     
-    jqxhr.fail(function() {
-    	alert( " --- fail" );
-    });
-    
-    jqxhr.always(function() {
-    	alert( " --- always" );
+    jqxhr.fail(function(responseData) {
+        console.log(" --- fail: ", responseData);
+        alert( " --- fail: " + responseData );
     });
         
-    alert(" --- sending request... --- ");
-
-// $.post( "test.php", { func: "getNameAndTime" }, function( data ) {
-// console.log( data.name ); // John
-// console.log( data.time ); // 2pm
-// }, "json");
-    
-//  $.each(data.raw.success, function(ind, json) {	});
-
 }
 
 var setup = plugin.increaseFeeder.setup;
@@ -77,6 +66,4 @@ var info = {};
 if (typeof GM_info !== 'undefined' && GM_info && GM_info.script) info.script = { version: GM_info.script.version, name: GM_info.script.name, description: GM_info.script.description };
 script.appendChild(document.createTextNode('('+ wrapper +')('+JSON.stringify(info)+');'));
 (document.body || document.head || document.documentElement).appendChild(script);
-
-
 

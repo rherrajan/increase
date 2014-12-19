@@ -2,6 +2,7 @@ package tk.icudi;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,19 +25,25 @@ public class FeederServlet extends HttpServlet {
 		String postData = extractPostData(req);
 
 		System.out.println(" --- postData: " + postData);
-		
-		JSONObject jsonObject = new JSONObject(postData);
 
-		System.out.println(" --- jsonObject: " + jsonObject);
+		
+
+		
 
 		resp.setHeader("Access-Control-Allow-Origin", "*"); // CORS
-		// resp.setContentType("text/plain");
 		resp.setContentType("application/json");
-		// resp.getWriter().println("{ \"result\": \"success\" }");
 
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"success\"");
-		resp.getWriter().println("\"jsonObject\": \"" + jsonObject + "\"");
+		
+		if(postData != null && postData.isEmpty() == false){
+			JSONObject jsonObject = new JSONObject(postData);
+			System.out.println(" --- jsonObject: " + jsonObject);
+			if(jsonObject != null){
+				resp.getWriter().println(",\"jsonObject\": \"" + URLEncoder.encode(jsonObject.toString(), "UTF-8") + "\"");
+			}
+		}
+
 		resp.getWriter().println("}");
 
 	}

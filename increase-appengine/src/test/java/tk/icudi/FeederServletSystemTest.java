@@ -14,6 +14,17 @@ public class FeederServletSystemTest {
 	@Test
 	public void testDoGet() throws Exception {
 				
+		URL plexts = new URL("http://localhost:8080/feeder");
+		HttpURLConnection connection = (HttpURLConnection) plexts.openConnection();
+		
+		String result = PlextParser.streamToString(connection.getInputStream());
+				
+		Assert.assertThat(result, Matchers.notNullValue());
+	}
+	
+	@Test
+	public void testDoPost() throws Exception {
+				
 		String params = "{}";
 		
 		URL plexts = new URL("http://localhost:8080/feeder");
