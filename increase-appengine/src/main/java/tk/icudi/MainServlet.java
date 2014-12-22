@@ -1,6 +1,7 @@
 package tk.icudi;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.Map;
 
 import javax.servlet.http.HttpServlet;
@@ -14,16 +15,16 @@ public class MainServlet extends HttpServlet {
 	@Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {	
 		
-		
 		DatabaseService database = new DatabaseService();
 		String json = database.load();
-		
 
 		resp.setHeader("Access-Control-Allow-Origin", "*"); //cross domain request/CORS
         
-        resp.setContentType("text/plain");
-        resp.getWriter().println(json);
+		resp.setContentType("application/json");
+        
+		Game game = new Game();
+		game.appendLogsFrom(new LogProviderString(json));
+		resp.getWriter().println(",\"firstPortalsOwner\": \"" + URLEncoder.encode(game.getFirstPortalsOwner(), "UTF-8") + "\"");
 
     }
-
 }

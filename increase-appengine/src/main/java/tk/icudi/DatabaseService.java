@@ -9,18 +9,20 @@ import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Text;
 
 public class DatabaseService {
 
 	public void save(String postData) {
 
+		Text json = new Text(postData);
+		
 		Key key = KeyFactory.createKey("RawData", "RawData");
 		
 		Entity entity = new Entity("RawData", key);
-		entity.setProperty("json", postData);
+		entity.setProperty("json", json);
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		datastore.put(entity);
-
 
 	}
 
@@ -35,8 +37,8 @@ public class DatabaseService {
 	    	return "noch nüscht";
 	    }
 	    
-	    return (String) entities.get(0).getProperty("json");
-	    
+	    Text text = (Text) entities.get(0).getProperty("json");
+	    return text.getValue();
 	}
 
 }

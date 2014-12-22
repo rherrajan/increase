@@ -47,9 +47,6 @@ public class FeederServlet extends HttpServlet {
 			DatabaseService database = new DatabaseService();
 			database.save(json);
 			
-//			Game game = new Game();
-//			game.appendLogsFrom(new LogProviderString(json));
-//			resp.getWriter().println(",\"firstPortalsOwner\": \"" + URLEncoder.encode(game.getFirstPortalsOwner(), "UTF-8") + "\"");
 		}
 
 		resp.getWriter().println("}");
