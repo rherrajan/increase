@@ -2,6 +2,7 @@ package tk.icudi;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
@@ -11,11 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 public class FeederServlet extends HttpServlet {
 
+	// https://code.google.com/p/jsonengine/
+	
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		doPost(req, resp);
+		writeResponse(resp, "{test:true}");
 	}
 
 	@Override
@@ -24,25 +27,32 @@ public class FeederServlet extends HttpServlet {
 		String postData = extractPostData(req);
 
 		
+		writeResponse(resp, postData);
+
+	}
+
+	private void writeResponse(HttpServletResponse resp, String json)
+			throws IOException, UnsupportedEncodingException {
 		resp.setHeader("Access-Control-Allow-Origin", "*"); // CORS
 		resp.setContentType("application/json");
 
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"success\"");
 		
-		if(postData != null && postData.isEmpty() == false){
+		if(json != null && json.isEmpty() == false){
 			
-			postData = URLDecoder.decode(postData, "UTF-8");
-			System.out.println(" --- postData: " + postData.substring(0, 100) + "...");
-					
-			Game game = new Game();
-			game.appendLogsFrom(new LogProviderString(postData));
+			json = URLDecoder.decode(json, "UTF-8");
+			System.out.println(" --- postData: " + json);
+						
+			DatabaseService database = new DatabaseService();
+			database.save(json);
 			
-			resp.getWriter().println(",\"firstPortalsOwner\": \"" + URLEncoder.encode(game.getFirstPortalsOwner(), "UTF-8") + "\"");
+//			Game game = new Game();
+//			game.appendLogsFrom(new LogProviderString(json));
+//			resp.getWriter().println(",\"firstPortalsOwner\": \"" + URLEncoder.encode(game.getFirstPortalsOwner(), "UTF-8") + "\"");
 		}
 
 		resp.getWriter().println("}");
-
 	}
 
 	private String extractPostData(HttpServletRequest req) throws IOException {
