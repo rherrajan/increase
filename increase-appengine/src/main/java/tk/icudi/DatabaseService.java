@@ -44,7 +44,6 @@ public class DatabaseService {
 	    	Text text = (Text) entity.getProperty("json");
 	    	data.add(text.getValue());
 		}
-	    
    
 	    return data;
 	}

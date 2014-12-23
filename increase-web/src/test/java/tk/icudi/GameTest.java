@@ -142,8 +142,9 @@ public class GameTest {
 
 		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
 		int distance_meter = firstPlayer.getLastPortal().getDistance(getPortalMainStation());
-		assertThat(distance_meter, is(1784));
+		// assertThat(distance_meter, is(1784));
 		// assertThat(distance_meter, is(1276));
+		assertThat(distance_meter, is(1273));
 	}
 
 	@Test

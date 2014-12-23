@@ -44,7 +44,7 @@ public class MainServlet extends HttpServlet {
 //			builder.append("\"rank\": \"" + player.getRank(userLoc, time) + "\n");
 			builder.append("\"time\": " + player.getPassedSeconds(time) + "\n");
 			builder.append("\"portal\": \"" + player.getLastPortal().getName() + "\"\n");
-//			builder.append("\"distance\": \"" + player.getLastPortal().getLocation().distanceTo(userLoc) + "\"\n");
+			builder.append("\"distance\": \"" + player.getLastPortal().getLocation().distanceTo(userLoc) + "\"\n");
 						
 			builder.append("}").append("\n");
 
