@@ -1,8 +1,9 @@
 package tk.icudi;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URLEncoder;
-import java.util.Map;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,38 @@ public class MainServlet extends HttpServlet {
         
 		Game game = new Game();
 		game.appendLogsFrom(new LogProviderString(json));
-		resp.getWriter().println(",\"firstPortalsOwner\": \"" + URLEncoder.encode(game.getFirstPortalsOwner(), "UTF-8") + "\"");
+		
+//		Location userLoc = getPortalMainStation();
+		long time = System.currentTimeMillis();
+		
+//		List<Player> players = game.getSortetPlayers(userLoc, time);
+		List<Player> players = game.getPlayers();
+		
+		StringBuilder builder = new StringBuilder();
+		builder.append("{");
+		for (Player player : players) {
+			builder.append("\"player\": {").append("\n");
+			
+			builder.append("\"name\": \"" + URLEncoder.encode(player.getName(), "UTF-8") + "\"\n");
+//			builder.append("\"rank\": \"" + player.getRank(userLoc, time) + "\n");
+			builder.append("\"time\": " + player.getPassedSeconds(time) + "\n");
+			builder.append("\"portal\": \"" + URLEncoder.encode(player.getLastPortal().getName(), "UTF-8") + "\"\n");
+			
+			builder.append("}").append("\n");
 
+//			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastPortal().getName() + " "
+//					+ player.getLastPortal().getLocation().distanceTo(userLoc));
+		}
+		builder.append("}");
+		
+		resp.getWriter().println(builder.toString());
     }
+	
+	private Location getPortalMainStation() {
+		Location userLoc = new Location();
+		userLoc.setLat(50107356);
+		userLoc.setLng(8664123);
+
+		return userLoc;
+	}
 }

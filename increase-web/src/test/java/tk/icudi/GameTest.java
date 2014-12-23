@@ -171,7 +171,7 @@ public class GameTest {
 		long time = 1414324082779L + (1000 * 60 * 5);
 
 		List<Player> players = game.getPlayers();
-		List<Player> sortedPlayers = game.sortPlayers(players, getPortalMainStation(), time);
+		List<Player> sortedPlayers = game.sortPlayers(players, userLoc, time);
 
 		for (Player player : sortedPlayers) {
 			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastPortal().getName() + " "
