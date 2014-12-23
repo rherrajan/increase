@@ -1,5 +1,7 @@
 package tk.icudi;
 
+import java.awt.geom.Point2D;
+
 import org.geotools.referencing.GeodeticCalculator;
 
 public class Location {
@@ -30,8 +32,11 @@ public class Location {
 	public static double distFrom(double lat1, double lng1, double lat2, double lng2) {
 		final GeodeticCalculator calc = new GeodeticCalculator();
 
-		calc.setStartingGeographicPoint(lng1, lat1);
-		calc.setDestinationGeographicPoint(lng2, lat2);
+		final Point2D from = new Point2D.Double(lat1, lng1);
+		final Point2D to = new Point2D.Double(lat2, lng2);
+
+		calc.setStartingGeographicPoint(from);
+		calc.setDestinationGeographicPoint(to);
 
 		return calc.getOrthodromicDistance();
 	}

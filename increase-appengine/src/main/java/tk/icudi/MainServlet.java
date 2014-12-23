@@ -17,16 +17,19 @@ public class MainServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {	
 		
 		DatabaseService database = new DatabaseService();
-		String json = database.load();
+		List<String> jsons = database.load();
 
 		resp.setHeader("Access-Control-Allow-Origin", "*"); //cross domain request/CORS
         
 		resp.setContentType("application/json");
         
 		Game game = new Game();
-		game.appendLogsFrom(new LogProviderString(json));
 		
-//		Location userLoc = getPortalMainStation();
+		for (String json : jsons) {
+			game.appendLogsFrom(new LogProviderString(json));
+		}
+		
+		Location userLoc = getPortalMainStation();
 		long time = System.currentTimeMillis();
 		
 //		List<Player> players = game.getSortetPlayers(userLoc, time);
@@ -37,15 +40,14 @@ public class MainServlet extends HttpServlet {
 		for (Player player : players) {
 			builder.append("\"player\": {").append("\n");
 			
-			builder.append("\"name\": \"" + URLEncoder.encode(player.getName(), "UTF-8") + "\"\n");
+			builder.append("\"name\": \"" + player.getName() + "\"\n");
 //			builder.append("\"rank\": \"" + player.getRank(userLoc, time) + "\n");
 			builder.append("\"time\": " + player.getPassedSeconds(time) + "\n");
-			builder.append("\"portal\": \"" + URLEncoder.encode(player.getLastPortal().getName(), "UTF-8") + "\"\n");
-			
+			builder.append("\"portal\": \"" + player.getLastPortal().getName() + "\"\n");
+//			builder.append("\"distance\": \"" + player.getLastPortal().getLocation().distanceTo(userLoc) + "\"\n");
+						
 			builder.append("}").append("\n");
 
-//			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastPortal().getName() + " "
-//					+ player.getLastPortal().getLocation().distanceTo(userLoc));
 		}
 		builder.append("}");
 		

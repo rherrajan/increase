@@ -115,6 +115,7 @@
 				<configuration>
 					<excludes>
 						<exclude>**/SystemTest.java</exclude>
+						<exclude>**/IntegrationTest.java</exclude>
 					</excludes>
 				</configuration>
 			</plugin>

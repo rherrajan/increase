@@ -1,5 +1,7 @@
 package tk.icudi;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.google.appengine.api.datastore.DatastoreService;
@@ -26,19 +28,25 @@ public class DatabaseService {
 
 	}
 
-	public String load() {
+	public List<String> load() {
 		
 	    Key key = KeyFactory.createKey("RawData", "RawData");
 	    
 	    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 	    Query query = new Query("RawData", key);
-	    List<Entity> entities = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
-	    if (entities.isEmpty()) {
-	    	return "noch nüscht";
-	    }
+//	    List<Entity> entities = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
+	    List<Entity> entities = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
 	    
-	    Text text = (Text) entities.get(0).getProperty("json");
-	    return text.getValue();
+	    System.out.println(" Loading " + entities.size() + " raw-files...");
+		 
+	    List<String> data = new ArrayList<String>();
+	    for (Entity entity : entities) {
+	    	Text text = (Text) entity.getProperty("json");
+	    	data.add(text.getValue());
+		}
+	    
+   
+	    return data;
 	}
 
 }
