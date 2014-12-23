@@ -1,7 +1,6 @@
 package tk.icudi;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import com.google.appengine.api.datastore.DatastoreService;
