@@ -32,8 +32,8 @@ public class MainServlet extends HttpServlet {
 		Location userLoc = getPortalMainStation();
 		long time = System.currentTimeMillis();
 		
-//		List<Player> players = game.getSortetPlayers(userLoc, time);
-		List<Player> players = game.getPlayers();
+		List<Player> players = game.getSortetPlayers(userLoc, time);
+//		List<Player> players = game.getPlayers();
 		
 		StringBuilder builder = new StringBuilder();
 		builder.append("{");
@@ -41,7 +41,7 @@ public class MainServlet extends HttpServlet {
 			builder.append("\"player\": {").append("\n");
 			
 			builder.append("\"name\": \"" + player.getName() + "\"\n");
-//			builder.append("\"rank\": \"" + player.getRank(userLoc, time) + "\n");
+			builder.append("\"rank\": \"" + player.getRank(userLoc, time) + "\n");
 			builder.append("\"time\": " + player.getPassedSeconds(time) + "\n");
 			builder.append("\"portal\": \"" + player.getLastPortal().getName() + "\"\n");
 			builder.append("\"distance\": \"" + player.getLastPortal().getLocation().distanceTo(userLoc) + "\"\n");
