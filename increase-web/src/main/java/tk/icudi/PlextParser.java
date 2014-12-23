@@ -48,7 +48,8 @@ public class PlextParser {
 		try {
 			JSONArray success = obj.getJSONArray("success");
 
-			System.out.println("reading " + success.length() + " logentries");
+			// System.out.println("reading " + success.length() +
+			// " logentries");
 
 			List<LogEntry> logs = new ArrayList<LogEntry>();
 

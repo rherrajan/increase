@@ -29,7 +29,15 @@ public class MainServlet extends HttpServlet {
 			game.appendLogsFrom(new LogProviderString(json));
 		}
 		
-		Location userLoc = getPortalMainStation();
+		
+		
+		Location userLoc = getLocationFromRequest(req);
+		
+		if(userLoc == null){
+			userLoc = getPortalMainStation();
+		}
+		
+		
 		long time = System.currentTimeMillis();
 		
 		List<Player> players = game.getSortetPlayers(userLoc, time);
@@ -54,6 +62,20 @@ public class MainServlet extends HttpServlet {
 		resp.getWriter().println(builder.toString());
     }
 	
+	private Location getLocationFromRequest(HttpServletRequest req) {
+		
+		String latString = req.getParameter("lat");
+		if(latString == null){
+			return null;
+		}
+		
+		Location userLoc = new Location();
+		userLoc.setLat(Integer.valueOf(latString));
+		userLoc.setLng(Integer.valueOf(req.getParameter("lng")));
+
+		return userLoc;
+	}
+
 	private Location getPortalMainStation() {
 		Location userLoc = new Location();
 		userLoc.setLat(50107356);
