@@ -9,12 +9,12 @@
         <servlet-class>tk.icudi.FeederServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>main</servlet-name>
-        <servlet-class>tk.icudi.MainServlet</servlet-class>
+        <servlet-name>player</servlet-name>
+        <servlet-class>tk.icudi.PlayerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>main</servlet-name>
-        <url-pattern>/main</url-pattern>
+        <servlet-name>player</servlet-name>
+        <url-pattern>/player</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>feeder</servlet-name>
