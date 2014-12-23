@@ -30,6 +30,13 @@
 	</repositories>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>tk.icudi</groupId>
+			<artifactId>increase-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -61,11 +68,7 @@
 		<!-- <version>9.0</version> -->
 		<!-- </dependency> -->
 
-		<dependency>
-			<groupId>com.javadocmd</groupId>
-			<artifactId>simplelatlng</artifactId>
-			<version>1.3.0</version>
-		</dependency>
+
 
 	</dependencies>
 
