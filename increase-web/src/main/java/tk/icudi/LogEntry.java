@@ -31,7 +31,7 @@ public class LogEntry {
 		Player player = new Player();
 		player.setName(playerName);
 		player.setLastPortal(portal);
-		player.setTime(time);
+		player.setTime(time.getTimeInMillis());
 		return player;
 	}
 

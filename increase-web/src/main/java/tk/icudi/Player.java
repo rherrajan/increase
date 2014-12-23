@@ -2,11 +2,12 @@ package tk.icudi;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class Player {
 
 	private String name;
-	private GregorianCalendar time;
+	private long time;
 	private Portal lastPortal;
 
 	public String getName() {
@@ -18,10 +19,12 @@ public class Player {
 	}
 
 	public GregorianCalendar getTime() {
-		return this.time;
+		GregorianCalendar cal = new GregorianCalendar(Locale.GERMAN);
+		cal.setTimeInMillis(time);
+		return cal;
 	}
 
-	public void setTime(GregorianCalendar time) {
+	public void setTime(long time) {
 		this.time = time;
 	}
 
@@ -30,7 +33,7 @@ public class Player {
 	}
 
 	public int getPassedSeconds(long now) {
-		long durationMsec = now - time.getTimeInMillis();
+		long durationMsec = now - time;
 		return (int) (durationMsec / 1000);
 	}
 
@@ -49,7 +52,7 @@ public class Player {
 
 		if (passedTime < 0) {
 			System.err.println("now: " + new Date(now));
-			System.err.println("log: " + new Date(time.getTimeInMillis()));
+			System.err.println("log: " + new Date(time));
 		}
 
 		int rank = distance + passedTime;

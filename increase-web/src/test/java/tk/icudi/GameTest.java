@@ -11,7 +11,11 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.Test;
+
+import com.google.gson.Gson;
 
 public class GameTest {
 
@@ -179,6 +183,45 @@ public class GameTest {
 			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastPortal().getName() + " "
 					+ player.getLastPortal().getLocation().distanceTo(userLoc));
 		}
+	}
+
+	@Test
+	public void test_gson2json() throws Exception {
+
+		Player player = createDummyPlayer();
+
+		Gson gson = new Gson();
+
+		String json = gson.toJson(player);
+
+		Assert.assertThat(json, Matchers.containsString("playername"));
+	}
+
+	@Test
+	public void test_json2gson() throws Exception {
+
+		Player player = createDummyPlayer();
+		Gson gson = new Gson();
+		String json = gson.toJson(player);
+
+		Player obj = gson.fromJson(json, Player.class);
+		Assert.assertThat(obj.getName(), Matchers.is("playername"));
+	}
+
+	private Player createDummyPlayer() {
+		long time = 1414324082779L + (1000 * 60 * 5);
+
+		Portal portal = new Portal();
+		portal.setName("portalname");
+		portal.setLocation(getPortalMainStation());
+
+		Player player = new Player();
+		player.setName("playername");
+
+		player.setLastPortal(portal);
+		player.setTime(time);
+
+		return player;
 	}
 
 	private Location getPortalMainStation() {

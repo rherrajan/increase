@@ -103,7 +103,7 @@ public class PlextParser {
 				// message between Players
 
 			} else {
-				System.err.println("unnkown log identifikation '" + logIdentification + "'");
+				System.err.println("unknown log identifikation '" + logIdentification + "'");
 			}
 		}
 
