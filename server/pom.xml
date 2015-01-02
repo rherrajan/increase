@@ -11,9 +11,10 @@
     <version>1.0</version>
 
     <modules>
-        <module>increase-appengine</module>
-        <module>increase-web</module>
 	<module>increase-api</module>
+        <module>increase-web</module>
+        <module>increase-appengine</module>
+        <module>increase-systemtests</module>
     </modules>
 
     <build>

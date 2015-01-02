@@ -7,7 +7,7 @@
 	<version>1.0</version>
 
 	<groupId>tk.icudi</groupId>
-	<artifactId>increase-appengine</artifactId>
+	<artifactId>increase-systemtests</artifactId>
 
 	<pluginRepositories>
 		<pluginRepository>
