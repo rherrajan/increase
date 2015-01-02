@@ -5,21 +5,30 @@
 
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
     <servlet>
-        <servlet-name>feeder</servlet-name>
+        <servlet-name>FeederServlet</servlet-name>
         <servlet-class>tk.icudi.FeederServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>player</servlet-name>
+        <servlet-name>UnitServlet</servlet-name>
+        <servlet-class>tk.icudi.UnitServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PlayerServlet</servlet-name>
         <servlet-class>tk.icudi.PlayerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>player</servlet-name>
-        <url-pattern>/player</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>feeder</servlet-name>
+        <servlet-name>FeederServlet</servlet-name>
         <url-pattern>/feeder</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UnitServlet</servlet-name>
+        <url-pattern>/units</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PlayerServlet</servlet-name>
+        <url-pattern>/player/nearby</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
