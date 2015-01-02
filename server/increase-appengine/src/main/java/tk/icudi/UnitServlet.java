@@ -61,6 +61,8 @@ public class UnitServlet extends HttpServlet {
 
 		return userLoc;
 	}
+	
+	
 
 	private Point getPortalMainStation() {
 		Point userLoc = new Point();
@@ -69,4 +71,13 @@ public class UnitServlet extends HttpServlet {
 
 		return userLoc;
 	}
+	
+//	private Point getPortalRedGate() {
+//		Point userLoc = new Point();
+//		userLoc.setLat(50080677);
+//		userLoc.setLng(8630383);
+//
+//		return userLoc;
+//	}
+
 }
