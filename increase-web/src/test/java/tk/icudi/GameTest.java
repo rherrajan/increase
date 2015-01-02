@@ -114,7 +114,7 @@ public class GameTest {
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
 		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
-		Point location = firstPlayer.getLastPortal().getPoint();
+		Point location = firstPlayer.getLastLocation().getPoint();
 		assertThat(location.getLat(), is(50113731));
 		assertThat(location.getLng(), is(8678958));
 	}
@@ -145,7 +145,7 @@ public class GameTest {
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
 		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
-		int distance_meter = firstPlayer.getLastPortal().getDistance(getPortalMainStation());
+		int distance_meter = firstPlayer.getLastLocation().getDistance(getPortalMainStation());
 		// assertThat(distance_meter, is(1784));
 		// assertThat(distance_meter, is(1276));
 		assertThat(distance_meter, is(1273));
@@ -161,10 +161,10 @@ public class GameTest {
 		Point userLoc = getPortalMainStation();
 
 		for (Player player : game.getPlayers()) {
-			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastPortal().getName() + " " + player.getLastPortal().getPoint().distanceTo(userLoc));
+			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastLocation().getName() + " " + player.getLastLocation().getPoint().distanceTo(userLoc));
 		}
 
-		assertThat(game.getPlayers().get(0).getLastPortal().getName(), is("Kinder Museum Frankfurt"));
+		assertThat(game.getPlayers().get(0).getLastLocation().getName(), is("Kinder Museum Frankfurt"));
 		assertThat(game.getPlayers().size(), is(1));
 	}
 
@@ -180,8 +180,8 @@ public class GameTest {
 		List<Player> sortedPlayers = game.sortPlayers(players, userLoc, time);
 
 		for (Player player : sortedPlayers) {
-			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastPortal().getName() + " "
-					+ player.getLastPortal().getPoint().distanceTo(userLoc));
+			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastLocation().getName() + " "
+					+ player.getLastLocation().getPoint().distanceTo(userLoc));
 		}
 	}
 
@@ -218,7 +218,7 @@ public class GameTest {
 		Player player = new Player();
 		player.setName("playername");
 
-		player.setLastPortal(portal);
+		player.setLastLocation(portal);
 		player.setTime(time);
 
 		return player;

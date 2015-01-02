@@ -8,7 +8,7 @@ public class Player {
 
 	private String name;
 	private long time;
-	private Location lastPortal;
+	private Location lastLocation;
 
 	public String getName() {
 		return name;
@@ -37,17 +37,17 @@ public class Player {
 		return (int) (durationMsec / 1000);
 	}
 
-	public Location getLastPortal() {
-		return lastPortal;
+	public Location getLastLocation() {
+		return lastLocation;
 	}
 
-	public void setLastPortal(Location portal) {
-		this.lastPortal = portal;
+	public void setLastLocation(Location portal) {
+		this.lastLocation = portal;
 	}
 
 	public int getRank(Point userLoc, long now) {
 
-		int distance = getLastPortal().getPoint().distanceTo(userLoc);
+		int distance = getLastLocation().getPoint().distanceTo(userLoc);
 		int passedTime = getPassedSeconds(now);
 
 		if (passedTime < 0) {
@@ -68,9 +68,9 @@ public class Player {
 	public String getMessage(Point userLoc, long time) {
 		StringBuilder builder = new StringBuilder();
 		builder.append(this.getName() + ": ");
-		builder.append(" in " + this.getLastPortal().getPoint().distanceTo(userLoc) + "m distance");
+		builder.append(" in " + this.getLastLocation().getPoint().distanceTo(userLoc) + "m distance");
 		builder.append(" " + Math.round(this.getPassedSeconds(time) / 60.0) + " min ago");
-		builder.append(" on '" + this.getLastPortal().getName() + "'");
+		builder.append(" on '" + this.getLastLocation().getName() + "'");
 		builder.append(" (rank " + this.getRank(userLoc, time) + ")");
 		return builder.toString();
 	}
