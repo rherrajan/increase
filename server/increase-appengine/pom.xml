@@ -116,8 +116,8 @@
 				<version>2.12.4</version>
 				<configuration>
 					<excludes>
-						<exclude>**/SystemTest.java</exclude>
-						<exclude>**/IntegrationTest.java</exclude>
+						<exclude>**/*SystemTest.java</exclude>
+						<exclude>**/*IntegrationTest.java</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
