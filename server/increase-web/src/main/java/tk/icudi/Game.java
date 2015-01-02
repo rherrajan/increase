@@ -40,7 +40,7 @@ public class Game {
 		return players;
 	}
 
-	public Map<Location, String> getPortalOwners() {
+	public Map<Location, String> getLocationOwners() {
 		return portals;
 	}
 
@@ -57,7 +57,7 @@ public class Game {
 		return portals;
 	}
 
-	public String getFirstPortalsOwner() {
+	public String getFirstLocationsOwner() {
 		return portals.entrySet().iterator().next().getValue();
 	}
 
