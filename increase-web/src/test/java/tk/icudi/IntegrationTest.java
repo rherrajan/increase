@@ -58,14 +58,14 @@ public class IntegrationTest {
 			updater.start();
 
 			int portalsOnTime1 = game.getPortalOwners().size();
-			for (Entry<Portal, String> entry : game.getPortalOwners().entrySet()) {
+			for (Entry<Location, String> entry : game.getPortalOwners().entrySet()) {
 				System.out.println(entry.getValue() + ": " + entry.getKey());
 			}
 			System.out.println(portalsOnTime1 + " portals");
 
 			Thread.sleep(90 * 1000);
 			int portalsOnTime2 = game.getPortalOwners().size();
-			for (Entry<Portal, String> entry : game.getPortalOwners().entrySet()) {
+			for (Entry<Location, String> entry : game.getPortalOwners().entrySet()) {
 				System.out.println(entry.getValue() + ": " + entry.getKey());
 			}
 			System.out.println(portalsOnTime2 + " portals");
@@ -90,7 +90,7 @@ public class IntegrationTest {
 			System.out.println("logEntry: " + logEntry);
 		}
 
-		Location userLoc = getPortalMainStation();
+		Point userLoc = getPortalMainStation();
 
 		long now = System.currentTimeMillis();
 		for (Player player : game.getSortetPlayers(userLoc, now)) {
@@ -98,8 +98,8 @@ public class IntegrationTest {
 		}
 	}
 
-	private Location getPortalMainStation() {
-		Location userLoc = new Location();
+	private Point getPortalMainStation() {
+		Point userLoc = new Point();
 		userLoc.setLat(50107356);
 		userLoc.setLng(8664123);
 

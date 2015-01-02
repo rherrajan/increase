@@ -7,7 +7,7 @@ import java.util.Locale;
 public class LogEntry {
 
 	private String playerName;
-	private Portal portal = new Portal();
+	private Location portal = new Location();
 	private GregorianCalendar time;
 
 	public void setTimeStamp(long timestamp) {
@@ -39,11 +39,11 @@ public class LogEntry {
 		this.playerName = playerName;
 	}
 
-	public Portal getPortal() {
+	public Location getPortal() {
 		return portal;
 	}
 
-	public void setPortal(Portal portal) {
+	public void setPortal(Location portal) {
 		this.portal = portal;
 	}
 

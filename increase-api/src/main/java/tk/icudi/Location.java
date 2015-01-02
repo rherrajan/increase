@@ -1,54 +1,42 @@
 package tk.icudi;
 
-import com.javadocmd.simplelatlng.LatLng;
-import com.javadocmd.simplelatlng.util.LengthUnit;
-
 public class Location {
 
-	private int lat;
-	private int lng;
+	private String name;
 
-	public int getLat() {
-		return lat;
+	private Point point = new Point();
+
+	public String getName() {
+		return name;
 	}
 
-	public void setLat(int latE6) {
-		this.lat = latE6;
+	public void setName(String portalName) {
+		this.name = portalName;
 	}
 
-	public int getLng() {
-		return lng;
+	public void setPoint(Point loc) {
+		this.point = loc;
 	}
 
-	public void setLng(int lngE6) {
-		this.lng = lngE6;
+	public Point getPoint() {
+		return point;
 	}
 
-	public int distanceTo(Location other) {
-		return (int) Math.round(distFrom(this.lat / 1000000.0, this.lng / 1000000.0, other.lat / 1000000.0, other.lng / 1000000.0));
-	}
-
-	public static double distFrom(double lat1, double lng1, double lat2, double lng2) {
-		// final GeodeticCalculator calc = new GeodeticCalculator();
-		LatLng point1 = new LatLng(lat1, lng1);
-		LatLng point2 = new LatLng(lat2, lng2);
-
-		double distance = com.javadocmd.simplelatlng.LatLngTool.distance(point1, point2, LengthUnit.METER);
-
-		return distance;
+	public int getDistance(Point otherLoc) {
+		return point.distanceTo(otherLoc);
 	}
 
 	@Override
 	public String toString() {
-		return lat + "/" + lng;
+		return name;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + lat;
-		result = prime * result + lng;
+		result = prime * result + ((point == null) ? 0 : point.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -61,11 +49,16 @@ public class Location {
 		if (getClass() != obj.getClass())
 			return false;
 		Location other = (Location) obj;
-		if (lat != other.lat)
+		if (point == null) {
+			if (other.point != null)
+				return false;
+		} else if (!point.equals(other.point))
 			return false;
-		if (lng != other.lng)
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
-
 }

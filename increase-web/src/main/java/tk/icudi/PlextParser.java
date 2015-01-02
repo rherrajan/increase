@@ -86,10 +86,10 @@ public class PlextParser {
 			} else if (logIdentification.equals("PORTAL")) {
 				if (log.getPortal().getName() == null) {
 					log.getPortal().setName(logPart.getJSONObject(1).getString("name"));
-					Location loc = new Location();
+					Point loc = new Point();
 					loc.setLat(logPart.getJSONObject(1).getInt("latE6"));
 					loc.setLng(logPart.getJSONObject(1).getInt("lngE6"));
-					log.getPortal().setLocation(loc);
+					log.getPortal().setPoint(loc);
 				} else {
 					// with 2 portals the second is not important
 				}

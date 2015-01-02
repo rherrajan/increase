@@ -29,7 +29,7 @@ public class GameTest {
 	public void testPortals() throws Exception {
 
 		Game game = getGame("realdata.json");
-		Map<Portal, String> portals = game.getPortalOwners();
+		Map<Location, String> portals = game.getPortalOwners();
 
 		assertEquals(10, portals.size());
 	}
@@ -38,7 +38,7 @@ public class GameTest {
 	public void testParseOrder() throws Exception {
 
 		Game game = getGame("doubleAttack.json");
-		Map<Portal, String> portals = game.getPortalOwners();
+		Map<Location, String> portals = game.getPortalOwners();
 
 		assertEquals(1, portals.size());
 
@@ -69,7 +69,7 @@ public class GameTest {
 	public void test_append_realdata_player() throws Exception {
 		Game game = new Game();
 
-		Location userLoc = getPortalMainStation();
+		Point userLoc = getPortalMainStation();
 		long time = 1414335481800L + (1000 * 60 * 15);
 
 		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
@@ -114,7 +114,7 @@ public class GameTest {
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
 		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
-		Location location = firstPlayer.getLastPortal().getLocation();
+		Point location = firstPlayer.getLastPortal().getPoint();
 		assertThat(location.getLat(), is(50113731));
 		assertThat(location.getLng(), is(8678958));
 	}
@@ -158,10 +158,10 @@ public class GameTest {
 
 		Game game = getGame("move.json");
 
-		Location userLoc = getPortalMainStation();
+		Point userLoc = getPortalMainStation();
 
 		for (Player player : game.getPlayers()) {
-			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastPortal().getName() + " " + player.getLastPortal().getLocation().distanceTo(userLoc));
+			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastPortal().getName() + " " + player.getLastPortal().getPoint().distanceTo(userLoc));
 		}
 
 		assertThat(game.getPlayers().get(0).getLastPortal().getName(), is("Kinder Museum Frankfurt"));
@@ -172,7 +172,7 @@ public class GameTest {
 	public void test_player_sort() throws Exception {
 
 		Game game = getGame("realdata.json");
-		Location userLoc = getPortalMainStation();
+		Point userLoc = getPortalMainStation();
 
 		long time = 1414324082779L + (1000 * 60 * 5);
 
@@ -181,7 +181,7 @@ public class GameTest {
 
 		for (Player player : sortedPlayers) {
 			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastPortal().getName() + " "
-					+ player.getLastPortal().getLocation().distanceTo(userLoc));
+					+ player.getLastPortal().getPoint().distanceTo(userLoc));
 		}
 	}
 
@@ -211,9 +211,9 @@ public class GameTest {
 	private Player createDummyPlayer() {
 		long time = 1414324082779L + (1000 * 60 * 5);
 
-		Portal portal = new Portal();
+		Location portal = new Location();
 		portal.setName("portalname");
-		portal.setLocation(getPortalMainStation());
+		portal.setPoint(getPortalMainStation());
 
 		Player player = new Player();
 		player.setName("playername");
@@ -224,8 +224,8 @@ public class GameTest {
 		return player;
 	}
 
-	private Location getPortalMainStation() {
-		Location userLoc = new Location();
+	private Point getPortalMainStation() {
+		Point userLoc = new Point();
 		userLoc.setLat(50107356);
 		userLoc.setLng(8664123);
 

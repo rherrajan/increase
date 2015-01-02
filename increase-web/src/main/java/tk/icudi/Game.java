@@ -11,7 +11,7 @@ import java.util.Map;
 public class Game {
 
 	private List<LogEntry> logs;
-	private Map<Portal, String> portals = new HashMap<Portal, String>();
+	private Map<Location, String> portals = new HashMap<Location, String>();
 	private Map<String, Player> players = new HashMap<String, Player>();
 
 	public void appendLogsFrom(LogProvider provider) throws IOException {
@@ -40,15 +40,15 @@ public class Game {
 		return players;
 	}
 
-	public Map<Portal, String> getPortalOwners() {
+	public Map<Location, String> getPortalOwners() {
 		return portals;
 	}
 
-	private Map<Portal, String> createPortalList() {
-		Map<Portal, String> portals = new HashMap<Portal, String>();
+	private Map<Location, String> createPortalList() {
+		Map<Location, String> portals = new HashMap<Location, String>();
 
 		for (LogEntry logEntry : logs) {
-			Portal portal = logEntry.getPortal();
+			Location portal = logEntry.getPortal();
 			if (portal.getName() != null && logEntry.getPlayerName() != null) {
 				portals.put(portal, logEntry.getPlayerName());
 			}
@@ -77,12 +77,12 @@ public class Game {
 		return logs;
 	}
 
-	List<Player> getSortetPlayers(final Location userLoc, final long time) {
+	List<Player> getSortetPlayers(final Point userLoc, final long time) {
 		List<Player> players2 = getPlayers();
 		return sortPlayers(players2, userLoc, time);
 	}
 
-	List<Player> sortPlayers(final List<Player> players, final Location userLoc, final long now) {
+	List<Player> sortPlayers(final List<Player> players, final Point userLoc, final long now) {
 
 		Comparator<Player> comperator = new Comparator<Player>() {
 

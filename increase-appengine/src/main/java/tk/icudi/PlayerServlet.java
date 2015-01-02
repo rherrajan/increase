@@ -23,7 +23,7 @@ public class PlayerServlet extends HttpServlet {
         
 		Game game = createGame();
 		
-		Location userLoc = getLocationFromRequest(req);
+		Point userLoc = getLocationFromRequest(req);
 		final long time = System.currentTimeMillis();
 		
 		final List<Player> players = game.getSortetPlayers(userLoc, time);
@@ -68,7 +68,7 @@ public class PlayerServlet extends HttpServlet {
 		return game;
 	}
 	
-	private Location getLocationFromRequest(HttpServletRequest req) {
+	private Point getLocationFromRequest(HttpServletRequest req) {
 		
 		String latString = req.getParameter("lat");
 		if(latString == null){
@@ -76,15 +76,15 @@ public class PlayerServlet extends HttpServlet {
 			return getPortalMainStation();
 		}
 		
-		Location userLoc = new Location();
+		Point userLoc = new Point();
 		userLoc.setLat(Integer.valueOf(latString));
 		userLoc.setLng(Integer.valueOf(req.getParameter("lng")));
 
 		return userLoc;
 	}
 
-	private Location getPortalMainStation() {
-		Location userLoc = new Location();
+	private Point getPortalMainStation() {
+		Point userLoc = new Point();
 		userLoc.setLat(50107356);
 		userLoc.setLng(8664123);
 

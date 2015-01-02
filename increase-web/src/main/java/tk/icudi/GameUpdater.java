@@ -41,7 +41,7 @@ public class GameUpdater implements Runnable {
 					// entry.getKey());
 					// }
 
-					Location userLoc = getPortalMainStation();
+					Point userLoc = getPortalMainStation();
 					long now = System.currentTimeMillis();
 					System.out.println("");
 					System.out.println(new Date(now));
@@ -60,8 +60,8 @@ public class GameUpdater implements Runnable {
 		}
 	}
 
-	private Location getPortalMainStation() {
-		Location userLoc = new Location();
+	private Point getPortalMainStation() {
+		Point userLoc = new Point();
 		userLoc.setLat(50107356);
 		userLoc.setLng(8664123);
 
