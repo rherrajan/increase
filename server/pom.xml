@@ -14,7 +14,7 @@
 	<module>increase-api</module>
         <module>increase-web</module>
         <module>increase-appengine</module>
-        <module>increase-systemtests</module>
+        <!-- <module>increase-systemtests</module> -->
     </modules>
 
     <build>

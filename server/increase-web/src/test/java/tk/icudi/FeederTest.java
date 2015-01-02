@@ -11,11 +11,8 @@ public class FeederTest extends AbstractGameTest {
 	@Test
 	public void test_gson2json() throws Exception {
 
-		Player player = createDummyPlayer();
-
-		Gson gson = new Gson();
-
-		String json = gson.toJson(player);
+		Unit player = createDummyPlayer();
+		String json = new Gson().toJson(player);
 
 		Assert.assertThat(json, Matchers.containsString("playername"));
 	}
@@ -23,22 +20,22 @@ public class FeederTest extends AbstractGameTest {
 	@Test
 	public void test_json2gson() throws Exception {
 
-		Player player = createDummyPlayer();
+		Unit player = createDummyPlayer();
 		Gson gson = new Gson();
 		String json = gson.toJson(player);
 
-		Player obj = gson.fromJson(json, Player.class);
+		Unit obj = gson.fromJson(json, Unit.class);
 		Assert.assertThat(obj.getName(), Matchers.is("playername"));
 	}
 
-	private Player createDummyPlayer() {
+	private Unit createDummyPlayer() {
 		long time = 1414324082779L + (1000 * 60 * 5);
 
 		Location portal = new Location();
 		portal.setName("portalname");
 		portal.setPoint(getPortalMainStation());
 
-		Player player = new Player();
+		Unit player = new Unit();
 		player.setName("playername");
 
 		player.setLastLocation(portal);

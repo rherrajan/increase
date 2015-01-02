@@ -45,7 +45,7 @@ public class GameUpdater implements Runnable {
 					long now = System.currentTimeMillis();
 					System.out.println("");
 					System.out.println(new Date(now));
-					for (Player player : game.getSortetPlayers(userLoc, now)) {
+					for (Unit player : game.getSortetUnits(userLoc, now)) {
 						System.out.println(player.getMessage(userLoc, now));
 					}
 

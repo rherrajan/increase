@@ -27,8 +27,8 @@ public class LogEntry {
 		return playerName;
 	}
 
-	public Player getPlayer() {
-		Player player = new Player();
+	public Unit getPlayer() {
+		Unit player = new Unit();
 		player.setName(playerName);
 		player.setLastLocation(portal);
 		player.setTime(time.getTimeInMillis());

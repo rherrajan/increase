@@ -14,34 +14,14 @@ import org.junit.Test;
 public class PlayerTest extends AbstractGameTest {
 
 	@Test
-	public void test_append_realdata_player() throws Exception {
-		Game game = new Game();
-
-		Point userLoc = getPortalMainStation();
-		long time = 1414335481800L + (1000 * 60 * 15);
-
-		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
-		for (Player player : game.getSortetPlayers(userLoc, time)) {
-			System.out.println(player.getMessage(userLoc, time));
-		}
-
-		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
-		for (Player player : game.getSortetPlayers(userLoc, time)) {
-			System.out.println(player.getMessage(userLoc, time));
-		}
-
-		assertEquals(5 + 8, game.getPlayers().size());
-	}
-
-	@Test
 	public void test_players_name() throws Exception {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		List<Player> players = game.getPlayers();
+		List<Unit> players = game.getPlayers();
 		assertThat(players.size(), is(1));
 
-		Player firstPlayer = players.get(0);
+		Unit firstPlayer = players.get(0);
 		assertThat(firstPlayer.getName(), is("Attacker1"));
 	}
 
@@ -50,7 +30,7 @@ public class PlayerTest extends AbstractGameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Unit firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
 		Point location = firstPlayer.getLastLocation().getPoint();
 		assertThat(location.getLat(), is(50113731));
 		assertThat(location.getLng(), is(8678958));
@@ -61,7 +41,7 @@ public class PlayerTest extends AbstractGameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Unit firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
 		GregorianCalendar time = firstPlayer.getTime();
 		assertThat(time.get(Calendar.HOUR_OF_DAY), is(12));
 	}
@@ -71,7 +51,7 @@ public class PlayerTest extends AbstractGameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Unit firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
 		int passedSeconds = firstPlayer.getPassedSeconds();
 		assertThat(passedSeconds, notNullValue());
 	}
@@ -81,7 +61,7 @@ public class PlayerTest extends AbstractGameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Player firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Unit firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
 		int distance_meter = firstPlayer.getLastLocation().getDistance(getPortalMainStation());
 		// assertThat(distance_meter, is(1784));
 		// assertThat(distance_meter, is(1276));
@@ -97,12 +77,32 @@ public class PlayerTest extends AbstractGameTest {
 
 		Point userLoc = getPortalMainStation();
 
-		for (Player player : game.getPlayers()) {
+		for (Unit player : game.getPlayers()) {
 			System.out.println(player.getPassedSeconds() + " " + player.getName() + " " + player.getLastLocation().getName() + " " + player.getLastLocation().getPoint().distanceTo(userLoc));
 		}
 
 		assertThat(game.getPlayers().get(0).getLastLocation().getName(), is("Kinder Museum Frankfurt"));
 		assertThat(game.getPlayers().size(), is(1));
+	}
+
+	@Test
+	public void test_append_realdata_player() throws Exception {
+		Game game = new Game();
+
+		Point userLoc = getPortalMainStation();
+		long time = 1414335481800L + (1000 * 60 * 15);
+
+		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
+		for (Unit player : game.getSortetUnits(userLoc, time)) {
+			System.out.println(player.getMessage(userLoc, time));
+		}
+
+		game.appendLogs(PlextParserTest.parseLogs("realdata2.json"));
+		for (Unit player : game.getSortetUnits(userLoc, time)) {
+			System.out.println(player.getMessage(userLoc, time));
+		}
+
+		assertEquals(5 + 8, game.getPlayers().size());
 	}
 
 	@Test
@@ -113,16 +113,35 @@ public class PlayerTest extends AbstractGameTest {
 
 		long time = 1414324082779L + (1000 * 60 * 5);
 
-		List<Player> players = game.getPlayers();
-		List<Player> sortedPlayers = game.sortPlayers(players, userLoc, time);
+		List<Unit> players = game.getPlayers();
+		List<Unit> sortedPlayers = game.sortPlayers(players, userLoc, time);
 
-		for (Player player : sortedPlayers) {
+		for (Unit player : sortedPlayers) {
 			System.out.println(player.getRank(userLoc, time) + " " + player.getPassedSeconds(time) + " fhfgh " + player.getName() + " " + player.getLastLocation().getName() + " "
 					+ player.getLastLocation().getPoint().distanceTo(userLoc));
 		}
 
 		assertThat(sortedPlayers.get(0).getRank(userLoc, time), is(1500));
 		assertThat(sortedPlayers.get(4).getRank(userLoc, time), is(9232));
+	}
+
+	@Test
+	public void test_nearby_players() throws Exception {
+
+		Game game = getGame("realdata.json");
+		Point userLoc = getPortalMainStation();
+
+		long time = 1414324082779L + (1000 * 60 * 5);
+
+		List<NearbyPlayer> players = game.getNearbyPlayers(userLoc, time);
+
+		NearbyPlayer firstPlayer = players.get(0);
+		assertThat(firstPlayer.getRank(), is(1500));
+		assertThat(firstPlayer.getPassedSeconds(), is(227));
+		assertThat(firstPlayer.getName(), is("suchef"));
+		assertThat(firstPlayer.getLocation(), is("Kinder Museum Frankfurt"));
+		assertThat(firstPlayer.getDistance(), is(1273));
+
 	}
 
 }

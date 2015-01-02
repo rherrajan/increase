@@ -12,7 +12,7 @@ public class Game {
 
 	private List<LogEntry> logs;
 	private Map<Location, String> portals = new HashMap<Location, String>();
-	private Map<String, Player> players = new HashMap<String, Player>();
+	private Map<String, Unit> players = new HashMap<String, Unit>();
 
 	public void appendLogsFrom(LogProvider provider) throws IOException {
 		PlextParser parser = new PlextParser(provider);
@@ -27,11 +27,11 @@ public class Game {
 		players.putAll(createPlayerlist());
 	}
 
-	Map<String, Player> createPlayerlist() {
-		Map<String, Player> players = new HashMap<String, Player>();
+	Map<String, Unit> createPlayerlist() {
+		Map<String, Unit> players = new HashMap<String, Unit>();
 
 		for (LogEntry logEntry : logs) {
-			Player player = logEntry.getPlayer();
+			Unit player = logEntry.getPlayer();
 			if (player.getName() != null) {
 				players.put(player.getName(), player);
 			}
@@ -61,8 +61,8 @@ public class Game {
 		return portals.entrySet().iterator().next().getValue();
 	}
 
-	public List<Player> getPlayers() {
-		return new ArrayList<Player>(players.values());
+	public List<Unit> getPlayers() {
+		return new ArrayList<Unit>(players.values());
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -77,17 +77,17 @@ public class Game {
 		return logs;
 	}
 
-	List<Player> getSortetPlayers(final Point userLoc, final long time) {
-		List<Player> players2 = getPlayers();
+	List<Unit> getSortetUnits(final Point userLoc, final long time) {
+		List<Unit> players2 = getPlayers();
 		return sortPlayers(players2, userLoc, time);
 	}
 
-	List<Player> sortPlayers(final List<Player> players, final Point userLoc, final long now) {
+	List<Unit> sortPlayers(final List<Unit> players, final Point userLoc, final long now) {
 
-		Comparator<Player> comperator = new Comparator<Player>() {
+		Comparator<Unit> comperator = new Comparator<Unit>() {
 
 			@Override
-			public int compare(Player my, Player other) {
+			public int compare(Unit my, Unit other) {
 
 				Integer myRank = my.getRank(userLoc, now);
 				Integer otherRank = other.getRank(userLoc, now);
@@ -96,6 +96,33 @@ public class Game {
 			}
 		};
 		Collections.sort(players, comperator);
+
+		return players;
+	}
+
+	public List<NearbyPlayer> getNearbyPlayers(Point userLoc, long time) {
+
+		List<NearbyPlayer> players = new ArrayList<NearbyPlayer>();
+
+		for (Unit unit : getSortetUnits(userLoc, time)) {
+
+			NearbyPlayer player = new NearbyPlayer();
+			player.setRank(unit.getRank(userLoc, time));
+			player.setPassedSeconds(unit.getPassedSeconds(time));
+			player.setName(unit.getName());
+			player.setLocation(unit.getLastLocation().getName());
+			player.setDistance(unit.getLastLocation().getPoint().distanceTo(userLoc));
+
+			players.add(player);
+
+			// for (Player player : sortedPlayers) {
+			// System.out.println(player.getRank(userLoc, time) + " " +
+			// unit.getPassedSeconds(time) + " fhfgh " + unit.getName() + " " +
+			// unit.getLastLocation().getName() + " "
+			// + unit.getLastLocation().getPoint().distanceTo(userLoc));
+			// }
+
+		}
 
 		return players;
 	}

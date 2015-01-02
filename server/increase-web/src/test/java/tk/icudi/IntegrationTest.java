@@ -93,7 +93,7 @@ public class IntegrationTest {
 		Point userLoc = getPortalMainStation();
 
 		long now = System.currentTimeMillis();
-		for (Player player : game.getSortetPlayers(userLoc, now)) {
+		for (Unit player : game.getSortetUnits(userLoc, now)) {
 			System.out.println(player.getMessage(userLoc, now));
 		}
 	}
