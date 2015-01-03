@@ -3,15 +3,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tk.icudi</groupId>
-	<artifactId>increase-android</artifactId>
+	<artifactId>increase-app</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>apk</packaging>
-	<name>increase-android</name>
+	<name>increase-app</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<platform.version>4.1.1.4</platform.version>
-		<android.plugin.version>4.0.0-rc.2</android.plugin.version>
+		<android.plugin.version>3.8.2</android.plugin.version>
 		<android.sdk.path>/home/roland/development/android-sdk</android.sdk.path>
 	</properties>
 
@@ -25,25 +25,6 @@
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
-		<plugins>
-<!-- 			<plugin> -->
-<!-- 				<artifactId>maven-compiler-plugin</artifactId> -->
-<!-- 				<version>3.0</version> -->
-<!-- 				<configuration> -->
-<!-- 					<source>1.7</source> -->
-<!-- 					<target>1.7</target> -->
-<!-- 				</configuration> -->
-<!-- 			</plugin> -->
-			<plugin>
-				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
-				<artifactId>android-maven-plugin</artifactId>
-				<configuration>
-					<sdk>
-						<platform>19</platform>
-					</sdk>
-				</configuration>
-			</plugin>
-		</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -54,5 +35,16 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<configuration>
+					<sdk>
+						<platform>16</platform>
+					</sdk>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
