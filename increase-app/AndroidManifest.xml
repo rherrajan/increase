@@ -36,6 +36,9 @@
                 android:resource="@xml/widgetinfo" >
             </meta-data>
         </receiver>
+        
+        <service android:name=".IncreaseService"></service> 
+        
     </application>
 
 </manifest>
