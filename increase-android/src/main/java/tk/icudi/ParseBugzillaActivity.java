@@ -47,7 +47,7 @@ public class ParseBugzillaActivity extends Activity {
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(
-				"http://sylvan-dragon-772.appspot.com/player?lat=50586690&lng=8679832");
+				"http://sylvan-dragon-772.appspot.com/player/nearby?lat=50586690&lng=8679832");
 		try {
 			HttpResponse response = client.execute(httpGet);
 			StatusLine statusLine = response.getStatusLine();
