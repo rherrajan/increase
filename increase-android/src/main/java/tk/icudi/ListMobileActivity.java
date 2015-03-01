@@ -15,12 +15,17 @@ public class ListMobileActivity extends ListActivity {
 	static final String[] MOBILE_OS = new String[] { "Android", "iOS", "WindowsMobile", "Blackberry" };
 
 	IncreaseServer server = new IncreaseServer();
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setListAdapter(new MobileArrayAdapter(this, MOBILE_OS));
+		setContentView(R.layout.activity_main);
+	}
+
+	public void onClickRefresh(View view) {
+		logNearbyPlayers();
 	}
 
 	@Override
@@ -29,10 +34,6 @@ public class ListMobileActivity extends ListActivity {
 		// get selected items
 		String selectedValue = (String) getListAdapter().getItem(position);
 		Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
-
-		
-		logNearbyPlayers();
-
 	}
 
 	private void logNearbyPlayers() {
@@ -43,7 +44,7 @@ public class ListMobileActivity extends ListActivity {
 
 		try {
 			List<Unit> units = server.getNearbyPlayers();
-			
+
 			Log.i(ListMobileActivity.class.getName(), units.toString());
 		} catch (Exception e) {
 			Log.e(ListMobileActivity.class.getName(), "Failed to parse json", e);
