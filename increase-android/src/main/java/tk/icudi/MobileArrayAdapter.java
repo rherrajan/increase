@@ -9,12 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MobileArrayAdapter extends ArrayAdapter<String> {
+public class MobileArrayAdapter extends ArrayAdapter<Unit> {
 	
 	private final Context context;
-	private final String[] values;
+	private final Unit[] values;
 
-	public MobileArrayAdapter(Context context, String[] values) {
+	public MobileArrayAdapter(Context context, Unit[] values) {
 		super(context, R.layout.list_mobile, values);
 		this.context = context;
 		this.values = values;
@@ -28,10 +28,10 @@ public class MobileArrayAdapter extends ArrayAdapter<String> {
 		View rowView = inflater.inflate(R.layout.list_mobile, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
-		textView.setText(values[position]);
+		textView.setText(values[position].toString());
 
 		// Change icon based on name
-		String s = values[position];
+		String s = values[position].toString();
 
 		System.out.println(s);
 

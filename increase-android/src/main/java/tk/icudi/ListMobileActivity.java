@@ -20,12 +20,28 @@ public class ListMobileActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setListAdapter(new MobileArrayAdapter(this, MOBILE_OS));
 		setContentView(R.layout.activity_main);
 	}
 
 	public void onClickRefresh(View view) {
-		logNearbyPlayers();
+		
+		// # Just for testing, allow network access in the main thread
+		// # NEVER use this is productive code
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+
+		try {
+			List<Unit> units = server.getNearbyPlayers();
+			Log.i(ListMobileActivity.class.getName(), units.toString());
+			
+			setListAdapter(new MobileArrayAdapter(this, units.toArray(new Unit[0])));
+			
+			
+		} catch (Exception e) {
+			Log.e(ListMobileActivity.class.getName(), "Failed to parse json", e);
+		}
+		
+		
 	}
 
 	@Override
@@ -34,21 +50,6 @@ public class ListMobileActivity extends ListActivity {
 		// get selected items
 		String selectedValue = (String) getListAdapter().getItem(position);
 		Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
-	}
-
-	private void logNearbyPlayers() {
-		// # Just for testing, allow network access in the main thread
-		// # NEVER use this is productive code
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		StrictMode.setThreadPolicy(policy);
-
-		try {
-			List<Unit> units = server.getNearbyPlayers();
-
-			Log.i(ListMobileActivity.class.getName(), units.toString());
-		} catch (Exception e) {
-			Log.e(ListMobileActivity.class.getName(), "Failed to parse json", e);
-		}
 	}
 
 }
