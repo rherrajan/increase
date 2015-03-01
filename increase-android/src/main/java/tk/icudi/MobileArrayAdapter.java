@@ -15,7 +15,7 @@ public class MobileArrayAdapter extends ArrayAdapter<Unit> {
 	private final Unit[] values;
 
 	public MobileArrayAdapter(Context context, Unit[] values) {
-		super(context, R.layout.list_mobile, values);
+		super(context, R.layout.list_item, values);
 		this.context = context;
 		this.values = values;
 	}
@@ -25,7 +25,7 @@ public class MobileArrayAdapter extends ArrayAdapter<Unit> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		View rowView = inflater.inflate(R.layout.list_mobile, parent, false);
+		View rowView = inflater.inflate(R.layout.list_item, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
 		Unit unit = values[position];
