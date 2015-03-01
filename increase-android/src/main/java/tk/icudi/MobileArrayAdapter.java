@@ -9,12 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MobileArrayAdapter extends ArrayAdapter<Unit> {
+public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 	
 	private final Context context;
-	private final Unit[] values;
+	private final NearbyPlayer[] values;
 
-	public MobileArrayAdapter(Context context, Unit[] values) {
+	public MobileArrayAdapter(Context context, NearbyPlayer[] values) {
 		super(context, R.layout.list_item, values);
 		this.context = context;
 		this.values = values;
@@ -29,15 +29,15 @@ public class MobileArrayAdapter extends ArrayAdapter<Unit> {
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
 		
-		Unit unit = values[position];
-		textView.setText(unit.toString());
+		NearbyPlayer unit = values[position];
+		textView.setText(unit.getName());
 		imageView.setImageAlpha(calculateAlpha(unit));
 		imageView.setImageResource(R.drawable.increase);
 
 		return rowView;
 	}
 
-	private int calculateAlpha(Unit unit) {
+	private int calculateAlpha(NearbyPlayer unit) {
 		int alphaReduce = unit.getPassedSeconds() / 100;
 		if(alphaReduce > 100){
 			alphaReduce = 100;

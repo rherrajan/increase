@@ -23,9 +23,9 @@ public class IncreaseServer {
 
 	private static final String baseURL = "http://sylvan-dragon-772.appspot.com";
 
-	public List<Unit> getNearbyPlayers() throws ClientProtocolException, IOException {
+	public List<NearbyPlayer> getNearbyPlayers() throws ClientProtocolException, IOException {
 		String jsonString = getJsonString("/player/nearby?lat=50586690&lng=8679832");
-		return new Gson().<List<Unit>>fromJson(jsonString, new TypeToken<List<Unit>>(){}.getType());
+		return new Gson().<List<NearbyPlayer>>fromJson(jsonString, new TypeToken<List<NearbyPlayer>>(){}.getType());
 	}
 
 	private String getJsonString(String string) throws ClientProtocolException, IOException {

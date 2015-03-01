@@ -29,10 +29,10 @@ public class ListMobileActivity extends ListActivity {
 		StrictMode.setThreadPolicy(policy);
 
 		try {
-			List<Unit> units = server.getNearbyPlayers();
-			Log.i(ListMobileActivity.class.getName(), units.toString());
+			List<NearbyPlayer> units = server.getNearbyPlayers();
+			Log.i(ListMobileActivity.class.getName(),"found " + units.size() + " players");
 			
-			setListAdapter(new MobileArrayAdapter(this, units.toArray(new Unit[0])));
+			setListAdapter(new MobileArrayAdapter(this, units.toArray(new NearbyPlayer[0])));
 			
 		} catch (Exception e) {
 			Toast.makeText(this, "failed to get player information" + e, Toast.LENGTH_SHORT).show();
@@ -43,8 +43,31 @@ public class ListMobileActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 
-		String selectedValue = (String) getListAdapter().getItem(position);
-		Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
+		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
+		String text = "on '" + selectedValue.getLocation() + "' " + getHumanReadableTime(selectedValue) + " ago";
+		Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+	}
+
+	private String getHumanReadableTime(NearbyPlayer selectedValue) {
+		
+		int timetmp = selectedValue.getPassedSeconds();
+		
+		if(timetmp < 60*2){
+			return timetmp + " seconds";
+		}
+		
+		timetmp = timetmp/60;
+		if(timetmp < 60*2){
+			return timetmp + " minutes";
+		}
+		
+		timetmp = timetmp/60;
+		if(timetmp < 24*2){
+			return timetmp + " hours";
+		}
+		
+		timetmp = timetmp/24;
+		return timetmp + " days";
 	}
 
 }
