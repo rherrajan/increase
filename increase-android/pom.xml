@@ -22,18 +22,15 @@
 			<version>${platform.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>tk.icudi</groupId>
+			<artifactId>increase-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-<!-- 			<plugin> -->
-<!-- 				<artifactId>maven-compiler-plugin</artifactId> -->
-<!-- 				<version>3.0</version> -->
-<!-- 				<configuration> -->
-<!-- 					<source>1.7</source> -->
-<!-- 					<target>1.7</target> -->
-<!-- 				</configuration> -->
-<!-- 			</plugin> -->
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
