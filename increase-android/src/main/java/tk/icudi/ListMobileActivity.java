@@ -29,10 +29,10 @@ public class ListMobileActivity extends ListActivity {
 		StrictMode.setThreadPolicy(policy);
 
 		try {
-			List<NearbyPlayer> units = server.getNearbyPlayers();
-			Log.i(ListMobileActivity.class.getName(),"found " + units.size() + " players");
+			List<NearbyPlayer> players = server.getNearbyPlayers();
+			Log.i(ListMobileActivity.class.getName(),"found " + players.size() + " players");
 			
-			setListAdapter(new MobileArrayAdapter(this, units.toArray(new NearbyPlayer[0])));
+			setListAdapter(new MobileArrayAdapter(this, players.toArray(new NearbyPlayer[0])));
 			
 		} catch (Exception e) {
 			Toast.makeText(this, "failed to get player information" + e, Toast.LENGTH_SHORT).show();

@@ -29,16 +29,16 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
 		
-		NearbyPlayer unit = values[position];
-		textView.setText(unit.getName());
-		imageView.setImageAlpha(calculateAlpha(unit));
+		NearbyPlayer player = values[position];
+		textView.setText(player.getName());
+		imageView.setImageAlpha(calculateAlpha(player));
 		imageView.setImageResource(R.drawable.increase);
 
 		return rowView;
 	}
 
-	private int calculateAlpha(NearbyPlayer unit) {
-		int alphaReduce = unit.getPassedSeconds() / 100;
+	private int calculateAlpha(NearbyPlayer player) {
+		int alphaReduce = player.getPassedSeconds() / 100;
 		if(alphaReduce > 100){
 			alphaReduce = 100;
 		}
