@@ -24,10 +24,7 @@ public class FeederServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
 		String postData = extractPostData(req);
-
-		
 		writeResponse(resp, postData);
-
 	}
 
 	private void writeResponse(HttpServletResponse resp, String json)

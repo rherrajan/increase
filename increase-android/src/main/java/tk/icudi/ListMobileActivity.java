@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -12,7 +13,6 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -21,6 +21,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 public class ListMobileActivity extends ListActivity {
 
@@ -52,8 +54,10 @@ public class ListMobileActivity extends ListActivity {
 
 		String input = readNearbyPlayers();
 		try {
-			JSONArray json = new JSONArray(input);
-			Log.i(ListMobileActivity.class.getName(), json.toString());
+			@SuppressWarnings("unchecked")
+			List<Unit> units = new Gson().fromJson(input, List.class);
+			
+			Log.i(ListMobileActivity.class.getName(), units.toString());
 		} catch (Exception e) {
 			Log.e(ListMobileActivity.class.getName(), "Failed to parse json", e);
 		}
