@@ -28,17 +28,22 @@ public class MobileArrayAdapter extends ArrayAdapter<Unit> {
 		View rowView = inflater.inflate(R.layout.list_item, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
+		
 		Unit unit = values[position];
 		textView.setText(unit.toString());
+		imageView.setImageAlpha(calculateAlpha(unit));
+		imageView.setImageResource(R.drawable.increase);
 
+		return rowView;
+	}
+
+	private int calculateAlpha(Unit unit) {
 		int alphaReduce = unit.getPassedSeconds() / 100;
 		if(alphaReduce > 100){
 			alphaReduce = 100;
 		}
 		
-		imageView.setImageAlpha(255 - alphaReduce);
-		imageView.setImageResource(R.drawable.increase);
-
-		return rowView;
+		int alpha = 255 - alphaReduce;
+		return alpha;
 	}
 }
