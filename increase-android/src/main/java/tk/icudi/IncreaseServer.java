@@ -14,6 +14,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -45,6 +47,9 @@ public class IncreaseServer {
 	}
 
 	private HttpResponse callURL(String url) throws IOException, ClientProtocolException {
+		
+		Log.i(IncreaseServer.class.getName(), "call url: " + url);
+		
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(url);
 

@@ -28,22 +28,16 @@ public class MobileArrayAdapter extends ArrayAdapter<Unit> {
 		View rowView = inflater.inflate(R.layout.list_mobile, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
-		textView.setText(values[position].toString());
+		Unit unit = values[position];
+		textView.setText(unit.toString());
 
-		// Change icon based on name
-		String s = values[position].toString();
-
-		System.out.println(s);
-
-		if (s.equals("WindowsMobile")) {
-			imageView.setImageResource(R.drawable.ic_launcher);
-		} else if (s.equals("iOS")) {
-			imageView.setImageResource(R.drawable.ic_launcher);
-		} else if (s.equals("Blackberry")) {
-			imageView.setImageResource(R.drawable.ic_launcher);
-		} else {
-			imageView.setImageResource(R.drawable.ic_launcher);
+		int alphaReduce = unit.getPassedSeconds() / 100;
+		if(alphaReduce > 100){
+			alphaReduce = 100;
 		}
+		
+		imageView.setImageAlpha(255 - alphaReduce);
+		imageView.setImageResource(R.drawable.increase);
 
 		return rowView;
 	}

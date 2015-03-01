@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 public class ListMobileActivity extends ListActivity {
 
-	static final String[] MOBILE_OS = new String[] { "Android", "iOS", "WindowsMobile", "Blackberry" };
-
 	IncreaseServer server = new IncreaseServer();
 
 	@Override
@@ -36,18 +34,15 @@ public class ListMobileActivity extends ListActivity {
 			
 			setListAdapter(new MobileArrayAdapter(this, units.toArray(new Unit[0])));
 			
-			
 		} catch (Exception e) {
-			Log.e(ListMobileActivity.class.getName(), "Failed to parse json", e);
+			Toast.makeText(this, "failed to get player information" + e, Toast.LENGTH_SHORT).show();
+			Log.e(ListMobileActivity.class.getName(), "failed to get player information", e);
 		}
-		
-		
 	}
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 
-		// get selected items
 		String selectedValue = (String) getListAdapter().getItem(position);
 		Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
 	}
