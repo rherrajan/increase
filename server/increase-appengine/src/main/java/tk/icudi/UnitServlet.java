@@ -50,15 +50,27 @@ public class UnitServlet extends HttpServlet {
 	private Point getLocationFromRequest(HttpServletRequest req) {
 		
 		String latString = req.getParameter("lat");
+		String lngString = req.getParameter("lng");
+		
 		if(latString == null){
 			// Fallback
 			return getPortalMainStation();
 		}
 		
+		while(latString.length() > 8){
+			latString = latString.substring(0, latString.length()-1);
+		}
+
+		while(lngString.length() > 7){
+			lngString = lngString.substring(0, lngString.length()-1);
+		}
+		
 		Point userLoc = new Point();
 		userLoc.setLat(Integer.valueOf(latString));
-		userLoc.setLng(Integer.valueOf(req.getParameter("lng")));
+		userLoc.setLng(Integer.valueOf(lngString));
 
+		System.out.println("User-Location: " + userLoc);
+		
 		return userLoc;
 	}
 	
