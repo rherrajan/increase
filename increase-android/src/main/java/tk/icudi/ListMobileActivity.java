@@ -53,7 +53,7 @@ public class ListMobileActivity extends ListActivity {
 	
 	protected void makeUseOfNewLocation(Location location) {
 		this.userLocation = location;
-		System.out.println(" --- userLocation: " + userLocation);
+		System.out.println("userLocation: " + userLocation);
 	}
 
 	public void onClickRefresh(View view) {
