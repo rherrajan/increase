@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,8 +23,12 @@ public class ListMobileActivity extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		
 		setContentView(R.layout.activity_main);
+		
+		Button button = (Button) findViewById(R.id.button_refresh);
+		button.setActivated(false);
+		
 		setUpLocationService();
 	}
 
@@ -54,6 +59,11 @@ public class ListMobileActivity extends ListActivity {
 	protected void makeUseOfNewLocation(Location location) {
 		this.userLocation = location;
 		System.out.println("userLocation: " + userLocation);
+		
+		if(userLocation != null){
+			Button button = (Button) findViewById(R.id.button_refresh);
+			button.setActivated(true);
+		}
 	}
 
 	public void onClickRefresh(View view) {
@@ -70,10 +80,6 @@ public class ListMobileActivity extends ListActivity {
 		
 		System.out.println(" --- getAccuracy: " + userLocation.getAccuracy());
 		try {
-			
-
-			
-			userLocation.getAccuracy();
 			
 			List<NearbyPlayer> players = server.getNearbyPlayers(userLocation);
 			Log.i(ListMobileActivity.class.getName(),"found " + players.size() + " players");

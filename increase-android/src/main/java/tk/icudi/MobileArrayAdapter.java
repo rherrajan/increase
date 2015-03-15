@@ -37,19 +37,24 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 			textView.setTypeface(null, Typeface.BOLD);
 		}
 		
-		imageView.setImageAlpha(calculateAlpha(player));
-		imageView.setImageResource(R.drawable.increase);
-
+		if(player.getFaction() == Faction.blue){
+			imageView.setImageResource(R.drawable.blue);
+		} else if(player.getFaction() == Faction.green){
+			imageView.setImageResource(R.drawable.green);
+		} else {
+			imageView.setImageResource(R.drawable.increase);
+		}
+		
 		return rowView;
 	}
 
-	private int calculateAlpha(NearbyPlayer player) {
-		int alphaReduce = player.getPassedSeconds() / 100;
-		if(alphaReduce > 50){
-			alphaReduce = 50;
-		}
-		
-		int alpha = 255 - alphaReduce;
-		return alpha;
-	}
+//	private int calculateAlpha(NearbyPlayer player) {
+//		int alphaReduce = player.getPassedSeconds() / 100;
+//		if(alphaReduce > 50){
+//			alphaReduce = 50;
+//		}
+//		
+//		int alpha = 255 - alphaReduce;
+//		return alpha;
+//	}
 }
