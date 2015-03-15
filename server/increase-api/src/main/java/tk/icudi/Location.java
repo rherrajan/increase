@@ -26,6 +26,10 @@ public class Location {
 		return point.distanceTo(otherLoc);
 	}
 
+	public Direction getDirectionFrom(Point userLoc) {
+		return point.getDirectionFrom(userLoc);
+	}
+	
 	@Override
 	public String toString() {
 		return name;
@@ -61,4 +65,5 @@ public class Location {
 			return false;
 		return true;
 	}
+
 }

@@ -7,6 +7,7 @@ public class NearbyPlayer {
 	private String location;
 	private int distance;
 	private String name;
+	private Direction direction;
 
 	public void setPassedSeconds(int passedSeconds) {
 		this.passedSeconds = passedSeconds;
@@ -46,6 +47,14 @@ public class NearbyPlayer {
 
 	public int getDistance() {
 		return distance;
+	}
+
+	public Direction getDirection() {
+		return direction;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
 	}
 
 }

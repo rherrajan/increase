@@ -38,6 +38,35 @@ public class Point {
 		return distance;
 	}
 
+	public Direction getDirectionFrom(Point userLoc) {
+
+		int latDistance = this.lat - userLoc.lat;
+		int longDistance = this.lng - userLoc.lng;
+
+		if (latDistance > 0) {
+			if (Math.abs(latDistance) > Math.abs(longDistance)) {
+				return Direction.N;
+			} else {
+				if (longDistance > 0) {
+					return Direction.E;
+				} else {
+					return Direction.W;
+				}
+			}
+		} else {
+
+			if (Math.abs(latDistance) > Math.abs(longDistance)) {
+				return Direction.S;
+			} else {
+				if (longDistance > 0) {
+					return Direction.E;
+				} else {
+					return Direction.W;
+				}
+			}
+		}
+	}
+
 	@Override
 	public String toString() {
 		return lat + "/" + lng;
