@@ -2,6 +2,7 @@ package tk.icudi;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,11 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 		
 		NearbyPlayer player = values[position];
 		textView.setText(player.getName());
+
+		if(player.getRank() < 1000){
+			textView.setTypeface(null, Typeface.BOLD);
+		}
+		
 		imageView.setImageAlpha(calculateAlpha(player));
 		imageView.setImageResource(R.drawable.increase);
 
@@ -39,8 +45,8 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 
 	private int calculateAlpha(NearbyPlayer player) {
 		int alphaReduce = player.getPassedSeconds() / 100;
-		if(alphaReduce > 100){
-			alphaReduce = 100;
+		if(alphaReduce > 50){
+			alphaReduce = 50;
 		}
 		
 		int alpha = 255 - alphaReduce;

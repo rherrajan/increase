@@ -38,8 +38,6 @@ public class FeederServlet extends HttpServlet {
 		if(json != null && json.isEmpty() == false){
 			
 			json = URLDecoder.decode(json, "UTF-8");
-			System.out.println(" --- postData: " + json);
-						
 			DatabaseService database = new DatabaseService();
 			database.save(json);
 			

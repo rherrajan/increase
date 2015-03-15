@@ -63,7 +63,17 @@ public class ListMobileActivity extends ListActivity {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 
+		if(userLocation == null){
+			Toast.makeText(this, "no location", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		System.out.println(" --- getAccuracy: " + userLocation.getAccuracy());
 		try {
+			
+
+			
+			userLocation.getAccuracy();
 			
 			List<NearbyPlayer> players = server.getNearbyPlayers(userLocation);
 			Log.i(ListMobileActivity.class.getName(),"found " + players.size() + " players");
