@@ -3,6 +3,10 @@ package tk.icudi;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -12,13 +16,44 @@ import android.widget.Toast;
 
 public class ListMobileActivity extends ListActivity {
 
-	IncreaseServer server = new IncreaseServer();
+	private IncreaseServer server = new IncreaseServer();
+	private Location userLocation;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_main);
+		setUpLocationService();
+	}
+
+	private void setUpLocationService() {
+		
+		// Acquire a reference to the system Location Manager
+		LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+		// Define a listener that responds to location updates
+		LocationListener locationListener = new LocationListener() {
+
+
+		    public void onStatusChanged(String provider, int status, Bundle extras) {}
+
+		    public void onProviderEnabled(String provider) {}
+
+		    public void onProviderDisabled(String provider) {}
+
+			public void onLocationChanged(Location location) {
+				 makeUseOfNewLocation(location);
+			}
+		  };
+
+		// Register the listener with the Location Manager to receive location updates
+		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+	}
+	
+	protected void makeUseOfNewLocation(Location location) {
+		this.userLocation = location;
+		System.out.println(" --- userLocation: " + userLocation);
 	}
 
 	public void onClickRefresh(View view) {
@@ -29,7 +64,8 @@ public class ListMobileActivity extends ListActivity {
 		StrictMode.setThreadPolicy(policy);
 
 		try {
-			List<NearbyPlayer> players = server.getNearbyPlayers();
+			
+			List<NearbyPlayer> players = server.getNearbyPlayers(userLocation);
 			Log.i(ListMobileActivity.class.getName(),"found " + players.size() + " players");
 			
 			setListAdapter(new MobileArrayAdapter(this, players.toArray(new NearbyPlayer[0])));

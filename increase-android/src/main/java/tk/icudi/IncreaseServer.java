@@ -14,6 +14,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import android.location.Location;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -22,12 +23,21 @@ import com.google.gson.reflect.TypeToken;
 public class IncreaseServer {
 
 	private static final String baseURL = "http://sylvan-dragon-772.appspot.com";
-
-	public List<NearbyPlayer> getNearbyPlayers() throws ClientProtocolException, IOException {
-		String jsonString = getJsonString("/player/nearby?lat=50586690&lng=8679832");
+	
+	public List<NearbyPlayer> getNearbyPlayers(Location userLocation) throws ClientProtocolException, IOException {
+		
+		int lat = locDoubleToInt(userLocation.getLatitude());
+		int lng = locDoubleToInt(userLocation.getLongitude());
+		
+		String jsonString = getJsonString("/player/nearby?lat=" + lat +"&lng=" + lng);
 		return new Gson().<List<NearbyPlayer>>fromJson(jsonString, new TypeToken<List<NearbyPlayer>>(){}.getType());
 	}
 
+	private int locDoubleToInt(double doubleLoc) {
+		String stringLoc = String.valueOf(doubleLoc).replace(".", "");
+		return Integer.valueOf(stringLoc);
+	}
+	
 	private String getJsonString(String string) throws ClientProtocolException, IOException {
 		HttpResponse response = callURL(baseURL + string);
 		return response2String(response);
