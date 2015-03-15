@@ -8,6 +8,11 @@ public class NearbyPlayer {
 	private int distance;
 	private String name;
 	private Direction direction;
+	private Faction faction;
+
+	public Faction getFaction() {
+		return faction;
+	}
 
 	public void setPassedSeconds(int passedSeconds) {
 		this.passedSeconds = passedSeconds;
@@ -55,6 +60,10 @@ public class NearbyPlayer {
 
 	public void setDirection(Direction direction) {
 		this.direction = direction;
+	}
+
+	public void setFaction(Faction faction) {
+		this.faction = faction;
 	}
 
 }

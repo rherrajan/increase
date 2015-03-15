@@ -113,6 +113,7 @@ public class Game {
 			player.setLocation(unit.getLastLocation().getName());
 			player.setDistance(unit.getLastLocation().getPoint().distanceTo(userLoc));
 			player.setDirection(unit.getLastLocation().getDirectionFrom(userLoc));
+			player.setFaction(unit.getFaction());
 
 			players.add(player);
 

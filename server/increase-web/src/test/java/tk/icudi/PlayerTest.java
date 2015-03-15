@@ -26,6 +26,18 @@ public class PlayerTest extends AbstractGameTest {
 	}
 
 	@Test
+	public void test_players_faction() throws Exception {
+		Game game = new Game();
+		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
+
+		List<Unit> players = game.getPlayers();
+		assertThat(players.size(), is(1));
+
+		Unit firstPlayer = players.get(0);
+		assertThat(firstPlayer.getFaction(), is(Faction.blue));
+	}
+
+	@Test
 	public void test_players_location() throws Exception {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));

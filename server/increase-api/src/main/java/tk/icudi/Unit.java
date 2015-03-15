@@ -9,6 +9,7 @@ public class Unit {
 	private String name;
 	private long time;
 	private Location lastLocation;
+	private Faction faction;
 
 	public String getName() {
 		return name;
@@ -73,6 +74,14 @@ public class Unit {
 		builder.append(" on '" + this.getLastLocation().getName() + "'");
 		builder.append(" (rank " + this.getRank(userLoc, time) + ")");
 		return builder.toString();
+	}
+
+	public Faction getFaction() {
+		return faction;
+	}
+
+	public void setFaction(Faction faction) {
+		this.faction = faction;
 	}
 
 }

@@ -9,6 +9,7 @@ public class LogEntry {
 	private String playerName;
 	private Location portal = new Location();
 	private GregorianCalendar time;
+	private Faction faction;
 
 	public void setTimeStamp(long timestamp) {
 		this.time = new GregorianCalendar(Locale.GERMAN);
@@ -32,6 +33,7 @@ public class LogEntry {
 		player.setName(playerName);
 		player.setLastLocation(portal);
 		player.setTime(time.getTimeInMillis());
+		player.setFaction(this.faction);
 		return player;
 	}
 
@@ -50,6 +52,14 @@ public class LogEntry {
 	@Override
 	public String toString() {
 		return "LogEntry [time=" + getFormattedDate() + ", playerName=" + playerName + ", portal=" + portal + "]";
+	}
+
+	public Faction getFaction() {
+		return faction;
+	}
+
+	public void setFaction(Faction faction) {
+		this.faction = faction;
 	}
 
 }

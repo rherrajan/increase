@@ -83,6 +83,8 @@ public class PlextParser {
 			String logIdentification = logPart.getString(0);
 			if (logIdentification.equals("PLAYER")) {
 				log.setPlayerName(logPart.getJSONObject(1).getString("plain"));
+				log.setFaction(Faction.valueOfString(logPart.getJSONObject(1).getString("team")));
+
 			} else if (logIdentification.equals("PORTAL")) {
 				if (log.getPortal().getName() == null) {
 					log.getPortal().setName(logPart.getJSONObject(1).getString("name"));
