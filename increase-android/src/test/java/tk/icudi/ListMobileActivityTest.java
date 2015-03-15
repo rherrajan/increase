@@ -5,7 +5,6 @@ import static org.hamcrest.Matchers.notNullValue;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,23 +19,17 @@ import android.widget.ListAdapter;
 @Config(manifest = "./src/main/AndroidManifest.xml", emulateSdk = 18)
 public class ListMobileActivityTest {
 
-	@Before
-	public void setup() {
-		
-	}
-
 	@Test
 	public void should_have_application_name() throws Exception {
 		ListMobileActivity activity = new ListMobileActivity();
 		
 		String appName = activity.getResources().getString(R.string.app_name);
 		Assert.assertThat(appName, Matchers.equalTo("Increase"));
-		
 	}
 	
 	@Test
 	@Ignore("i dont know whats wrong")
-	public void should_have_application_name2() throws Exception {
+	public void should_have_list_after_refresh() throws Exception {
 		final ListMobileActivity activity = Robolectric.buildActivity(ListMobileActivity.class).create().start().resume().visible().get();
 
 		ListAdapter listAdapter = activity.getListAdapter();
