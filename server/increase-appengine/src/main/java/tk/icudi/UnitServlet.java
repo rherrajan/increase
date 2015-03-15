@@ -57,13 +57,8 @@ public class UnitServlet extends HttpServlet {
 			return getPortalMainStation();
 		}
 		
-		while(latString.length() > 8){
-			latString = latString.substring(0, latString.length()-1);
-		}
-
-		while(lngString.length() > 7){
-			lngString = lngString.substring(0, lngString.length()-1);
-		}
+		latString = makeCharacterNumber(latString, 8);
+		lngString = makeCharacterNumber(lngString, 7);
 		
 		Point userLoc = new Point();
 		userLoc.setLat(Integer.valueOf(latString));
@@ -72,6 +67,16 @@ public class UnitServlet extends HttpServlet {
 		System.out.println("User-Location: " + userLoc);
 		
 		return userLoc;
+	}
+
+	private String makeCharacterNumber(String latString, int characters) {
+		while(latString.length() > characters){
+			latString = latString.substring(0, latString.length()-1);
+		}
+		while(latString.length() < characters){
+			latString = latString + "0";
+		}
+		return latString;
 	}
 	
 	
