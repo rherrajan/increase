@@ -46,7 +46,7 @@ public class PlextParser {
 
 		JSONObject obj = new JSONObject(result);
 		try {
-			JSONArray success = obj.getJSONArray("success");
+			JSONArray success = obj.getJSONArray("result");
 
 			// System.out.println("reading " + success.length() +
 			// " logentries");
@@ -64,7 +64,7 @@ public class PlextParser {
 			return logs;
 
 		} catch (JSONException e) {
-			throw new RuntimeException("no success json: \n" + result, e);
+			throw new RuntimeException("no result json: \n" + result, e);
 		}
 
 	}
