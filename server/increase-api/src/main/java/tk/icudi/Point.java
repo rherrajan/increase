@@ -44,30 +44,14 @@ public class Point {
 
 	public Direction getDirectionFrom(Point userLoc) {
 		double angle = getAngle(userLoc);
-		Direction dir = Direction.valueOfAngle(angle);
-		
-		System.out.println(" --- " + userLoc + " -> " + this.toString() + " = " + (int)angle + "° => " + dir);
-		
-		return dir;
+		return Direction.valueOfAngle(angle);
 	}
 
 	private double getAngle(Point userLoc) {
 		long longDistance = this.lng - userLoc.lng;
 		long latDistance = this.lat - userLoc.lat;
-		
-		System.out.println(" --- longDistance: " + longDistance);
-		System.out.println(" --- latDistance: " + latDistance);
-		
-		long prwsqrt = (longDistance * longDistance) + (latDistance * latDistance);
-		
-		System.out.println(" --- prwsqrt: " + prwsqrt);
-		
-		double hypothenuse = Math.sqrt(prwsqrt);
-		
-		System.out.println(" --- vDistance: " + hypothenuse);
-		
+		double hypothenuse = Math.sqrt((longDistance * longDistance) + (latDistance * latDistance));
 		double vAngle = (Math.acos(latDistance / hypothenuse) * 360) / (2 * Math.PI);
-		
 		if(longDistance < 0){
 			vAngle = 360 - vAngle;
 		}

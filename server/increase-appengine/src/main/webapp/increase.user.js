@@ -49,12 +49,12 @@ window.plugin.increase.feeder.handleData = function(data) {
     var jqxhr = $.post(url, inputData);
     
     jqxhr.done(function(responseData) {
-        console.log(" --- done: ", responseData);
+        console.log("done: ", responseData);
     });
     
     jqxhr.fail(function(responseData) {
-        console.log(" --- fail: ", responseData);
-        alert( " --- fail: " + responseData );
+        console.log("fail: ", responseData);
+        alert( "fail: " + responseData );
     });
         
 }

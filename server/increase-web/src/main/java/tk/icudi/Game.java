@@ -116,13 +116,6 @@ public class Game {
 			player.setFaction(unit.getFaction());
 
 			players.add(player);
-			
-			if(player.getName().equals("itsjustm3")){
-				System.out.println(" --- getDirection: " + player.getDirection());
-				System.out.println(" --- getLocation: " + player.getLocation());
-				System.out.println(" --- userLoc: " + userLoc);
-			}
-			
 		}
 
 		return players;
