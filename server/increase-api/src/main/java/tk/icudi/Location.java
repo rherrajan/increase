@@ -26,8 +26,8 @@ public class Location {
 		return point.distanceTo(otherLoc);
 	}
 
-	public Direction getDirectionFrom(Point userLoc) {
-		return point.getDirectionFrom(userLoc);
+	public double getAngleFrom(Point userLoc) {
+		return point.getAngleFrom(userLoc);
 	}
 	
 	@Override

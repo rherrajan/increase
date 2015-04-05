@@ -103,7 +103,7 @@ public class ListMobileActivity extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 
 		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
-		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago " + selectedValue.getHumanReadableDistance() + " " + selectedValue.getDirection();
+		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago " ;
 		Toast.makeText(this, text, Toast.LENGTH_LONG).show();
 	}
 

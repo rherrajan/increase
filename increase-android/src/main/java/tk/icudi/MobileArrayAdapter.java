@@ -31,7 +31,7 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 		TextView player_distance = (TextView) rowView.findViewById(R.id.player_distance);
 		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
 		ImageView directionPic = (ImageView) rowView.findViewById(R.id.direction);
-		directionPic.setRotation(-90);
+
 		
 		NearbyPlayer player = values[position];
 		player_name.setText(player.getName());
@@ -48,6 +48,8 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 		} else {
 			factionPic.setImageResource(R.drawable.increase);
 		}
+		
+		directionPic.setRotation(-90 + (int)player.getAngle());
 		
 		return rowView;
 	}

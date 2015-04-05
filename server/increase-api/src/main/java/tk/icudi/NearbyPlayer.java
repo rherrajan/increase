@@ -7,7 +7,7 @@ public class NearbyPlayer {
 	private String location;
 	private int distance;
 	private String name;
-	private Direction direction;
+	private double angle;
 	private Faction faction;
 
 	public Faction getFaction() {
@@ -54,14 +54,6 @@ public class NearbyPlayer {
 		return distance;
 	}
 
-	public Direction getDirection() {
-		return direction;
-	}
-
-	public void setDirection(Direction direction) {
-		this.direction = direction;
-	}
-
 	public void setFaction(Faction faction) {
 		this.faction = faction;
 	}
@@ -97,6 +89,14 @@ public class NearbyPlayer {
 		
 		distTmp = distTmp/1000;
 		return distTmp + "km";
+	}
+
+	public double getAngle() {
+		return angle;
+	}
+
+	public void setAngle(double angle) {
+		this.angle = angle;
 	}
 
 }

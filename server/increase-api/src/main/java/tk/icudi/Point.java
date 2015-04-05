@@ -42,12 +42,7 @@ public class Point {
 		return distance;
 	}
 
-	public Direction getDirectionFrom(Point userLoc) {
-		double angle = getAngle(userLoc);
-		return Direction.valueOfAngle(angle);
-	}
-
-	private double getAngle(Point userLoc) {
+	public double getAngleFrom(Point userLoc) {
 		long longDistance = this.lng - userLoc.lng;
 		long latDistance = this.lat - userLoc.lat;
 		double hypothenuse = Math.sqrt((longDistance * longDistance) + (latDistance * latDistance));
@@ -87,6 +82,10 @@ public class Point {
 		if (lng != other.lng)
 			return false;
 		return true;
+	}
+
+	public Direction getDirectionFrom(Point userLoc) {
+		return Direction.valueOfAngle(getAngleFrom(userLoc));
 	}
 
 }
