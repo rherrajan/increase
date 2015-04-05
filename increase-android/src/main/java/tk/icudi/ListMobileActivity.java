@@ -27,7 +27,7 @@ public class ListMobileActivity extends ListActivity {
 		setContentView(R.layout.activity_main);
 		
 		Button button = (Button) findViewById(R.id.button_refresh);
-		button.setActivated(false);
+		button.setEnabled(false);
 		
 		setUpLocationService();
 	}
@@ -62,7 +62,8 @@ public class ListMobileActivity extends ListActivity {
 		
 		if(userLocation != null){
 			Button button = (Button) findViewById(R.id.button_refresh);
-			button.setActivated(true);
+			button.setEnabled(true);
+			button.setText("Refresh (" + (int)location.getAccuracy() +"m acc)");
 		}
 	}
 
@@ -75,11 +76,6 @@ public class ListMobileActivity extends ListActivity {
 		
 		if(userLocation == null){
 			Toast.makeText(this, "no location", Toast.LENGTH_SHORT).show();
-			return;
-		}
-		
-		if(userLocation.getAccuracy() > 100){
-			Toast.makeText(this, "no precise location (" + (int)userLocation.getAccuracy() + "m accuracy)", Toast.LENGTH_SHORT).show();
 			return;
 		}
 				
@@ -120,12 +116,12 @@ public class ListMobileActivity extends ListActivity {
 		
 		int timetmp = selectedValue.getPassedSeconds();
 		
-		if(timetmp < 60*2){
+		if(timetmp < 100){
 			return timetmp + " seconds";
 		}
 		
 		timetmp = timetmp/60;
-		if(timetmp < 60*2){
+		if(timetmp < 100){
 			return timetmp + " minutes";
 		}
 		

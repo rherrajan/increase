@@ -21,6 +21,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:onClick="onClickRefresh"
-        android:text="@string/refresh" />
+        android:text="@string/no_location" />
 
 </RelativeLayout>

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Increase</string>
-    <string name="refresh">Refresh</string>
+    <string name="no_location">no location</string>
     
     
 </resources>
