@@ -69,12 +69,12 @@ public class NearbyPlayer {
 	public String getHumanReadableTime() {
 		int timetmp = this.getPassedSeconds();
 
-		if (timetmp < 100) {
+		if (timetmp < 2*60) {
 			return timetmp + "sec";
 		}
 
 		timetmp = timetmp / 60;
-		if (timetmp < 100) {
+		if (timetmp < 2*60) {
 			return timetmp + "min";
 		}
 

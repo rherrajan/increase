@@ -28,12 +28,12 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 
 		View rowView = inflater.inflate(R.layout.list_item, parent, false);
 		TextView player_name = (TextView) rowView.findViewById(R.id.player_name);
-		TextView player_time = (TextView) rowView.findViewById(R.id.player_time);
+		TextView player_distance = (TextView) rowView.findViewById(R.id.player_distance);
 		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
 		
 		NearbyPlayer player = values[position];
 		player_name.setText(player.getName());
-		player_time.setText(player.getHumanReadableTime());
+		player_distance.setText(player.getHumanReadableDistance());
 		
 		if(player.getRank() < 1000){
 			player_name.setTypeface(null, Typeface.BOLD);

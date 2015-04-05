@@ -8,34 +8,46 @@
         android:id="@+id/logo"
         android:layout_width="50px"
         android:layout_height="50px"
-        android:layout_alignParentLeft="true"
         android:layout_marginLeft="5px"
         android:layout_marginRight="20px"
         android:layout_marginTop="5px"
         android:src="@drawable/increase" >
     </ImageView>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="5dp" >
-    
-	    <TextView
-	        android:id="@+id/player_name"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:textSize="30px" 
-	        android:layout_alignParentLeft="true">
-	    </TextView>
-	
-	    <TextView
-	        android:id="@+id/player_time"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentRight="true"
-	        android:textSize="30px" >
-	    </TextView>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
 
+        <TextView
+            android:id="@+id/player_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="30px" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/direction"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="5px"
+            android:src="@drawable/increase" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/player_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/direction"
+            android:layout_centerVertical="true"
+            android:textSize="25px"
+            android:textStyle="bold|italic" >
+        </TextView>
     </RelativeLayout>
-    
+
 </LinearLayout>
