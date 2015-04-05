@@ -79,7 +79,7 @@ public class ListMobileActivity extends ListActivity {
 		}
 		
 		if(userLocation.getAccuracy() > 100){
-			Toast.makeText(this, "no precise location (" + (int)userLocation.getAccuracy() + "m tolerance)", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "no precise location (" + (int)userLocation.getAccuracy() + "m accuracy)", Toast.LENGTH_SHORT).show();
 			return;
 		}
 				
@@ -100,8 +100,20 @@ public class ListMobileActivity extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 
 		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
-		String text = "on '" + selectedValue.getLocation() + "' " + getHumanReadableTime(selectedValue) + " ago " + selectedValue.getDistance() + "m " + selectedValue.getDirection();
+		String text = "on '" + selectedValue.getLocation() + "' " + getHumanReadableTime(selectedValue) + " ago " + getHumanReadableDistance(selectedValue) + " " + selectedValue.getDirection();
 		Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+	}
+
+	private String getHumanReadableDistance(NearbyPlayer selectedValue) {
+
+		int distTmp = selectedValue.getDistance();
+		
+		if(distTmp < 1000){
+			return distTmp + "m";
+		}
+		
+		distTmp = distTmp/1000;
+		return distTmp + "km";
 	}
 
 	private String getHumanReadableTime(NearbyPlayer selectedValue) {
