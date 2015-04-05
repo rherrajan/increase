@@ -27,34 +27,27 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		View rowView = inflater.inflate(R.layout.list_item, parent, false);
-		TextView textView = (TextView) rowView.findViewById(R.id.label);
-		ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
+		TextView player_name = (TextView) rowView.findViewById(R.id.player_name);
+		TextView player_time = (TextView) rowView.findViewById(R.id.player_time);
+		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
 		
 		NearbyPlayer player = values[position];
-		textView.setText(player.getName());
-
+		player_name.setText(player.getName());
+		player_time.setText(player.getHumanReadableTime());
+		
 		if(player.getRank() < 1000){
-			textView.setTypeface(null, Typeface.BOLD);
+			player_name.setTypeface(null, Typeface.BOLD);
 		}
 		
 		if(player.getFaction() == Faction.blue){
-			imageView.setImageResource(R.drawable.blue);
+			factionPic.setImageResource(R.drawable.blue);
 		} else if(player.getFaction() == Faction.green){
-			imageView.setImageResource(R.drawable.green);
+			factionPic.setImageResource(R.drawable.green);
 		} else {
-			imageView.setImageResource(R.drawable.increase);
+			factionPic.setImageResource(R.drawable.increase);
 		}
 		
 		return rowView;
 	}
 
-//	private int calculateAlpha(NearbyPlayer player) {
-//		int alphaReduce = player.getPassedSeconds() / 100;
-//		if(alphaReduce > 50){
-//			alphaReduce = 50;
-//		}
-//		
-//		int alpha = 255 - alphaReduce;
-//		return alpha;
-//	}
 }

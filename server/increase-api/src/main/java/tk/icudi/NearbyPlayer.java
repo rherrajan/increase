@@ -66,4 +66,37 @@ public class NearbyPlayer {
 		this.faction = faction;
 	}
 
+	public String getHumanReadableTime() {
+		int timetmp = this.getPassedSeconds();
+
+		if (timetmp < 100) {
+			return timetmp + "sec";
+		}
+
+		timetmp = timetmp / 60;
+		if (timetmp < 100) {
+			return timetmp + "min";
+		}
+
+		timetmp = timetmp / 60;
+		if (timetmp < 24 * 2) {
+			return timetmp + "hr";
+		}
+
+		timetmp = timetmp / 24;
+		return timetmp + "days";
+	}
+
+	public String getHumanReadableDistance() {
+
+		int distTmp = this.getDistance();
+		
+		if(distTmp < 1000){
+			return distTmp + "m";
+		}
+		
+		distTmp = distTmp/1000;
+		return distTmp + "km";
+	}
+
 }

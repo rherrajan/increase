@@ -103,42 +103,11 @@ public class ListMobileActivity extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 
 		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
-		String text = "on '" + selectedValue.getLocation() + "' " + getHumanReadableTime(selectedValue) + " ago " + getHumanReadableDistance(selectedValue) + " " + selectedValue.getDirection();
+		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago " + selectedValue.getHumanReadableDistance() + " " + selectedValue.getDirection();
 		Toast.makeText(this, text, Toast.LENGTH_LONG).show();
 	}
 
-	private String getHumanReadableDistance(NearbyPlayer selectedValue) {
 
-		int distTmp = selectedValue.getDistance();
-		
-		if(distTmp < 1000){
-			return distTmp + "m";
-		}
-		
-		distTmp = distTmp/1000;
-		return distTmp + "km";
-	}
 
-	private String getHumanReadableTime(NearbyPlayer selectedValue) {
-		
-		int timetmp = selectedValue.getPassedSeconds();
-		
-		if(timetmp < 100){
-			return timetmp + " seconds";
-		}
-		
-		timetmp = timetmp/60;
-		if(timetmp < 100){
-			return timetmp + " minutes";
-		}
-		
-		timetmp = timetmp/60;
-		if(timetmp < 24*2){
-			return timetmp + " hours";
-		}
-		
-		timetmp = timetmp/24;
-		return timetmp + " days";
-	}
 
 }
