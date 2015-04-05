@@ -15,28 +15,80 @@ public class PointTest {
 		center.setLng(0);
 		
 		Point top = new Point();
-		top.setLat(10);
 		top.setLng(0);
+		top.setLat(10);
 		
-		Direction direction = top.getDirectionFrom(center);
+		assertThat(top.getDirectionFrom(center), is(Direction.N));
+	}
+	
+	@Test
+	public void test_should_find_south() {
 		
-		assertThat(direction, is(Direction.N));
+		Point center = new Point();
+		center.setLat(0);
+		center.setLng(0);
+		
+		Point top = new Point();
+		top.setLng(0);
+		top.setLat(-10);
+		
+		assertThat(top.getDirectionFrom(center), is(Direction.S));
 	}
 	
 	@Test
 	public void test_should_find_south_east() {
 		
 		Point center = new Point();
-		center.setLat(0);
 		center.setLng(0);
+		center.setLat(0);
 		
 		Point se = new Point();
-		se.setLat(-5);
 		se.setLng(10);
+		se.setLat(-10);
 		
-		Direction direction = se.getDirectionFrom(center);
+		assertThat(se.getDirectionFrom(center), is(Direction.SE));
+	}
+	
+	@Test
+	public void test_should_find_north_west() {
 		
-		assertThat(direction, is(Direction.SE));
+		Point center = new Point();
+		center.setLng(0);
+		center.setLat(0);
+		
+		Point se = new Point();
+		se.setLng(-10);
+		se.setLat(10);
+		
+		assertThat(se.getDirectionFrom(center), is(Direction.NW));
+	}
+	
+	@Test
+	public void test_should_find_west() {
+		
+		Point referenc = new Point();
+		referenc.setLng(0);
+		referenc.setLat(0);
+		
+		Point west = new Point();
+		west.setLng(referenc.getLng()-10);
+		west.setLat(referenc.getLat());
+		
+		assertThat(west.getDirectionFrom(referenc), is(Direction.W));
+	}
+	
+	@Test
+	public void test_should_find_krumbach() {
+		
+		Point odenhausen = new Point();
+		odenhausen.setLng(8724732);
+		odenhausen.setLat(50664071);
+		
+		Point krumbach = new Point();
+		krumbach.setLng(8611887);
+		krumbach.setLat(50668246);
+		
+		assertThat(krumbach.getDirectionFrom(odenhausen), is(Direction.W));
 	}
 
 }

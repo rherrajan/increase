@@ -116,14 +116,13 @@ public class Game {
 			player.setFaction(unit.getFaction());
 
 			players.add(player);
-
-			// for (Player player : sortedPlayers) {
-			// System.out.println(player.getRank(userLoc, time) + " " +
-			// unit.getPassedSeconds(time) + " fhfgh " + unit.getName() + " " +
-			// unit.getLastLocation().getName() + " "
-			// + unit.getLastLocation().getPoint().distanceTo(userLoc));
-			// }
-
+			
+			if(player.getName().equals("itsjustm3")){
+				System.out.println(" --- getDirection: " + player.getDirection());
+				System.out.println(" --- getLocation: " + player.getLocation());
+				System.out.println(" --- userLoc: " + userLoc);
+			}
+			
 		}
 
 		return players;
