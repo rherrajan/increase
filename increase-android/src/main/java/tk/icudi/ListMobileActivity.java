@@ -62,8 +62,15 @@ public class ListMobileActivity extends ListActivity {
 		
 		if(userLocation != null){
 			Button button = (Button) findViewById(R.id.button_refresh);
-			button.setEnabled(true);
-			button.setText("Refresh (" + (int)location.getAccuracy() +"m acc)");
+			int acc = (int)location.getAccuracy();
+			button.setText("Refresh (" + acc +"m acc)");
+			
+			if(acc < 2000){
+				button.setEnabled(true);
+			} else {
+				button.setEnabled(false);
+			}
+			
 		}
 	}
 
