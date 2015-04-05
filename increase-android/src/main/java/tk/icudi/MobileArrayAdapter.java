@@ -30,6 +30,8 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 		TextView player_name = (TextView) rowView.findViewById(R.id.player_name);
 		TextView player_distance = (TextView) rowView.findViewById(R.id.player_distance);
 		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
+		ImageView directionPic = (ImageView) rowView.findViewById(R.id.direction);
+		directionPic.setRotation(-90);
 		
 		NearbyPlayer player = values[position];
 		player_name.setText(player.getName());
