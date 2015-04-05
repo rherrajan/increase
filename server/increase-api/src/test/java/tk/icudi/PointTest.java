@@ -36,7 +36,7 @@ public class PointTest {
 		
 		Direction direction = se.getDirectionFrom(center);
 		
-		assertThat(direction, is(Direction.E));
+		assertThat(direction, is(Direction.SE));
 	}
 
 }

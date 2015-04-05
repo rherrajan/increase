@@ -25,46 +25,36 @@ public class Point {
 	}
 
 	public int distanceTo(Point other) {
-		return (int) Math.round(distFrom(this.lat / 1000000.0, this.lng / 1000000.0, other.lat / 1000000.0, other.lng / 1000000.0));
+		return (int) Math.round(distFrom(this.lat / 1000000.0,
+				this.lng / 1000000.0, other.lat / 1000000.0,
+				other.lng / 1000000.0));
 	}
 
-	public static double distFrom(double lat1, double lng1, double lat2, double lng2) {
+	public static double distFrom(double lat1, double lng1, double lat2,
+			double lng2) {
 		// final GeodeticCalculator calc = new GeodeticCalculator();
 		LatLng point1 = new LatLng(lat1, lng1);
 		LatLng point2 = new LatLng(lat2, lng2);
 
-		double distance = com.javadocmd.simplelatlng.LatLngTool.distance(point1, point2, LengthUnit.METER);
+		double distance = com.javadocmd.simplelatlng.LatLngTool.distance(
+				point1, point2, LengthUnit.METER);
 
 		return distance;
 	}
 
 	public Direction getDirectionFrom(Point userLoc) {
+		double angle = getAngle(userLoc);
+		return Direction.valueOfAngle(angle);
+	}
 
+	private double getAngle(Point userLoc) {
 		int latDistance = this.lat - userLoc.lat;
 		int longDistance = this.lng - userLoc.lng;
-
-		if (latDistance > 0) {
-			if (Math.abs(latDistance) > Math.abs(longDistance)) {
-				return Direction.N;
-			} else {
-				if (longDistance > 0) {
-					return Direction.E;
-				} else {
-					return Direction.W;
-				}
-			}
-		} else {
-
-			if (Math.abs(latDistance) > Math.abs(longDistance)) {
-				return Direction.S;
-			} else {
-				if (longDistance > 0) {
-					return Direction.E;
-				} else {
-					return Direction.W;
-				}
-			}
-		}
+		
+		double vDistance = Math.sqrt((longDistance * longDistance) + (latDistance * latDistance));
+		double vAngle = (Math.acos(latDistance / vDistance) * 360) / 6.28;
+		
+		return vAngle;
 	}
 
 	@Override
