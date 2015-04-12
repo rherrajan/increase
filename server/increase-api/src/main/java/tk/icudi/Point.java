@@ -46,6 +46,11 @@ public class Point {
 		long longDistance = this.lng - userLoc.lng;
 		long latDistance = this.lat - userLoc.lat;
 		double hypothenuse = Math.sqrt((longDistance * longDistance) + (latDistance * latDistance));
+		
+		if(hypothenuse == 0){
+			return 0;
+		}
+		
 		double vAngle = (Math.acos(latDistance / hypothenuse) * 360) / (2 * Math.PI);
 		if(longDistance < 0){
 			vAngle = 360 - vAngle;

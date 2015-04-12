@@ -19,7 +19,7 @@ public class ListMobileActivity extends ListActivity {
 
 	private IncreaseServer server = new IncreaseServer();
 	private Location userLocation;
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,6 +37,7 @@ public class ListMobileActivity extends ListActivity {
 		// Acquire a reference to the system Location Manager
 		LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
+		
 		// Define a listener that responds to location updates
 		LocationListener locationListener = new LocationListener() {
 
@@ -52,8 +53,17 @@ public class ListMobileActivity extends ListActivity {
 			}
 		  };
 
-		// Register the listener with the Location Manager to receive location updates
-		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+		if((locationManager.getProvider(LocationManager.NETWORK_PROVIDER) == null) == false){
+			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+		} else {
+			// emulator
+			Location dummyLoc = new Location("dummyprovider");
+			dummyLoc.setLatitude(50.107356);
+			dummyLoc.setLongitude(8.664123);
+			dummyLoc.setAccuracy(815);
+			makeUseOfNewLocation(dummyLoc);
+		}
+		
 	}
 	
 	protected void makeUseOfNewLocation(Location location) {
@@ -61,16 +71,18 @@ public class ListMobileActivity extends ListActivity {
 		System.out.println("userLocation: " + userLocation);
 		
 		if(userLocation != null){
-			Button button = (Button) findViewById(R.id.button_refresh);
-			int acc = (int)location.getAccuracy();
-			button.setText("Refresh (" + acc +"m acc)");
-			
-			if(acc < 2000){
-				button.setEnabled(true);
-			} else {
-				button.setEnabled(false);
-			}
-			
+			updateButton((int)location.getAccuracy());
+		}
+	}
+
+	private void updateButton(int acc) {
+		Button button = (Button) findViewById(R.id.button_refresh);
+		button.setText("Refresh (" + acc +"m acc)");
+		
+		if(acc < 2000){
+			button.setEnabled(true);
+		} else {
+			button.setEnabled(false);
 		}
 	}
 
@@ -80,7 +92,7 @@ public class ListMobileActivity extends ListActivity {
 		// # NEVER use this is productive code
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
-		
+				
 		if(userLocation == null){
 			Toast.makeText(this, "no location", Toast.LENGTH_SHORT).show();
 			return;

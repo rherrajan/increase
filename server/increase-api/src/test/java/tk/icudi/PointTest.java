@@ -1,12 +1,27 @@
 package tk.icudi;
 
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 public class PointTest {
 
+	@Test
+	public void test_shoul_work_without_angle() {
+		
+		Point center = new Point();
+		center.setLat(0);
+		center.setLng(0);
+		
+		Point top = new Point();
+		top.setLng(0);
+		top.setLat(0);
+				
+		assertThat(top.getAngleFrom(center), not(is(Double.NaN)));
+	}
+	
 	@Test
 	public void test_should_find_north() {
 		
