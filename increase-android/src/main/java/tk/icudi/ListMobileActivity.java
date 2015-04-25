@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.inject.Inject;
@@ -35,7 +36,9 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	}
 
 	public void onClickRefresh(View view) {
-		setListAdapter(null);
+		ProgressBar progressBar = (ProgressBar) findViewById(R.id.waiting);
+		progressBar.setVisibility(View.VISIBLE); 
+		//setListAdapter(null);
 		updateService.updatePlayers();
 	}
 
@@ -53,6 +56,10 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	}
 	
 	public void onPlayerChanged(List<NearbyPlayer> players) {
+		
+		ProgressBar progressBar = (ProgressBar) findViewById(R.id.waiting);
+		progressBar.setVisibility(View.GONE);
+		
 		setListAdapter(new MobileArrayAdapter(ListMobileActivity.this, players.toArray(new NearbyPlayer[players.size()])));
 	}
 	
@@ -66,7 +73,7 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		Button button = (Button) findViewById(R.id.button_refresh);
 		button.setText("Refresh (" + acc + "m acc)");
 
-		if (acc < 2000) {
+		if (acc < UpdateService.min_acc_for_disable) {
 			button.setEnabled(true);
 		} else {
 			button.setEnabled(false);

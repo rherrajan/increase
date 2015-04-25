@@ -21,6 +21,10 @@ import com.google.inject.Singleton;
 @Singleton
 public class UpdateService {
 
+	private static final int max_ranking_for_notification = 500;
+	public static final int min_acc_for_disable = 2000;
+	private static final int seconds_till_refresh = 60;
+	
 	@Inject
 	LocationManager locationManager;
 
@@ -57,7 +61,7 @@ public class UpdateService {
 			userLocation = createDummyLocation();
 		}
 
-		sheduleUpdate(60);
+		sheduleUpdate(seconds_till_refresh);
 	}
 
 	private void sheduleUpdate(int sec) {
@@ -65,7 +69,7 @@ public class UpdateService {
 			public void run() {
 				updatePlayers();
 				if(doAutoUpdates){
-					sheduleUpdate(60);
+					sheduleUpdate(seconds_till_refresh);
 				}
 			}
 		}, 1000*sec);
@@ -178,7 +182,7 @@ public class UpdateService {
 			return;
 		}
 		
-		if(players.get(0).getRank() < 200 ){
+		if(players.get(0).getRank() < max_ranking_for_notification ){
 			notificationService.sendNotification(players.get(0));
 		}
 
