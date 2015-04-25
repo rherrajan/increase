@@ -11,7 +11,6 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.StrictMode;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -22,7 +21,7 @@ import com.google.inject.Singleton;
 public class UpdateService {
 
 	public static final int max_ranking_for_bold_display = 1000;
-	public static final int max_ranking_for_notification = 500;
+	public static final int max_ranking_for_notification = 5000;
 	public static final int min_acc_for_disable = 2000;
 	public static final int seconds_till_player_refresh = 60;
 
@@ -92,9 +91,17 @@ public class UpdateService {
 			}
 
 			public void onLocationChanged(Location location) {
+				
+				boolean firstCall = UpdateService.this.userLocation == null;
+				
+
 				UpdateService.this.userLocation = location;
 				for (IncreaseListener increaseListener : listener) {
 					increaseListener.onLocationChanged(location);
+				}
+				
+				if(firstCall){
+					UpdateService.this.updatePlayers();
 				}
 			}
 		};

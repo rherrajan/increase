@@ -99,4 +99,8 @@ public class NearbyPlayer {
 		this.angle = angle;
 	}
 
+	public Direction getDirection() {
+		return Direction.valueOfAngle(angle);
+	}
+
 }
