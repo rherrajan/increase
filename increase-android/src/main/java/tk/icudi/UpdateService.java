@@ -21,9 +21,11 @@ import com.google.inject.Singleton;
 @Singleton
 public class UpdateService {
 
-	private static final int max_ranking_for_notification = 500;
+	public static final int max_ranking_for_bold_display = 1000;
+	public static final int max_ranking_for_notification = 500;
 	public static final int min_acc_for_disable = 2000;
-	private static final int seconds_till_refresh = 60;
+	public static final int seconds_till_player_refresh = 60;
+
 	
 	@Inject
 	LocationManager locationManager;
@@ -61,7 +63,7 @@ public class UpdateService {
 			userLocation = createDummyLocation();
 		}
 
-		sheduleUpdate(seconds_till_refresh);
+		sheduleUpdate(seconds_till_player_refresh);
 	}
 
 	private void sheduleUpdate(int sec) {
@@ -69,7 +71,7 @@ public class UpdateService {
 			public void run() {
 				updatePlayers();
 				if(doAutoUpdates){
-					sheduleUpdate(seconds_till_refresh);
+					sheduleUpdate(seconds_till_player_refresh);
 				}
 			}
 		}, 1000*sec);
@@ -152,8 +154,8 @@ public class UpdateService {
 
 		// # Just for testing, allow network access in the main thread
 		// # NEVER use this is productive code
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		StrictMode.setThreadPolicy(policy);
+		// StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		// StrictMode.setThreadPolicy(policy);
 
 		if (userLocation == null) {
 			Toast.makeText(context, "no location", Toast.LENGTH_SHORT).show();

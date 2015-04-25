@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 	
+
+	
 	private final Context context;
 	private final NearbyPlayer[] values;
 
@@ -37,7 +39,7 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 		player_name.setText(player.getName());
 		player_distance.setText(player.getHumanReadableDistance());
 		
-		if(player.getRank() < 1000){
+		if(player.getRank() < UpdateService.max_ranking_for_bold_display){
 			player_name.setTypeface(null, Typeface.BOLD);
 		}
 		
