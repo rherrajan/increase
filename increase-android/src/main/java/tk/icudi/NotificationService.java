@@ -27,7 +27,8 @@ public class NotificationService {
 		Builder builder = new Notification.Builder(context);
 		builder.setSmallIcon(R.drawable.increase_small);
 		builder.setContentIntent(pIntent);
-		builder.setContentTitle(nearbyPlayer.getName() + " seen on " + nearbyPlayer.getLocation());
+		builder.setContentTitle(nearbyPlayer.getName());
+		builder.setContentInfo("seen on " + nearbyPlayer.getLocation());
 		
 		Notification noti =	builder.build();
 		noti.flags |= Notification.FLAG_AUTO_CANCEL;
