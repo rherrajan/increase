@@ -31,6 +31,7 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		checkBox.setChecked(true);
 		
 		updateService.registerListener(this);
+		updateService.updatePlayers();
 	}
 
 	public void onClickRefresh(View view) {

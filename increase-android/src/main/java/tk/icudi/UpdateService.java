@@ -57,7 +57,7 @@ public class UpdateService {
 			userLocation = createDummyLocation();
 		}
 
-		sheduleUpdate(0);
+		sheduleUpdate(60);
 	}
 
 	private void sheduleUpdate(int sec) {
@@ -189,7 +189,6 @@ public class UpdateService {
 		if(doAutoUpdates){
 			sheduleUpdate(0);
 		}
-		System.out.println(" --- doAutoUpdates: " + doAutoUpdates);
 	}
 
 }
