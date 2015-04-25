@@ -10,6 +10,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
 import android.util.Log;
 import android.widget.Toast;
@@ -22,35 +23,47 @@ public class UpdateService {
 
 	@Inject
 	LocationManager locationManager;
-	
+
 	@Inject
 	Context context;
-	
-	Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
-	
-	boolean isInitialised = false;
 
+	Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
+
+	private Handler handler = new Handler();
+
+	boolean isInitialised = false;
 	private Location userLocation;
-	
-	public void registerListener(IncreaseListener increaseListener){
+
+	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
-				
-		if(isInitialised == false){
+
+		if (isInitialised == false) {
 			init();
 			isInitialised = true;
 		}
-		
+
 		if (isEmulator()) {
 			increaseListener.onLocationChanged(userLocation);
 		}
 	}
-	
+
 	private void init() {
 		if (isEmulator() == false) {
 			setUpLocationService();
 		} else {
 			userLocation = createDummyLocation();
 		}
+
+		sheduleUpdate(0);
+	}
+
+	private void sheduleUpdate(int sec) {
+		handler.postDelayed(new Runnable() {
+			public void run() {
+				updatePlayers();
+				sheduleUpdate(60);
+			}
+		}, 1000*sec);
 	}
 
 	private void setUpLocationService() {
@@ -76,7 +89,7 @@ public class UpdateService {
 		};
 
 		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-		
+
 	}
 
 	private Location createDummyLocation() {
@@ -84,14 +97,14 @@ public class UpdateService {
 		dummyLoc.setLatitude(50.107356);
 		dummyLoc.setLongitude(8.664123);
 		dummyLoc.setAccuracy(815);
-		
+
 		return dummyLoc;
 	}
 
 	private boolean isEmulator() {
 		return locationManager.getProvider(LocationManager.NETWORK_PROVIDER) == null;
 	}
-	
+
 	public static abstract class GetNearbyPlayersTask extends AsyncTask<Location, Integer, List<NearbyPlayer>> {
 
 		private IncreaseServer server = new IncreaseServer();
@@ -103,16 +116,16 @@ public class UpdateService {
 				List<NearbyPlayer> players = server.getNearbyPlayers(params[0]);
 				Log.i(ListMobileActivity.class.getName(), "found " + players.size() + " players");
 				return players;
-				
+
 			} catch (Exception e) {
-				this.exception=e;
+				this.exception = e;
 				return null;
 			}
 		}
 
 		@Override
 		protected void onPostExecute(List<NearbyPlayer> players) {
-			if(players != null){
+			if (players != null) {
 				onSuccessfullExecute(players);
 			} else {
 				Toast.makeText(getInitiator(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
@@ -151,7 +164,5 @@ public class UpdateService {
 			}
 		}.execute(userLocation);
 	}
-	
-
 
 }
