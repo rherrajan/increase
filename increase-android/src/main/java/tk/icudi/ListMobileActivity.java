@@ -7,6 +7,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,6 +27,9 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		Button button = (Button) findViewById(R.id.button_refresh);
 		button.setEnabled(false);
 		
+		CheckBox checkBox = (CheckBox) findViewById(R.id.toggle_updates);
+		checkBox.setChecked(true);
+		
 		updateService.registerListener(this);
 	}
 
@@ -34,14 +38,24 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		updateService.updatePlayers();
 	}
 
-	public void onLocationChanged(Location location) {
-		updateButton(location);
+	public void onClickToggleUpdates(View view) {
+		CheckBox checkBox = (CheckBox) findViewById(R.id.toggle_updates);
+		if(checkBox.isChecked()){
+			updateService.setAutoUpdates(true);
+		} else {
+			updateService.setAutoUpdates(false);
+		}
 	}
+	
+	public void onLocationChanged(Location location) {
+		updateRefreshButton(location);
+	}
+	
 	public void onPlayerChanged(List<NearbyPlayer> players) {
 		setListAdapter(new MobileArrayAdapter(ListMobileActivity.this, players.toArray(new NearbyPlayer[players.size()])));
 	}
 	
-	private void updateButton(Location location) {
+	private void updateRefreshButton(Location location) {
 		if(location == null){
 			return;
 		}

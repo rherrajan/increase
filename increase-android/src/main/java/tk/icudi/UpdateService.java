@@ -30,10 +30,10 @@ public class UpdateService {
 	Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
 
 	private Handler handler = new Handler();
-
-	boolean isInitialised = false;
+	private boolean isInitialised = false;
 	private Location userLocation;
-
+	private boolean doAutoUpdates = true;
+	
 	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
 
@@ -61,7 +61,9 @@ public class UpdateService {
 		handler.postDelayed(new Runnable() {
 			public void run() {
 				updatePlayers();
-				sheduleUpdate(60);
+				if(doAutoUpdates){
+					sheduleUpdate(60);
+				}
 			}
 		}, 1000*sec);
 	}
@@ -163,6 +165,14 @@ public class UpdateService {
 				return context;
 			}
 		}.execute(userLocation);
+	}
+
+	public void setAutoUpdates(boolean doAutoUpdates) {
+		this.doAutoUpdates = doAutoUpdates;
+		if(doAutoUpdates){
+			sheduleUpdate(0);
+		}
+		System.out.println(" --- doAutoUpdates: " + doAutoUpdates);
 	}
 
 }

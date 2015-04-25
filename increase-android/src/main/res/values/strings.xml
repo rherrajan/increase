@@ -3,6 +3,7 @@
 
     <string name="app_name">Increase</string>
     <string name="no_location">no location</string>
+    <string name="auto_updates">auto updates</string>
     
     
 </resources>
