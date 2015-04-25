@@ -27,6 +27,9 @@ public class UpdateService {
 	@Inject
 	Context context;
 
+	@Inject
+	NotificationService notificationService;
+	
 	Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
 
 	private Handler handler = new Handler();
@@ -158,6 +161,8 @@ public class UpdateService {
 				for (IncreaseListener increaseListener : listener) {
 					increaseListener.onPlayerChanged(players);
 				}
+				
+				sendNotifcation(players);
 			}
 
 			@Override
@@ -167,6 +172,18 @@ public class UpdateService {
 		}.execute(userLocation);
 	}
 
+	private void sendNotifcation(List<NearbyPlayer> players) {
+		
+		if(players.isEmpty()){
+			return;
+		}
+		
+		if(players.get(0).getRank() < 200 ){
+			notificationService.sendNotification(players.get(0));
+		}
+
+	}
+	
 	public void setAutoUpdates(boolean doAutoUpdates) {
 		this.doAutoUpdates = doAutoUpdates;
 		if(doAutoUpdates){
