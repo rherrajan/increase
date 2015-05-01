@@ -121,4 +121,12 @@ public class Game {
 		return players;
 	}
 
+	public void appendLog(String text) {
+		try {
+			this.appendLogsFrom(new LogProviderString(text));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

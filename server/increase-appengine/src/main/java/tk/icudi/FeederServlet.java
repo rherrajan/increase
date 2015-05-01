@@ -38,9 +38,11 @@ public class FeederServlet extends HttpServlet {
 		if(json != null && json.isEmpty() == false){
 			
 			json = URLDecoder.decode(json, "UTF-8");
+
+			AppengineGame.getInstance().getGame().appendLog(json);
+			
 			DatabaseService database = new DatabaseService();
 			database.save(json);
-			
 		}
 
 		resp.getWriter().println("}");

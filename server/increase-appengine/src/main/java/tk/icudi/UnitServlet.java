@@ -1,10 +1,6 @@
 package tk.icudi;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +18,7 @@ public class UnitServlet extends HttpServlet {
 		resp.setHeader("Access-Control-Allow-Origin", "*"); //cross domain request/CORS
 		resp.setContentType("application/json");
         
-		Game game = createGame();
+		Game game = AppengineGame.getInstance().getGame();
 		
 		Point userLoc = getLocationFromRequest(req);
 		final long time = System.currentTimeMillis();
@@ -37,46 +33,7 @@ public class UnitServlet extends HttpServlet {
 	protected Object getResult(Game game, Point userLoc, final long time) {
 		return game.getSortetUnits(userLoc, time);
 	}
-
 	
-	private Game createGame() throws IOException {
-		DatabaseService database = new DatabaseService();
-		List<String> jsons_raw = database.load();
-		
-		List<LogEntry> logs = sort(jsons_raw);
-		
-		System.out.println("loading " + logs.size() + " log eintries");
-		
-		Game game = new Game();
-		game.appendLogs(logs);
-		
-		return game;
-	}
-	
-	private List<LogEntry> sort(List<String> jsons_raw) throws IOException {
-		
-		List<LogEntry> result = new ArrayList<LogEntry>();
-		
-		for (String json : jsons_raw) {
-			PlextParser parser = new PlextParser(new LogProviderString(json));
-			parser.updateLogs();
-			List<LogEntry> logs = parser.extractLogEntries();
-			
-			for (LogEntry logEntry : logs) {
-				result.add(logEntry);
-			}
-		}
-		
-		Comparator<? super LogEntry> comperator =  new Comparator<LogEntry>() {
-			@Override
-			public int compare(LogEntry o1, LogEntry o2) {
-				return Long.compare(o1.getTime().getTimeInMillis(), o2.getTime().getTimeInMillis());
-			}
-		};
-		Collections.sort(result, comperator);
-		
-		return result;
-	}
 
 	private Point getLocationFromRequest(HttpServletRequest req) {
 		
