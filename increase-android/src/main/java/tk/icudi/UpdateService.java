@@ -1,5 +1,6 @@
 package tk.icudi;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -24,7 +25,6 @@ public class UpdateService {
 	public static final int max_ranking_for_notification = 5000;
 	public static final int min_acc_for_disable = 2000;
 	public static final int seconds_till_player_refresh = 60;
-
 	
 	@Inject
 	LocationManager locationManager;
@@ -41,6 +41,8 @@ public class UpdateService {
 	private boolean isInitialised = false;
 	private Location userLocation;
 	private boolean doAutoUpdates = true;
+	
+	private List<NearbyPlayer> lastPlayers = new ArrayList<NearbyPlayer>();
 	
 	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
@@ -159,18 +161,18 @@ public class UpdateService {
 
 	public void updatePlayers() {
 
-		// # Just for testing, allow network access in the main thread
-		// # NEVER use this is productive code
-		// StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		// StrictMode.setThreadPolicy(policy);
-
 		if (userLocation == null) {
 			Toast.makeText(context, "no location", Toast.LENGTH_SHORT).show();
 			return;
 		}
 
 		new GetNearbyPlayersTask() {
+			
+
 			protected void onSuccessfullExecute(List<NearbyPlayer> players) {
+				
+				lastPlayers = players;
+				
 				for (IncreaseListener increaseListener : listener) {
 					increaseListener.onPlayerChanged(players);
 				}
@@ -206,6 +208,10 @@ public class UpdateService {
 
 	public boolean isAutoUpdates() {
 		return doAutoUpdates;
+	}
+
+	public List<NearbyPlayer> getLastPlayers() {
+		return lastPlayers;
 	}
 
 }

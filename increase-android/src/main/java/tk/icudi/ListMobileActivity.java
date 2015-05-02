@@ -38,6 +38,7 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		button_refresh.setEnabled(false);
 		checkBox.setChecked(updateService.isAutoUpdates());
 		progressBar.setVisibility(View.GONE);
+		onPlayerChanged(updateService.getLastPlayers());
 		
 		updateService.registerListener(this);
 	}
