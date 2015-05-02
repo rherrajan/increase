@@ -43,6 +43,7 @@ public class UpdateService {
 	private boolean doAutoUpdates = true;
 	
 	private List<NearbyPlayer> lastPlayers = new ArrayList<NearbyPlayer>();
+	private Set<NearbyPlayer> blockedPlayers = new HashSet<NearbyPlayer>();
 	
 	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
@@ -212,6 +213,10 @@ public class UpdateService {
 
 	public List<NearbyPlayer> getLastPlayers() {
 		return lastPlayers;
+	}
+
+	public void blockPlayer(NearbyPlayer player) {
+		blockedPlayers.add(player);
 	}
 
 }
