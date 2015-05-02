@@ -5,16 +5,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -29,7 +25,7 @@ public class UpdateService {
 	public static final int max_ranking_for_notification = 5000;
 
 	public static final int min_acc_for_disable = 2000;
-	public static final int seconds_till_player_refresh = 5;
+	public static final int seconds_till_player_refresh = 30;
 
 	@Inject
 	Context context;
@@ -40,9 +36,6 @@ public class UpdateService {
 	@Inject
 	NotificationService notificationService;
 
-	@Inject
-	AlarmManager alarmManager;
-
 	Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
 
 	private boolean isInitialised = false;
@@ -50,35 +43,27 @@ public class UpdateService {
 
 	private List<NearbyPlayer> lastPlayers = new ArrayList<NearbyPlayer>();
 	private Set<NearbyPlayer> blockedPlayers = new HashSet<NearbyPlayer>();
-	
-	private PendingIntent updateAlarm;
-	private boolean doAutoUpdates;
 
 	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
-
-		if (isInitialised == false) {
-			init();
-			isInitialised = true;
-		}
 
 		if (isEmulator()) {
 			increaseListener.onLocationChanged(userLocation);
 		}
 	}
 
-	private void init() {
+	synchronized void init() {
+		
+		if (isInitialised) {
+			return;
+		}
+		isInitialised = true;
+		
 		if (isEmulator() == false) {
 			setUpLocationService();
 		} else {
 			userLocation = createDummyLocation();
-		}
-
-		Intent unpendingIntent = new Intent(context, AlarmReceiver.class);
-		this.updateAlarm = PendingIntent.getBroadcast(context, 0, unpendingIntent, 0);
-		
-		aktivateAutoUpdates(true);
-		
+		}		
 	}
     
 	private void setUpLocationService() {
@@ -97,6 +82,8 @@ public class UpdateService {
 
 			public void onLocationChanged(Location location) {
 
+				System.out.println(" --- location: " + location);
+				
 				boolean firstCall = UpdateService.this.userLocation == null;
 
 				UpdateService.this.userLocation = location;
@@ -112,6 +99,7 @@ public class UpdateService {
 
 		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
 
+		System.out.println(" --- requestLocationUpdates --- ");
 	}
 
 	private Location createDummyLocation() {
@@ -197,25 +185,7 @@ public class UpdateService {
 		notificationService.nearestPlayer(players.get(0));
 	}
 
-	public void aktivateAutoUpdates(boolean doAutoUpdates) {
-		
-		if(this.doAutoUpdates == doAutoUpdates){
-			return;
-		}
-		
-		this.doAutoUpdates = doAutoUpdates;
-		if (doAutoUpdates) {
-			alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), seconds_till_player_refresh * 1000, updateAlarm);
-			Toast.makeText(context, "alarm set", Toast.LENGTH_SHORT).show();
-		} else {
-			alarmManager.cancel(updateAlarm);
-			Toast.makeText(context, "alarm canceled", Toast.LENGTH_SHORT).show();
-		}
-	}
-
-	public boolean isAutoUpdates() {
-		return doAutoUpdates;
-	}
+	
 
 	public List<NearbyPlayer> getLastPlayers() {
 		return lastPlayers;

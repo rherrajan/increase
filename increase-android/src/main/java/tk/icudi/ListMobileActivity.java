@@ -4,10 +4,6 @@ import java.util.List;
 
 import roboguice.activity.RoboListActivity;
 import roboguice.inject.InjectView;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -29,6 +25,9 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	@Inject
 	UpdateService updateService;
 
+	@Inject
+	AlarmService alarmService;
+	
 	@InjectView(R.id.button_refresh)
 	Button button_refresh;
 
@@ -38,23 +37,22 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	@InjectView(R.id.waiting)
 	ProgressBar progressBar;
 
-
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_main);
-
-		button_refresh.setEnabled(false);
-		checkBox.setChecked(updateService.isAutoUpdates());
-		progressBar.setVisibility(View.GONE);
-		onPlayerChanged(updateService.getLastPlayers());
-
-		registerForContextMenu(this.getListView());
+		System.out.println(" --- onCreate --- ");
+		
+		alarmService.init();
+		updateService.init();
 		updateService.registerListener(this);
 		
-
+		setContentView(R.layout.activity_main);
+		button_refresh.setEnabled(false);
+		checkBox.setChecked(alarmService.isAutoUpdates());
+		progressBar.setVisibility(View.GONE);
+		onPlayerChanged(updateService.getLastPlayers());
+		registerForContextMenu(this.getListView());
 	}
     
 	@Override
@@ -89,9 +87,9 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 
 	public void onClickToggleUpdates(View view) {
 		if (checkBox.isChecked()) {
-			updateService.aktivateAutoUpdates(true);
+			alarmService.aktivateAutoUpdates(true);
 		} else {
-			updateService.aktivateAutoUpdates(false);
+			alarmService.aktivateAutoUpdates(false);
 		}
 	}
 
