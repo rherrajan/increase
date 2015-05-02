@@ -6,6 +6,9 @@ import roboguice.activity.RoboListActivity;
 import roboguice.inject.InjectView;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -40,8 +43,21 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		progressBar.setVisibility(View.GONE);
 		onPlayerChanged(updateService.getLastPlayers());
 		
+		registerForContextMenu(this.getListView());
 		updateService.registerListener(this);
 	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+	    super.onCreateContextMenu(menu, v, menuInfo);
+	    
+	    System.out.println(" --- onCreateContextMenu --- ");
+	    
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.context_menu, menu);
+	}
+	
+
 
 	public void onClickRefresh(View view) {
 		progressBar.setVisibility(View.VISIBLE); 
