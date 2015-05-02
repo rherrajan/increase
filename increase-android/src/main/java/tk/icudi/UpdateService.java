@@ -21,7 +21,7 @@ import com.google.inject.Singleton;
 @Singleton
 public class UpdateService {
 
-	public static final int max_ranking_for_vibration = 500;
+	public static final int max_ranking_for_vibration = 300;
 	public static final int max_ranking_for_bold_display = 1000;
 	public static final int max_ranking_for_notification = 5000;
 
