@@ -134,10 +134,11 @@ public class UpdateService {
 			if (players != null) {
 				onSuccessfullExecute(players);
 			} else {
-				Toast.makeText(getInitiator(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
-				Log.e(ListMobileActivity.class.getName(), "failed to get player information", exception);
+				onFailure(exception);
 			}
 		}
+
+		protected abstract void onFailure(Exception exception);
 
 		protected abstract Context getInitiator();
 
@@ -163,25 +164,28 @@ public class UpdateService {
 					increaseListener.onPlayerChanged(lastPlayers);
 				}
 
-				sendNotifcation(lastPlayers);
+				if (players.isEmpty()) {
+					return;
+				}
+
+				notificationService.nearestPlayer(players.get(0));
 			}
 
+			protected void onFailure(Exception exception) {
+				
+				for (IncreaseListener increaseListener : listener) {
+					increaseListener.onRefreshFailure(exception);
+				}
+				
+			}
+			
 			@Override
 			protected Context getInitiator() {
 				return context;
 			}
+			
 		}.execute(userLocation);
 	}
-
-	private void sendNotifcation(List<NearbyPlayer> players) {
-
-		if (players.isEmpty()) {
-			return;
-		}
-
-		notificationService.nearestPlayer(players.get(0));
-	}
-
 	
 
 	public List<NearbyPlayer> getLastPlayers() {

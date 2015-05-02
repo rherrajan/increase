@@ -6,6 +6,7 @@ import roboguice.activity.RoboListActivity;
 import roboguice.inject.InjectView;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuInflater;
@@ -125,6 +126,12 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
 		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago ";
 		Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+	}
+
+	public void onRefreshFailure(Exception exception) {
+		Toast.makeText(this, "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
+		Log.e(ListMobileActivity.class.getName(), "failed to get player information", exception);
+		progressBar.setVisibility(View.GONE);
 	}
 
 }
