@@ -29,12 +29,12 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		button.setEnabled(false);
 		
 		CheckBox checkBox = (CheckBox) findViewById(R.id.toggle_updates);
-		checkBox.setChecked(true);
-		
-		updateService.registerListener(this);
+		checkBox.setChecked(updateService.isAutoUpdates());
 		
 		ProgressBar progressBar = (ProgressBar) findViewById(R.id.waiting);
 		progressBar.setVisibility(View.GONE);
+		
+		updateService.registerListener(this);
 	}
 
 	public void onClickRefresh(View view) {

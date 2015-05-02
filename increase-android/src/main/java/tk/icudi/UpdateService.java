@@ -204,4 +204,8 @@ public class UpdateService {
 		}
 	}
 
+	public boolean isAutoUpdates() {
+		return doAutoUpdates;
+	}
+
 }
