@@ -22,8 +22,9 @@ public class NotificationService {
 	public void sendNotification(NearbyPlayer nearbyPlayer) {
 		
 		Intent intent = new Intent(context, ListMobileActivity.class);
-		PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent, 0);
-
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		PendingIntent pIntent = PendingIntent.getActivity(context, 2, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+		    
 		Builder builder = new Notification.Builder(context);
 		builder.setSmallIcon(R.drawable.increase_small);
 		builder.setContentIntent(pIntent);
