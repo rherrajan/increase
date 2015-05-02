@@ -27,17 +27,19 @@ public class NotificationService {
 
 	public void nearestPlayer(NearbyPlayer nearbyPlayer) {
 		
-		if(nearbyPlayer.getRank() < UpdateService.max_ranking_for_notification){
-			if(somethingNew(nearbyPlayer)){
-				sendNotification(nearbyPlayer);
-			}
-			
+		if(nearbyPlayer.getRank() > UpdateService.max_ranking_for_notification){
+			notificationManager.cancelAll();
+			return;
+		}
+
+		if(somethingNew(nearbyPlayer)){
+			sendNotification(nearbyPlayer);
+
 			if(nearbyPlayer.getRank() < UpdateService.max_ranking_for_vibration){
 				long[] pattern = {0, 300, 0, 300};
 				vibrator.vibrate(pattern, -1);
 			}
 		}
-
 	}
 
 	private boolean somethingNew(NearbyPlayer nearbyPlayer) {
