@@ -21,10 +21,13 @@ import com.google.inject.Singleton;
 @Singleton
 public class UpdateService {
 
+	public static final int max_ranking_for_vibration = 5000;
 	public static final int max_ranking_for_bold_display = 1000;
 	public static final int max_ranking_for_notification = 5000;
+
 	public static final int min_acc_for_disable = 2000;
 	public static final int seconds_till_player_refresh = 60;
+
 	
 	@Inject
 	LocationManager locationManager;
@@ -193,10 +196,7 @@ public class UpdateService {
 			return;
 		}
 		
-		if(players.get(0).getRank() < max_ranking_for_notification ){
-			notificationService.nearestPlayer(players.get(0));
-		}
-
+		notificationService.nearestPlayer(players.get(0));
 	}
 	
 	public void setAutoUpdates(boolean doAutoUpdates) {

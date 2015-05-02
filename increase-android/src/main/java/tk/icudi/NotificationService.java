@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -17,14 +18,24 @@ public class NotificationService {
 	NotificationManager notificationManager;
 
 	@Inject
+	Vibrator vibrator;
+
+	@Inject
 	Context context;
 
 	private NearbyPlayer lastNotification;
 
 	public void nearestPlayer(NearbyPlayer nearbyPlayer) {
 		
-		if(somethingNew(nearbyPlayer)){
-			sendNotification(nearbyPlayer);
+		if(nearbyPlayer.getRank() < UpdateService.max_ranking_for_notification){
+			if(somethingNew(nearbyPlayer)){
+				sendNotification(nearbyPlayer);
+			}
+			
+			if(nearbyPlayer.getRank() < UpdateService.max_ranking_for_vibration){
+				System.out.println(" --- --- --- ");
+				vibrator.vibrate(500);
+			}
 		}
 
 	}
