@@ -65,6 +65,7 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		switch (item.getItemId()) {
 		case R.id.block_agent:		
 			this.updateService.blockPlayer(player);
+			onPlayerChanged(updateService.getLastPlayers());
 			return true;
 
 		default:

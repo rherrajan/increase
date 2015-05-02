@@ -180,23 +180,6 @@ public class UpdateService {
 				sendNotifcation(lastPlayers);
 			}
 
-			private List<NearbyPlayer> removeBlockedPlayers(List<NearbyPlayer> players) {
-				
-				List<NearbyPlayer> result = new ArrayList<NearbyPlayer>();
-				
-				for (NearbyPlayer nearbyPlayer : players) {
-
-					if(blockedPlayers.contains(nearbyPlayer)){
-						System.out.println(" --- blocked: " + nearbyPlayer);
-						
-					} else {
-						result.add(nearbyPlayer);
-					}
-				}
-				
-				return result;
-			}
-
 			@Override
 			protected Context getInitiator() {
 				return context;
@@ -234,7 +217,22 @@ public class UpdateService {
 	public void blockPlayer(NearbyPlayer player) {
 		blockedPlayers.add(player);
 		
-		Toast.makeText(context, "blocked Player '" + player.getName() + "'", Toast.LENGTH_SHORT).show();		
+		Toast.makeText(context, "blocked Player '" + player.getName() + "'", Toast.LENGTH_SHORT).show();	
+		
+		lastPlayers = removeBlockedPlayers(lastPlayers);
 	}
 
+	private List<NearbyPlayer> removeBlockedPlayers(List<NearbyPlayer> players) {
+		
+		List<NearbyPlayer> result = new ArrayList<NearbyPlayer>();
+		
+		for (NearbyPlayer nearbyPlayer : players) {
+
+			if(blockedPlayers.contains(nearbyPlayer) == false){
+				result.add(nearbyPlayer);
+			}
+		}
+		
+		return result;
+	}
 }
