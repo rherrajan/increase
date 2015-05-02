@@ -16,8 +16,8 @@ public class UnitServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {	
 		
 		resp.setHeader("Access-Control-Allow-Origin", "*"); //cross domain request/CORS
-		resp.setContentType("application/json");
-        
+		resp.setContentType("application/json; charset=UTF-8");
+		
 		Game game = AppengineGame.getInstance().getGame();
 		
 		Point userLoc = getLocationFromRequest(req);

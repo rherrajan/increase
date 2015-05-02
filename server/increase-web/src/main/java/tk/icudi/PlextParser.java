@@ -33,7 +33,7 @@ public class PlextParser {
 	}
 
 	public static String streamToString(InputStream inputStream) throws IOException {
-		BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+		BufferedReader in = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
 		StringBuilder builder = new StringBuilder();
 		String strLine;
 		while ((strLine = in.readLine()) != null) {

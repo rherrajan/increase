@@ -2,8 +2,8 @@ package tk.icudi;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,22 +29,23 @@ public class FeederServlet extends HttpServlet {
 
 	private void writeResponse(HttpServletResponse resp, String json)
 			throws IOException, UnsupportedEncodingException {
-		resp.setHeader("Access-Control-Allow-Origin", "*"); // CORS
-		resp.setContentType("application/json");
-
-		resp.getWriter().println("{");
-		resp.getWriter().println("\"result\": \"success\"");
+		
+		Game game = AppengineGame.getInstance().getGame();	
 		
 		if(json != null && json.isEmpty() == false){
+//			json = URLDecoder.decode(json, "UTF-8");
 			
-			json = URLDecoder.decode(json, "UTF-8");
-
-			AppengineGame.getInstance().getGame().appendLog(json);
+			game.appendLog(json);
 			
 			DatabaseService database = new DatabaseService();
 			database.save(json);
 		}
-
+		
+		resp.setHeader("Access-Control-Allow-Origin", "*"); // CORS
+		resp.setContentType("application/json; charset=UTF-8");
+		
+		resp.getWriter().println("{");
+		resp.getWriter().println("\"result\": \"success\"");
 		resp.getWriter().println("}");
 	}
 
@@ -52,7 +53,7 @@ public class FeederServlet extends HttpServlet {
 		StringBuilder jb = new StringBuilder();
 		String line = null;
 
-		BufferedReader reader = req.getReader();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(req.getInputStream(), "UTF-8"));
 		while ((line = reader.readLine()) != null) {
 			jb.append(line);
 		}
