@@ -40,8 +40,6 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		System.out.println(" --- onCreate --- ");
 		
 		alarmService.init();
 		updateService.init();

@@ -25,7 +25,7 @@ public class UpdateService {
 	public static final int max_ranking_for_notification = 5000;
 
 	public static final int min_acc_for_disable = 2000;
-	public static final int seconds_till_player_refresh = 30;
+	public static final int seconds_till_player_refresh = 60;
 
 	@Inject
 	Context context;
@@ -82,8 +82,6 @@ public class UpdateService {
 
 			public void onLocationChanged(Location location) {
 
-				System.out.println(" --- location: " + location);
-				
 				boolean firstCall = UpdateService.this.userLocation == null;
 
 				UpdateService.this.userLocation = location;
@@ -98,8 +96,6 @@ public class UpdateService {
 		};
 
 		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
-		System.out.println(" --- requestLocationUpdates --- ");
 	}
 
 	private Location createDummyLocation() {
@@ -156,6 +152,7 @@ public class UpdateService {
 			return;
 		}
 
+		
 		new GetNearbyPlayersTask() {
 
 			protected void onSuccessfullExecute(List<NearbyPlayer> players) {

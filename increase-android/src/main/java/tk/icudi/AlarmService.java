@@ -24,7 +24,6 @@ public class AlarmService {
 
 	synchronized void init() {
 		if(isInitialised){
-			System.out.println(" --- doppelt: ");
 			return;
 		}
 		isInitialised = true;
@@ -32,9 +31,7 @@ public class AlarmService {
 		Intent unpendingIntent = new Intent(context, AlarmReceiver.class);
 		this.updateAlarm = PendingIntent.getBroadcast(context, 0, unpendingIntent, 0);
 		
-		System.out.println(" --- updateAlarm: " + updateAlarm);
-		
-		aktivateAutoUpdates(false);
+		aktivateAutoUpdates(true);
 	}
 
 	public void aktivateAutoUpdates(boolean doAutoUpdates) {
@@ -46,12 +43,8 @@ public class AlarmService {
 		this.doAutoUpdates = doAutoUpdates;
 		if (doAutoUpdates) {
 			alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), UpdateService.seconds_till_player_refresh * 1000, updateAlarm);
-			Toast.makeText(context, "alarm set", Toast.LENGTH_SHORT).show();
-			System.out.println(" --- alarm set --- ");
 		} else {
 			alarmManager.cancel(updateAlarm);
-			Toast.makeText(context, "alarm canceled", Toast.LENGTH_SHORT).show();
-			System.out.println(" --- alarm canceled --- ");
 		}
 	}
 
