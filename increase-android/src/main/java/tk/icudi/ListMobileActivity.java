@@ -48,11 +48,18 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		
 		setContentView(R.layout.activity_main);
 		button_refresh.setEnabled(false);
-		checkBox.setChecked(alarmService.isAutoUpdates());
 		progressBar.setVisibility(View.GONE);
-		onPlayerChanged(updateService.getLastPlayers());
 		registerForContextMenu(this.getListView());
 	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		checkBox.setChecked(alarmService.isAutoUpdates());
+		onPlayerChanged(updateService.getLastPlayers());
+	}
+	
     
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
