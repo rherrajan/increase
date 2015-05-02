@@ -19,8 +19,26 @@ public class NotificationService {
 	@Inject
 	Context context;
 
+	private NearbyPlayer lastNotification;
+
 	public void nearestPlayer(NearbyPlayer nearbyPlayer) {
-		sendNotification(nearbyPlayer);
+		
+		if(somethingNew(nearbyPlayer)){
+			sendNotification(nearbyPlayer);
+		}
+
+	}
+
+	private boolean somethingNew(NearbyPlayer nearbyPlayer) {
+		if(lastNotification != null){
+			if(lastNotification.equals(nearbyPlayer)){
+				if(lastNotification.getLocation().equals(nearbyPlayer.getLocation())){
+					return false;
+				}
+			}
+		}
+		
+		return true;
 	}
 
 	private void sendNotification(NearbyPlayer nearbyPlayer) {
@@ -37,6 +55,8 @@ public class NotificationService {
 		Notification noti =	builder.build();
 		noti.flags |= Notification.FLAG_AUTO_CANCEL;
 		notificationManager.notify(0, noti);
+		
+		this.lastNotification = nearbyPlayer;
 	}
 
 }
