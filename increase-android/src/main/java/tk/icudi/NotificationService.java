@@ -61,7 +61,7 @@ public class NotificationService {
 		builder.setSmallIcon(R.drawable.increase_small);
 		builder.setContentIntent(pIntent);
 		builder.setContentTitle(nearbyPlayer.getName());
-		builder.setContentInfo("on " + nearbyPlayer.getLocation() + ". " + nearbyPlayer.getHumanReadableTime() + " ago. " + nearbyPlayer.getHumanReadableDistance() + " " + nearbyPlayer.getDirection());
+		builder.setContentInfo(nearbyPlayer.getHumanReadableDistance() + " " + nearbyPlayer.getDirection() + " " + nearbyPlayer.getHumanReadableTime() + " ago on " + nearbyPlayer.getLocation());
 		
 		Notification noti =	builder.build();
 		noti.flags |= Notification.FLAG_AUTO_CANCEL;
