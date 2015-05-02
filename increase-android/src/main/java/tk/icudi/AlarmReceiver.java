@@ -17,6 +17,7 @@ public class AlarmReceiver extends RoboBroadcastReceiver {
 		// For our recurring task, we'll just display a message
 		Toast.makeText(context, "I'm running", Toast.LENGTH_SHORT).show();
 
+		updateService.updatePlayers();
 		System.out.println(" --- I'm running --- ");
 	}
 
