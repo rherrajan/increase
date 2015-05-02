@@ -60,7 +60,16 @@ public class NotificationService {
 		PendingIntent pIntent = PendingIntent.getActivity(context, 2, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		    
 		Builder builder = new Notification.Builder(context);
-		builder.setSmallIcon(R.drawable.increase_small);
+		
+		switch(nearbyPlayer.getFaction()){
+		case blue:
+			builder.setSmallIcon(R.drawable.blue_small);
+			break;
+		case green:
+			builder.setSmallIcon(R.drawable.green_small);
+			break;
+		}
+		
 		builder.setContentIntent(pIntent);
 		builder.setContentTitle(nearbyPlayer.getName());
 		builder.setContentInfo(nearbyPlayer.getHumanReadableDistance() + " " + nearbyPlayer.getDirection() + " " + nearbyPlayer.getHumanReadableTime() + " ago on " + nearbyPlayer.getLocation());
