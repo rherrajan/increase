@@ -169,16 +169,32 @@ public class UpdateService {
 
 		new GetNearbyPlayersTask() {
 			
-
 			protected void onSuccessfullExecute(List<NearbyPlayer> players) {
 				
-				lastPlayers = players;
+				lastPlayers = removeBlockedPlayers(players);
 				
 				for (IncreaseListener increaseListener : listener) {
-					increaseListener.onPlayerChanged(players);
+					increaseListener.onPlayerChanged(lastPlayers);
 				}
 				
-				sendNotifcation(players);
+				sendNotifcation(lastPlayers);
+			}
+
+			private List<NearbyPlayer> removeBlockedPlayers(List<NearbyPlayer> players) {
+				
+				List<NearbyPlayer> result = new ArrayList<NearbyPlayer>();
+				
+				for (NearbyPlayer nearbyPlayer : players) {
+
+					if(blockedPlayers.contains(nearbyPlayer)){
+						System.out.println(" --- blocked: " + nearbyPlayer);
+						
+					} else {
+						result.add(nearbyPlayer);
+					}
+				}
+				
+				return result;
 			}
 
 			@Override
@@ -217,6 +233,8 @@ public class UpdateService {
 
 	public void blockPlayer(NearbyPlayer player) {
 		blockedPlayers.add(player);
+		
+		Toast.makeText(context, "blocked Player '" + player.getName() + "'", Toast.LENGTH_SHORT).show();		
 	}
 
 }
