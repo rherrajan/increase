@@ -69,6 +69,8 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	
 	private void updateRefreshButton(Location location) {
 		if(location == null){
+			button_refresh.setText("no location");
+			button_refresh.setEnabled(false);
 			return;
 		}
 		
