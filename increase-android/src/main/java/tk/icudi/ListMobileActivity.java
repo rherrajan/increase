@@ -3,6 +3,7 @@ package tk.icudi;
 import java.util.List;
 
 import roboguice.activity.RoboListActivity;
+import roboguice.inject.InjectView;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
@@ -18,34 +19,36 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 
 	@Inject
 	UpdateService updateService;
-
+    
+	@InjectView(R.id.button_refresh)
+	Button button_refresh; 
+	
+	@InjectView(R.id.toggle_updates)
+	CheckBox checkBox; 
+	
+	@InjectView(R.id.waiting)
+	ProgressBar progressBar;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_main);
 
-		Button button = (Button) findViewById(R.id.button_refresh);
-		button.setEnabled(false);
-		
-		CheckBox checkBox = (CheckBox) findViewById(R.id.toggle_updates);
+		button_refresh.setEnabled(false);
 		checkBox.setChecked(updateService.isAutoUpdates());
-		
-		ProgressBar progressBar = (ProgressBar) findViewById(R.id.waiting);
 		progressBar.setVisibility(View.GONE);
 		
 		updateService.registerListener(this);
 	}
 
 	public void onClickRefresh(View view) {
-		ProgressBar progressBar = (ProgressBar) findViewById(R.id.waiting);
 		progressBar.setVisibility(View.VISIBLE); 
 		//setListAdapter(null);
 		updateService.updatePlayers();
 	}
 
 	public void onClickToggleUpdates(View view) {
-		CheckBox checkBox = (CheckBox) findViewById(R.id.toggle_updates);
 		if(checkBox.isChecked()){
 			updateService.setAutoUpdates(true);
 		} else {
@@ -58,8 +61,6 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	}
 	
 	public void onPlayerChanged(List<NearbyPlayer> players) {
-		
-		ProgressBar progressBar = (ProgressBar) findViewById(R.id.waiting);
 		progressBar.setVisibility(View.GONE);
 		
 		setListAdapter(new MobileArrayAdapter(ListMobileActivity.this, players.toArray(new NearbyPlayer[players.size()])));
@@ -72,13 +73,12 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		
 		int acc = (int) location.getAccuracy();
 		
-		Button button = (Button) findViewById(R.id.button_refresh);
-		button.setText("Refresh (" + acc + "m acc)");
+		button_refresh.setText("Refresh (" + acc + "m acc)");
 
 		if (acc < UpdateService.min_acc_for_disable) {
-			button.setEnabled(true);
+			button_refresh.setEnabled(true);
 		} else {
-			button.setEnabled(false);
+			button_refresh.setEnabled(false);
 		}
 	}
 	
