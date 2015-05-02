@@ -19,8 +19,11 @@ public class NotificationService {
 	@Inject
 	Context context;
 
-	public void sendNotification(NearbyPlayer nearbyPlayer) {
-		
+	public void nearestPlayer(NearbyPlayer nearbyPlayer) {
+		sendNotification(nearbyPlayer);
+	}
+
+	private void sendNotification(NearbyPlayer nearbyPlayer) {
 		Intent intent = new Intent(context, ListMobileActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pIntent = PendingIntent.getActivity(context, 2, intent, PendingIntent.FLAG_UPDATE_CURRENT);

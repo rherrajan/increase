@@ -194,7 +194,7 @@ public class UpdateService {
 		}
 		
 		if(players.get(0).getRank() < max_ranking_for_notification ){
-			notificationService.sendNotification(players.get(0));
+			notificationService.nearestPlayer(players.get(0));
 		}
 
 	}
