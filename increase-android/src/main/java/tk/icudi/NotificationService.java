@@ -33,8 +33,8 @@ public class NotificationService {
 			}
 			
 			if(nearbyPlayer.getRank() < UpdateService.max_ranking_for_vibration){
-				System.out.println(" --- --- --- ");
-				vibrator.vibrate(500);
+				long[] pattern = {0, 300, 0, 300};
+				vibrator.vibrate(pattern, -1);
 			}
 		}
 
