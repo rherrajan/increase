@@ -4,6 +4,10 @@ import java.util.List;
 
 import roboguice.activity.RoboListActivity;
 import roboguice.inject.InjectView;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -34,6 +38,8 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	@InjectView(R.id.waiting)
 	ProgressBar progressBar;
 
+
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,8 +53,10 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 
 		registerForContextMenu(this.getListView());
 		updateService.registerListener(this);
-	}
+		
 
+	}
+    
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
@@ -81,9 +89,9 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 
 	public void onClickToggleUpdates(View view) {
 		if (checkBox.isChecked()) {
-			updateService.setAutoUpdates(true);
+			updateService.aktivateAutoUpdates(true);
 		} else {
-			updateService.setAutoUpdates(false);
+			updateService.aktivateAutoUpdates(false);
 		}
 	}
 
