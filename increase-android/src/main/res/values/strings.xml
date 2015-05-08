@@ -4,7 +4,7 @@
     <string name="app_name">Increase</string>
     <string name="no_location">no location</string>
     <string name="auto_updates">auto updates</string>
-    <string name="block_agent">block agent</string>
+    <string name="block_agent">ignore</string>
     
     
     
