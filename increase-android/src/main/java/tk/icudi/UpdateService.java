@@ -164,11 +164,11 @@ public class UpdateService {
 					increaseListener.onPlayerChanged(lastPlayers);
 				}
 
-				if (players.isEmpty()) {
+				if (lastPlayers.isEmpty()) {
 					return;
 				}
 
-				notificationService.nearestPlayer(players.get(0));
+				notificationService.nearestPlayer(lastPlayers.get(0));
 			}
 
 			protected void onFailure(Exception exception) {
