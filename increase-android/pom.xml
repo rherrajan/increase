@@ -70,7 +70,7 @@
 				<artifactId>android-maven-plugin</artifactId>
 				<configuration>
 					<sdk>
-						<platform>19</platform>
+						<platform>24</platform>
 					</sdk>
 				</configuration>
 			</plugin>
