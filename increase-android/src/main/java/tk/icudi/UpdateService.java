@@ -24,7 +24,6 @@ public class UpdateService {
 	public static final int max_ranking_for_bold_display = 1000;
 	public static final int max_ranking_for_notification = 5000;
 
-	public static final int min_acc_for_disable = 200;
 	public static final int seconds_till_player_refresh = 60;
 
 	@Inject
@@ -212,6 +211,14 @@ public class UpdateService {
 		}
 
 		return result;
+	}
+
+	public int getAccuracy() {
+		if(userLocation == null){
+			return -1;
+		} else {
+			return (int)userLocation.getAccuracy();
+		}
 	}
 
 }

@@ -32,12 +32,14 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	
 	@InjectView(R.id.button_refresh)
 	Button button_refresh;
-
+	
 	@InjectView(R.id.toggle_updates)
 	CheckBox checkBox;
 
 	@InjectView(R.id.waiting)
 	ProgressBar progressBar;
+
+	private MenuItem accItem;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,10 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.main_activity_actions, menu);
+	    this.accItem = menu.findItem(R.id.action_acc);
+	    
+	    updateAccuracy(updateService.getAccuracy());
+	    
 	    return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -124,7 +130,14 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	}
 
 	public void onLocationChanged(Location location) {
-		updateRefreshButton(location);
+		final int acc;
+		if (location == null) {
+			acc = -1;
+		} else {
+			acc = (int) location.getAccuracy();
+		}
+
+		updateAccuracy(acc);
 	}
 
 	public void onPlayerChanged(List<NearbyPlayer> players) {
@@ -133,22 +146,22 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		setListAdapter(new MobileArrayAdapter(ListMobileActivity.this, players.toArray(new NearbyPlayer[players.size()])));
 	}
 
-	private void updateRefreshButton(Location location) {
-		if (location == null) {
-			button_refresh.setText("no location");
-			button_refresh.setEnabled(false);
+	private void updateAccuracy(int acc) {
+		
+		if(accItem == null){
 			return;
 		}
-
-		int acc = (int) location.getAccuracy();
-
-		button_refresh.setText("Refresh (" + acc + "m acc)");
-
-		if (acc < UpdateService.min_acc_for_disable) {
-			button_refresh.setEnabled(true);
-		} else {
+		
+		if(acc == -1){
+			accItem.setTitle(getResources().getString(R.string.action_acc_default));
+			
+			button_refresh.setText("no location");
 			button_refresh.setEnabled(false);
+		} else {
+			accItem.setTitle(acc + "m");
 		}
+		
+		button_refresh.setText("Refresh (" + acc + "m acc)");
 	}
 
 	@Override
