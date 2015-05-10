@@ -70,12 +70,28 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	}
 	
 	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_refresh:
+	    		progressBar.setVisibility(View.VISIBLE);
+	    		updateService.updatePlayers();
+	            return true;
+	        case R.id.action_settings:
+	            //openSettings();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
+	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.context_menu, menu);
 	}
-	
+
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
@@ -93,9 +109,9 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		}
 	}
 
+	@Deprecated
 	public void onClickRefresh(View view) {
 		progressBar.setVisibility(View.VISIBLE);
-		// setListAdapter(null);
 		updateService.updatePlayers();
 	}
 
