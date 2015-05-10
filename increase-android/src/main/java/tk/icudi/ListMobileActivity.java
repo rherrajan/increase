@@ -63,24 +63,17 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	
     
 	@Override
-	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-		
-		System.out.println(" --- onCreateContextMenu --- ");
-		
-		super.onCreateContextMenu(menu, v, menuInfo);
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.context_menu, menu);
-	}
-
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		
-		System.out.println(" --- onCreateOptionsMenu --- ");
-		
-	    // Inflate the menu items for use in the action bar
 	    MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.main_activity_actions, menu);
 	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.context_menu, menu);
 	}
 	
 	@Override
