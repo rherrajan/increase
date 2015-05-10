@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,11 +64,25 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
     
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		
+		System.out.println(" --- onCreateContextMenu --- ");
+		
 		super.onCreateContextMenu(menu, v, menuInfo);
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.context_menu, menu);
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		
+		System.out.println(" --- onCreateOptionsMenu --- ");
+		
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.main_activity_actions, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+	
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
@@ -134,7 +149,7 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago ";
 		Toast.makeText(this, text, Toast.LENGTH_LONG).show();
 	}
-
+	
 	public void onRefreshFailure(Exception exception) {
 		Toast.makeText(this, "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
 		Log.e(ListMobileActivity.class.getName(), "failed to get player information", exception);
