@@ -12,7 +12,6 @@ import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-import android.widget.Button;
 import android.widget.ListAdapter;
 
 @RunWith(RobolectricTestRunner.class)
@@ -36,8 +35,8 @@ public class ListMobileActivityTest {
 		Assert.assertThat(listAdapter, notNullValue());
 		Assert.assertThat(listAdapter.getCount(), is(0));
 		
-		Button button = (Button) activity.findViewById(R.id.button_refresh);
-		button.performClick();
+//		Button button = (Button) activity.findViewById(R.id.button_refresh);
+//		button.performClick();
 
 		Assert.assertThat(listAdapter.getCount(), Matchers.greaterThan(0));
 	}

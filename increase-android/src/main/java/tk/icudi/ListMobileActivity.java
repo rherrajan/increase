@@ -14,7 +14,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -29,10 +28,7 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 
 	@Inject
 	AlarmService alarmService;
-	
-	@InjectView(R.id.button_refresh)
-	Button button_refresh;
-	
+		
 	@InjectView(R.id.toggle_updates)
 	CheckBox checkBox;
 
@@ -50,7 +46,6 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		updateService.registerListener(this);
 		
 		setContentView(R.layout.activity_main);
-		button_refresh.setEnabled(false);
 		progressBar.setVisibility(View.GONE);
 		registerForContextMenu(this.getListView());
 	}
@@ -147,21 +142,15 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 	}
 
 	private void updateAccuracy(int acc) {
-		
 		if(accItem == null){
 			return;
 		}
 		
 		if(acc == -1){
 			accItem.setTitle(getResources().getString(R.string.action_acc_default));
-			
-			button_refresh.setText("no location");
-			button_refresh.setEnabled(false);
 		} else {
 			accItem.setTitle(acc + "m");
 		}
-		
-		button_refresh.setText("Refresh (" + acc + "m acc)");
 	}
 
 	@Override

@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Increase</string>
-    <string name="no_location">no location</string>
     <string name="action_acc_default">no location</string>
     <string name="auto_updates">auto updates</string>
     <string name="block_agent">ignore</string>
