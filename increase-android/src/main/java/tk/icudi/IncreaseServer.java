@@ -33,9 +33,8 @@ public class IncreaseServer {
 		return new Gson().<List<NearbyPlayer>>fromJson(jsonString, new TypeToken<List<NearbyPlayer>>(){}.getType());
 	}
 
-	private int locDoubleToInt(double doubleLoc) {
-		String stringLoc = String.valueOf(doubleLoc).replace(".", "");
-		return Integer.valueOf(stringLoc);
+	int locDoubleToInt(double doubleLoc) {
+		return (int)(doubleLoc * 10000000);
 	}
 	
 	private String getJsonString(String string) throws ClientProtocolException, IOException {
