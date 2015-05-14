@@ -7,6 +7,7 @@ import roboguice.inject.InjectView;
 import tk.icudi.business.AlarmService;
 import tk.icudi.business.IncreaseListener;
 import tk.icudi.business.UpdateService;
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -84,16 +85,19 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		
+
 		switch (item.getItemId()) {
+
 		case R.id.action_refresh:
 			showRefreshAnimation(true);
-
 			updateService.updatePlayers();
 			return true;
+
 		case R.id.action_settings:
-			// openSettings();
+			Intent i = new Intent(getActivity(), ConfigurationActivity.class);
+			startActivity(i);
 			return true;
+
 		default:
 			return super.onOptionsItemSelected(item);
 		}
@@ -106,11 +110,11 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		}
 
 		MenuItem refreshItem = menu.findItem(R.id.action_refresh);
-		
+
 		if (activate) {
 
 			refreshItem.setActionView(R.layout.iv_refresh);
-			
+
 			Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
 			rotation.setRepeatCount(Animation.INFINITE);
 			refreshItem.getActionView().startAnimation(rotation);

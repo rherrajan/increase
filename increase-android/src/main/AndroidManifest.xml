@@ -9,35 +9,34 @@
         android:targetSdkVersion="24" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/increase"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo">
-        
-        <activity android:name=".ListMobileActivity"
+        android:theme="@android:style/Theme.Holo" >
+        <activity
+            android:name=".ListMobileActivity"
             android:configChanges="orientation|screenSize"
-            android:launchMode="singleTop">
-            
+            android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-<!--                 android:parentActivityName="com.example.myfirstapp.MainActivity" > -->
-<!--         Parent activity meta-data to support 4.0 and lower -->
-<!--         <meta-data -->
-<!--             android:name="android.support.PARENT_ACTIVITY" -->
-<!--             android:value="com.example.myfirstapp.MainActivity" /> -->
-        
-        <receiver android:name="tk.icudi.business.AlarmReceiver" android:enabled="true" >
+        <activity
+            android:name=".ConfigurationActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" >
+        </activity>
+
+        <receiver
+            android:name="tk.icudi.business.AlarmReceiver"
+            android:enabled="true" >
         </receiver>
-        
     </application>
 
 </manifest>

@@ -2,7 +2,6 @@ package tk.icudi;
 
 import roboguice.activity.RoboFragmentActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 
 public class ListMobileActivity extends RoboFragmentActivity {
 
@@ -11,21 +10,27 @@ public class ListMobileActivity extends RoboFragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);
 
-		activateFragment(new ListAgentsFragment(), savedInstanceState);
+		if(isReadyForFragment(savedInstanceState)){
+			activateSupportFragment(new ListAgentsFragment(), savedInstanceState);
+		}
+		
 	}
 
-	private void activateFragment(Fragment fragment, Bundle savedInstanceState) {
-
+	private boolean isReadyForFragment(Bundle savedInstanceState) {
 		if (findViewById(R.id.fragment_container) == null) {
-			return;
+			return false;
 		}
 
 		if (savedInstanceState != null) {
-			return;
+			return false;
 		}
+		
+		return true;
+	}
 
+	private void activateSupportFragment(android.support.v4.app.Fragment fragment, Bundle savedInstanceState) {
 		fragment.setArguments(getIntent().getExtras());
 		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
 	}
-
+	
 }
