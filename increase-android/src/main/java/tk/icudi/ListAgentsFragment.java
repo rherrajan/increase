@@ -22,9 +22,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.inject.Inject;
@@ -36,9 +34,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Inject
 	private AlarmService alarmService;
-
-	@Inject
-	private LayoutInflater inflater;
 
 	@InjectView(R.id.toggle_updates)
 	private CheckBox checkBox;
