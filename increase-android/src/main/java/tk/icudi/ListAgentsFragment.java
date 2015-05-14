@@ -7,7 +7,6 @@ import roboguice.inject.InjectView;
 import tk.icudi.business.AlarmService;
 import tk.icudi.business.IncreaseListener;
 import tk.icudi.business.UpdateService;
-import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,9 +42,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@InjectView(R.id.toggle_updates)
 	private CheckBox checkBox;
-
-	@InjectView(R.id.waiting)
-	private ProgressBar progressBar;
 
 	private Menu menu;
 
@@ -110,12 +106,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	private void showRefreshAnimation(boolean activate) {
 
-		if (activate) {
-			progressBar.setVisibility(View.VISIBLE);
-		} else {
-			progressBar.setVisibility(View.GONE);
-		}
-		
 		if (menu == null) {
 			return;
 		}

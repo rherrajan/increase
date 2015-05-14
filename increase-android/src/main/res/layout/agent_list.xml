@@ -20,12 +20,4 @@
         android:onClick="onClickToggleUpdates"
         android:text="@string/auto_updates" />
         
-    <ProgressBar
-        android:id="@+id/waiting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:indeterminate="true" />
-        
 </RelativeLayout>
