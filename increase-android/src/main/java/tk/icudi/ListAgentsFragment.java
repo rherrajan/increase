@@ -66,7 +66,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	public void onResume() {
 		super.onResume();
 
-		onPlayerChanged(updateService.getLastPlayers());
+		onPlayerRefreshSuccesfull(updateService.getLastPlayers());
 	}
 
 	@Override
@@ -141,7 +141,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		switch (item.getItemId()) {
 		case R.id.block_agent:
 			this.updateService.blockPlayer(player);
-			onPlayerChanged(updateService.getLastPlayers());
+			onPlayerRefreshSuccesfull(updateService.getLastPlayers());
 			return true;
 
 		default:
@@ -160,12 +160,22 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		updateAccuracy(acc);
 	}
 
-	public void onPlayerChanged(List<NearbyPlayer> players) {
+	public void onPlayerRefreshStart() {
+		showRefreshAnimation(true);
+	}
+	
+	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
 		showRefreshAnimation(false);
 
 		setListAdapter(new MobileArrayAdapter(getActivity(), players.toArray(new NearbyPlayer[players.size()])));
 	}
 
+	public void onPlayerRefreshFailure(Exception exception) {
+		Toast.makeText(getActivity(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
+		Log.e(ListAgentsFragment.class.getName(), "failed to get player information", exception);
+		showRefreshAnimation(false);
+	}
+	
 	private void updateAccuracy(int acc) {
 
 		if (menu == null) {
@@ -190,10 +200,5 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
 	}
 
-	public void onRefreshFailure(Exception exception) {
-		Toast.makeText(getActivity(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
-		Log.e(ListAgentsFragment.class.getName(), "failed to get player information", exception);
-		showRefreshAnimation(false);
-	}
 
 }

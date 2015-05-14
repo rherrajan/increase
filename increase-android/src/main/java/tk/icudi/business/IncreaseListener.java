@@ -9,7 +9,9 @@ public interface IncreaseListener {
 
 	public void onLocationChanged(Location location);
 	
-	public void onPlayerChanged(List<NearbyPlayer> players);
+	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players);
 
-	public void onRefreshFailure(Exception exception);
+	public void onPlayerRefreshFailure(Exception exception);
+
+	public void onPlayerRefreshStart();
 }

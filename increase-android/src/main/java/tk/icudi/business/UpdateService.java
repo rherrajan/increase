@@ -153,6 +153,9 @@ public class UpdateService {
 			return;
 		}
 
+		for (IncreaseListener increaseListener : listener) {
+			increaseListener.onPlayerRefreshStart();
+		}
 		
 		new GetNearbyPlayersTask() {
 
@@ -161,7 +164,7 @@ public class UpdateService {
 				lastPlayers = removeBlockedPlayers(players);
 
 				for (IncreaseListener increaseListener : listener) {
-					increaseListener.onPlayerChanged(lastPlayers);
+					increaseListener.onPlayerRefreshSuccesfull(lastPlayers);
 				}
 
 				if (lastPlayers.isEmpty()) {
@@ -174,7 +177,7 @@ public class UpdateService {
 			protected void onFailure(Exception exception) {
 				
 				for (IncreaseListener increaseListener : listener) {
-					increaseListener.onRefreshFailure(exception);
+					increaseListener.onPlayerRefreshFailure(exception);
 				}
 				
 			}
