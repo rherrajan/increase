@@ -40,7 +40,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	@InjectView(R.id.waiting)
 	private ProgressBar progressBar;
 
-	private MenuItem accItem;
+	private Menu menu;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,8 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 	    inflater.inflate(R.menu.main_activity_actions, menu);
-	    this.accItem = menu.findItem(R.id.action_acc);
+	    
+	    this.menu = menu;
 	    updateAccuracy(updateService.getAccuracy());
 	    
 	    super.onCreateOptionsMenu(menu,inflater);
@@ -124,12 +125,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		}
 	}
 
-	@Deprecated
-	public void onClickRefresh(View view) {
-		progressBar.setVisibility(View.VISIBLE);
-		updateService.updatePlayers();
-	}
-
 	public void onClickToggleUpdates(View view) {
 		if (checkBox.isChecked()) {
 			alarmService.aktivateAutoUpdates(true);
@@ -155,15 +150,19 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	}
 
 	private void updateAccuracy(int acc) {
-		if(accItem == null){
+		
+		if(menu == null){
 			return;
 		}
 		
+		final String title;
 		if(acc == -1){
-			accItem.setTitle(getResources().getString(R.string.action_acc_default));
+			title = getResources().getString(R.string.action_acc_default);
 		} else {
-			accItem.setTitle(acc + "m");
+			title = acc + "m";
 		}
+		
+		menu.findItem(R.id.action_acc).setTitle(title);
 	}
 
 	@Override
