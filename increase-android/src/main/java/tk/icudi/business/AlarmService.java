@@ -4,12 +4,14 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class AlarmService {
+public class AlarmService implements OnSharedPreferenceChangeListener {
 
 	@Inject
 	AlarmManager alarmManager;
@@ -30,14 +32,10 @@ public class AlarmService {
 		Intent unpendingIntent = new Intent(context, AlarmReceiver.class);
 		this.updateAlarm = PendingIntent.getBroadcast(context, 0, unpendingIntent, 0);
 		
-		aktivateAutoUpdates(true);
+		alarmManager.cancel(updateAlarm);
 	}
 
-	public void aktivateAutoUpdates(boolean doAutoUpdates) {
-
-		if (this.doAutoUpdates == doAutoUpdates) {
-			return;
-		}
+	private void aktivateAutoUpdates(boolean doAutoUpdates) {
 
 		this.doAutoUpdates = doAutoUpdates;
 		if (doAutoUpdates) {
@@ -46,8 +44,11 @@ public class AlarmService {
 			alarmManager.cancel(updateAlarm);
 		}
 	}
-
-	public boolean isAutoUpdates() {
-		return doAutoUpdates;
+	
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+		if(key.equals("checkbox_preference")){
+			boolean newValue = sharedPreferences.getBoolean(key, false);
+			aktivateAutoUpdates(newValue);
+		}
 	}
 }

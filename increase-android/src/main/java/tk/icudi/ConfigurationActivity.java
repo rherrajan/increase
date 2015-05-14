@@ -1,24 +1,31 @@
 package tk.icudi;
 
+import roboguice.activity.RoboPreferenceActivity;
+import tk.icudi.business.AlarmService;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 
-public class ConfigurationActivity extends PreferenceActivity {
+import com.google.inject.Inject;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new ConfigurationFragment()).commit();
-    }
+public class ConfigurationActivity extends RoboPreferenceActivity {
 
-    private static class ConfigurationFragment extends PreferenceFragment {
+	@Inject
+	AlarmService alarmService;
 
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.preferences);
-        }
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		getFragmentManager().beginTransaction().replace(android.R.id.content, new ConfigurationFragment()).commit();
+	}
+
+	private class ConfigurationFragment extends PreferenceFragment {
+
+		@Override
+		public void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			addPreferencesFromResource(R.xml.preferences);
+			getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(ConfigurationActivity.this.alarmService);
+		}
+	}
 
 }

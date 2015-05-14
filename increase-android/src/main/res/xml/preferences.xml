@@ -5,8 +5,9 @@
 
         <CheckBoxPreference
                 android:key="checkbox_preference"
-                android:title="title_checkbox_preference"
-                android:summary="summary_checkbox_preference" />
+                android:defaultValue="false"
+                android:title="@string/auto_updates"
+                android:summary="@string/auto_updates_summary" />
 
     </PreferenceCategory>
 

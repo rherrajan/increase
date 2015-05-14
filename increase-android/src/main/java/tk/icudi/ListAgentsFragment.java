@@ -3,7 +3,6 @@ package tk.icudi;
 import java.util.List;
 
 import roboguice.fragment.RoboListFragment;
-import roboguice.inject.InjectView;
 import tk.icudi.business.AlarmService;
 import tk.icudi.business.IncreaseListener;
 import tk.icudi.business.UpdateService;
@@ -22,7 +21,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView.AdapterContextMenuInfo;
-import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,9 +33,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Inject
 	private AlarmService alarmService;
-
-	@InjectView(R.id.toggle_updates)
-	private CheckBox checkBox;
 
 	private Menu menu;
 
@@ -69,7 +64,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	public void onResume() {
 		super.onResume();
 
-		checkBox.setChecked(alarmService.isAutoUpdates());
 		onPlayerChanged(updateService.getLastPlayers());
 	}
 
@@ -150,14 +144,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 		default:
 			return super.onContextItemSelected(item);
-		}
-	}
-
-	public void onClickToggleUpdates(View view) {
-		if (checkBox.isChecked()) {
-			alarmService.aktivateAutoUpdates(true);
-		} else {
-			alarmService.aktivateAutoUpdates(false);
 		}
 	}
 

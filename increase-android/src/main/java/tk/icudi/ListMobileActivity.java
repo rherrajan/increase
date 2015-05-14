@@ -2,11 +2,15 @@ package tk.icudi;
 
 import roboguice.activity.RoboFragmentActivity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 public class ListMobileActivity extends RoboFragmentActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		
+		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);
 
