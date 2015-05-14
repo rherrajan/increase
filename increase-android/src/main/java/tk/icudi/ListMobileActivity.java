@@ -24,16 +24,16 @@ import com.google.inject.Inject;
 public class ListMobileActivity extends RoboListActivity implements IncreaseListener {
 
 	@Inject
-	UpdateService updateService;
+	private UpdateService updateService;
 
 	@Inject
-	AlarmService alarmService;
+	private AlarmService alarmService;
 		
 	@InjectView(R.id.toggle_updates)
-	CheckBox checkBox;
+	private CheckBox checkBox;
 
 	@InjectView(R.id.waiting)
-	ProgressBar progressBar;
+	private ProgressBar progressBar;
 
 	private MenuItem accItem;
 
@@ -45,7 +45,7 @@ public class ListMobileActivity extends RoboListActivity implements IncreaseList
 		updateService.init();
 		updateService.registerListener(this);
 		
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.agent_list);
 		progressBar.setVisibility(View.GONE);
 		registerForContextMenu(this.getListView());
 	}

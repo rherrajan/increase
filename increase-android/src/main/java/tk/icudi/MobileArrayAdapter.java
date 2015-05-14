@@ -18,7 +18,7 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 	private final NearbyPlayer[] values;
 
 	public MobileArrayAdapter(Context context, NearbyPlayer[] values) {
-		super(context, R.layout.list_item, values);
+		super(context, R.layout.agent_list_item, values);
 		this.context = context;
 		this.values = values;
 	}
@@ -28,7 +28,7 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		View rowView = inflater.inflate(R.layout.list_item, parent, false);
+		View rowView = inflater.inflate(R.layout.agent_list_item, parent, false);
 		TextView player_name = (TextView) rowView.findViewById(R.id.player_name);
 		TextView player_distance = (TextView) rowView.findViewById(R.id.player_distance);
 		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
