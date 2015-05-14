@@ -1,16 +1,10 @@
 package tk.icudi;
 
 import roboguice.activity.RoboPreferenceActivity;
-import tk.icudi.business.AlarmService;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 
-import com.google.inject.Inject;
-
 public class ConfigurationActivity extends RoboPreferenceActivity {
-
-	@Inject
-	AlarmService alarmService;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +18,6 @@ public class ConfigurationActivity extends RoboPreferenceActivity {
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			addPreferencesFromResource(R.xml.preferences);
-			getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(ConfigurationActivity.this.alarmService);
 		}
 	}
 

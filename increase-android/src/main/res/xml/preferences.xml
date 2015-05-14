@@ -4,10 +4,17 @@
     <PreferenceCategory android:title="inline_preferences">
 
         <CheckBoxPreference
-                android:key="checkbox_preference"
-                android:defaultValue="false"
-                android:title="@string/auto_updates"
-                android:summary="@string/auto_updates_summary" />
+                android:key="preference_auto_updates"
+                android:defaultValue="true"
+                android:title="@string/pref_auto_updates"
+                android:summary="@string/pref_auto_updates_summary" />
+        
+         <EditTextPreference
+                android:key="preference_update_interval"
+                android:defaultValue="60"
+                android:inputType="number"
+                android:title="@string/pref_interval"
+                android:summary="@string/pref_interval_summary" />
 
     </PreferenceCategory>
 

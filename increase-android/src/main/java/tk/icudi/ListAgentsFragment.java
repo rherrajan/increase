@@ -45,6 +45,8 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		updateService.registerListener(this);
 
 		setHasOptionsMenu(true);
+		
+		
 	}
 
 	@Override
