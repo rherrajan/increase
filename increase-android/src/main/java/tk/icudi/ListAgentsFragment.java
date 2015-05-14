@@ -49,11 +49,12 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		alarmService.init();
 		updateService.init();
 		updateService.registerListener(this);
+		
+		setHasOptionsMenu(true);
 	}
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//    	super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.agent_list, container, false);
     }
     

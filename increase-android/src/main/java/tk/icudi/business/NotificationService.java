@@ -3,7 +3,6 @@ package tk.icudi.business;
 import tk.icudi.ListMobileActivity;
 import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
-import android.app.ListFragment;
 import android.app.Notification;
 import android.app.Notification.Builder;
 import android.app.NotificationManager;
