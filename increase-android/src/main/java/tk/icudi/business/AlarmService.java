@@ -21,7 +21,6 @@ public class AlarmService implements OnSharedPreferenceChangeListener {
 	
 	private boolean isInitialised = false;
 	private PendingIntent updateAlarm;
-	private boolean doAutoUpdates = false;
 
 	public synchronized void init() {
 		if(isInitialised){
@@ -37,7 +36,6 @@ public class AlarmService implements OnSharedPreferenceChangeListener {
 
 	private void aktivateAutoUpdates(boolean doAutoUpdates) {
 
-		this.doAutoUpdates = doAutoUpdates;
 		if (doAutoUpdates) {
 			alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), UpdateService.seconds_till_player_refresh * 1000, updateAlarm);
 		} else {
