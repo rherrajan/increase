@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 	
-
-	
 	private final Context context;
 	private final NearbyPlayer[] values;
 
