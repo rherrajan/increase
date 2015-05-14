@@ -1,9 +1,11 @@
-package tk.icudi;
+package tk.icudi.business;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import tk.icudi.business.IncreaseServer;
 
 public class IncreaseServerTest {
 

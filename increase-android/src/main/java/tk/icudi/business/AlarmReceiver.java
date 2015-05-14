@@ -1,4 +1,4 @@
-package tk.icudi;
+package tk.icudi.business;
 
 import roboguice.receiver.RoboBroadcastReceiver;
 import android.content.Context;

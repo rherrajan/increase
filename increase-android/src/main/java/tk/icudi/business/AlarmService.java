@@ -1,4 +1,4 @@
-package tk.icudi;
+package tk.icudi.business;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -21,7 +21,7 @@ public class AlarmService {
 	private PendingIntent updateAlarm;
 	private boolean doAutoUpdates = false;
 
-	synchronized void init() {
+	public synchronized void init() {
 		if(isInitialised){
 			return;
 		}

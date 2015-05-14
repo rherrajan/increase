@@ -1,7 +1,8 @@
-package tk.icudi;
+package tk.icudi.business;
 
 import java.util.List;
 
+import tk.icudi.NearbyPlayer;
 import android.location.Location;
 
 public interface IncreaseListener {

@@ -1,10 +1,12 @@
-package tk.icudi;
+package tk.icudi.business;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import tk.icudi.ListMobileActivity;
+import tk.icudi.NearbyPlayer;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
@@ -51,7 +53,7 @@ public class UpdateService {
 		}
 	}
 
-	synchronized void init() {
+	public synchronized void init() {
 		
 		if (isInitialised) {
 			return;

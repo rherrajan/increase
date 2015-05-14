@@ -35,7 +35,7 @@
 <!--             android:name="android.support.PARENT_ACTIVITY" -->
 <!--             android:value="com.example.myfirstapp.MainActivity" /> -->
         
-        <receiver android:name=".AlarmReceiver" android:enabled="true" >
+        <receiver android:name="tk.icudi.business.AlarmReceiver" android:enabled="true" >
         </receiver>
         
     </application>
