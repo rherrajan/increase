@@ -7,6 +7,7 @@ import roboguice.inject.InjectView;
 import tk.icudi.business.AlarmService;
 import tk.icudi.business.IncreaseListener;
 import tk.icudi.business.UpdateService;
+import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,8 +19,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -33,7 +37,10 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Inject
 	private AlarmService alarmService;
-		
+
+	@Inject
+	private LayoutInflater inflater;
+
 	@InjectView(R.id.toggle_updates)
 	private CheckBox checkBox;
 
@@ -45,62 +52,97 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		alarmService.init();
 		updateService.init();
 		updateService.registerListener(this);
-		
+
 		setHasOptionsMenu(true);
 	}
-	
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.agent_list, container, false);
-    }
-    
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-    	super.onViewCreated(view, savedInstanceState);
-    	
-		progressBar.setVisibility(View.GONE);
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.agent_list, container, false);
+	}
+
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+
+		showRefreshAnimation(false);
 		registerForContextMenu(this.getListView());
-    }
-    
+	}
+
 	@Override
 	public void onResume() {
 		super.onResume();
-		
+
 		checkBox.setChecked(alarmService.isAutoUpdates());
 		onPlayerChanged(updateService.getLastPlayers());
 	}
-	
-    
+
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-	    inflater.inflate(R.menu.main_activity_actions, menu);
-	    
-	    this.menu = menu;
-	    updateAccuracy(updateService.getAccuracy());
-	    
-	    super.onCreateOptionsMenu(menu,inflater);
+		inflater.inflate(R.menu.main_activity_actions, menu);
+
+		this.menu = menu;
+		updateAccuracy(updateService.getAccuracy());
+
+		super.onCreateOptionsMenu(menu, inflater);
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle presses on the action bar items
-	    switch (item.getItemId()) {
-	        case R.id.action_refresh:
-	    		progressBar.setVisibility(View.VISIBLE);
-	    		updateService.updatePlayers();
-	            return true;
-	        case R.id.action_settings:
-	            //openSettings();
-	            return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
+		
+		switch (item.getItemId()) {
+		case R.id.action_refresh:
+			progressBar.setVisibility(View.VISIBLE);
+			setAnimation(item);
+
+			updateService.updatePlayers();
+			return true;
+		case R.id.action_settings:
+			// openSettings();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
-	
+
+	private void showRefreshAnimation(boolean activate) {
+
+		if (activate) {
+
+		} else {
+			progressBar.setVisibility(View.GONE);
+		}
+		
+		if (menu == null) {
+			return;
+		}
+
+		if (activate) {
+
+		} else {
+			MenuItem refreshItem = menu.findItem(R.id.action_refresh);
+			View actionView = refreshItem.getActionView();
+			if (actionView != null) {
+				actionView.clearAnimation();
+				refreshItem.setActionView(null);
+			}
+		}
+
+	}
+
+	private void setAnimation(MenuItem item) {
+		// menu.findItem(R.id.action_refresh);
+		ImageView iv = (ImageView) inflater.inflate(R.layout.iv_refresh, null);
+		Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
+		rotation.setRepeatCount(Animation.INFINITE);
+		iv.startAnimation(rotation);
+		item.setActionView(iv);
+	}
+
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
@@ -112,10 +154,10 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	public boolean onContextItemSelected(MenuItem item) {
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
 		Object player_raw = getListView().getItemAtPosition(info.position);
-		NearbyPlayer player = (NearbyPlayer)player_raw;
-		
+		NearbyPlayer player = (NearbyPlayer) player_raw;
+
 		switch (item.getItemId()) {
-		case R.id.block_agent:		
+		case R.id.block_agent:
 			this.updateService.blockPlayer(player);
 			onPlayerChanged(updateService.getLastPlayers());
 			return true;
@@ -145,23 +187,24 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	}
 
 	public void onPlayerChanged(List<NearbyPlayer> players) {
-		progressBar.setVisibility(View.GONE);
+		showRefreshAnimation(false);
+
 		setListAdapter(new MobileArrayAdapter(getActivity(), players.toArray(new NearbyPlayer[players.size()])));
 	}
 
 	private void updateAccuracy(int acc) {
-		
-		if(menu == null){
+
+		if (menu == null) {
 			return;
 		}
-		
+
 		final String title;
-		if(acc == -1){
+		if (acc == -1) {
 			title = getResources().getString(R.string.action_acc_default);
 		} else {
 			title = acc + "m";
 		}
-		
+
 		menu.findItem(R.id.action_acc).setTitle(title);
 	}
 
@@ -172,11 +215,11 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago ";
 		Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
 	}
-	
+
 	public void onRefreshFailure(Exception exception) {
 		Toast.makeText(getActivity(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
 		Log.e(ListAgentsFragment.class.getName(), "failed to get player information", exception);
-		progressBar.setVisibility(View.GONE);
+		showRefreshAnimation(false);
 	}
 
 }
