@@ -107,16 +107,20 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 		MenuItem refreshItem = menu.findItem(R.id.action_refresh);
 
+		View actionView = refreshItem.getActionView();
+		
 		if (activate) {
 
-			refreshItem.setActionView(R.layout.iv_refresh);
+			if(actionView == null){
+				refreshItem.setActionView(R.layout.iv_refresh);
 
-			Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
-			rotation.setRepeatCount(Animation.INFINITE);
-			refreshItem.getActionView().startAnimation(rotation);
+				Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
+				rotation.setRepeatCount(Animation.INFINITE);
+				refreshItem.getActionView().startAnimation(rotation);
+			}
 
 		} else {
-			View actionView = refreshItem.getActionView();
+			
 			if (actionView != null) {
 				actionView.clearAnimation();
 				refreshItem.setActionView(null);
