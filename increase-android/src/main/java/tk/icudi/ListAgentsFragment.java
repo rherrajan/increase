@@ -96,8 +96,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		
 		switch (item.getItemId()) {
 		case R.id.action_refresh:
-			progressBar.setVisibility(View.VISIBLE);
-			setAnimation(item);
+			showRefreshAnimation(true);
 
 			updateService.updatePlayers();
 			return true;
@@ -112,7 +111,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	private void showRefreshAnimation(boolean activate) {
 
 		if (activate) {
-
+			progressBar.setVisibility(View.VISIBLE);
 		} else {
 			progressBar.setVisibility(View.GONE);
 		}
@@ -121,10 +120,15 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 			return;
 		}
 
+		MenuItem refreshItem = menu.findItem(R.id.action_refresh);
+		
 		if (activate) {
-
+			ImageView iv = (ImageView) inflater.inflate(R.layout.iv_refresh, null);
+			Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
+			rotation.setRepeatCount(Animation.INFINITE);
+			iv.startAnimation(rotation);
+			refreshItem.setActionView(iv);
 		} else {
-			MenuItem refreshItem = menu.findItem(R.id.action_refresh);
 			View actionView = refreshItem.getActionView();
 			if (actionView != null) {
 				actionView.clearAnimation();
@@ -132,15 +136,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 			}
 		}
 
-	}
-
-	private void setAnimation(MenuItem item) {
-		// menu.findItem(R.id.action_refresh);
-		ImageView iv = (ImageView) inflater.inflate(R.layout.iv_refresh, null);
-		Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
-		rotation.setRepeatCount(Animation.INFINITE);
-		iv.startAnimation(rotation);
-		item.setActionView(iv);
 	}
 
 	@Override
