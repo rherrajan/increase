@@ -6,10 +6,7 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map.Entry;
 
-import org.hamcrest.Matchers;
-import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -44,38 +41,6 @@ public class IntegrationTest {
 		List<LogEntry> logs = getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
 
 		assertThat(logs.size(), is(50));
-	}
-
-	@Test
-	public void test_append() throws Exception {
-
-		LogProvider provider = new LogProviderWeb(new RequestDataRherrajan());
-		Game game = new Game();
-
-		GameUpdater updater = new GameUpdater(game, provider);
-
-		try {
-			updater.start();
-
-			int portalsOnTime1 = game.getLocationOwners().size();
-			for (Entry<Location, String> entry : game.getLocationOwners().entrySet()) {
-				System.out.println(entry.getValue() + ": " + entry.getKey());
-			}
-			System.out.println(portalsOnTime1 + " portals");
-
-			Thread.sleep(90 * 1000);
-			int portalsOnTime2 = game.getLocationOwners().size();
-			for (Entry<Location, String> entry : game.getLocationOwners().entrySet()) {
-				System.out.println(entry.getValue() + ": " + entry.getKey());
-			}
-			System.out.println(portalsOnTime2 + " portals");
-
-			Assert.assertThat(portalsOnTime2, Matchers.greaterThan(portalsOnTime1));
-
-		} finally {
-			updater.stop();
-		}
-
 	}
 
 	@Test

@@ -30,15 +30,13 @@ public class FeederServlet extends HttpServlet {
 	private void writeResponse(HttpServletResponse resp, String json)
 			throws IOException, UnsupportedEncodingException {
 		
-		Game game = AppengineGame.getInstance().getGame();	
+//		Game game = AppengineGame.getInstance().getGame();	
+		
+
+		Game game = new Game(new GaeDatabase());
 		
 		if(json != null && json.isEmpty() == false){
-//			json = URLDecoder.decode(json, "UTF-8");
-			
 			game.appendLog(json);
-			
-			DatabaseService database = new DatabaseService();
-			database.save(json);
 		}
 		
 		resp.setHeader("Access-Control-Allow-Origin", "*"); // CORS

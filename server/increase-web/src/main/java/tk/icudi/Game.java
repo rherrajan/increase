@@ -8,11 +8,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import tk.icudi.Database.Schema;
+
 public class Game {
 
 	private List<LogEntry> logs;
-	private Map<Location, String> portals = new HashMap<Location, String>();
-	private Map<String, Unit> players = new HashMap<String, Unit>();
+
+	private Database database;
+
+	public Game() {
+		this(new InMemoryDatabase());
+	}
+
+	public Game(Database database) {
+		this.database = database;
+	}
 
 	public void appendLogsFrom(LogProvider provider) throws IOException {
 		PlextParser parser = new PlextParser(provider);
@@ -23,8 +33,15 @@ public class Game {
 
 	void appendLogs(List<LogEntry> logs) {
 		this.logs = logs;
-		portals.putAll(createPortalList());
-		players.putAll(createPlayerlist());
+
+		Map<String, Unit> newPlayers = createPlayerlist();
+
+		// TODO: Vor dem Speichern die doppelten entfernen
+		// TODO: Future für Datenbankaufruf erstellen
+
+		for (Unit logEntry : newPlayers.values()) {
+			database.save(Schema.player, logEntry);
+		}
 	}
 
 	Map<String, Unit> createPlayerlist() {
@@ -40,29 +57,16 @@ public class Game {
 		return players;
 	}
 
-	public Map<Location, String> getLocationOwners() {
-		return portals;
-	}
-
-	private Map<Location, String> createPortalList() {
-		Map<Location, String> portals = new HashMap<Location, String>();
-
-		for (LogEntry logEntry : logs) {
-			Location portal = logEntry.getPortal();
-			if (portal.getName() != null && logEntry.getPlayerName() != null) {
-				portals.put(portal, logEntry.getPlayerName());
-			}
-		}
-
-		return portals;
-	}
-
-	public String getFirstLocationsOwner() {
-		return portals.entrySet().iterator().next().getValue();
-	}
+	// public Map<Location, String> getLocationOwners() {
+	// return portals;
+	// }
+	//
+	// public String getFirstLocationsOwner() {
+	// return portals.entrySet().iterator().next().getValue();
+	// }
 
 	public List<Unit> getPlayers() {
-		return new ArrayList<Unit>(players.values());
+		return database.load(Schema.player);
 	}
 
 	public static void main(String[] args) throws Exception {
