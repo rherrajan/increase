@@ -7,8 +7,6 @@ import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.FetchOptions;
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Text;
 import com.google.gson.Gson;
@@ -16,18 +14,15 @@ import com.google.gson.Gson;
 public class GaeDatabase implements Database {
 
 	@Override
-	public void save(Schema schema, Object toSave) {
+	public void save(Schema schema, Identifyable toSave) {
 		
-		String jsonString = new Gson().toJson(toSave);		
-		Key key = KeyFactory.createKey(schema.name(), schema.name());
+		String jsonString = new Gson().toJson(toSave);			
 		
-		System.out.println(" --- save jsonString: " + jsonString);
-		
-		Entity entity = new Entity(schema.name(), key);
+		Entity entity = new Entity(schema.name(), toSave.getIdentification());
 		entity.setProperty("json", new Text(jsonString));
-		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-		datastore.put(entity);
-
+		
+		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();		
+		datastore.put(entity);		
 	}
 	
 	@Override
@@ -35,7 +30,6 @@ public class GaeDatabase implements Database {
 		
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 				
-//		Query query = new Query(schema.name(), key);
 		Query query = new Query(schema.name());
 		List<Entity> entities = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
 		    
@@ -48,8 +42,6 @@ public class GaeDatabase implements Database {
 	    for (Entity entity : entities) {
 	    	Text text = (Text) entity.getProperty("json");
 	    	String jsonString = text.getValue();
-	    	
-	    	System.out.println(" --- load jsonString: " + jsonString);
 	    	Unit obj = gson.fromJson(jsonString, Unit.class);
 	    	
 	    	result.add(obj);

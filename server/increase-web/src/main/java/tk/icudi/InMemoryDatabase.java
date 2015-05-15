@@ -8,7 +8,7 @@ public class InMemoryDatabase implements Database {
 	private List<Unit> agents = new ArrayList<Unit>();
 
 	@Override
-	public void save(Schema schema, Object toSave) {
+	public void save(Schema schema, Identifyable toSave) {
 		this.agents.add((Unit) toSave);
 	}
 

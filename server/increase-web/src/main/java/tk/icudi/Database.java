@@ -9,7 +9,7 @@ public interface Database {
 
 	}
 
-	void save(Schema schema, Object toSave);
+	void save(Schema schema, Identifyable toSave);
 
 	// TODO: Typesave machen
 	List<Unit> load(Schema schema);

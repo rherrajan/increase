@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-public class Unit {
+public class Unit implements Identifyable{
 
 	private String name;
 	private long time;
@@ -82,6 +82,11 @@ public class Unit {
 
 	public void setFaction(Faction faction) {
 		this.faction = faction;
+	}
+
+	@Override
+	public String getIdentification() {
+		return name;
 	}
 
 }
