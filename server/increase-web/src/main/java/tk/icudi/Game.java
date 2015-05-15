@@ -12,6 +12,7 @@ import tk.icudi.Database.Schema;
 
 public class Game {
 
+	@Deprecated
 	private List<LogEntry> logs;
 
 	private Database database;
@@ -34,17 +35,17 @@ public class Game {
 	void appendLogs(List<LogEntry> logs) {
 		this.logs = logs;
 
-		Map<String, Unit> newPlayers = createPlayerlist();
+		Map<String, Unit> newAgents = createPlayerlist(logs);
 
 		// TODO: Vor dem Speichern die doppelten entfernen
 		// TODO: Future für Datenbankaufruf erstellen
 
-		for (Unit logEntry : newPlayers.values()) {
+		for (Unit logEntry : newAgents.values()) {
 			database.save(Schema.player, logEntry);
 		}
 	}
 
-	Map<String, Unit> createPlayerlist() {
+	Map<String, Unit> createPlayerlist(List<LogEntry> log) {
 		Map<String, Unit> players = new HashMap<String, Unit>();
 
 		for (LogEntry logEntry : logs) {

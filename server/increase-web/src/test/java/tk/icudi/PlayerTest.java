@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class PlayerTest extends AbstractGameTest {
@@ -42,7 +43,7 @@ public class PlayerTest extends AbstractGameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Unit firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Unit firstPlayer = game.getPlayers().iterator().next();
 		Point location = firstPlayer.getLastLocation().getPoint();
 		assertThat(location.getLat(), is(50113731));
 		assertThat(location.getLng(), is(8678958));
@@ -53,7 +54,7 @@ public class PlayerTest extends AbstractGameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Unit firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Unit firstPlayer = game.getPlayers().iterator().next();
 		GregorianCalendar time = firstPlayer.getTime();
 		assertThat(time.get(Calendar.HOUR_OF_DAY), is(12));
 	}
@@ -63,7 +64,7 @@ public class PlayerTest extends AbstractGameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Unit firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Unit firstPlayer = game.getPlayers().iterator().next();
 		int passedSeconds = firstPlayer.getPassedSeconds();
 		assertThat(passedSeconds, notNullValue());
 	}
@@ -73,7 +74,7 @@ public class PlayerTest extends AbstractGameTest {
 		Game game = new Game();
 		game.appendLogs(PlextParserTest.parseLogs("attack1.json"));
 
-		Unit firstPlayer = game.createPlayerlist().entrySet().iterator().next().getValue();
+		Unit firstPlayer = game.getPlayers().iterator().next();
 		int distance_meter = firstPlayer.getLastLocation().getDistance(getPortalMainStation());
 		// assertThat(distance_meter, is(1784));
 		// assertThat(distance_meter, is(1276));
@@ -115,6 +116,28 @@ public class PlayerTest extends AbstractGameTest {
 		}
 
 		assertEquals(5 + 8, game.getPlayers().size());
+	}
+
+	@Test
+	@Ignore
+	public void test_append_player_multiple() throws Exception {
+		Game game = new Game();
+
+		Point userLoc = getPortalMainStation();
+		long time = 1414335481800L + (1000 * 60 * 15);
+
+		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
+		for (Unit player : game.getSortetUnits(userLoc, time)) {
+			System.out.println(player.getMessage(userLoc, time));
+		}
+		assertEquals(5, game.getPlayers().size());
+
+		game.appendLogs(PlextParserTest.parseLogs("realdata.json"));
+		for (Unit player : game.getSortetUnits(userLoc, time)) {
+			System.out.println(player.getMessage(userLoc, time));
+		}
+
+		assertEquals(5, game.getPlayers().size());
 	}
 
 	@Test

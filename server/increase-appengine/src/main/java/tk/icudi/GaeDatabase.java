@@ -33,10 +33,10 @@ public class GaeDatabase implements Database {
 	@Override
 	public List<Unit> load(Schema schema) {
 		
-		Key key = KeyFactory.createKey(schema.name(), schema.name());
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-		
-		Query query = new Query(schema.name(), key);
+				
+//		Query query = new Query(schema.name(), key);
+		Query query = new Query(schema.name());
 		List<Entity> entities = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
 		    
 		System.out.println(" Loading " + entities.size() + " " + schema.name() + "...");
