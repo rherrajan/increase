@@ -89,6 +89,10 @@ public class UpdateService {
 				}
 
 				if (firstCall) {
+					for (IncreaseListener increaseListener : listener) {
+						increaseListener.onPlayerRefreshStart();
+					}
+					
 					UpdateService.this.updatePlayers();
 				}
 			}
