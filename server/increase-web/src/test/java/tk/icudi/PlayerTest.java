@@ -9,7 +9,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class PlayerTest extends AbstractGameTest {
@@ -119,7 +118,6 @@ public class PlayerTest extends AbstractGameTest {
 	}
 
 	@Test
-	@Ignore
 	public void test_append_player_multiple() throws Exception {
 		Game game = new Game();
 
