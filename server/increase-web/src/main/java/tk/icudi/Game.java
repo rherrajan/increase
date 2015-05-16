@@ -69,7 +69,7 @@ public class Game {
 	public List<Unit> getPlayers() {
 		List<Unit> players = database.load(Schema.player);
 
-		if (players.size() > 20) {
+		if (players.size() > 15) {
 			database.delete(Schema.player, 10);
 		}
 
