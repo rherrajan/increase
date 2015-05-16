@@ -112,6 +112,10 @@ public class UpdateService implements IncreaseLocationListener {
 		return result;
 	}
 
+	public void addPlayer(NearbyPlayer player) {
+		Toast.makeText(context, "add: " + player, Toast.LENGTH_SHORT).show();
+	}
+	
 	public void onLocationChanged(Location location) {
 	}
 

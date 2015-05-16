@@ -2,7 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/block_agent"
-        android:title="@string/block_agent"/>
+        android:id="@+id/agent_block"
+        android:title="@string/agent_block"/>
 
+    <item
+        android:id="@+id/agent_add"
+        android:title="@string/adent_add"/>
+        
 </menu>

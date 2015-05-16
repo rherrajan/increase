@@ -151,11 +151,17 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		NearbyPlayer player = (NearbyPlayer) player_raw;
 
 		switch (item.getItemId()) {
-		case R.id.block_agent:
+		case R.id.agent_block:
 			this.updateService.blockPlayer(player);
 			onPlayerRefreshSuccesfull(updateService.getLastPlayers());
 			return true;
 
+		case R.id.agent_add:
+			this.updateService.addPlayer(player);
+			onPlayerRefreshSuccesfull(updateService.getLastPlayers());
+			return true;
+
+			
 		default:
 			return super.onContextItemSelected(item);
 		}
