@@ -73,9 +73,9 @@ public class IncreaseServer {
 		return response;
 	}
 
-	public boolean addNearbyPlayers(AddPlayerInput addPlayerInput) {
-		// TODO Auto-generated method stub
-		return true;
+	public boolean addNearbyPlayer(AddPlayerInput addPlayerInput) throws ClientProtocolException, IOException {
+		String jsonString = getJsonString("/player/add?player=" + addPlayerInput.player.getName() +"&accuracy=" + addPlayerInput.accuracy);
+		return new Gson().fromJson(jsonString, Boolean.class);
 	}
 
 }

@@ -14,11 +14,10 @@ abstract class AddNearbyPlayersTask extends AsyncTask<AddPlayerInput, Integer, B
 		public int accuracy;
 	}
 
-
 	@Override
 	protected Boolean doInBackground(AddPlayerInput... params) {
 		try {
-			return server.addNearbyPlayers(params[0]);
+			return server.addNearbyPlayer(params[0]);
 		} catch (Exception e) {
 			this.exception = e;
 			return null;
