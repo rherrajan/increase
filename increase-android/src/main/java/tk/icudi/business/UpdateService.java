@@ -117,14 +117,14 @@ public class UpdateService implements IncreaseLocationListener {
 	public void addPlayer(NearbyPlayer player) {
 
 		final AddPlayerInput input = new AddPlayerInput();
-		input.player = player;
+		input.playername = player.getName();
 		input.accuracy = locationService.getAccuracy();
 
 		new AddNearbyPlayersTask() {
 			@Override
 			protected void onPostExecute(Boolean success) {
 				if (success != null && success.equals(Boolean.TRUE)) {
-					Toast.makeText(context, "add: " + input.player, Toast.LENGTH_SHORT).show();
+					Toast.makeText(context, "add: " + input.playername, Toast.LENGTH_SHORT).show();
 				} else if(exception != null){
 					Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
 				} else {
