@@ -5,7 +5,7 @@ import java.util.List;
 public interface Database {
 
 	static enum Schema {
-		player
+		player, hackedAgents
 
 	}
 

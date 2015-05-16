@@ -141,7 +141,32 @@ public class Game {
 	}
 
 	public void deleteOldPlayers() {
-		this.database.delete(Schema.player, 10);
+		database.delete(Schema.player, 10);
+	}
+
+	class HackedAgent implements Identifyable {
+
+		private String playername;
+
+		@SuppressWarnings("unused")
+		private String accuracy;
+
+		public HackedAgent(String playername, String accuracy) {
+			this.playername = playername;
+			this.accuracy = accuracy;
+		}
+
+		@Override
+		public String getIdentification() {
+			return playername;
+		}
+
+	}
+
+	public void addPlayer(String playername, String accuracy) {
+
+		HackedAgent agent = new HackedAgent(playername, accuracy);
+		database.save(Schema.hackedAgents, agent);
 	}
 
 }

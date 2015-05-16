@@ -5,11 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FeederServlet extends HttpServlet {
+public class FeederServlet extends AbstractServlet {
 
 	// https://code.google.com/p/jsonengine/
 	
@@ -17,12 +16,15 @@ public class FeederServlet extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		super.doGet(req, resp);
+		
 		writeResponse(resp, "{test:true}");
 	}
 
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
+		super.doPost(req, resp);
+		
 		String postData = extractPostData(req);
 		writeResponse(resp, postData);
 	}
@@ -30,18 +32,12 @@ public class FeederServlet extends HttpServlet {
 	private void writeResponse(HttpServletResponse resp, String json)
 			throws IOException, UnsupportedEncodingException {
 		
-//		Game game = AppengineGame.getInstance().getGame();	
-		
-
 		Game game = new Game(new GaeDatabase());
 		
 		if(json != null && json.isEmpty() == false){
 			game.appendLog(json);
 		}
-		
-		resp.setHeader("Access-Control-Allow-Origin", "*"); // CORS
-		resp.setContentType("application/json; charset=UTF-8");
-		
+				
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"success\"");
 		resp.getWriter().println("}");

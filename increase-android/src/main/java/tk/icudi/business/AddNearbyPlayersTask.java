@@ -1,6 +1,5 @@
 package tk.icudi.business;
 
-import tk.icudi.NearbyPlayer;
 import tk.icudi.business.AddNearbyPlayersTask.AddPlayerInput;
 import android.os.AsyncTask;
 
@@ -10,7 +9,7 @@ abstract class AddNearbyPlayersTask extends AsyncTask<AddPlayerInput, Integer, B
 	protected Exception exception;
 
 	static class AddPlayerInput {
-		public NearbyPlayer player;
+		public String playername;
 		public int accuracy;
 	}
 

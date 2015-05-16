@@ -2,21 +2,18 @@ package tk.icudi;
 
 import java.io.IOException;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-public class UnitServlet extends HttpServlet {
+public class UnitServlet extends AbstractServlet {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {	
-		
-		resp.setHeader("Access-Control-Allow-Origin", "*"); //cross domain request/CORS
-		resp.setContentType("application/json; charset=UTF-8");
+		super.doGet(req, resp);
 		
 		Game game = new Game(new GaeDatabase());
 		
