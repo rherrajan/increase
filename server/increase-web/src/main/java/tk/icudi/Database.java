@@ -14,4 +14,6 @@ public interface Database {
 	// TODO: Typesave machen
 	List<Unit> load(Schema schema);
 
+	void delete(Schema schema);
+
 }

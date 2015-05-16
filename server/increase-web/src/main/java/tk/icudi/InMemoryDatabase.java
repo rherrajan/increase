@@ -19,4 +19,9 @@ public class InMemoryDatabase implements Database {
 		return new ArrayList<Unit>(agents.values());
 	}
 
+	@Override
+	public void delete(Schema schema) {
+		agents = new HashMap<String, Unit>();
+	}
+
 }
