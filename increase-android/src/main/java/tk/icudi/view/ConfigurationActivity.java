@@ -1,6 +1,7 @@
-package tk.icudi;
+package tk.icudi.view;
 
 import roboguice.activity.RoboPreferenceActivity;
+import tk.icudi.R;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 

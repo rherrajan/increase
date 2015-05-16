@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import tk.icudi.ListMobileActivity;
 import tk.icudi.NearbyPlayer;
+import tk.icudi.view.ListMobileActivity;
 import android.content.Context;
 import android.location.Location;
 import android.os.AsyncTask;

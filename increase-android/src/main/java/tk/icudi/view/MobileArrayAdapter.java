@@ -1,5 +1,8 @@
-package tk.icudi;
+package tk.icudi.view;
 
+import tk.icudi.Faction;
+import tk.icudi.NearbyPlayer;
+import tk.icudi.R;
 import tk.icudi.business.UpdateService;
 import android.annotation.SuppressLint;
 import android.content.Context;

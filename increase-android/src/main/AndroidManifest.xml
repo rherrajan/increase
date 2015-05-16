@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo" >
         <activity
-            android:name=".ListMobileActivity"
+            android:name="tk.icudi.view.ListMobileActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" >
             <intent-filter>
@@ -27,8 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
-            android:name=".ConfigurationActivity"
+        	android:name="tk.icudi.view.ConfigurationActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" >
         </activity>

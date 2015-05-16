@@ -1,8 +1,10 @@
-package tk.icudi;
+package tk.icudi.view;
 
 import java.util.List;
 
 import roboguice.fragment.RoboListFragment;
+import tk.icudi.NearbyPlayer;
+import tk.icudi.R;
 import tk.icudi.business.AlarmService;
 import tk.icudi.business.IncreaseListener;
 import tk.icudi.business.UpdateService;
