@@ -30,8 +30,6 @@ public class UnitServlet extends HttpServlet {
 			resp.getWriter().println(json);
 		}
 		
-		//resp.setStatus(HttpServletResponse.SC_OK);
-		//resp.setContentType("text/plain");
     }
 
 	protected Object getResult(Game game, Point userLoc, final long time) {
@@ -71,8 +69,6 @@ public class UnitServlet extends HttpServlet {
 		return latString;
 	}
 	
-	
-
 	private Point getPortalMainStation() {
 		Point userLoc = new Point();
 		userLoc.setLat(50107356);
@@ -80,13 +76,5 @@ public class UnitServlet extends HttpServlet {
 
 		return userLoc;
 	}
-	
-//	private Point getPortalRedGate() {
-//		Point userLoc = new Point();
-//		userLoc.setLat(50080677);
-//		userLoc.setLng(8630383);
-//
-//		return userLoc;
-//	}
 
 }
