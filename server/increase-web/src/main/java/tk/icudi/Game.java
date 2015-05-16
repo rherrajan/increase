@@ -67,7 +67,13 @@ public class Game {
 	// }
 
 	public List<Unit> getPlayers() {
-		return database.load(Schema.player);
+		List<Unit> players = database.load(Schema.player);
+
+		if (players.size() > 20) {
+			database.delete(Schema.player, 10);
+		}
+
+		return players;
 	}
 
 	public static void main(String[] args) throws Exception {
