@@ -83,6 +83,20 @@ public class UpdateService {
 
 				boolean firstCall = UpdateService.this.userLocation == null;
 
+				if(location == null){
+					long duration = System.currentTimeMillis() - userLocation.getTime();
+					if(duration > 1000 * 30){
+						// Better old than no location
+						return;
+					} else {
+						// Too old: better no location
+					}
+				}
+				
+				updateLocation(location, firstCall);
+			}
+
+			private void updateLocation(Location location, boolean firstCall) {
 				UpdateService.this.userLocation = location;
 				for (IncreaseListener increaseListener : listener) {
 					increaseListener.onLocationChanged(location);
