@@ -2,6 +2,7 @@ package tk.icudi;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -91,9 +92,11 @@ public class Unit implements Identifyable{
 	}
 
 	@Override
-	public Map<String, Object> getProperties() {
-		// TODO Auto-generated method stub
-		return null;
+	public Map<String, Object> getIndexes() {
+		Map<String, Object> indexes = new HashMap<String, Object>();
+		indexes.put("time", time);
+		
+		return indexes;
 	}
 
 }

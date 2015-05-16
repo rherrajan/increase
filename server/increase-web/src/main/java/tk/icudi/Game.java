@@ -162,7 +162,7 @@ public class Game {
 		}
 
 		@Override
-		public Map<String, Object> getProperties() {
+		public Map<String, Object> getIndexes() {
 			return null;
 		}
 

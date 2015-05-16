@@ -6,6 +6,6 @@ public interface Identifyable {
 
 	String getIdentification();
 
-	Map<String, Object> getProperties();
+	Map<String, Object> getIndexes();
 
 }

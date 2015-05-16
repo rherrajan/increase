@@ -23,16 +23,16 @@ public class GaeDatabase implements Database {
 		String jsonString = new Gson().toJson(toSave);
 
 		Entity entity = new Entity(schema.name(), toSave.getIdentification());
-		entity.setProperty("json", jsonString);
-
-		Map<String, Object> properties = toSave.getProperties();
 		
-		if( properties != null){
-			for (Entry<String, Object> entry : properties.entrySet()) {
+		Map<String, Object> indexes = toSave.getIndexes();
+		if( indexes != null){
+			for (Entry<String, Object> entry : indexes.entrySet()) {
 				entity.setProperty(entry.getKey(), entry.getValue());
 			}
 		}
 		
+		entity.setProperty("json", jsonString);
+
 		datastore.put(entity);
 	}
 
