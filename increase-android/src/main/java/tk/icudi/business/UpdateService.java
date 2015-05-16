@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import tk.icudi.NearbyPlayer;
+import tk.icudi.business.AddNearbyPlayersTask.AddPlayerInput;
 import android.content.Context;
 import android.location.Location;
 import android.widget.Toast;
@@ -113,7 +114,21 @@ public class UpdateService implements IncreaseLocationListener {
 	}
 
 	public void addPlayer(NearbyPlayer player) {
-		Toast.makeText(context, "add: " + player, Toast.LENGTH_SHORT).show();
+		
+		final AddPlayerInput input = new AddPlayerInput();
+		input.player = player;
+		input.accuracy = locationService.getAccuracy();
+		
+		new AddNearbyPlayersTask() {
+			@Override
+			protected void onPostExecute(Boolean success) {
+				if (success != null && success.equals(Boolean.TRUE)) {
+					Toast.makeText(context, "add: " + input.player, Toast.LENGTH_SHORT).show();
+				}
+			}
+			
+		}.execute(input);
+		
 	}
 	
 	public void onLocationChanged(Location location) {

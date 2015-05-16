@@ -15,6 +15,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import tk.icudi.NearbyPlayer;
+import tk.icudi.business.AddNearbyPlayersTask.AddPlayerInput;
 import android.location.Location;
 import android.util.Log;
 
@@ -70,6 +71,11 @@ public class IncreaseServer {
 			throw new IOException("got response code '" + statusCode + "' from url: " + url);
 		}
 		return response;
+	}
+
+	public boolean addNearbyPlayers(AddPlayerInput addPlayerInput) {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }
