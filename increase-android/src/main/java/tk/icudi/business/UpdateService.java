@@ -127,6 +127,7 @@ public class UpdateService implements IncreaseLocationListener {
 					Toast.makeText(context, "add: " + input.playername, Toast.LENGTH_SHORT).show();
 				} else if(exception != null){
 					Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
+					exception.printStackTrace();
 				} else {
 					Toast.makeText(context, "server did not allow operation", Toast.LENGTH_SHORT).show();
 				}

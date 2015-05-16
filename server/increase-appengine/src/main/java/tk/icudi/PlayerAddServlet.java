@@ -19,8 +19,10 @@ public class PlayerAddServlet extends AbstractServlet {
 		String accuracy = req.getParameter("accuracy");
 
 		game.addPlayer(playername, accuracy);
+		
+		resp.getWriter().println("{");
+		resp.getWriter().println("\"result\": \"success\"");
+		resp.getWriter().println("}");
 	}
-
-
 
 }

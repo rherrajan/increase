@@ -75,7 +75,7 @@ public class IncreaseServer {
 
 	public boolean addNearbyPlayer(AddPlayerInput addPlayerInput) throws ClientProtocolException, IOException {
 		String jsonString = getJsonString("/player/add?player=" + addPlayerInput.playername +"&accuracy=" + addPlayerInput.accuracy);
-		return new Gson().fromJson(jsonString, Boolean.class);
+		return jsonString.contains("success");
 	}
 
 }
