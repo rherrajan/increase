@@ -11,6 +11,7 @@ import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.gson.Gson;
 
 public class GaeDatabase implements Database {
@@ -61,7 +62,7 @@ public class GaeDatabase implements Database {
 	@Override
 	public void delete(Schema schema, int itemsToKeep) {
 
-		final Query query = new Query(schema.name());
+		final Query query = new Query(schema.name()).addSort("time", SortDirection.DESCENDING);
 		query.setKeysOnly();
 		final List<Key> keys = new ArrayList<Key>();
 		for (final Entity entity : datastore.prepare(query).asIterable(FetchOptions.Builder.withLimit(100000))) {
