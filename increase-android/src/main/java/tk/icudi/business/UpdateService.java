@@ -26,21 +26,23 @@ public class UpdateService implements IncreaseLocationListener {
 
 	@Inject
 	private NotificationService notificationService;
-	
+
 	@Inject
 	private LocationService locationService;
-	
+
+	@Inject
+	private AlarmService alarmService;
 
 	private Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
-
 	private List<NearbyPlayer> lastPlayers = new ArrayList<NearbyPlayer>();
 	private Set<NearbyPlayer> blockedPlayers = new HashSet<NearbyPlayer>();
 
 	public void init() {
 		locationService.init();
 		locationService.registerListener(this);
+		alarmService.init();
 	}
-	
+
 	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
 		locationService.registerListener(increaseListener);
@@ -49,7 +51,7 @@ public class UpdateService implements IncreaseLocationListener {
 	public void updatePlayers() {
 
 		final Location userLocation = locationService.getUserLocation();
-		
+
 		if (userLocation == null) {
 			Toast.makeText(context, "no location", Toast.LENGTH_SHORT).show();
 			return;
@@ -58,7 +60,7 @@ public class UpdateService implements IncreaseLocationListener {
 		for (IncreaseListener increaseListener : listener) {
 			increaseListener.onFirstLocation();
 		}
-		
+
 		new GetNearbyPlayersTask() {
 
 			protected void onSuccessfullExecute(List<NearbyPlayer> players) {
@@ -76,16 +78,15 @@ public class UpdateService implements IncreaseLocationListener {
 			}
 
 			protected void onFailure(Exception exception) {
-				
+
 				for (IncreaseListener increaseListener : listener) {
 					increaseListener.onPlayerRefreshFailure(exception);
 				}
-				
+
 			}
-			
+
 		}.execute(userLocation);
 	}
-	
 
 	public List<NearbyPlayer> getLastPlayers() {
 		return lastPlayers;
@@ -114,11 +115,11 @@ public class UpdateService implements IncreaseLocationListener {
 	}
 
 	public void addPlayer(NearbyPlayer player) {
-		
+
 		final AddPlayerInput input = new AddPlayerInput();
 		input.player = player;
 		input.accuracy = locationService.getAccuracy();
-		
+
 		new AddNearbyPlayersTask() {
 			@Override
 			protected void onPostExecute(Boolean success) {
@@ -126,11 +127,11 @@ public class UpdateService implements IncreaseLocationListener {
 					Toast.makeText(context, "add: " + input.player, Toast.LENGTH_SHORT).show();
 				}
 			}
-			
+
 		}.execute(input);
-		
+
 	}
-	
+
 	public void onLocationChanged(Location location) {
 	}
 
@@ -141,6 +142,5 @@ public class UpdateService implements IncreaseLocationListener {
 	public int getAccuracy() {
 		return locationService.getAccuracy();
 	}
-
 
 }
