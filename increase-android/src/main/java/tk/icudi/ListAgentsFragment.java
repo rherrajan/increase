@@ -33,7 +33,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Inject
 	private AlarmService alarmService;
-
+	
 	private Menu menu;
 
 	@Override
@@ -164,7 +164,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		updateAccuracy(acc);
 	}
 
-	public void onPlayerRefreshStart() {
+	public void onFirstLocation() {
 		showRefreshAnimation(true);
 	}
 	
@@ -198,7 +198,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-
 		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
 		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago ";
 		Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();

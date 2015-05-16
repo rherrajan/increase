@@ -9,10 +9,7 @@ import tk.icudi.ListMobileActivity;
 import tk.icudi.NearbyPlayer;
 import android.content.Context;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -20,7 +17,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class UpdateService {
+public class UpdateService implements IncreaseLocationListener {
 
 	public static final int max_ranking_for_vibration = 300;
 	public static final int max_ranking_for_bold_display = 1000;
@@ -30,103 +27,25 @@ public class UpdateService {
 	Context context;
 
 	@Inject
-	LocationManager locationManager;
-
-	@Inject
 	NotificationService notificationService;
+	
+	@Inject
+	private LocationService locationService;
+	
 
-	Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
-
-	private boolean isInitialised = false;
-	private Location userLocation;
+	private Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
 
 	private List<NearbyPlayer> lastPlayers = new ArrayList<NearbyPlayer>();
 	private Set<NearbyPlayer> blockedPlayers = new HashSet<NearbyPlayer>();
 
+	public void init() {
+		locationService.init();
+		locationService.registerListener(this);
+	}
+	
 	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
-
-		if (isEmulator()) {
-			increaseListener.onLocationChanged(userLocation);
-		}
-	}
-
-	public synchronized void init() {
-		
-		if (isInitialised) {
-			return;
-		}
-		isInitialised = true;
-		
-		if (isEmulator() == false) {
-			setUpLocationService();
-		} else {
-			userLocation = createDummyLocation();
-		}		
-	}
-    
-	private void setUpLocationService() {
-
-		// Define a listener that responds to location updates
-		LocationListener locationListener = new LocationListener() {
-
-			public void onStatusChanged(String provider, int status, Bundle extras) {
-			}
-
-			public void onProviderEnabled(String provider) {
-			}
-
-			public void onProviderDisabled(String provider) {
-			}
-
-			public void onLocationChanged(Location location) {
-
-				boolean firstCall = UpdateService.this.userLocation == null;
-
-				if(location == null){
-					long duration = System.currentTimeMillis() - userLocation.getTime();
-					if(duration > 1000 * 30){
-						// Better old than no location
-						return;
-					} else {
-						// Too old: better no location
-					}
-				}
-				
-				updateLocation(location, firstCall);
-			}
-
-			private void updateLocation(Location location, boolean firstCall) {
-				UpdateService.this.userLocation = location;
-				for (IncreaseListener increaseListener : listener) {
-					increaseListener.onLocationChanged(location);
-				}
-
-				if (firstCall) {
-					for (IncreaseListener increaseListener : listener) {
-						increaseListener.onPlayerRefreshStart();
-					}
-					
-					UpdateService.this.updatePlayers();
-				}
-			}
-		};
-
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-	}
-
-	private Location createDummyLocation() {
-		Location dummyLoc = new Location("dummyprovider");
-		dummyLoc.setLatitude(50.107356);
-		dummyLoc.setLongitude(8.664123);
-		dummyLoc.setAccuracy(815);
-
-		return dummyLoc;
-	}
-
-	private boolean isEmulator() {
-		return locationManager.getProvider(LocationManager.NETWORK_PROVIDER) == null;
+		locationService.registerListener(increaseListener);
 	}
 
 	public static abstract class GetNearbyPlayersTask extends AsyncTask<Location, Integer, List<NearbyPlayer>> {
@@ -166,13 +85,15 @@ public class UpdateService {
 
 	public void updatePlayers() {
 
+		final Location userLocation = locationService.getUserLocation();
+		
 		if (userLocation == null) {
 			Toast.makeText(context, "no location", Toast.LENGTH_SHORT).show();
 			return;
 		}
 
 		for (IncreaseListener increaseListener : listener) {
-			increaseListener.onPlayerRefreshStart();
+			increaseListener.onFirstLocation();
 		}
 		
 		new GetNearbyPlayersTask() {
@@ -235,12 +156,16 @@ public class UpdateService {
 		return result;
 	}
 
-	public int getAccuracy() {
-		if(userLocation == null){
-			return -1;
-		} else {
-			return (int)userLocation.getAccuracy();
-		}
+	public void onLocationChanged(Location location) {
 	}
+
+	public void onFirstLocation() {
+		updatePlayers();
+	}
+
+	public int getAccuracy() {
+		return locationService.getAccuracy();
+	}
+
 
 }

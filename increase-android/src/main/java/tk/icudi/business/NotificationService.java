@@ -15,16 +15,16 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class NotificationService {
+class NotificationService {
 
 	@Inject
-	NotificationManager notificationManager;
+	private NotificationManager notificationManager;
 
 	@Inject
-	Vibrator vibrator;
+	private Vibrator vibrator;
 
 	@Inject
-	Context context;
+	private Context context;
 
 	private NearbyPlayer lastNotification;
 
