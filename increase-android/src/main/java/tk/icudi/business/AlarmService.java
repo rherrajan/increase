@@ -15,10 +15,10 @@ import com.google.inject.Singleton;
 class AlarmService implements OnSharedPreferenceChangeListener {
 
 	@Inject
-	AlarmManager alarmManager;
+	private AlarmManager alarmManager;
 	
 	@Inject
-	Context context;
+	private Context context;
 	
 	private boolean isInitialised = false;
 	private PendingIntent updateAlarm;
