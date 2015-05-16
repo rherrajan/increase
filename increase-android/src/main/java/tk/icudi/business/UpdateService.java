@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 import tk.icudi.NearbyPlayer;
-import tk.icudi.view.ListMobileActivity;
 import android.content.Context;
 import android.location.Location;
 import android.os.AsyncTask;
@@ -57,7 +56,7 @@ public class UpdateService implements IncreaseLocationListener {
 		protected List<NearbyPlayer> doInBackground(Location... params) {
 			try {
 				List<NearbyPlayer> players = server.getNearbyPlayers(params[0]);
-				Log.i(ListMobileActivity.class.getName(), "found " + players.size() + " players");
+				Log.i(UpdateService.class.getName(), "found " + players.size() + " players");
 				return players;
 
 			} catch (Exception e) {

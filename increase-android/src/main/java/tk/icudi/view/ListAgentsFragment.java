@@ -7,6 +7,7 @@ import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
 import tk.icudi.business.AlarmService;
 import tk.icudi.business.IncreaseListener;
+import tk.icudi.business.NotificationService;
 import tk.icudi.business.UpdateService;
 import android.content.Intent;
 import android.location.Location;
@@ -36,12 +37,17 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	@Inject
 	private AlarmService alarmService;
 	
+	@Inject
+	private NotificationService notificationService;
+	
+
 	private Menu menu;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		notificationService.setActionToNotificate(ListAgentsFragment.class);
 		alarmService.init();
 		updateService.init();
 		updateService.registerListener(this);

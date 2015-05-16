@@ -2,7 +2,6 @@ package tk.icudi.business;
 
 import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
-import tk.icudi.view.ListMobileActivity;
 import android.app.Notification;
 import android.app.Notification.Builder;
 import android.app.NotificationManager;
@@ -15,7 +14,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-class NotificationService {
+public class NotificationService {
 
 	@Inject
 	private NotificationManager notificationManager;
@@ -27,6 +26,8 @@ class NotificationService {
 	private Context context;
 
 	private NearbyPlayer lastNotification;
+	
+	private Class<?> actionToNotificate;
 
 	public void nearestPlayer(NearbyPlayer nearbyPlayer) {
 		
@@ -58,7 +59,7 @@ class NotificationService {
 	}
 
 	private void sendNotification(NearbyPlayer nearbyPlayer) {
-		Intent intent = new Intent(context, ListMobileActivity.class);
+		Intent intent = new Intent(context, actionToNotificate);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pIntent = PendingIntent.getActivity(context, 2, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		    
@@ -82,6 +83,10 @@ class NotificationService {
 		notificationManager.notify(0, noti);
 		
 		this.lastNotification = nearbyPlayer;
+	}
+
+	public void setActionToNotificate(Class<?> actionToNotificate) {
+		this.actionToNotificate = actionToNotificate;
 	}
 
 }
