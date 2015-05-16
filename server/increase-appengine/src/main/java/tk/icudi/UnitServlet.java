@@ -25,9 +25,13 @@ public class UnitServlet extends HttpServlet {
 		
 		final Object result = getResult(game, userLoc, time);
 		
-		String json = new Gson().toJson(result);
+		if(result != null){
+			String json = new Gson().toJson(result);
+			resp.getWriter().println(json);
+		}
 		
-		resp.getWriter().println(json);
+		//resp.setStatus(HttpServletResponse.SC_OK);
+		//resp.setContentType("text/plain");
     }
 
 	protected Object getResult(Game game, Point userLoc, final long time) {

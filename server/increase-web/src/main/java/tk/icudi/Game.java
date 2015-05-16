@@ -134,4 +134,8 @@ public class Game {
 		}
 	}
 
+	public void deleteAllPlayers() {
+		System.out.println(" --- deleteAllPlayers --- ");
+	}
+
 }
