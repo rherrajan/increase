@@ -161,6 +161,11 @@ public class Game {
 			return playername;
 		}
 
+		@Override
+		public Map<String, Object> getProperties() {
+			return null;
+		}
+
 	}
 
 	public void addPlayer(String playername, String accuracy) {

@@ -3,6 +3,7 @@ package tk.icudi;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.Map;
 
 public class Unit implements Identifyable{
 
@@ -87,6 +88,12 @@ public class Unit implements Identifyable{
 	@Override
 	public String getIdentification() {
 		return name;
+	}
+
+	@Override
+	public Map<String, Object> getProperties() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

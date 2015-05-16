@@ -2,6 +2,8 @@ package tk.icudi;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
@@ -9,7 +11,6 @@ import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.datastore.Text;
 import com.google.gson.Gson;
 
 public class GaeDatabase implements Database {
@@ -22,8 +23,16 @@ public class GaeDatabase implements Database {
 		String jsonString = new Gson().toJson(toSave);
 
 		Entity entity = new Entity(schema.name(), toSave.getIdentification());
-		entity.setProperty("json", new Text(jsonString));
+		entity.setProperty("json", jsonString);
 
+		Map<String, Object> properties = toSave.getProperties();
+		
+		if( properties != null){
+			for (Entry<String, Object> entry : properties.entrySet()) {
+				entity.setProperty(entry.getKey(), entry.getValue());
+			}
+		}
+		
 		datastore.put(entity);
 	}
 
@@ -40,8 +49,7 @@ public class GaeDatabase implements Database {
 		List<Unit> result = new ArrayList<Unit>();
 
 		for (Entity entity : entities) {
-			Text text = (Text) entity.getProperty("json");
-			String jsonString = text.getValue();
+			String jsonString = (String) entity.getProperty("json");
 			Unit obj = gson.fromJson(jsonString, Unit.class);
 
 			result.add(obj);
