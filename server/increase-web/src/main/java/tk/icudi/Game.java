@@ -134,8 +134,8 @@ public class Game {
 		}
 	}
 
-	public void deleteAllPlayers() {
-		this.database.delete(Schema.player);
+	public void deleteOldPlayers() {
+		this.database.delete(Schema.player, 10);
 	}
 
 }

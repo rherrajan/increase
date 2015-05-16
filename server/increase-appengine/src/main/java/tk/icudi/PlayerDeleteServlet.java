@@ -7,7 +7,7 @@ public class PlayerDeleteServlet extends UnitServlet {
 
 	@Override
 	protected Object getResult(Game game, Point userLoc, final long time) {
-		game.deleteAllPlayers();
+		game.deleteOldPlayers();
 
 		return null;
 	}

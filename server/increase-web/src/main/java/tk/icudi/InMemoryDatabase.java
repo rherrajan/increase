@@ -20,7 +20,7 @@ public class InMemoryDatabase implements Database {
 	}
 
 	@Override
-	public void delete(Schema schema) {
+	public void delete(Schema schema, int itemsToKeep) {
 		agents = new HashMap<String, Unit>();
 	}
 

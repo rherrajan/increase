@@ -52,7 +52,7 @@ public class GaeDatabase implements Database {
 	}
 
 	@Override
-	public void delete(Schema schema) {
+	public void delete(Schema schema, int itemsToKeep) {
 		final DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		final Query query = new Query(schema.name());
 		query.setKeysOnly();
@@ -60,9 +60,24 @@ public class GaeDatabase implements Database {
 		for (final Entity entity : datastore.prepare(query).asIterable(FetchOptions.Builder.withLimit(100000))) {
 			keys.add(entity.getKey());
 		}
-		System.out.println("delete " + keys.size() + " " +  schema.name());
+		System.out.println(keys.size() + " " +  schema.name() + " found");
 		
-		datastore.delete(keys);
+		if(itemsToKeep < 0){
+			return;
+		}
+		
+		if(keys.size() > itemsToKeep){
+			List<Key> toDelete = new ArrayList<Key>();
+			for(int i=itemsToKeep; i<keys.size(); i++){
+				toDelete.add(keys.get(i));
+			}
+			
+			System.out.println("delete " + keys.size() + " " +  schema.name());
+			datastore.delete(toDelete);
+		} else {
+			System.out.println("too few " +  schema.name() + " to delete");
+		}
+
 	}
 
 }
