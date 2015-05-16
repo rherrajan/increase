@@ -8,8 +8,6 @@ import java.util.Set;
 import tk.icudi.NearbyPlayer;
 import android.content.Context;
 import android.location.Location;
-import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.inject.Inject;
@@ -23,10 +21,10 @@ public class UpdateService implements IncreaseLocationListener {
 	public static final int max_ranking_for_notification = 5000;
 
 	@Inject
-	Context context;
+	private Context context;
 
 	@Inject
-	NotificationService notificationService;
+	private NotificationService notificationService;
 	
 	@Inject
 	private LocationService locationService;
@@ -45,41 +43,6 @@ public class UpdateService implements IncreaseLocationListener {
 	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
 		locationService.registerListener(increaseListener);
-	}
-
-	public static abstract class GetNearbyPlayersTask extends AsyncTask<Location, Integer, List<NearbyPlayer>> {
-
-		private IncreaseServer server = new IncreaseServer();
-		private Exception exception;
-
-		@Override
-		protected List<NearbyPlayer> doInBackground(Location... params) {
-			try {
-				List<NearbyPlayer> players = server.getNearbyPlayers(params[0]);
-				Log.i(UpdateService.class.getName(), "found " + players.size() + " players");
-				return players;
-
-			} catch (Exception e) {
-				this.exception = e;
-				return null;
-			}
-		}
-
-		@Override
-		protected void onPostExecute(List<NearbyPlayer> players) {
-			if (players != null) {
-				onSuccessfullExecute(players);
-			} else {
-				onFailure(exception);
-			}
-		}
-
-		protected abstract void onFailure(Exception exception);
-
-		protected abstract Context getInitiator();
-
-		protected abstract void onSuccessfullExecute(List<NearbyPlayer> players);
-
 	}
 
 	public void updatePlayers() {
@@ -105,11 +68,10 @@ public class UpdateService implements IncreaseLocationListener {
 					increaseListener.onPlayerRefreshSuccesfull(lastPlayers);
 				}
 
-				if (lastPlayers.isEmpty()) {
-					return;
+				if (lastPlayers.isEmpty() == false) {
+					notificationService.nearestPlayer(lastPlayers.get(0));
 				}
 
-				notificationService.nearestPlayer(lastPlayers.get(0));
 			}
 
 			protected void onFailure(Exception exception) {
@@ -118,11 +80,6 @@ public class UpdateService implements IncreaseLocationListener {
 					increaseListener.onPlayerRefreshFailure(exception);
 				}
 				
-			}
-			
-			@Override
-			protected Context getInitiator() {
-				return context;
 			}
 			
 		}.execute(userLocation);
