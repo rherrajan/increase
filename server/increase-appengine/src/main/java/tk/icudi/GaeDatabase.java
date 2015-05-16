@@ -14,6 +14,8 @@ import com.google.gson.Gson;
 
 public class GaeDatabase implements Database {
 
+	final DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+	
 	@Override
 	public void save(Schema schema, Identifyable toSave) {
 
@@ -22,14 +24,11 @@ public class GaeDatabase implements Database {
 		Entity entity = new Entity(schema.name(), toSave.getIdentification());
 		entity.setProperty("json", new Text(jsonString));
 
-		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		datastore.put(entity);
 	}
 
 	@Override
 	public List<Unit> load(Schema schema) {
-
-		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
 		Query query = new Query(schema.name());
 		List<Entity> entities = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
@@ -53,7 +52,7 @@ public class GaeDatabase implements Database {
 
 	@Override
 	public void delete(Schema schema, int itemsToKeep) {
-		final DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
 		final Query query = new Query(schema.name());
 		query.setKeysOnly();
 		final List<Key> keys = new ArrayList<Key>();
