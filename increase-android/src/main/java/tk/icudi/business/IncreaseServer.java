@@ -14,10 +14,9 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import tk.icudi.CaughtPlayer;
 import tk.icudi.NearbyPlayer;
-import tk.icudi.business.AddNearbyPlayersTask.AddPlayerInput;
 import android.location.Location;
-import android.provider.Settings.Secure;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -75,7 +74,7 @@ public class IncreaseServer {
 		return response;
 	}
 
-	public boolean addNearbyPlayer(AddPlayerInput addPlayerInput) throws ClientProtocolException, IOException {
+	public boolean addNearbyPlayer(CaughtPlayer addPlayerInput) throws ClientProtocolException, IOException {
 		
 		String jsonString = getJsonString("/player/add? " + addPlayerInput.makeQueryString());
 		return jsonString.contains("success");

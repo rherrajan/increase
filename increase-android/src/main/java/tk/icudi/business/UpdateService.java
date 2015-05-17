@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import tk.icudi.CaughtPlayer;
 import tk.icudi.NearbyPlayer;
-import tk.icudi.business.AddNearbyPlayersTask.AddPlayerInput;
 import android.content.Context;
 import android.location.Location;
 import android.provider.Settings.Secure;
@@ -116,7 +116,7 @@ public class UpdateService implements IncreaseLocationListener {
 
 	public void addPlayer(NearbyPlayer player) {
 
-		final AddPlayerInput input = new AddPlayerInput();
+		final CaughtPlayer input = new CaughtPlayer();
 		input.playername = player.getName();
 		input.accuracy = locationService.getAccuracy();
 		input.device_id = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID); 
