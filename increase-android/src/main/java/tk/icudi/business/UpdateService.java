@@ -9,6 +9,7 @@ import tk.icudi.NearbyPlayer;
 import tk.icudi.business.AddNearbyPlayersTask.AddPlayerInput;
 import android.content.Context;
 import android.location.Location;
+import android.provider.Settings.Secure;
 import android.widget.Toast;
 
 import com.google.inject.Inject;
@@ -118,6 +119,7 @@ public class UpdateService implements IncreaseLocationListener {
 		final AddPlayerInput input = new AddPlayerInput();
 		input.playername = player.getName();
 		input.accuracy = locationService.getAccuracy();
+		input.device_id = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID); 
 
 		new AddNearbyPlayersTask() {
 			@Override

@@ -2,6 +2,7 @@ package tk.icudi.business;
 
 import tk.icudi.business.AddNearbyPlayersTask.AddPlayerInput;
 import android.os.AsyncTask;
+import android.provider.Settings.Secure;
 
 abstract class AddNearbyPlayersTask extends AsyncTask<AddPlayerInput, Integer, Boolean> {
 
@@ -11,6 +12,7 @@ abstract class AddNearbyPlayersTask extends AsyncTask<AddPlayerInput, Integer, B
 	static class AddPlayerInput {
 		public String playername;
 		public int accuracy;
+		public String device_id;
 	}
 
 	@Override
