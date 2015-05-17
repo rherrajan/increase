@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.PopupMenu;
 
 import com.google.inject.Inject;
 
@@ -25,10 +26,10 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 
 	@Inject
 	private NotificationService notificationService;
-	
+
 	@Inject
 	private UpdateService updateService;
-		
+
 	private ListAgentsFragment fragment = new ListAgentsFragment();
 
 	@Override
@@ -37,28 +38,28 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.main_layout);
 
-		notificationService.setActionToNotificate(ListAgentsFragment.class);
+		notificationService.setActionToNotificate(ListMobileActivity.class);
 		updateService.init();
 		updateService.registerListener(this);
 		updateService.registerListener(fragment);
-		
+
 		showRefreshAnimation(false);
-		
+
 		if (isReadyForFragment(savedInstanceState)) {
 			activateSupportFragment(fragment, savedInstanceState);
 		}
 	}
-	
+
 	@Override
 	public void onResume() {
 		super.onResume();
 
 		onPlayerRefreshSuccesfull(updateService.getLastPlayers());
 	}
-	
+
 	private boolean isReadyForFragment(Bundle savedInstanceState) {
 		if (findViewById(R.id.fragment_container) == null) {
 			return false;
@@ -75,9 +76,9 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 		fragment.setArguments(getIntent().getExtras());
 		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
 	}
-	
+
 	private Menu menu;
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -91,10 +92,9 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
- 
+
 		switch (item.getItemId()) {
 
-		
 		case R.id.action_refresh:
 			showRefreshAnimation(true);
 			updateService.updatePlayers();
@@ -102,20 +102,20 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 
 		case R.id.action_settings:
 
-//		    PopupMenu popup = new PopupMenu(getActivity(), findViewById(R.id.agent_list));
-//		    MenuInflater inflater = popup.getMenuInflater();
-//		    inflater.inflate(R.menu.burger_menu, popup.getMenu());
-//		    popup.show();
-		    
-			Intent i = new Intent(getActivity(), ConfigurationActivity.class);
-			startActivity(i);
-			return true;
+			
+			PopupMenu popup = new PopupMenu(getActivity(), findViewById(R.id.action_settings));
+			popup.getMenuInflater().inflate(R.menu.burger_menu, popup.getMenu());
+			popup.show();
+
+//			Intent i = new Intent(getActivity(), ConfigurationActivity.class);
+//			startActivity(i);
+//			return true;
 
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
+
 	private Context getActivity() {
 		return this;
 	}
@@ -137,7 +137,7 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 
 				Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
 				rotation.setRepeatCount(Animation.INFINITE);
-				refreshItem.getActionView().startAnimation(rotation);
+				// refreshItem.getActionView().startAnimation(rotation);
 			}
 
 		} else {
@@ -148,11 +148,11 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 			}
 		}
 	}
-	
+
 	public void onPlayerRefreshStart() {
 		showRefreshAnimation(true);
 	}
-	
+
 	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
 		showRefreshAnimation(false);
 	}
@@ -191,5 +191,5 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 	public void onFirstLocation() {
 
 	}
-	
+
 }
