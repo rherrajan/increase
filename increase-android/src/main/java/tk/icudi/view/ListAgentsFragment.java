@@ -1,5 +1,6 @@
 package tk.icudi.view;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import roboguice.fragment.RoboListFragment;
@@ -39,6 +40,9 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		super.onViewCreated(view, savedInstanceState);
 
 		registerForContextMenu(this.getListView());
+		
+		list = new AgentlistAdapter(getActivity(), new ArrayList<NearbyPlayer>());
+		setListAdapter(list);
 	}
 
 
@@ -79,14 +83,8 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	}
 	
 	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
-		if(list == null){
-			list = new AgentlistAdapter(getActivity(), players);
-			setListAdapter(list);
-		} else {
-			list.clear();
-			list.addAll(players);
-		}
-
+		list.clear();
+		list.addAll(players);
 	}
 
 	public void onPlayerRefreshFailure(Exception exception) {
