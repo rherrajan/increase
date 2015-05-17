@@ -12,10 +12,10 @@ public class CaughtPlayer implements Identifyable {
 		return "player=" + playername + "&accuracy=" + accuracy + "&id=" + device_id;
 	}
 
-	public static CaughtPlayer fromParameterMap(Map<String,String> parameterMap) {
+	public static CaughtPlayer fromParameterMap(Map<String,String[]> parameterMap) {
 		CaughtPlayer player = new CaughtPlayer(); 
-		player.playername = parameterMap.get("player");
-		player.accuracy = Integer.valueOf(parameterMap.get("accuracy"));
+		player.playername = parameterMap.get("player")[0];
+		player.accuracy = Integer.valueOf(parameterMap.get("accuracy")[0]);
 		return player;
 	}
 

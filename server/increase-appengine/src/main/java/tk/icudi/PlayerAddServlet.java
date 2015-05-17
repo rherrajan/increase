@@ -18,7 +18,7 @@ public class PlayerAddServlet extends AbstractServlet {
 		Game game = new Game(new GaeDatabase());
 
 
-		CaughtPlayer player = CaughtPlayer.fromParameterMap((Map<String,String>)req.getParameterMap());
+		CaughtPlayer player = CaughtPlayer.fromParameterMap((Map<String,String[]>)req.getParameterMap());
 
 		game.addPlayer(player);
 		
