@@ -6,22 +6,17 @@ import roboguice.fragment.RoboListFragment;
 import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
 import tk.icudi.business.IncreaseListener;
-import tk.icudi.business.NotificationService;
 import tk.icudi.business.UpdateService;
-import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -32,24 +27,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Inject
 	private UpdateService updateService;
-
-	@Inject
-	private NotificationService notificationService;
-
-	private Menu menu;
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		notificationService.setActionToNotificate(ListAgentsFragment.class);
-		updateService.init();
-		updateService.registerListener(this);
-
-		setHasOptionsMenu(true);
-
-	}
-
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		return inflater.inflate(R.layout.agent_list, container, false);
@@ -59,76 +37,9 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
-		showRefreshAnimation(false);
 		registerForContextMenu(this.getListView());
 	}
 
-	@Override
-	public void onResume() {
-		super.onResume();
-
-		onPlayerRefreshSuccesfull(updateService.getLastPlayers());
-	}
-
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		inflater.inflate(R.menu.main_activity_actions, menu);
-
-		this.menu = menu;
-		updateAccuracy(updateService.getAccuracy());
-
-		super.onCreateOptionsMenu(menu, inflater);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-
-		switch (item.getItemId()) {
-
-		case R.id.action_refresh:
-			showRefreshAnimation(true);
-			updateService.updatePlayers();
-			return true;
-
-		case R.id.action_settings:
-			Intent i = new Intent(getActivity(), ConfigurationActivity.class);
-			startActivity(i);
-			return true;
-
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
-
-	private void showRefreshAnimation(boolean activate) {
-
-		if (menu == null) {
-			return;
-		}
-
-		MenuItem refreshItem = menu.findItem(R.id.action_refresh);
-
-		View actionView = refreshItem.getActionView();
-
-		if (activate) {
-
-			if (actionView == null) {
-				refreshItem.setActionView(R.layout.iv_refresh);
-
-				Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
-				rotation.setRepeatCount(Animation.INFINITE);
-				refreshItem.getActionView().startAnimation(rotation);
-			}
-
-		} else {
-
-			if (actionView != null) {
-				actionView.clearAnimation();
-				refreshItem.setActionView(null);
-			}
-		}
-
-	}
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -159,58 +70,32 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		}
 	}
 
-	public void onLocationChanged(Location location) {
-		final int acc;
-		if (location == null) {
-			acc = -1;
-		} else {
-			acc = (int) location.getAccuracy();
-		}
-
-		updateAccuracy(acc);
-	}
-
-	public void onFirstLocation() {
-		
-	}
-
-	public void onPlayerRefreshStart() {
-		showRefreshAnimation(true);
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
+		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago ";
+		Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
 	}
 	
 	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
-		showRefreshAnimation(false);
-
 		setListAdapter(new MobileArrayAdapter(getActivity(), players.toArray(new NearbyPlayer[players.size()])));
 	}
 
 	public void onPlayerRefreshFailure(Exception exception) {
 		Toast.makeText(getActivity(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
 		Log.e(ListAgentsFragment.class.getName(), "failed to get player information", exception);
-		showRefreshAnimation(false);
 	}
 
-	private void updateAccuracy(int acc) {
+	public void onFirstLocation() {
+		
+	}
+	
+	public void onLocationChanged(Location location) {
 
-		if (menu == null) {
-			return;
-		}
-
-		final String title;
-		if (acc == -1) {
-			title = getResources().getString(R.string.action_acc_default);
-		} else {
-			title = acc + "m";
-		}
-
-		menu.findItem(R.id.action_acc).setTitle(title);
 	}
 
-	@Override
-	public void onListItemClick(ListView l, View v, int position, long id) {
-		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
-		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago ";
-		Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
+	public void onPlayerRefreshStart() {
+
 	}
 
 }
