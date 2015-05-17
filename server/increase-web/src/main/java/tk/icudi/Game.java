@@ -144,34 +144,8 @@ public class Game {
 		database.delete(Schema.player, 10);
 	}
 
-	class HackedAgent implements Identifyable {
-
-		private String playername;
-
-		@SuppressWarnings("unused")
-		private String accuracy;
-
-		public HackedAgent(String playername, String accuracy) {
-			this.playername = playername;
-			this.accuracy = accuracy;
-		}
-
-		@Override
-		public String getIdentification() {
-			return playername;
-		}
-
-		@Override
-		public Map<String, Object> getIndexes() {
-			return null;
-		}
-
-	}
-
-	public void addPlayer(String playername, String accuracy) {
-
-		HackedAgent agent = new HackedAgent(playername, accuracy);
-		database.save(Schema.hackedAgents, agent);
+	public void addPlayer(CaughtPlayer player) {
+		database.save(Schema.hackedAgents, player);
 	}
 
 }
