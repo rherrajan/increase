@@ -13,6 +13,10 @@ abstract class AddNearbyPlayersTask extends AsyncTask<AddPlayerInput, Integer, B
 		public String playername;
 		public int accuracy;
 		public String device_id;
+		
+		public String makeQueryString() {
+			return "player=" + playername + "&accuracy=" + accuracy+ "&id=" + device_id;
+		}
 	}
 
 	@Override
