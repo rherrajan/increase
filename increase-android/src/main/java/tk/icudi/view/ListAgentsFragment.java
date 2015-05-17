@@ -171,9 +171,13 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	}
 
 	public void onFirstLocation() {
-		showRefreshAnimation(true);
+		
 	}
 
+	public void onPlayerRefreshStart() {
+		showRefreshAnimation(true);
+	}
+	
 	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
 		showRefreshAnimation(false);
 

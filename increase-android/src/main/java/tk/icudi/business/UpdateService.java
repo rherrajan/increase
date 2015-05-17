@@ -58,7 +58,7 @@ public class UpdateService implements IncreaseLocationListener {
 		}
 
 		for (IncreaseListener increaseListener : listener) {
-			increaseListener.onFirstLocation();
+			increaseListener.onPlayerRefreshStart();
 		}
 
 		new GetNearbyPlayersTask() {

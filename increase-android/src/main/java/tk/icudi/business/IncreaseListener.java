@@ -10,4 +10,6 @@ public interface IncreaseListener extends IncreaseLocationListener {
 
 	public void onPlayerRefreshFailure(Exception exception);
 
+	public void onPlayerRefreshStart();
+
 }
