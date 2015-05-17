@@ -8,10 +8,12 @@
     
     <string name="action_refresh">refresh</string>
     <string name="action_settings">settings</string>
-
+    <string name="action_burger">menu</string>
+    
     <string name="pref_auto_updates">auto updates</string>
     <string name="pref_auto_updates_summary">refresh the agents periodically</string>
     <string name="pref_interval">refresh interval</string>
     <string name="pref_interval_summary">how many second to wait until the next refresh</string>
+
     
 </resources>

@@ -10,9 +10,9 @@
         android:showAsAction="ifRoom"
         android:title="@string/action_refresh"/>
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_burger"
 		android:icon="@android:drawable/ic_dialog_dialer"
         android:showAsAction="always"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_burger"/>
 
 </menu>

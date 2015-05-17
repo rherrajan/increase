@@ -100,15 +100,27 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 			updateService.updatePlayers();
 			return true;
 
-		case R.id.action_settings:
+		case R.id.action_burger:
 
-			
-//			PopupMenu popup = new PopupMenu(getActivity(), findViewById(R.id.action_settings));
-//			popup.getMenuInflater().inflate(R.menu.burger_menu, popup.getMenu());
-//			popup.show();
+			PopupMenu popup = new PopupMenu(getActivity(), findViewById(item.getItemId()));
+			popup.getMenuInflater().inflate(R.menu.burger_menu, popup.getMenu());
+			popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
-			Intent i = new Intent(getActivity(), ConfigurationActivity.class);
-			startActivity(i);
+				public boolean onMenuItemClick(MenuItem item) {
+
+					switch (item.getItemId()) {
+					case R.id.action_settings:
+						Intent i = new Intent(getActivity(), ConfigurationActivity.class);
+						startActivity(i);
+						break;
+					}
+
+					return true;
+				}
+
+			});
+
+			popup.show();
 			return true;
 
 		default:
