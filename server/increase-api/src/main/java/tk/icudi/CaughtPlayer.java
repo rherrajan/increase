@@ -16,6 +16,7 @@ public class CaughtPlayer implements Identifyable {
 		CaughtPlayer player = new CaughtPlayer(); 
 		player.playername = parameterMap.get("player")[0];
 		player.accuracy = Integer.valueOf(parameterMap.get("accuracy")[0]);
+		player.device_id = parameterMap.get("id")[0];
 		return player;
 	}
 
