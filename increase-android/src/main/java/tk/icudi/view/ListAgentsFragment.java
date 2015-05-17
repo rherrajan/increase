@@ -78,7 +78,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	}
 	
 	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
-		setListAdapter(new MobileArrayAdapter(getActivity(), players.toArray(new NearbyPlayer[players.size()])));
+		setListAdapter(new AgentlistAdapter(getActivity(), players.toArray(new NearbyPlayer[players.size()])));
 	}
 
 	public void onPlayerRefreshFailure(Exception exception) {

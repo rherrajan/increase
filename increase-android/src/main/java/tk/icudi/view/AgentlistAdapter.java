@@ -14,12 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
+public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> {
 
 	private final Context context;
 	private final NearbyPlayer[] values;
 
-	public MobileArrayAdapter(Context context, NearbyPlayer[] values) {
+	public AgentlistAdapter(Context context, NearbyPlayer[] values) {
 		super(context, R.layout.agent_list_item, values);
 		this.context = context;
 		this.values = values;
