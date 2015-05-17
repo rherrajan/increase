@@ -76,7 +76,7 @@ public class IncreaseServer {
 
 	public boolean addNearbyPlayer(CaughtPlayer addPlayerInput) throws ClientProtocolException, IOException {
 		
-		String jsonString = getJsonString("/player/add? " + addPlayerInput.makeQueryString());
+		String jsonString = getJsonString("/player/add?" + addPlayerInput.makeQueryString());
 		return jsonString.contains("success");
 	}
 
