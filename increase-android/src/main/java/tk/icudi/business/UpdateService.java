@@ -124,7 +124,7 @@ public class UpdateService implements IncreaseLocationListener {
 			protected void onPostExecute(Boolean success) {
 				if (success != null && success.equals(Boolean.TRUE)) {
 					Toast.makeText(context, "add: " + input.playername, Toast.LENGTH_SHORT).show();
-				} else if(exception != null){
+				} else if (exception != null) {
 					Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
 					exception.printStackTrace();
 				} else {

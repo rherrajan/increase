@@ -9,16 +9,16 @@ public class ListMobileActivity extends RoboFragmentActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		
+
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);
 
-		if(isReadyForFragment(savedInstanceState)){
+		if (isReadyForFragment(savedInstanceState)) {
 			activateSupportFragment(new ListAgentsFragment(), savedInstanceState);
 		}
-		
+
 	}
 
 	private boolean isReadyForFragment(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class ListMobileActivity extends RoboFragmentActivity {
 		if (savedInstanceState != null) {
 			return false;
 		}
-		
+
 		return true;
 	}
 
@@ -37,5 +37,5 @@ public class ListMobileActivity extends RoboFragmentActivity {
 		fragment.setArguments(getIntent().getExtras());
 		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
 	}
-	
+
 }

@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
-	
+
 	private final Context context;
 	private final NearbyPlayer[] values;
 
@@ -36,25 +36,24 @@ public class MobileArrayAdapter extends ArrayAdapter<NearbyPlayer> {
 		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
 		ImageView directionPic = (ImageView) rowView.findViewById(R.id.direction);
 
-		
 		NearbyPlayer player = values[position];
 		player_name.setText(player.getName());
 		player_distance.setText(player.getHumanReadableDistance());
-		
-		if(player.getRank() < UpdateService.max_ranking_for_bold_display){
+
+		if (player.getRank() < UpdateService.max_ranking_for_bold_display) {
 			player_name.setTypeface(null, Typeface.BOLD);
 		}
-		
-		if(player.getFaction() == Faction.blue){
+
+		if (player.getFaction() == Faction.blue) {
 			factionPic.setImageResource(R.drawable.blue);
-		} else if(player.getFaction() == Faction.green){
+		} else if (player.getFaction() == Faction.green) {
 			factionPic.setImageResource(R.drawable.green);
 		} else {
 			factionPic.setImageResource(R.drawable.increase);
 		}
-		
-		directionPic.setRotation(-90 + (int)player.getAngle());
-		
+
+		directionPic.setRotation(-90 + (int) player.getAngle());
+
 		return rowView;
 	}
 

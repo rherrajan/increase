@@ -32,10 +32,10 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Inject
 	private UpdateService updateService;
-	
+
 	@Inject
 	private NotificationService notificationService;
-	
+
 	private Menu menu;
 
 	@Override
@@ -47,8 +47,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		updateService.registerListener(this);
 
 		setHasOptionsMenu(true);
-		
-		
+
 	}
 
 	@Override
@@ -110,10 +109,10 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		MenuItem refreshItem = menu.findItem(R.id.action_refresh);
 
 		View actionView = refreshItem.getActionView();
-		
+
 		if (activate) {
 
-			if(actionView == null){
+			if (actionView == null) {
 				refreshItem.setActionView(R.layout.iv_refresh);
 
 				Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
@@ -122,7 +121,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 			}
 
 		} else {
-			
+
 			if (actionView != null) {
 				actionView.clearAnimation();
 				refreshItem.setActionView(null);
@@ -155,7 +154,6 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 			onPlayerRefreshSuccesfull(updateService.getLastPlayers());
 			return true;
 
-			
 		default:
 			return super.onContextItemSelected(item);
 		}
@@ -175,7 +173,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	public void onFirstLocation() {
 		showRefreshAnimation(true);
 	}
-	
+
 	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
 		showRefreshAnimation(false);
 
@@ -187,7 +185,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		Log.e(ListAgentsFragment.class.getName(), "failed to get player information", exception);
 		showRefreshAnimation(false);
 	}
-	
+
 	private void updateAccuracy(int acc) {
 
 		if (menu == null) {
@@ -210,6 +208,5 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago ";
 		Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
 	}
-
 
 }

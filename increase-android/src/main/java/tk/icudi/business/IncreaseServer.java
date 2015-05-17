@@ -25,20 +25,21 @@ import com.google.gson.reflect.TypeToken;
 public class IncreaseServer {
 
 	private static final String baseURL = "http://sylvan-dragon-772.appspot.com";
-	
+
 	public List<NearbyPlayer> getNearbyPlayers(Location userLocation) throws ClientProtocolException, IOException {
-		
+
 		int lat = locDoubleToInt(userLocation.getLatitude());
 		int lng = locDoubleToInt(userLocation.getLongitude());
-		
-		String jsonString = getJsonString("/player/nearby?lat=" + lat +"&lng=" + lng);
-		return new Gson().<List<NearbyPlayer>>fromJson(jsonString, new TypeToken<List<NearbyPlayer>>(){}.getType());
+
+		String jsonString = getJsonString("/player/nearby?lat=" + lat + "&lng=" + lng);
+		return new Gson().<List<NearbyPlayer>> fromJson(jsonString, new TypeToken<List<NearbyPlayer>>() {
+		}.getType());
 	}
 
 	int locDoubleToInt(double doubleLoc) {
-		return (int)(doubleLoc * 10000000);
+		return (int) (doubleLoc * 10000000);
 	}
-	
+
 	private String getJsonString(String string) throws ClientProtocolException, IOException {
 		HttpResponse response = callURL(baseURL + string);
 		return response2String(response);
@@ -58,9 +59,9 @@ public class IncreaseServer {
 	}
 
 	private HttpResponse callURL(String url) throws IOException, ClientProtocolException {
-		
+
 		Log.i(IncreaseServer.class.getName(), "call url: " + url);
-		
+
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(url);
 
@@ -74,7 +75,7 @@ public class IncreaseServer {
 	}
 
 	public boolean addNearbyPlayer(AddPlayerInput addPlayerInput) throws ClientProtocolException, IOException {
-		String jsonString = getJsonString("/player/add?player=" + addPlayerInput.playername +"&accuracy=" + addPlayerInput.accuracy);
+		String jsonString = getJsonString("/player/add?player=" + addPlayerInput.playername + "&accuracy=" + addPlayerInput.accuracy);
 		return jsonString.contains("success");
 	}
 

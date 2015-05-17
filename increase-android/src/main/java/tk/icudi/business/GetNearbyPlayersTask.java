@@ -12,9 +12,6 @@ abstract class GetNearbyPlayersTask extends AsyncTask<Location, Integer, List<Ne
 	private IncreaseServer server = new IncreaseServer();
 	private Exception exception;
 
-
-
-
 	@Override
 	protected List<NearbyPlayer> doInBackground(Location... params) {
 		try {

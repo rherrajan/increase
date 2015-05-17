@@ -135,12 +135,12 @@ class LocationService {
 			String offTime = NearbyPlayer.makeHumanReadableTime((int) (duration / 1000));
 			Toast.makeText(context, "no location for " + offTime, Toast.LENGTH_SHORT).show();
 
-			if(duration > 1000 * 60 * 5){
+			if (duration > 1000 * 60 * 5) {
 				Log.w(this.getClass().getSimpleName(), "propably kicked out of location observers. registering again");
 				Toast.makeText(context, "propably kicked out of location observers. registering again" + offTime, Toast.LENGTH_LONG).show();
 				// setUpLocationService();
 			}
-			
+
 		}
 
 		return userLocation;
