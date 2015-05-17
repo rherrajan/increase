@@ -53,7 +53,6 @@ public class UpdateService implements IncreaseLocationListener {
 		final Location userLocation = locationService.getUserLocation();
 
 		if (userLocation == null) {
-			Toast.makeText(context, "no location", Toast.LENGTH_SHORT).show();
 			return;
 		}
 

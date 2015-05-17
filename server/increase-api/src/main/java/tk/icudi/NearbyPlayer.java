@@ -59,8 +59,12 @@ public class NearbyPlayer {
 	}
 
 	public String getHumanReadableTime() {
-		int timetmp = this.getPassedSeconds();
+		return makeHumanReadableTime(this.getPassedSeconds());
+	}
 
+	public static String makeHumanReadableTime(final int seconds) {
+		
+		int timetmp = seconds;
 		if (timetmp < 2*60) {
 			return timetmp + "sec";
 		}
