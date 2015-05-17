@@ -1,5 +1,7 @@
 package tk.icudi.view;
 
+import java.util.List;
+
 import tk.icudi.Faction;
 import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
@@ -17,13 +19,14 @@ import android.widget.TextView;
 public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> {
 
 	private final Context context;
-	private final NearbyPlayer[] values;
+	private final List<NearbyPlayer> players;
 
-	public AgentlistAdapter(Context context, NearbyPlayer[] values) {
-		super(context, R.layout.agent_list_item, values);
+	public AgentlistAdapter(Context context, List<NearbyPlayer> players) {
+		super(context, R.layout.agent_list_item, players);
 		this.context = context;
-		this.values = values;
+		this.players = players;
 	}
+
 
 	@SuppressLint("ViewHolder")
 	@Override
@@ -36,7 +39,7 @@ public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> {
 		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
 		ImageView directionPic = (ImageView) rowView.findViewById(R.id.direction);
 
-		NearbyPlayer player = values[position];
+		NearbyPlayer player = players.get(position);
 		player_name.setText(player.getName());
 		player_distance.setText(player.getHumanReadableDistance());
 

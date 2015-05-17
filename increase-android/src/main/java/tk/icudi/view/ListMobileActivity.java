@@ -103,13 +103,13 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 		case R.id.action_settings:
 
 			
-			PopupMenu popup = new PopupMenu(getActivity(), findViewById(R.id.action_settings));
-			popup.getMenuInflater().inflate(R.menu.burger_menu, popup.getMenu());
-			popup.show();
+//			PopupMenu popup = new PopupMenu(getActivity(), findViewById(R.id.action_settings));
+//			popup.getMenuInflater().inflate(R.menu.burger_menu, popup.getMenu());
+//			popup.show();
 
-//			Intent i = new Intent(getActivity(), ConfigurationActivity.class);
-//			startActivity(i);
-//			return true;
+			Intent i = new Intent(getActivity(), ConfigurationActivity.class);
+			startActivity(i);
+			return true;
 
 		default:
 			return super.onOptionsItemSelected(item);
@@ -137,7 +137,7 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 
 				Animation rotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_refresh);
 				rotation.setRepeatCount(Animation.INFINITE);
-				// refreshItem.getActionView().startAnimation(rotation);
+				refreshItem.getActionView().startAnimation(rotation);
 			}
 
 		} else {

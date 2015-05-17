@@ -27,6 +27,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	@Inject
 	private UpdateService updateService;
+	private AgentlistAdapter list;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -78,7 +79,14 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	}
 	
 	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
-		setListAdapter(new AgentlistAdapter(getActivity(), players.toArray(new NearbyPlayer[players.size()])));
+		if(list == null){
+			list = new AgentlistAdapter(getActivity(), players);
+			setListAdapter(list);
+		} else {
+			list.clear();
+			list.addAll(players);
+		}
+
 	}
 
 	public void onPlayerRefreshFailure(Exception exception) {
