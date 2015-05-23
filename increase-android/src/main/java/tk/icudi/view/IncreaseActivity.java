@@ -1,5 +1,8 @@
 package tk.icudi.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import roboguice.activity.RoboFragmentActivity;
@@ -19,6 +22,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.PopupMenu;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.inject.Inject;
 
@@ -49,7 +54,9 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 		showRefreshAnimation(false);
 
 		if (isReadyForFragment(savedInstanceState)) {
-			activateSupportFragment(fragment, savedInstanceState);
+//			activateSupportFragment(fragment, savedInstanceState);
+			
+			activateSupportFragment(new LogfilesFragment(), savedInstanceState);
 		}
 	}
 
