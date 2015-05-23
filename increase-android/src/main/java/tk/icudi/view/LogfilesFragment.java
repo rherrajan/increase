@@ -3,24 +3,20 @@ package tk.icudi.view;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import roboguice.fragment.RoboFragment;
 import roboguice.inject.InjectView;
 import tk.icudi.R;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.inject.Inject;
 
 public class LogfilesFragment extends RoboFragment {
-
-	@Inject
-	private Context context;
 
 	@InjectView(R.id.logfile)
 	TextView myView;
@@ -38,29 +34,33 @@ public class LogfilesFragment extends RoboFragment {
 		
 		String logs = readLogs();
 
-		System.out.println(" --- logs: " + logs);
-
 		myView.setText(logs);
 	}
 
 	private String readLogs() {
 		
-		String logs = null;
+		List<String> logEntries = new ArrayList<String>();
+					
+		
 		try {
-//			Runtime.getRuntime().exec("logcat -c");
 			Process process = Runtime.getRuntime().exec("logcat -d *:I ");
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-			StringBuilder log = new StringBuilder();
 			String line = "";
 			while ((line = bufferedReader.readLine()) != null) {
-				log.append(line).append("\n");
+				logEntries.add(line);
 			}
-			logs = log.toString();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return logs;
+		
+		Collections.reverse(logEntries);
+		
+		StringBuilder builder = new StringBuilder();
+		for (String logEntry : logEntries) {
+			builder.append(logEntry).append("\n");
+		}
+		return builder.toString();
 	}
 
 }
