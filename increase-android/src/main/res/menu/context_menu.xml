@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/agent_block"
-        android:title="@string/agent_block"/>
+        android:id="@+id/agent_ignore"
+        android:title="@string/agent_ignore"/>
 
     <item
         android:id="@+id/agent_add"

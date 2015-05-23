@@ -3,7 +3,7 @@
 
     <string name="app_name">Increase</string>
     <string name="action_acc_default">no location</string>   
-    <string name="agent_block">ignore</string>
+    <string name="agent_ignore">ignore</string>
     <string name="adent_add">install backdoor</string>
     
     <string name="action_refresh">refresh</string>
