@@ -60,7 +60,7 @@ public class IncreaseServer {
 
 	private HttpResponse callURL(String url) throws IOException, ClientProtocolException {
 
-		Log.i(IncreaseServer.class.getName(), "call url: " + url);
+		Log.d(IncreaseServer.class.getName(), "call url: " + url);
 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(url);

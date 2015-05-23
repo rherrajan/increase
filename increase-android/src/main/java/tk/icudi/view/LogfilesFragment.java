@@ -40,22 +40,21 @@ public class LogfilesFragment extends RoboFragment {
 
 		System.out.println(" --- logs: " + logs);
 
-		Toast.makeText(context, "logs: " + logs, Toast.LENGTH_LONG).show();
-
 		myView.setText(logs);
 	}
 
 	private String readLogs() {
+		
 		String logs = null;
 		try {
-			// *:I
-			Process process = Runtime.getRuntime().exec("logcat -d");
+//			Runtime.getRuntime().exec("logcat -c");
+			Process process = Runtime.getRuntime().exec("logcat -d *:I ");
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
 			StringBuilder log = new StringBuilder();
 			String line = "";
 			while ((line = bufferedReader.readLine()) != null) {
-				log.append(line);
+				log.append(line).append("\n");
 			}
 			logs = log.toString();
 		} catch (IOException e) {
