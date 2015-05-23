@@ -3,7 +3,9 @@
 
     <item
         android:id="@+id/action_settings"
-		android:icon="@android:drawable/ic_dialog_dialer"
         android:title="@string/action_settings"/>
-    
+    <item
+        android:id="@+id/action_logfile"
+        android:title="@string/action_logfile"/>
+
 </menu>
