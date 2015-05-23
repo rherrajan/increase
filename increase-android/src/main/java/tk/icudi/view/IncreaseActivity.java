@@ -22,7 +22,7 @@ import android.widget.PopupMenu;
 
 import com.google.inject.Inject;
 
-public class ListMobileActivity extends RoboFragmentActivity implements IncreaseListener {
+public class IncreaseActivity extends RoboFragmentActivity implements IncreaseListener {
 
 	@Inject
 	private NotificationService notificationService;
@@ -41,7 +41,7 @@ public class ListMobileActivity extends RoboFragmentActivity implements Increase
 
 		setContentView(R.layout.main_layout);
 
-		notificationService.setActionToNotificate(ListMobileActivity.class);
+		notificationService.setActionToNotificate(IncreaseActivity.class);
 		updateService.init();
 		updateService.registerListener(this);
 		updateService.registerListener(fragment);

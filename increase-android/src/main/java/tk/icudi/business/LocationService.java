@@ -137,7 +137,7 @@ class LocationService {
 
 			if (duration > 1000 * 60 * 5) {
 				Log.w(this.getClass().getSimpleName(), "propably kicked out of location observers. registering again");
-				Toast.makeText(context, "propably kicked out of location observers. registering again" + offTime, Toast.LENGTH_LONG).show();
+				Toast.makeText(context, "propably kicked out of location observers. registering again " + offTime, Toast.LENGTH_LONG).show();
 				// setUpLocationService();
 			}
 

@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo" >
         <activity
-            android:name="tk.icudi.view.ListMobileActivity"
+            android:name="tk.icudi.view.IncreaseActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" >
             <intent-filter>
