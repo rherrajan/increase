@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,7 +32,9 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 	private UpdateService updateService;
 
 	private ListAgentsFragment listAgentsFragment = new ListAgentsFragment();
-//	private LogfilesFragment logfilesFragment = new LogfilesFragment();
+	private LogfilesFragment logfilesFragment = new LogfilesFragment();
+	
+	private Menu menu;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,7 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 		showRefreshAnimation(false);
 
 		if (isReadyForFragment(savedInstanceState)) {
-			activateSupportFragment(listAgentsFragment, savedInstanceState);
+			activateSupportFragment(listAgentsFragment);
 		}
 	}
 
@@ -73,12 +76,10 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 		return true;
 	}
 
-	private void activateSupportFragment(android.support.v4.app.Fragment fragment, Bundle savedInstanceState) {
-		fragment.setArguments(getIntent().getExtras());
-		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
+	private void activateSupportFragment(android.support.v4.app.Fragment newFragment) {
+		newFragment.setArguments(getIntent().getExtras());
+		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, newFragment).commit();
 	}
-
-	private Menu menu;
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -113,6 +114,13 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 					case R.id.action_settings:
 						Intent i = new Intent(getActivity(), ConfigurationActivity.class);
 						startActivity(i);
+						break;
+					case R.id.action_logfile:
+						FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+						transaction.replace(R.id.fragment_container, logfilesFragment);
+						transaction.addToBackStack(null);
+						transaction.commit();
+
 						break;
 					}
 
