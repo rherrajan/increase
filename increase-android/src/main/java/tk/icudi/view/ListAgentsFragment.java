@@ -83,8 +83,10 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 	}
 	
 	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
-		list.clear();
-		list.addAll(players);
+		if(list != null){
+			list.clear();
+			list.addAll(players);
+		}
 	}
 
 	public void onPlayerRefreshFailure(Exception exception) {
