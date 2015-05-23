@@ -1,8 +1,5 @@
 package tk.icudi.view;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 
 import roboguice.activity.RoboFragmentActivity;
@@ -22,8 +19,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.PopupMenu;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.inject.Inject;
 
@@ -35,8 +30,9 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 	@Inject
 	private UpdateService updateService;
 
-	private ListAgentsFragment fragment = new ListAgentsFragment();
-
+	private ListAgentsFragment listAgentsFragment = new ListAgentsFragment();
+//	private LogfilesFragment logfilesFragment = new LogfilesFragment();
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -49,14 +45,12 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 		notificationService.setActionToNotificate(IncreaseActivity.class);
 		updateService.init();
 		updateService.registerListener(this);
-		updateService.registerListener(fragment);
+		updateService.registerListener(listAgentsFragment);
 
 		showRefreshAnimation(false);
 
 		if (isReadyForFragment(savedInstanceState)) {
-//			activateSupportFragment(fragment, savedInstanceState);
-			
-			activateSupportFragment(new LogfilesFragment(), savedInstanceState);
+			activateSupportFragment(listAgentsFragment, savedInstanceState);
 		}
 	}
 

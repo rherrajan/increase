@@ -29,18 +29,12 @@ public class LogfilesFragment extends RoboFragment {
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
-
-		System.out.println(" --- onViewCreated --- ");
-		
-		String logs = readLogs();
-
-		myView.setText(logs);
+		myView.setText(readLogs());
 	}
 
 	private String readLogs() {
 		
 		List<String> logEntries = new ArrayList<String>();
-					
 		
 		try {
 			Process process = Runtime.getRuntime().exec("logcat -d *:I ");
