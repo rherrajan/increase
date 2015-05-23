@@ -63,11 +63,12 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 		case R.id.agent_ignore:
 			this.updateService.blockPlayer(player);
 			onPlayerRefreshSuccesfull(updateService.getLastPlayers());
+			updateService.updateNotification();
 			return true;
 
 		case R.id.agent_add:
 			this.updateService.addPlayer(player);
-			onPlayerRefreshSuccesfull(updateService.getLastPlayers());
+
 			return true;
 
 		default:

@@ -49,6 +49,12 @@ public class UpdateService implements IncreaseLocationListener {
 		locationService.registerListener(increaseListener);
 	}
 
+	public void updateNotification() {
+		if (lastPlayers.isEmpty() == false) {
+			notificationService.nearestPlayer(lastPlayers.get(0));
+		}
+	}
+	
 	public void updatePlayers() {
 
 		final Location userLocation = locationService.getUserLocation();
@@ -71,11 +77,10 @@ public class UpdateService implements IncreaseLocationListener {
 					increaseListener.onPlayerRefreshSuccesfull(lastPlayers);
 				}
 
-				if (lastPlayers.isEmpty() == false) {
-					notificationService.nearestPlayer(lastPlayers.get(0));
-				}
+				updateNotification();
 
 			}
+
 
 			protected void onFailure(Exception exception) {
 
