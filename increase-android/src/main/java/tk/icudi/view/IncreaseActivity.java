@@ -3,6 +3,7 @@ package tk.icudi.view;
 import java.util.List;
 
 import roboguice.activity.RoboFragmentActivity;
+import tk.icudi.CaughtPlayer;
 import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
 import tk.icudi.business.IncreaseListener;
@@ -225,7 +226,7 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 
 	}
 
-	public void onHackedAgentsRefreshSuccesfull(List<NearbyPlayer> hackedAgents) {
+	public void onHackedAgentsRefreshSuccesfull(List<CaughtPlayer> hackedAgents) {
 
 	}
 

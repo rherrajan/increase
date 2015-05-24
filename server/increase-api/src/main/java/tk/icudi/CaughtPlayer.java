@@ -2,7 +2,7 @@ package tk.icudi;
 
 import java.util.Map;
 
-public class CaughtPlayer implements Identifyable {
+public class CaughtPlayer implements Identifyable, Player {
 
 	public String playername;
 	public int accuracy;
@@ -27,8 +27,19 @@ public class CaughtPlayer implements Identifyable {
 
 	@Override
 	public Map<String, Object> getIndexes() {
-		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public String getName() {
+		return playername;
+	}
+
+	@Override
+	public String toString() {
+		return "CaughtPlayer [playername=" + playername + ", accuracy=" + accuracy + ", device_id=" + device_id + "]";
+	}
+	
+
 
 }

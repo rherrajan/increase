@@ -30,8 +30,7 @@ public class HackedAgentsServlet extends AbstractServlet {
 
 	private Object getResult(Map<String, String[]> parameterMap) {
 		Game game = new Game(new GaeDatabase());
-		game.getCaughtPlayers();
-		return null;
+		return game.getCaughtPlayers();
 	}
 
 	

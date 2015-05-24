@@ -32,10 +32,15 @@ public class IncreaseServer {
 		int lng = locDoubleToInt(userLocation.getLongitude());
 
 		String jsonString = getJsonString("/player/nearby?lat=" + lat + "&lng=" + lng);
-		return new Gson().<List<NearbyPlayer>> fromJson(jsonString, new TypeToken<List<NearbyPlayer>>() {
-		}.getType());
+		return new Gson().<List<NearbyPlayer>> fromJson(jsonString, new TypeToken<List<NearbyPlayer>>() {}.getType());
 	}
 
+	public List<CaughtPlayer> getHackedAgents(Location location) throws ClientProtocolException, IOException {
+		String jsonString = getJsonString("/player/hacked");
+		return new Gson().<List<CaughtPlayer>> fromJson(jsonString, new TypeToken<List<CaughtPlayer>>() {}.getType());
+	}
+
+	
 	int locDoubleToInt(double doubleLoc) {
 		return (int) (doubleLoc * 10000000);
 	}
@@ -79,5 +84,5 @@ public class IncreaseServer {
 		String jsonString = getJsonString("/player/add?" + addPlayerInput.makeQueryString());
 		return jsonString.contains("success");
 	}
-
+	
 }

@@ -53,15 +53,24 @@ public class UpdateService implements IncreaseLocationListener {
 	}
 	
 	public void updateHackedPlayers() {
-		List<NearbyPlayer> hackedAgents = new ArrayList<NearbyPlayer>();
 		
-		NearbyPlayer dummy = new NearbyPlayer();
-		dummy.setName("dummy");
-		hackedAgents.add(dummy);
-		
-		for (IncreaseListener increaseListener : listener) {
-			increaseListener.onHackedAgentsRefreshSuccesfull(hackedAgents);
-		}
+		new GetHackedAgentsTask() {
+
+			protected void onSuccessfullExecute(List<CaughtPlayer> players) {
+
+				for (IncreaseListener increaseListener : listener) {
+					increaseListener.onHackedAgentsRefreshSuccesfull(players);
+				}
+			}
+
+			@Override
+			protected void onFailure(Exception exception) {
+				// TODO Auto-generated method stub
+				
+			}
+
+
+		}.execute();
 		
 	}
 	
@@ -162,6 +171,10 @@ public class UpdateService implements IncreaseLocationListener {
 
 	public int getAccuracy() {
 		return locationService.getAccuracy();
+	}
+
+	public void onHackedAgentsRefreshSuccesfull(List<CaughtPlayer> agents) {
+
 	}
 
 }

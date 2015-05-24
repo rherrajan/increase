@@ -4,6 +4,7 @@ import java.util.List;
 
 import tk.icudi.Faction;
 import tk.icudi.NearbyPlayer;
+import tk.icudi.Player;
 import tk.icudi.R;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,14 +19,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> implements OnSharedPreferenceChangeListener {
+public class AgentlistAdapter<T extends Player> extends ArrayAdapter<T> implements OnSharedPreferenceChangeListener {
 
 	private final Context context;
-	private final List<NearbyPlayer> players;
+	private final List<T> players;
 
 	private int max_ranking_for_bold_display = -1;
 
-	public AgentlistAdapter(Context context, List<NearbyPlayer> players) {
+	public AgentlistAdapter(Context context, List<T> players) {
 		super(context, R.layout.agent_list_item, players);
 		this.context = context;
 		this.players = players;
@@ -52,23 +53,29 @@ public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> implements OnSh
 		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
 		ImageView directionPic = (ImageView) rowView.findViewById(R.id.direction);
 
-		NearbyPlayer player = players.get(position);
+		T player = players.get(position);
+		
 		player_name.setText(player.getName());
-		player_distance.setText(player.getHumanReadableDistance());
-
-		if (player.getRank() < max_ranking_for_bold_display) {
-			player_name.setTypeface(null, Typeface.BOLD);
+		
+		if(player.getClass().equals(NearbyPlayer.class)){
+		
+			NearbyPlayer nearbyPlayer = (NearbyPlayer)player;
+			player_distance.setText(nearbyPlayer.getHumanReadableDistance());
+			
+			if (nearbyPlayer.getRank() < max_ranking_for_bold_display) {
+				player_name.setTypeface(null, Typeface.BOLD);
+			}
+			
+			if (nearbyPlayer.getFaction() == Faction.blue) {
+				factionPic.setImageResource(R.drawable.blue);
+			} else if (nearbyPlayer.getFaction() == Faction.green) {
+				factionPic.setImageResource(R.drawable.green);
+			} else {
+				factionPic.setImageResource(R.drawable.increase);
+			}
+			
+			directionPic.setRotation(-90 + (int) nearbyPlayer.getAngle());
 		}
-
-		if (player.getFaction() == Faction.blue) {
-			factionPic.setImageResource(R.drawable.blue);
-		} else if (player.getFaction() == Faction.green) {
-			factionPic.setImageResource(R.drawable.green);
-		} else {
-			factionPic.setImageResource(R.drawable.increase);
-		}
-
-		directionPic.setRotation(-90 + (int) player.getAngle());
 
 		return rowView;
 	}
