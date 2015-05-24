@@ -53,7 +53,7 @@
 		<url-pattern>/player/nearby</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>NearbyAgentsServlet</servlet-name>
+		<servlet-name>HackedAgentsServlet</servlet-name>
 		<url-pattern>/player/hacked</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import roboguice.fragment.RoboListFragment;
+import tk.icudi.CaughtPlayer;
 import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
 import tk.icudi.business.IncreaseListener;
@@ -20,7 +21,7 @@ public class ListHackedAgentsFragment extends RoboListFragment implements Increa
 
 	@Inject
 	private UpdateService updateService;
-	private AgentlistAdapter list;
+	private AgentlistAdapter<CaughtPlayer> list;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,16 +32,13 @@ public class ListHackedAgentsFragment extends RoboListFragment implements Increa
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
-		list = new AgentlistAdapter(getActivity(), new ArrayList<NearbyPlayer>());
+		list = new AgentlistAdapter<CaughtPlayer>(getActivity(), new ArrayList<CaughtPlayer>());
 		setListAdapter(list);
 		
 		updateService.updateHackedPlayers();
 	}
 
-	public void onHackedAgentsRefreshSuccesfull(List<NearbyPlayer> agents) {
-		
-		System.out.println(" --- h: " + agents);
-		
+	public void onHackedAgentsRefreshSuccesfull(List<CaughtPlayer> agents) {
 		if(list != null){
 			list.clear();
 			list.addAll(agents);
@@ -67,6 +65,8 @@ public class ListHackedAgentsFragment extends RoboListFragment implements Increa
 	public void onNearbyAgentsRefreshStart() {
 		
 	}
+
+
 
 
 	
