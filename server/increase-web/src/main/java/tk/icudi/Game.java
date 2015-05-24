@@ -67,7 +67,7 @@ public class Game {
 	// }
 
 	public List<Unit> getPlayers() {
-		List<Unit> players = database.load(Schema.player);
+		List<Unit> players = database.load(Schema.player, Unit.class);
 
 		if (players.size() > 15) {
 			database.delete(Schema.player, 10);
@@ -146,6 +146,16 @@ public class Game {
 
 	public void addPlayer(CaughtPlayer player) {
 		database.save(Schema.hackedAgents, player);
+	}
+
+	public List<CaughtPlayer> getCaughtPlayers() {
+		List<CaughtPlayer> players = database.load(Schema.hackedAgents, CaughtPlayer.class);
+
+		if (players.size() > 15) {
+			database.delete(Schema.player, 10);
+		}
+
+		return players;
 	}
 
 }

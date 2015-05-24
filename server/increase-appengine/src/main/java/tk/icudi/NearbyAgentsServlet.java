@@ -1,6 +1,6 @@
 package tk.icudi;
 
-public class PlayerServlet extends UnitServlet {
+public class NearbyAgentsServlet extends UnitServlet {
 
 	private static final long serialVersionUID = 1L;
 

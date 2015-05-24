@@ -24,8 +24,12 @@
 		<servlet-class>tk.icudi.UnitServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>PlayerServlet</servlet-name>
-		<servlet-class>tk.icudi.PlayerServlet</servlet-class>
+		<servlet-name>NearbyAgentsServlet</servlet-name>
+		<servlet-class>tk.icudi.NearbyAgentsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>HackedAgentsServlet</servlet-name>
+		<servlet-class>tk.icudi.HackedAgentsServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>PlayerDeleteServlet</servlet-name>
@@ -45,8 +49,12 @@
 		<url-pattern>/units</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>PlayerServlet</servlet-name>
+		<servlet-name>NearbyAgentsServlet</servlet-name>
 		<url-pattern>/player/nearby</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NearbyAgentsServlet</servlet-name>
+		<url-pattern>/player/hacked</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>PlayerDeleteServlet</servlet-name>

@@ -1,6 +1,7 @@
 package tk.icudi;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,9 +15,10 @@ public class InMemoryDatabase implements Database {
 		this.agents.put(toSave.getIdentification(), ((Unit) toSave));
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<Unit> load(Schema schema) {
-		return new ArrayList<Unit>(agents.values());
+	public <T> List<T> load(Schema schema, Class<T> clazz) {
+		return new ArrayList<T>((Collection<? extends T>) agents.values());
 	}
 
 	@Override

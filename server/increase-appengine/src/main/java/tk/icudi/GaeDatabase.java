@@ -38,7 +38,7 @@ public class GaeDatabase implements Database {
 	}
 
 	@Override
-	public List<Unit> load(Schema schema) {
+	public <T> List<T> load(Schema schema, Class<T> clazz) {
 
 		Query query = new Query(schema.name());
 		List<Entity> entities = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
@@ -47,11 +47,11 @@ public class GaeDatabase implements Database {
 
 		Gson gson = new Gson();
 
-		List<Unit> result = new ArrayList<Unit>();
+		List<T> result = new ArrayList<T>();
 
 		for (Entity entity : entities) {
 			String jsonString = (String) entity.getProperty("json");
-			Unit obj = gson.fromJson(jsonString, Unit.class);
+			T obj = gson.fromJson(jsonString, clazz);
 
 			result.add(obj);
 		}

@@ -12,7 +12,7 @@ public interface Database {
 	void save(Schema schema, Identifyable toSave);
 
 	// TODO: Typesave machen
-	List<Unit> load(Schema schema);
+	<T> List<T> load(Schema schema, Class<T> clazz);
 
 	void delete(Schema schema, int itemsToKeep);
 
