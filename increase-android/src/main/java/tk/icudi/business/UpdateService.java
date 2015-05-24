@@ -18,10 +18,6 @@ import com.google.inject.Singleton;
 @Singleton
 public class UpdateService implements IncreaseLocationListener {
 
-	public static final int max_ranking_for_vibration = 300;
-	public static final int max_ranking_for_bold_display = 1000;
-	public static final int max_ranking_for_notification = 5000;
-
 	@Inject
 	private Context context;
 
@@ -42,8 +38,9 @@ public class UpdateService implements IncreaseLocationListener {
 		locationService.init();
 		locationService.registerListener(this);
 		alarmService.init();
+		notificationService.init();
 	}
-
+	
 	public void registerListener(IncreaseListener increaseListener) {
 		listener.add(increaseListener);
 		locationService.registerListener(increaseListener);

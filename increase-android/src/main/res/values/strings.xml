@@ -15,6 +15,11 @@
     <string name="pref_auto_updates_summary">refresh the agents periodically</string>
     <string name="pref_interval">refresh interval</string>
     <string name="pref_interval_summary">how many second to wait until the next refresh</string>
-
     
+	<string name="pref_threshold_vibration">vibration threshold</string>
+    <string name="pref_threshold_vibration_summary">maximum ranking for a vibration</string>
+    <string name="pref_threshold_bold">bold threshold</string>
+    <string name="pref_threshold_bold_summary">maximum ranking for a emphasized display</string>
+    <string name="pref_threshold_notification">notification threshold</string>
+    <string name="pref_threshold_notification_summary">maximum ranking for a notification</string>
 </resources>

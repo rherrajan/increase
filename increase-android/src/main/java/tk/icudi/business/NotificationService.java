@@ -8,13 +8,16 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class NotificationService {
+public class NotificationService implements OnSharedPreferenceChangeListener {
 
 	@Inject
 	private NotificationManager notificationManager;
@@ -29,9 +32,23 @@ public class NotificationService {
 
 	private Class<?> actionToNotificate;
 
+	private int max_ranking_for_vibration = -1;
+	private int max_ranking_for_notification = -1;
+	
+	public void init(){
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+		sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+		refreshConfiguration(sharedPreferences);
+	}
+	
+	private void refreshConfiguration(SharedPreferences sharedPreferences) {
+		max_ranking_for_vibration = Integer.valueOf(sharedPreferences.getString("max_ranking_for_vibration", "-1"));
+		max_ranking_for_notification = Integer.valueOf(sharedPreferences.getString("max_ranking_for_notification", "-1"));
+	}
+	
 	public void nearestPlayer(NearbyPlayer nearbyPlayer) {
 
-		if (nearbyPlayer.getRank() > UpdateService.max_ranking_for_notification) {
+		if (nearbyPlayer.getRank() > max_ranking_for_notification) {
 			notificationManager.cancelAll();
 			return;
 		}
@@ -39,7 +56,7 @@ public class NotificationService {
 		if (somethingNew(nearbyPlayer)) {
 			sendNotification(nearbyPlayer);
 
-			if (nearbyPlayer.getRank() < UpdateService.max_ranking_for_vibration) {
+			if (nearbyPlayer.getRank() < max_ranking_for_vibration) {
 				long[] pattern = { 0, 300, 0, 300 };
 				vibrator.vibrate(pattern, -1);
 			}
@@ -87,6 +104,10 @@ public class NotificationService {
 
 	public void setActionToNotificate(Class<?> actionToNotificate) {
 		this.actionToNotificate = actionToNotificate;
+	}
+
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+		refreshConfiguration(sharedPreferences);
 	}
 
 }

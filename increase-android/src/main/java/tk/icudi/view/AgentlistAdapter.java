@@ -5,10 +5,12 @@ import java.util.List;
 import tk.icudi.Faction;
 import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
-import tk.icudi.business.UpdateService;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.graphics.Typeface;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,17 +18,28 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> {
+public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> implements OnSharedPreferenceChangeListener {
 
 	private final Context context;
 	private final List<NearbyPlayer> players;
+
+	private int max_ranking_for_bold_display = -1;
 
 	public AgentlistAdapter(Context context, List<NearbyPlayer> players) {
 		super(context, R.layout.agent_list_item, players);
 		this.context = context;
 		this.players = players;
+		
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+		sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+		refreshConfiguration(sharedPreferences);
 	}
 
+	
+	private void refreshConfiguration(SharedPreferences sharedPreferences) {
+		max_ranking_for_bold_display = Integer.valueOf(sharedPreferences.getString("max_ranking_for_bold_display", "-1"));
+	}
+	
 
 	@SuppressLint("ViewHolder")
 	@Override
@@ -43,7 +56,7 @@ public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> {
 		player_name.setText(player.getName());
 		player_distance.setText(player.getHumanReadableDistance());
 
-		if (player.getRank() < UpdateService.max_ranking_for_bold_display) {
+		if (player.getRank() < max_ranking_for_bold_display) {
 			player_name.setTypeface(null, Typeface.BOLD);
 		}
 
@@ -58,6 +71,11 @@ public class AgentlistAdapter extends ArrayAdapter<NearbyPlayer> {
 		directionPic.setRotation(-90 + (int) player.getAngle());
 
 		return rowView;
+	}
+
+
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+		refreshConfiguration(sharedPreferences);
 	}
 
 }

@@ -1,21 +1,40 @@
-<PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="preferences">
-
+    <PreferenceCategory android:title="preferences" >
         <CheckBoxPreference
-                android:key="preference_auto_updates"
-                android:defaultValue="true"
-                android:title="@string/pref_auto_updates"
-                android:summary="@string/pref_auto_updates_summary" />
-        
-         <EditTextPreference
-                android:key="preference_update_interval"
-                android:defaultValue="60"
-                android:inputType="number"
-                android:title="@string/pref_interval"
-                android:summary="@string/pref_interval_summary" />
+            android:defaultValue="true"
+            android:key="preference_auto_updates"
+            android:summary="@string/pref_auto_updates_summary"
+            android:title="@string/pref_auto_updates" />
 
+        <EditTextPreference
+            android:defaultValue="60"
+            android:inputType="number"
+            android:key="preference_update_interval"
+            android:summary="@string/pref_interval_summary"
+            android:title="@string/pref_interval" />
+        
+        <EditTextPreference
+            android:defaultValue="300"
+            android:inputType="number"
+            android:key="preference_threshold_vibration"
+            android:summary="@string/pref_threshold_vibration_summary"
+            android:title="@string/pref_threshold_vibration" />
+         
+        <EditTextPreference
+            android:defaultValue="1000"
+            android:inputType="number"
+            android:key="preference_threshold_bold"
+            android:summary="@string/pref_threshold_bold_summary"
+            android:title="@string/pref_threshold_bold" />
+      
+        <EditTextPreference
+            android:defaultValue="1500"
+            android:inputType="number"
+            android:key="preference_threshold_notification"
+            android:summary="@string/pref_threshold_notification_summary"
+            android:title="@string/pref_threshold_notification" />
+                
     </PreferenceCategory>
 
 </PreferenceScreen>
