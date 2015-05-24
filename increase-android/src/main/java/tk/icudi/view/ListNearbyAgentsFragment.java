@@ -50,7 +50,7 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
 		MenuInflater inflater = getActivity().getMenuInflater();
-		inflater.inflate(R.menu.context_menu, menu);
+		inflater.inflate(R.menu.nearby_agents_context, menu);
 	}
 
 	@Override
@@ -62,7 +62,7 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 		switch (item.getItemId()) {
 		case R.id.agent_ignore:
 			this.updateService.blockPlayer(player);
-			onPlayerRefreshSuccesfull(updateService.getLastPlayers());
+			onNearbyAgentsRefreshSuccesfull(updateService.getLastPlayers());
 			updateService.updateNotification();
 			return true;
 
@@ -83,14 +83,14 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 		Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
 	}
 	
-	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
+	public void onNearbyAgentsRefreshSuccesfull(List<NearbyPlayer> players) {
 		if(list != null){
 			list.clear();
 			list.addAll(players);
 		}
 	}
 
-	public void onPlayerRefreshFailure(Exception exception) {
+	public void onNearbyAgentsRefreshFailure(Exception exception) {
 		Toast.makeText(getActivity(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
 		Log.e(ListNearbyAgentsFragment.class.getName(), "failed to get player information", exception);
 	}
@@ -103,7 +103,11 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 
 	}
 
-	public void onPlayerRefreshStart() {
+	public void onNearbyAgentsRefreshStart() {
+
+	}
+
+	public void onHackedAgentsRefreshSuccesfull(List<NearbyPlayer> hackedAgents) {
 
 	}
 

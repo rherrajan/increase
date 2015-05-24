@@ -1,6 +1,6 @@
 package tk.icudi;
 
-public class NearbyPlayer {
+public class NearbyPlayer implements Player {
 
 	private int passedSeconds;
 	private int rank;

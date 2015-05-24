@@ -51,7 +51,8 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 		updateService.init();
 		updateService.registerListener(this);
 		updateService.registerListener(listAgentsFragment);
-
+		updateService.registerListener(hackedAgentsFragment);
+		
 		showRefreshAnimation(false);
 
 		if (isReadyForFragment(savedInstanceState)) {
@@ -63,7 +64,7 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 	public void onResume() {
 		super.onResume();
 
-		onPlayerRefreshSuccesfull(updateService.getLastPlayers());
+		onNearbyAgentsRefreshSuccesfull(updateService.getLastPlayers());
 	}
 
 	private boolean isReadyForFragment(Bundle savedInstanceState) {
@@ -181,15 +182,15 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 		}
 	}
 
-	public void onPlayerRefreshStart() {
+	public void onNearbyAgentsRefreshStart() {
 		showRefreshAnimation(true);
 	}
 
-	public void onPlayerRefreshSuccesfull(List<NearbyPlayer> players) {
+	public void onNearbyAgentsRefreshSuccesfull(List<NearbyPlayer> players) {
 		showRefreshAnimation(false);
 	}
 
-	public void onPlayerRefreshFailure(Exception exception) {
+	public void onNearbyAgentsRefreshFailure(Exception exception) {
 		showRefreshAnimation(false);
 	}
 
@@ -221,6 +222,10 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 	}
 
 	public void onFirstLocation() {
+
+	}
+
+	public void onHackedAgentsRefreshSuccesfull(List<NearbyPlayer> hackedAgents) {
 
 	}
 

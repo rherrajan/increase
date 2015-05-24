@@ -52,6 +52,19 @@ public class UpdateService implements IncreaseLocationListener {
 		}
 	}
 	
+	public void updateHackedPlayers() {
+		List<NearbyPlayer> hackedAgents = new ArrayList<NearbyPlayer>();
+		
+		NearbyPlayer dummy = new NearbyPlayer();
+		dummy.setName("dummy");
+		hackedAgents.add(dummy);
+		
+		for (IncreaseListener increaseListener : listener) {
+			increaseListener.onHackedAgentsRefreshSuccesfull(hackedAgents);
+		}
+		
+	}
+	
 	public void updatePlayers() {
 
 		final Location userLocation = locationService.getUserLocation();
@@ -61,7 +74,7 @@ public class UpdateService implements IncreaseLocationListener {
 		}
 
 		for (IncreaseListener increaseListener : listener) {
-			increaseListener.onPlayerRefreshStart();
+			increaseListener.onNearbyAgentsRefreshStart();
 		}
 
 		new GetNearbyPlayersTask() {
@@ -71,7 +84,7 @@ public class UpdateService implements IncreaseLocationListener {
 				lastPlayers = removeBlockedPlayers(players);
 
 				for (IncreaseListener increaseListener : listener) {
-					increaseListener.onPlayerRefreshSuccesfull(lastPlayers);
+					increaseListener.onNearbyAgentsRefreshSuccesfull(lastPlayers);
 				}
 
 				updateNotification();
@@ -82,7 +95,7 @@ public class UpdateService implements IncreaseLocationListener {
 			protected void onFailure(Exception exception) {
 
 				for (IncreaseListener increaseListener : listener) {
-					increaseListener.onPlayerRefreshFailure(exception);
+					increaseListener.onNearbyAgentsRefreshFailure(exception);
 				}
 
 			}
