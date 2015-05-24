@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 import com.google.inject.Inject;
 
-public class ListAgentsFragment extends RoboListFragment implements IncreaseListener {
+public class ListNearbyAgentsFragment extends RoboListFragment implements IncreaseListener {
 
 	@Inject
 	private UpdateService updateService;
@@ -92,7 +92,7 @@ public class ListAgentsFragment extends RoboListFragment implements IncreaseList
 
 	public void onPlayerRefreshFailure(Exception exception) {
 		Toast.makeText(getActivity(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
-		Log.e(ListAgentsFragment.class.getName(), "failed to get player information", exception);
+		Log.e(ListNearbyAgentsFragment.class.getName(), "failed to get player information", exception);
 	}
 
 	public void onFirstLocation() {

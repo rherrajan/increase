@@ -9,6 +9,7 @@
     <string name="action_refresh">refresh</string>
     <string name="action_settings">settings</string>
     <string name="action_logfile">logfile</string>
+    <string name="action_hacked_agents">hacked agents</string>
     <string name="action_burger">menu</string>
     
     <string name="pref_auto_updates">auto updates</string>

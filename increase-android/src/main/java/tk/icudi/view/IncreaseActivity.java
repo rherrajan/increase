@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,8 +32,9 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 	@Inject
 	private UpdateService updateService;
 
-	private ListAgentsFragment listAgentsFragment = new ListAgentsFragment();
+	private ListNearbyAgentsFragment listAgentsFragment = new ListNearbyAgentsFragment();
 	private LogfilesFragment logfilesFragment = new LogfilesFragment();
+	private ListHackedAgentsFragment hackedAgentsFragment = new ListHackedAgentsFragment();
 	
 	private Menu menu;
 	
@@ -111,20 +113,29 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 				public boolean onMenuItemClick(MenuItem item) {
 
 					switch (item.getItemId()) {
+
+					case R.id.action_hacked_agents:
+						activateFragment(hackedAgentsFragment);
+						break;
+						
+					case R.id.action_logfile:
+						activateFragment(logfilesFragment);
+						break;
+						
 					case R.id.action_settings:
 						Intent i = new Intent(getActivity(), ConfigurationActivity.class);
 						startActivity(i);
 						break;
-					case R.id.action_logfile:
-						FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-						transaction.replace(R.id.fragment_container, logfilesFragment);
-						transaction.addToBackStack(null);
-						transaction.commit();
-
-						break;
 					}
 
 					return true;
+				}
+
+				private void activateFragment(Fragment newFragment) {
+					FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+					transaction.replace(R.id.fragment_container, newFragment);
+					transaction.addToBackStack(null);
+					transaction.commit();
 				}
 
 			});
