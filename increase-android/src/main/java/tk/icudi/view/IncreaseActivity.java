@@ -105,7 +105,7 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 
 		case R.id.action_refresh:
 			showRefreshAnimation(true);
-			updateService.updatePlayers();
+			updateService.updateNearbyAgents();
 			return true;
 
 		case R.id.action_burger:

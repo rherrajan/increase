@@ -10,6 +10,7 @@ import tk.icudi.NearbyPlayer;
 import android.content.Context;
 import android.location.Location;
 import android.provider.Settings.Secure;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.inject.Inject;
@@ -33,6 +34,8 @@ public class UpdateService implements IncreaseLocationListener {
 	private Set<IncreaseListener> listener = new HashSet<IncreaseListener>();
 	private List<NearbyPlayer> lastPlayers = new ArrayList<NearbyPlayer>();
 	private Set<NearbyPlayer> blockedPlayers = new HashSet<NearbyPlayer>();
+
+	private boolean isUpdating = false;
 
 	public void init() {
 		locationService.init();
@@ -67,8 +70,7 @@ public class UpdateService implements IncreaseLocationListener {
 
 			@Override
 			protected void onFailure(Exception exception) {
-				// TODO Auto-generated method stub
-				
+				Toast.makeText(context, "failure retrieving hacked agents", Toast.LENGTH_SHORT).show();
 			}
 
 
@@ -76,14 +78,18 @@ public class UpdateService implements IncreaseLocationListener {
 		
 	}
 	
-	public void updatePlayers() {
+	public void updateNearbyAgents() {
 
 		final Location userLocation = locationService.getUserLocation();
-
 		if (userLocation == null) {
 			return;
 		}
 
+		if(acquireLock() == false){
+			Log.d(this.getClass().getSimpleName(), "already updating");
+			return;
+		}
+		
 		for (IncreaseListener increaseListener : listener) {
 			increaseListener.onNearbyAgentsRefreshStart();
 		}
@@ -92,6 +98,8 @@ public class UpdateService implements IncreaseLocationListener {
 
 			protected void onSuccessfullExecute(List<NearbyPlayer> players) {
 
+				releaseLock();
+				
 				lastPlayers = removeBlockedPlayers(players);
 
 				for (IncreaseListener increaseListener : listener) {
@@ -105,15 +113,31 @@ public class UpdateService implements IncreaseLocationListener {
 
 			protected void onFailure(Exception exception) {
 
+				releaseLock();
+				
 				for (IncreaseListener increaseListener : listener) {
 					increaseListener.onNearbyAgentsRefreshFailure(exception);
 				}
 
 			}
 
+
 		}.execute(userLocation);
 	}
 
+	private synchronized boolean acquireLock() {
+		
+		boolean succes = isUpdating == false;
+		
+		isUpdating = true;
+		
+		return succes;
+	}
+
+	private synchronized void releaseLock() {
+		isUpdating = false;
+	}
+	
 	public List<NearbyPlayer> getLastPlayers() {
 		return lastPlayers;
 	}
@@ -170,7 +194,7 @@ public class UpdateService implements IncreaseLocationListener {
 	}
 
 	public void onFirstLocation() {
-		updatePlayers();
+		updateNearbyAgents();
 	}
 
 	public int getAccuracy() {

@@ -13,7 +13,7 @@ public class AlarmReceiver extends RoboBroadcastReceiver {
 
 	@Override
 	protected void handleReceive(Context context, Intent intent) {
-		updateService.updatePlayers();
+		updateService.updateNearbyAgents();
 	}
 
 }
