@@ -25,7 +25,7 @@ import android.widget.PopupMenu;
 
 import com.google.inject.Inject;
 
-public class IncreaseActivity extends RoboFragmentActivity implements IncreaseListener {
+public class IncreaseActivity extends RoboFragmentActivity implements IncreaseListener, FragmentSwitcher {
 
 	@Inject
 	private NotificationService notificationService;
@@ -33,9 +33,9 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 	@Inject
 	private UpdateService updateService;
 
-	private ListNearbyAgentsFragment listAgentsFragment = new ListNearbyAgentsFragment();
-	private LogfilesFragment logfilesFragment = new LogfilesFragment();
-	private ListHackedAgentsFragment hackedAgentsFragment = new ListHackedAgentsFragment();
+	static ListNearbyAgentsFragment listAgentsFragment = new ListNearbyAgentsFragment();
+	static LogfilesFragment logfilesFragment = new LogfilesFragment();
+	static ListHackedAgentsFragment hackedAgentsFragment = new ListHackedAgentsFragment();
 	
 	private Menu menu;
 	
@@ -48,11 +48,13 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 
 		setContentView(R.layout.main_layout);
 
+		
 		notificationService.setActionToNotificate(IncreaseActivity.class);
 		updateService.init();
 		updateService.registerListener(this);
 		updateService.registerListener(listAgentsFragment);
 		updateService.registerListener(hackedAgentsFragment);
+		listAgentsFragment.init(this);
 		
 		showRefreshAnimation(false);
 
@@ -132,14 +134,6 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 
 					return true;
 				}
-
-				private void activateFragment(Fragment newFragment) {
-					FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-					transaction.replace(R.id.fragment_container, newFragment);
-					transaction.addToBackStack(null);
-					transaction.commit();
-				}
-
 			});
 
 			popup.show();
@@ -150,6 +144,13 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 		}
 	}
 
+	public void activateFragment(Fragment newFragment) {
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		transaction.replace(R.id.fragment_container, newFragment);
+		transaction.addToBackStack(null);
+		transaction.commit();
+	}
+	
 	private Context getActivity() {
 		return this;
 	}

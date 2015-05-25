@@ -29,7 +29,13 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 
 	@Inject
 	private UpdateService updateService;
+	
 	private Agentlist<NearbyPlayer> list;
+	private FragmentSwitcher fragmentSwitcher;
+
+	public void init(FragmentSwitcher fragmentSwitcher) {
+		this.fragmentSwitcher = fragmentSwitcher;
+	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -69,7 +75,9 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 
 		case R.id.agent_add:
 			this.updateService.addPlayer(player);
-
+			
+			this.fragmentSwitcher.activateFragment(IncreaseActivity.hackedAgentsFragment);
+			
 			return true;
 
 		default:
