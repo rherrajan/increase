@@ -44,7 +44,9 @@ public class CaughtPlayer implements Identifyable, Player {
 	public String toString() {
 		return "CaughtPlayer [playername=" + playername + ", accuracy=" + accuracy + ", device_id=" + device_id + "]";
 	}
-	
 
+	public long getRank() {
+		return distance + passedSeconds + accuracy;
+	}
 
 }
