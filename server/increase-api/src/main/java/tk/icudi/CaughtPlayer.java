@@ -7,9 +7,10 @@ public class CaughtPlayer implements Identifyable, Player {
 	public String playername;
 	public int accuracy;
 	public String device_id;
+	public int distance;
 
 	public String makeQueryString() {
-		return "player=" + playername + "&accuracy=" + accuracy + "&id=" + device_id;
+		return "player=" + playername + "&accuracy=" + accuracy + "&id=" + device_id + "&distance=" + distance;
 	}
 
 	public static CaughtPlayer fromParameterMap(Map<String,String[]> parameterMap) {
@@ -17,6 +18,7 @@ public class CaughtPlayer implements Identifyable, Player {
 		player.playername = parameterMap.get("player")[0];
 		player.accuracy = Integer.valueOf(parameterMap.get("accuracy")[0]);
 		player.device_id = parameterMap.get("id")[0];
+		player.distance = Integer.valueOf(parameterMap.get("distance")[0]);
 		return player;
 	}
 
