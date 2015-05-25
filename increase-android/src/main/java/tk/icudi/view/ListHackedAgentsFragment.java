@@ -21,7 +21,7 @@ public class ListHackedAgentsFragment extends RoboListFragment implements Increa
 
 	@Inject
 	private UpdateService updateService;
-	private AgentlistAdapter<CaughtPlayer> list;
+	private Agentlist<CaughtPlayer> list;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class ListHackedAgentsFragment extends RoboListFragment implements Increa
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
-		list = new AgentlistAdapter<CaughtPlayer>(getActivity(), new ArrayList<CaughtPlayer>());
+		list = new AgentlistHacked(getActivity(), new ArrayList<CaughtPlayer>());
 		setListAdapter(list);
 		
 		updateService.updateHackedPlayers();

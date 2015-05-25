@@ -29,7 +29,7 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 
 	@Inject
 	private UpdateService updateService;
-	private AgentlistAdapter<NearbyPlayer> list;
+	private Agentlist<NearbyPlayer> list;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 
 		registerForContextMenu(this.getListView());
 		
-		list = new AgentlistAdapter<NearbyPlayer>(getActivity(), new ArrayList<NearbyPlayer>());
+		list = new AgentlistNearby(getActivity(), new ArrayList<NearbyPlayer>());
 		setListAdapter(list);
 	}
 
