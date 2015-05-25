@@ -5,7 +5,6 @@ import java.util.List;
 import tk.icudi.CaughtPlayer;
 import tk.icudi.R;
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
