@@ -6,16 +6,16 @@ import tk.icudi.CaughtPlayer;
 import android.os.AsyncTask;
 import android.util.Log;
 
-abstract class GetHackedAgentsTask extends AsyncTask<Void, Integer, List<CaughtPlayer>> {
+abstract class GetHackedAgentsTask extends AsyncTask<String, Integer, List<CaughtPlayer>> {
 
 	private IncreaseServer server = new IncreaseServer();
 	private Exception exception;
 
 	@Override
-	protected List<CaughtPlayer> doInBackground(Void... params) {
+	protected List<CaughtPlayer> doInBackground(String... params) {
 		
 		try {
-			List<CaughtPlayer> hackedAgents = server.getHackedAgents(null);
+			List<CaughtPlayer> hackedAgents = server.getHackedAgents(params[0]);
 			Log.i(UpdateService.class.getName(), "found " + hackedAgents.size() + " hackedAgents");
 			
 			return hackedAgents;

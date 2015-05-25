@@ -35,8 +35,8 @@ public class IncreaseServer {
 		return new Gson().<List<NearbyPlayer>> fromJson(jsonString, new TypeToken<List<NearbyPlayer>>() {}.getType());
 	}
 
-	public List<CaughtPlayer> getHackedAgents(Location location) throws ClientProtocolException, IOException {
-		String jsonString = getJsonString("/player/hacked");
+	public List<CaughtPlayer> getHackedAgents(String id) throws ClientProtocolException, IOException {
+		String jsonString = getJsonString("/player/hacked?id=" + id);
 		return new Gson().<List<CaughtPlayer>> fromJson(jsonString, new TypeToken<List<CaughtPlayer>>() {}.getType());
 	}
 

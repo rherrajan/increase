@@ -54,6 +54,8 @@ public class UpdateService implements IncreaseLocationListener {
 	
 	public void updateHackedPlayers() {
 		
+		String device_id = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID); 
+		
 		new GetHackedAgentsTask() {
 
 			protected void onSuccessfullExecute(List<CaughtPlayer> players) {
@@ -70,7 +72,7 @@ public class UpdateService implements IncreaseLocationListener {
 			}
 
 
-		}.execute();
+		}.execute(device_id);
 		
 	}
 	
