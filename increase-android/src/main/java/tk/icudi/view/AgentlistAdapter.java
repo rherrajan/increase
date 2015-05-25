@@ -27,7 +27,7 @@ public class AgentlistAdapter<T extends Player> extends ArrayAdapter<T> implemen
 	private int max_ranking_for_bold_display = -1;
 
 	public AgentlistAdapter(Context context, List<T> players) {
-		super(context, R.layout.agent_list_item, players);
+		super(context, R.layout.agent_nearby, players);
 		this.context = context;
 		this.players = players;
 		
@@ -47,7 +47,7 @@ public class AgentlistAdapter<T extends Player> extends ArrayAdapter<T> implemen
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		View rowView = inflater.inflate(R.layout.agent_list_item, parent, false);
+		View rowView = inflater.inflate(R.layout.agent_nearby, parent, false);
 		TextView player_name = (TextView) rowView.findViewById(R.id.player_name);
 		TextView player_distance = (TextView) rowView.findViewById(R.id.player_distance);
 		ImageView factionPic = (ImageView) rowView.findViewById(R.id.logo);
