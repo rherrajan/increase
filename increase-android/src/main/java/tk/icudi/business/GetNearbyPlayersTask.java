@@ -16,7 +16,7 @@ abstract class GetNearbyPlayersTask extends AsyncTask<Location, Integer, List<Ne
 	protected List<NearbyPlayer> doInBackground(Location... params) {
 		try {
 			List<NearbyPlayer> players = server.getNearbyPlayers(params[0]);
-			Log.i(UpdateService.class.getName(), "found " + players.size() + " players");
+			Log.i(UpdateService.class.getName(), "found " + players.size() + " nearby agents");
 			return players;
 
 		} catch (Exception e) {
