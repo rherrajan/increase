@@ -21,10 +21,10 @@ public class AgentlistHacked extends Agentlist<CaughtPlayer> {
 	
 	protected void modifyView(View rowView, CaughtPlayer agent) {
 		TextView player_name = (TextView) rowView.findViewById(R.id.player_name);
-		ImageView logo = (ImageView) rowView.findViewById(R.id.logo);
+//		ImageView logo = (ImageView) rowView.findViewById(R.id.logo);
 
 		player_name.setText(agent.getName());
-		logo.setImageResource(R.drawable.increase);
+//		logo.setImageResource(R.drawable.increase);
 	}
 
 
