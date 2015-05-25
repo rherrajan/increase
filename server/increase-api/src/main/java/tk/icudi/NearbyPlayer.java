@@ -2,21 +2,22 @@ package tk.icudi;
 
 public class NearbyPlayer implements Player {
 
-	private int passedSeconds;
+//	private int passedSeconds;
 	private int rank;
 	private String location;
 	private int distance;
 	private String name;
 	private double angle;
 	private Faction faction;
+	private long timestamp;
 
 	public Faction getFaction() {
 		return faction;
 	}
 
-	public void setPassedSeconds(int passedSeconds) {
-		this.passedSeconds = passedSeconds;
-	}
+//	public void setPassedSeconds(int passedSeconds) {
+//		this.passedSeconds = passedSeconds;
+//	}
 
 	public void setRank(int rank) {
 		this.rank = rank;
@@ -38,9 +39,9 @@ public class NearbyPlayer implements Player {
 		return rank;
 	}
 
-	public int getPassedSeconds() {
-		return passedSeconds;
-	}
+//	public int getPassedSeconds() {
+//		return passedSeconds;
+//	}
 
 	public String getName() {
 		return name;
@@ -62,6 +63,15 @@ public class NearbyPlayer implements Player {
 		return makeHumanReadableTime(this.getPassedSeconds());
 	}
 
+	private int getPassedSeconds() {
+		return getPassedSeconds(System.currentTimeMillis());
+	}
+
+	public int getPassedSeconds(long now) {
+		long durationMsec = now - timestamp;
+		return (int) (durationMsec / 1000);
+	}
+	
 	public static String makeHumanReadableTime(final int seconds) {
 		
 		int timetmp = seconds;
@@ -130,6 +140,14 @@ public class NearbyPlayer implements Player {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+
+	public long getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	

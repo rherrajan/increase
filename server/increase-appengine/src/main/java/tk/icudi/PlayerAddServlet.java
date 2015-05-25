@@ -17,11 +17,11 @@ public class PlayerAddServlet extends AbstractServlet {
 
 		Game game = new Game(new GaeDatabase());
 
-
-		CaughtPlayer player = CaughtPlayer.fromParameterMap((Map<String,String[]>)req.getParameterMap());
+		CaughtPlayer player = CaughtPlayer.fromParameterMap((Map<String, String[]>) req.getParameterMap());
+		player.passedSeconds = (System.currentTimeMillis() - player.timestamp) / 1000;
 
 		game.addPlayer(player);
-		
+
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"success\"");
 		resp.getWriter().println("}");

@@ -119,7 +119,7 @@ public class Game {
 
 			NearbyPlayer player = new NearbyPlayer();
 			player.setRank(unit.getRank(userLoc, time));
-			player.setPassedSeconds(unit.getPassedSeconds(time));
+			player.setTimestamp(unit.getTime().getTimeInMillis());
 			player.setName(unit.getName());
 			player.setLocation(unit.getLastLocation().getName());
 			player.setDistance(unit.getLastLocation().getPoint().distanceTo(userLoc));

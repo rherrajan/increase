@@ -170,7 +170,8 @@ public class PlayerTest extends AbstractGameTest {
 
 		NearbyPlayer firstPlayer = players.get(0);
 		assertThat(firstPlayer.getRank(), is(1500));
-		assertThat(firstPlayer.getPassedSeconds(), is(227));
+		// assertThat(firstPlayer.getPassedSeconds(), is(227));
+		assertThat(firstPlayer.getTimestamp(), is(1414324155453L));
 		assertThat(firstPlayer.getName(), is("suchef"));
 		assertThat(firstPlayer.getLocation(), is("Kinder Museum Frankfurt"));
 		assertThat(firstPlayer.getDistance(), is(1273));

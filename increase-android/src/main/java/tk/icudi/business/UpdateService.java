@@ -147,7 +147,7 @@ public class UpdateService implements IncreaseLocationListener {
 		input.accuracy = locationService.getAccuracy();
 		input.device_id = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID); 
 		input.distance = player.getDistance();
-		
+		input.timestamp = player.getTimestamp();
 		
 		new AddNearbyPlayersTask() {
 			@Override
