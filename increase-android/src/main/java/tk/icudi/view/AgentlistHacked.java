@@ -45,6 +45,7 @@ public class AgentlistHacked extends Agentlist<CaughtPlayer> {
 		
 //		Log.d(this.getClass().getSimpleName(), agent.getName() + ": rank=" + agent + " => aplha=" + alpha);
 		
+		
 		return alpha;
 	}
 

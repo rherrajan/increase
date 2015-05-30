@@ -41,16 +41,22 @@ public class NotificationService implements OnSharedPreferenceChangeListener {
 		refreshConfiguration(sharedPreferences);
 	}
 	
-	private void refreshConfiguration(SharedPreferences sharedPreferences) {
-		max_ranking_for_vibration = Integer.valueOf(sharedPreferences.getString("max_ranking_for_vibration", "-1"));
-		max_ranking_for_notification = Integer.valueOf(sharedPreferences.getString("max_ranking_for_notification", "-1"));
+	private void refreshConfiguration(SharedPreferences sharedPreferences) {    
+		max_ranking_for_vibration = Integer.valueOf(sharedPreferences.getString("preference_threshold_vibration", "-1"));
+		max_ranking_for_notification = Integer.valueOf(sharedPreferences.getString("preference_threshold_notification", "-1"));
 	}
 	
 	public void nearestPlayer(NearbyPlayer nearbyPlayer) {
 
+		System.out.println(" --- " + nearbyPlayer.getName() + " " + nearbyPlayer.getRank());
+		System.out.println(" --- max_ranking_for_notification: " + max_ranking_for_notification);
 		if (nearbyPlayer.getRank() > max_ranking_for_notification) {
+			
+			System.out.println(" --- cancelAll --- ");
 			notificationManager.cancelAll();
-			return;
+			if(nearbyPlayer.getRank() < max_ranking_for_vibration){
+				return;
+			}
 		}
 
 		if (somethingNew(nearbyPlayer)) {
@@ -64,6 +70,9 @@ public class NotificationService implements OnSharedPreferenceChangeListener {
 	}
 
 	private boolean somethingNew(NearbyPlayer nearbyPlayer) {
+		
+		System.out.println(" --- lastNotification: " + lastNotification);
+		
 		if (lastNotification != null) {
 			if (lastNotification.equals(nearbyPlayer)) {
 				if (lastNotification.getLocation().equals(nearbyPlayer.getLocation())) {
@@ -76,6 +85,9 @@ public class NotificationService implements OnSharedPreferenceChangeListener {
 	}
 
 	private void sendNotification(NearbyPlayer nearbyPlayer) {
+		
+		System.out.println(" --- sendNotification --- ");
+		
 		Intent intent = new Intent(context, actionToNotificate);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pIntent = PendingIntent.getActivity(context, 2, intent, PendingIntent.FLAG_UPDATE_CURRENT);

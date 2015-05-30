@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class AgentlistNearby extends Agentlist<NearbyPlayer> {
 
+	
 	private int max_ranking_for_bold_display = -1;
 
 	public AgentlistNearby(Context context, List<NearbyPlayer> players) {
@@ -26,7 +27,7 @@ public class AgentlistNearby extends Agentlist<NearbyPlayer> {
 	}
 	
 	protected void refreshConfiguration(SharedPreferences sharedPreferences) {
-		max_ranking_for_bold_display = Integer.valueOf(sharedPreferences.getString("max_ranking_for_bold_display", "-1"));
+		max_ranking_for_bold_display = Integer.valueOf(sharedPreferences.getString("preference_threshold_bold", "-1"));
 	}
 
 	protected void modifyView(View rowView, NearbyPlayer agent) {
