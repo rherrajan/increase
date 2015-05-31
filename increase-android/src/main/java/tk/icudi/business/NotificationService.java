@@ -48,11 +48,8 @@ public class NotificationService implements OnSharedPreferenceChangeListener {
 	
 	public void nearestPlayer(NearbyPlayer nearbyPlayer) {
 
-		System.out.println(" --- " + nearbyPlayer.getName() + " " + nearbyPlayer.getRank());
-		System.out.println(" --- max_ranking_for_notification: " + max_ranking_for_notification);
 		if (nearbyPlayer.getRank() > max_ranking_for_notification) {
 			
-			System.out.println(" --- cancelAll --- ");
 			notificationManager.cancelAll();
 			if(nearbyPlayer.getRank() < max_ranking_for_vibration){
 				return;
@@ -71,8 +68,6 @@ public class NotificationService implements OnSharedPreferenceChangeListener {
 
 	private boolean somethingNew(NearbyPlayer nearbyPlayer) {
 		
-		System.out.println(" --- lastNotification: " + lastNotification);
-		
 		if (lastNotification != null) {
 			if (lastNotification.equals(nearbyPlayer)) {
 				if (lastNotification.getLocation().equals(nearbyPlayer.getLocation())) {
@@ -85,8 +80,6 @@ public class NotificationService implements OnSharedPreferenceChangeListener {
 	}
 
 	private void sendNotification(NearbyPlayer nearbyPlayer) {
-		
-		System.out.println(" --- sendNotification --- ");
 		
 		Intent intent = new Intent(context, actionToNotificate);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
