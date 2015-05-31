@@ -27,11 +27,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
-        	android:name="tk.icudi.view.ConfigurationActivity"
+            android:name="tk.icudi.view.ConfigurationActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="tk.icudi.durandal.core.DurandalCoreActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
 
         <receiver

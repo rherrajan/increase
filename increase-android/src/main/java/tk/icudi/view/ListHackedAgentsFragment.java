@@ -9,11 +9,18 @@ import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
 import tk.icudi.business.IncreaseListener;
 import tk.icudi.business.UpdateService;
+import tk.icudi.durandal.core.DurandalCoreActivity;
+import tk.icudi.durandal.core.logic.StartOptions;
+import tk.icudi.durandal.core.logic.player.PlayerAI;
+import tk.icudi.durandal.core.logic.player.PlayerHuman;
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.google.inject.Inject;
 
@@ -45,6 +52,29 @@ public class ListHackedAgentsFragment extends RoboListFragment implements Increa
 		}
 	}
 	
+
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		final CaughtPlayer selectedValue = list.getItem(position);
+
+		PlayerHuman local = new PlayerHuman();
+		PlayerAI remote = new PlayerAI(1);
+
+		StartOptions options = new StartOptions();
+		options.setReleaseCreepAtStart(false);
+		options.addPlayer(local);
+		options.addPlayer(remote);
+		startGame(options);
+	}
+	
+	
+	private void startGame(StartOptions options) {
+		Log.d(" --- ", " Game started: " + options);
+	    Intent intent = new Intent(getActivity(), DurandalCoreActivity.class);
+	    intent.putExtra(StartOptions.START_OPTIONS_MESSAGE, options);
+	    
+	    startActivityForResult(intent, 0);
+	}
 	
 	public void onLocationChanged(Location location) {
 		

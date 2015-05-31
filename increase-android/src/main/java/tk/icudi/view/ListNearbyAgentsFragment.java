@@ -93,7 +93,7 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-		NearbyPlayer selectedValue = (NearbyPlayer) getListAdapter().getItem(position);
+		NearbyPlayer selectedValue = list.getItem(position);
 		String text = "on '" + selectedValue.getLocation() + "' " + selectedValue.getHumanReadableTime() + " ago ";
 		Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
 	}
