@@ -2,6 +2,7 @@ package tk.icudi.increase;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -10,13 +11,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(increase.icudi.tk.increase_app.R.layout.activity_main);
+
+        setSupportActionBar(new Toolbar(this));
+
+        setContentView(tk.icudi.increase.R.layout.activity_main);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(increase.icudi.tk.increase_app.R.menu.menu_main, menu);
+        getMenuInflater().inflate(tk.icudi.increase.R.menu.menu_main, menu);
         return true;
     }
 
@@ -28,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == increase.icudi.tk.increase_app.R.id.action_settings) {
+        if (id == tk.icudi.increase.R.id.action_settings) {
             return true;
         }
 
