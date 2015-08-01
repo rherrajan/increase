@@ -95,10 +95,17 @@ public class ToolbarFragment extends Fragment {
             public void onNearbyAgentsRefreshStart() {
                 showRefreshAnimation(true);
             }
-            
+
             @Override
             public void onLocationChanged(Location location) {
-                Toast.makeText(activity, "onLocationChanged", Toast.LENGTH_LONG).show();
+                final int acc;
+                if (location == null) {
+                    acc = -1;
+                } else {
+                    acc = (int) location.getAccuracy();
+                }
+
+                updateAccuracy(acc);
             }
 
             @Override
@@ -154,6 +161,24 @@ public class ToolbarFragment extends Fragment {
                 return super.onOptionsItemSelected(item);
         }
 
+    }
+
+
+
+    private void updateAccuracy(int acc) {
+
+        if (menu == null) {
+            return;
+        }
+
+        final String title;
+        if (acc == -1) {
+            title = getResources().getString(R.string.action_acc_default);
+        } else {
+            title = acc + "m";
+        }
+
+        menu.findItem(R.id.action_acc).setTitle(title);
     }
 
 
