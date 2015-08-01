@@ -30,31 +30,12 @@ import tk.icudi.increase.logic.UpdateService;
 
 public class NearbyFragment extends ListFragment {
 
-    private View listView;
     private AgentlistNearby list;
-    private AppCompatActivity activity;
-    private Menu menu;
-
     private UpdateService updateService;
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
-        System.out.println(" --- onAttach --- ");
-
-        this.activity = (AppCompatActivity)activity;
-
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        System.out.println(" --- onCreateView --- ");
-
-        this.listView = inflater.inflate(R.layout.fragment_nearby, container, false);
-
-        return this.listView;
+        return inflater.inflate(R.layout.fragment_nearby, container, false);
     }
 
     @Override
@@ -65,13 +46,6 @@ public class NearbyFragment extends ListFragment {
 
         list = new AgentlistNearby(getActivity(), new ArrayList<NearbyPlayer>());
         setListAdapter(list);
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.nearby_agents_context, menu);
     }
 
     @Override
