@@ -7,13 +7,16 @@
         android:text="@string/hello_blank_fragment" />
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/agent_toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_material_dark"
         >
 
-
-
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_action_refresh"/>
 
     </android.support.v7.widget.Toolbar>
         
