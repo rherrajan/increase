@@ -3,6 +3,7 @@ package tk.icudi.increase.view.fragments;
 import android.app.Activity;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.internal.widget.AdapterViewCompat;
@@ -26,6 +27,7 @@ import tk.icudi.increase.R;
 import tk.icudi.increase.logic.IncreaseAdapter;
 import tk.icudi.increase.logic.IncreaseListener;
 import tk.icudi.increase.logic.UpdateService;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 
 
 public class NearbyFragment extends ListFragment {
@@ -42,15 +44,27 @@ public class NearbyFragment extends ListFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        registerForContextMenu(this.getListView());
-
         list = new AgentlistNearby(getActivity(), new ArrayList<NearbyPlayer>());
         setListAdapter(list);
     }
 
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        registerForContextMenu(this.getListView());
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.nearby_agents_context, menu);
+    }
+
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        AdapterViewCompat.AdapterContextMenuInfo info = (AdapterViewCompat.AdapterContextMenuInfo) item.getMenuInfo();
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         Object player_raw = getListView().getItemAtPosition(info.position);
         NearbyPlayer player = (NearbyPlayer) player_raw;
 

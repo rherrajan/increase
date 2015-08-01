@@ -46,12 +46,15 @@ public class ListNearbyAgentsFragment extends RoboListFragment implements Increa
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
-		registerForContextMenu(this.getListView());
-		
 		list = new AgentlistNearby(getActivity(), new ArrayList<NearbyPlayer>());
 		setListAdapter(list);
 	}
 
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		registerForContextMenu(this.getListView());
+	}
 	@Override
 	public void onResume() {
 		super.onResume();

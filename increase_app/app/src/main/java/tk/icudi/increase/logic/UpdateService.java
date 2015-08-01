@@ -31,7 +31,8 @@ public class UpdateService implements IncreaseLocationListener {
 		this.notificationService = new NotificationService(context);
 		this.locationService = new LocationService(context);
 		this.alarmService = new AlarmService(context);
-
+		this.context = context;
+		
 		notificationService.setActionToNotificate(context.getClass());
 	}
 
@@ -143,9 +144,9 @@ public class UpdateService implements IncreaseLocationListener {
 	public void blockPlayer(NearbyPlayer player) {
 		blockedPlayers.add(player);
 
-		Toast.makeText(context, "blocked Player '" + player.getName() + "'", Toast.LENGTH_SHORT).show();
-
 		lastPlayers = removeBlockedPlayers(lastPlayers);
+
+		Toast.makeText(context, "blocked Player '" + player.getName() + "'", Toast.LENGTH_SHORT).show();
 	}
 
 	private List<NearbyPlayer> removeBlockedPlayers(List<NearbyPlayer> players) {
