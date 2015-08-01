@@ -4,9 +4,5 @@
     <item
         android:id="@+id/agent_ignore"
         android:title="@string/agent_ignore"/>
-
-    <item
-        android:id="@+id/agent_add"
-        android:title="@string/adent_add"/>
         
 </menu>

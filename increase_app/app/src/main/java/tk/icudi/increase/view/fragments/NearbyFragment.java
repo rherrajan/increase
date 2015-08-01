@@ -61,11 +61,6 @@ public class NearbyFragment extends ListFragment {
                 updateService.updateNotification();
                 return true;
 
-            case R.id.agent_add:
-                this.updateService.addPlayer(player);
-                Toast.makeText(getActivity(), "added player " + player.getName(), Toast.LENGTH_LONG).show();
-                return true;
-
             default:
                 return super.onContextItemSelected(item);
         }
