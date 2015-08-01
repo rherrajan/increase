@@ -22,11 +22,6 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name="tk.icudi.increase.logic.AlarmReceiver"
-            android:enabled="true" >
-        </receiver>
-
     </application>
 
 </manifest>
