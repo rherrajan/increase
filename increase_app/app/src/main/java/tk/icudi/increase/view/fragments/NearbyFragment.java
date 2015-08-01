@@ -23,6 +23,7 @@ import java.util.List;
 import tk.icudi.CaughtPlayer;
 import tk.icudi.NearbyPlayer;
 import tk.icudi.increase.R;
+import tk.icudi.increase.logic.IncreaseAdapter;
 import tk.icudi.increase.logic.IncreaseListener;
 import tk.icudi.increase.logic.UpdateService;
 
@@ -116,7 +117,7 @@ public class NearbyFragment extends ListFragment {
     }
 
     public IncreaseListener createIncreaseListener() {
-        return new IncreaseListener() {
+        return new IncreaseAdapter() {
 
             @Override
             public void onNearbyAgentsRefreshSuccesfull(List<NearbyPlayer> players) {
@@ -129,25 +130,6 @@ public class NearbyFragment extends ListFragment {
                 Log.e(NearbyFragment.class.getName(), "failed to get player information", exception);
             }
 
-            @Override
-            public void onNearbyAgentsRefreshStart() {
-
-            }
-
-            @Override
-            public void onHackedAgentsRefreshSuccesfull(List<CaughtPlayer> hackedAgents) {
-
-            }
-
-            @Override
-            public void onLocationChanged(Location location) {
-
-            }
-
-            @Override
-            public void onFirstLocation() {
-
-            }
         };
     }
 }

@@ -1,10 +1,7 @@
 package tk.icudi.increase.view.activities;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.view.View;
 
 import tk.icudi.increase.R;
 import tk.icudi.increase.logic.UpdateService;
@@ -22,13 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(tk.icudi.increase.R.layout.activity_main);
 
         init();
-    }
-
-    @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-        View view = super.onCreateView(parent, name, context, attrs);
-
-        return view;
     }
 
     private void init() {
