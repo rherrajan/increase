@@ -17,7 +17,7 @@ class AlarmService implements OnSharedPreferenceChangeListener {
 	private boolean isInitialised = false;
 	private PendingIntent updateAlarm;
 
-	private int seconds_till_player_refresh = -1;
+	private int seconds_till_player_refresh;
 
 	private boolean doAutoUpdates;
 

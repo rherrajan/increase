@@ -22,8 +22,8 @@ public class NotificationService implements OnSharedPreferenceChangeListener {
 	private NearbyPlayer lastNotification;
 	private Class<?> actionToNotificate;
 
-	private int max_ranking_for_vibration = -1;
-	private int max_ranking_for_notification = -1;
+	private int max_ranking_for_vibration;
+	private int max_ranking_for_notification;
 
 	public NotificationService(Context context){
 		this.context = context;

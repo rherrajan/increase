@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Increase</string>
+    <string name="app_name">Increase Classic</string>
     <string name="action_acc_default">no location</string>   
     <string name="agent_ignore">ignore</string>
     <string name="adent_add">hack</string>
