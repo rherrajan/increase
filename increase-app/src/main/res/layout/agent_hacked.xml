@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/ying_yang_background"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_marginLeft="0px"
+            android:layout_marginRight="0px"
+            android:layout_marginTop="5px"
+            android:src="@drawable/ying_yang_background" >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/ying_yang_black"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_alignRight="@+id/ying_yang_background"
+            android:layout_marginLeft="0px"
+            android:layout_marginRight="0px"
+            android:layout_marginTop="5px"
+            android:src="@drawable/ying_yang_black" >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/ying_yang_white"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_alignRight="@+id/ying_yang_background"
+            android:layout_marginLeft="0px"
+            android:layout_marginRight="0px"
+            android:layout_marginTop="5px"
+            android:src="@drawable/ying_yang_white" >
+        </ImageView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/player_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5px"
+        android:layout_marginRight="0px"
+        android:layout_marginTop="20px"
+        android:text="playername"
+        android:textSize="30px" >
+    </TextView>
+
+</LinearLayout>

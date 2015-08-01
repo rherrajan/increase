@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_acc"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_acc_default"/>
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_action_refresh"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_refresh"/>
+    <item
+        android:id="@+id/action_burger"
+		android:icon="@android:drawable/ic_dialog_dialer"
+        android:showAsAction="always"
+        android:title="@string/action_burger"/>
+
+</menu>
