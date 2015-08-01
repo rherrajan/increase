@@ -1,9 +1,10 @@
-package tk.icudi.increase;
+package tk.icudi.increase.view.fragments;
 
 import android.app.Activity;
 import android.location.Location;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +22,7 @@ import java.util.List;
 
 import tk.icudi.CaughtPlayer;
 import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.R;
 import tk.icudi.increase.logic.IncreaseListener;
 import tk.icudi.increase.logic.UpdateService;
 
@@ -36,11 +38,7 @@ public class ToolbarFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-
-        System.out.println(" --- onAttach --- ");
-
         this.activity = (AppCompatActivity)activity;
-
     }
 
     @Override
@@ -49,12 +47,20 @@ public class ToolbarFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (updateService != null) {
+            updateService.updateNearbyAgents();
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         this.toolbar = inflater.inflate(R.layout.fragment_toolbar, container, false);
-        System.out.println(" --- onCreateView --- ");
-
         Toolbar toolbar = (Toolbar) this.toolbar.findViewById(R.id.nearby_toolbar);
         activity.setSupportActionBar(toolbar);
 
@@ -69,30 +75,28 @@ public class ToolbarFragment extends Fragment {
         inflater.inflate(R.menu.main_activity_actions, menu);
 
         showRefreshAnimation(false);
+    }
 
-        this.updateService = new UpdateService(activity);
-        updateService.registerListener(new IncreaseListener() {
+    @NonNull
+    public IncreaseListener createIncreaseListener() {
+        return new IncreaseListener() {
             @Override
             public void onNearbyAgentsRefreshSuccesfull(List<NearbyPlayer> players) {
-                Toast.makeText(activity, "onNearbyAgentsRefreshSuccesfull", Toast.LENGTH_LONG).show();
                 showRefreshAnimation(false);
             }
 
             @Override
             public void onNearbyAgentsRefreshFailure(Exception exception) {
-                Toast.makeText(activity, "onNearbyAgentsRefreshFailure", Toast.LENGTH_LONG).show();
                 showRefreshAnimation(false);
             }
 
             @Override
             public void onNearbyAgentsRefreshStart() {
-                Toast.makeText(activity, "onNearbyAgentsRefreshStart", Toast.LENGTH_LONG).show();
                 showRefreshAnimation(true);
             }
 
             @Override
             public void onHackedAgentsRefreshSuccesfull(List<CaughtPlayer> hackedAgents) {
-                Toast.makeText(activity, "onHackedAgentsRefreshSuccesfull", Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -102,25 +106,16 @@ public class ToolbarFragment extends Fragment {
 
             @Override
             public void onFirstLocation() {
-                Toast.makeText(activity, "onFirstLocation", Toast.LENGTH_LONG).show();
+                updateService.updateNearbyAgents();
             }
-        });
-
-        updateService.init();
+        };
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-
         switch (item.getItemId()) {
 
             case R.id.action_refresh:
-                showRefreshAnimation(true);
                 updateService.updateNearbyAgents();
                 return true;
 
@@ -194,4 +189,7 @@ public class ToolbarFragment extends Fragment {
         }
     }
 
+    public void setUpdateService(UpdateService updateService) {
+        this.updateService = updateService;
+    }
 }
