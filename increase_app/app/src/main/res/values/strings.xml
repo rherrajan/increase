@@ -1,9 +1,24 @@
 <resources>
     <string name="app_name">Increase</string>
-
-    <string name="hello_world">Hello world2!</string>
-    <string name="action_settings">Settings</string>
-
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_acc_default">no location</string>   
+    <string name="agent_ignore">ignore</string>
+    <string name="adent_add">hack</string>
+    
+    <string name="action_refresh">refresh</string>
+    <string name="action_settings">settings</string>
+    <string name="action_logfile">logfile</string>
+    <string name="action_hacked_agents">hacked agents</string>
+    <string name="action_burger">menu</string>
+    
+    <string name="pref_auto_updates">auto updates</string>
+    <string name="pref_auto_updates_summary">refresh the agents periodically</string>
+    <string name="pref_interval">refresh interval</string>
+    <string name="pref_interval_summary">how many second to wait until the next refresh</string>
+    
+	<string name="pref_threshold_vibration">vibration threshold</string>
+    <string name="pref_threshold_vibration_summary">maximum ranking for a vibration</string>
+    <string name="pref_threshold_bold">bold threshold</string>
+    <string name="pref_threshold_bold_summary">maximum ranking for a emphasized display</string>
+    <string name="pref_threshold_notification">notification threshold</string>
+    <string name="pref_threshold_notification_summary">maximum ranking for a notification</string>
 </resources>
