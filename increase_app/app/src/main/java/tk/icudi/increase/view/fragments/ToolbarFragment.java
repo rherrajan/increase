@@ -1,6 +1,7 @@
 package tk.icudi.increase.view.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -26,6 +27,7 @@ import tk.icudi.increase.R;
 import tk.icudi.increase.logic.IncreaseAdapter;
 import tk.icudi.increase.logic.IncreaseListener;
 import tk.icudi.increase.logic.UpdateService;
+import tk.icudi.increase.view.activities.ConfigurationActivity;
 
 
 public class ToolbarFragment extends Fragment {
@@ -133,20 +135,11 @@ public class ToolbarFragment extends Fragment {
 
                         switch (item.getItemId()) {
 
-                            /*
-                            case R.id.action_hacked_agents:
-                                activateFragment(hackedAgentsFragment);
-                                break;
-
-                            case R.id.action_logfile:
-                                activateFragment(logfilesFragment);
-                                break;
-
                             case R.id.action_settings:
-                                Intent i = new Intent(getActivity(), ConfigurationActivity.class);
-                                startActivity(i);
+                                Intent intent = new Intent(getActivity(), ConfigurationActivity.class);
+                                startActivity(intent);
                                 break;
-                            */
+
                         }
 
                         return true;

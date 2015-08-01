@@ -1,5 +1,6 @@
 package tk.icudi.increase.view.activities;
 
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -14,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        
         super.onCreate(savedInstanceState);
 
         setContentView(tk.icudi.increase.R.layout.activity_main);
