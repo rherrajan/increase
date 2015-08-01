@@ -27,7 +27,12 @@ public class AgentlistNearby extends Agentlist<NearbyPlayer> {
 	}
 	
 	protected void refreshConfiguration(SharedPreferences sharedPreferences) {
+		
+		
 		max_ranking_for_bold_display = Integer.valueOf(sharedPreferences.getString("preference_threshold_bold", "-1"));
+		
+		System.out.println(" --- AgentlistNearby: " + max_ranking_for_bold_display);
+		
 	}
 
 	protected void modifyView(View rowView, NearbyPlayer agent) {

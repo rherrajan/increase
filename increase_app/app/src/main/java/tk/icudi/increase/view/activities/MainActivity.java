@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-        
+
         super.onCreate(savedInstanceState);
 
         setContentView(tk.icudi.increase.R.layout.activity_main);

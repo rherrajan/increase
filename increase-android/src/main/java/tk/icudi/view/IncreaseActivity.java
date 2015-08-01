@@ -40,8 +40,16 @@ public class IncreaseActivity extends RoboFragmentActivity implements IncreaseLi
 	private Menu menu;
 	
 	@Override
+	protected void onStart() {
+		System.out.println(" --- IncreaseActivity: onStart --- ");
+		super.onStart();
+	}
+	
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
+		System.out.println(" --- IncreaseActivity: onCreate --- ");
+		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
 		super.onCreate(savedInstanceState);

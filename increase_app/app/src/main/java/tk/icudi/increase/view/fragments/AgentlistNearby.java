@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class AgentlistNearby extends Agentlist<NearbyPlayer> {
 
-	private int max_ranking_for_bold_display = -1;
+	private int max_ranking_for_bold_display;
 
 	public AgentlistNearby(Context context, List<NearbyPlayer> players) {
 		super(context, R.layout.agent_nearby, players);
