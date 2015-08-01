@@ -32,7 +32,7 @@ public class UpdateService implements IncreaseLocationListener {
 		this.locationService = new LocationService(context);
 		this.alarmService = new AlarmService(context);
 		this.context = context;
-		
+
 		notificationService.setActionToNotificate(context.getClass());
 	}
 
