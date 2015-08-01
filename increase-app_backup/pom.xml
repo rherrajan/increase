@@ -38,6 +38,12 @@
 			<version>r7</version>
 		</dependency>
 		<dependency>
+			<groupId>android.support</groupId>
+			<artifactId>compatibility-v7-appcompat</artifactId>
+			<version>${compatibility.version}</version>
+			<type>apklib</type>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
