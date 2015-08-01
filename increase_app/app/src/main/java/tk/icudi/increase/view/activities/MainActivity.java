@@ -35,10 +35,12 @@ public class MainActivity extends AppCompatActivity {
         this.updateService = new UpdateService(this);
 
         ToolbarFragment toolbar = (ToolbarFragment)getFragmentManager().findFragmentById(R.id.fragment_toolbar);
-        NearbyFragment nearbyList = (NearbyFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_nearby);
-
         toolbar.setUpdateService(updateService);
         updateService.registerListener(toolbar.createIncreaseListener());
+
+        NearbyFragment nearbyList = (NearbyFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_nearby);
+        nearbyList.setUpdateService(updateService);
+        updateService.registerListener(nearbyList.createIncreaseListener());
 
         updateService.init();
     }

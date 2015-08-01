@@ -23,6 +23,7 @@ import java.util.List;
 import tk.icudi.CaughtPlayer;
 import tk.icudi.NearbyPlayer;
 import tk.icudi.increase.R;
+import tk.icudi.increase.logic.IncreaseListener;
 import tk.icudi.increase.logic.UpdateService;
 
 
@@ -81,7 +82,7 @@ public class NearbyFragment extends ListFragment {
         switch (item.getItemId()) {
             case R.id.agent_ignore:
                 this.updateService.blockPlayer(player);
-                onNearbyAgentsRefreshSuccesfull(updateService.getLastPlayers());
+                refreshList(updateService.getLastPlayers());
                 updateService.updateNotification();
                 return true;
 
@@ -95,6 +96,14 @@ public class NearbyFragment extends ListFragment {
         }
     }
 
+    private void refreshList(List<NearbyPlayer> players) {
+        if(list != null){
+            list.clear();
+            list.addAll(players);
+        }
+    }
+
+
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         NearbyPlayer selectedValue = list.getItem(position);
@@ -102,32 +111,43 @@ public class NearbyFragment extends ListFragment {
         Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
     }
 
-    public void onNearbyAgentsRefreshSuccesfull(List<NearbyPlayer> players) {
-        if(list != null){
-            list.clear();
-            list.addAll(players);
-        }
+    public void setUpdateService(UpdateService updateService) {
+        this.updateService = updateService;
     }
 
-    public void onNearbyAgentsRefreshFailure(Exception exception) {
-        Toast.makeText(getActivity(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
-        Log.e(NearbyFragment.class.getName(), "failed to get player information", exception);
+    public IncreaseListener createIncreaseListener() {
+        return new IncreaseListener() {
+
+            @Override
+            public void onNearbyAgentsRefreshSuccesfull(List<NearbyPlayer> players) {
+                refreshList(players);
+            }
+
+            @Override
+            public void onNearbyAgentsRefreshFailure(Exception exception) {
+                Toast.makeText(getActivity(), "failed to get player information" + exception, Toast.LENGTH_SHORT).show();
+                Log.e(NearbyFragment.class.getName(), "failed to get player information", exception);
+            }
+
+            @Override
+            public void onNearbyAgentsRefreshStart() {
+
+            }
+
+            @Override
+            public void onHackedAgentsRefreshSuccesfull(List<CaughtPlayer> hackedAgents) {
+
+            }
+
+            @Override
+            public void onLocationChanged(Location location) {
+
+            }
+
+            @Override
+            public void onFirstLocation() {
+
+            }
+        };
     }
-
-    public void onFirstLocation() {
-
-    }
-
-    public void onLocationChanged(Location location) {
-
-    }
-
-    public void onNearbyAgentsRefreshStart() {
-
-    }
-
-    public void onHackedAgentsRefreshSuccesfull(List<CaughtPlayer> hackedAgents) {
-
-    }
-
 }
