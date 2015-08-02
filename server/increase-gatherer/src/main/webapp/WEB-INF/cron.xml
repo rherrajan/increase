@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+	<cron>
+		<url>/player/gather</url>
+		<description>gathers information about players</description>
+		<schedule>every 2 minutes</schedule>
+		<timezone>Europe/Berlin</timezone>
+	</cron>
+</cronentries>
