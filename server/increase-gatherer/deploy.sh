@@ -10,7 +10,6 @@ check_errs() {
   fi
 }
 
-
 mvn appengine:update
 check_errs $? "error in increase-gatherer"
 

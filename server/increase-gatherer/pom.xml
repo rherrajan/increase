@@ -44,6 +44,20 @@
 		</dependency>
 
 
+		<dependency>
+		  <groupId>net.sourceforge.htmlunit</groupId>
+		  <artifactId>htmlunit</artifactId>
+		  <version>2.18</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.47.1</version>
+		</dependency>
+
+
+
+
 		<!-- test scope -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -117,6 +131,7 @@
 				<configuration>
 					<fullScanSeconds>1</fullScanSeconds>
 					<server>preview.appengine.google.com</server>
+					<enableJarSplitting>true</enableJarSplitting>
 				</configuration>
 			</plugin>
 		</plugins>
