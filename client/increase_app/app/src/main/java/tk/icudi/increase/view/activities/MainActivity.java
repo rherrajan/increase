@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import tk.icudi.increase.R;
-import tk.icudi.increase.logic.UpdateService;
+import tk.icudi.increase.nearby.UpdateService;
 import tk.icudi.increase.view.fragments.NearbyFragment;
 import tk.icudi.increase.view.fragments.ToolbarFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private UpdateService updateService;
+    public static UpdateService updateService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        this.updateService = new UpdateService(this);
+        updateService = new UpdateService(this, AlarmReceiver.class);
 
         ToolbarFragment toolbar = (ToolbarFragment)getFragmentManager().findFragmentById(R.id.fragment_toolbar);
         toolbar.setUpdateService(updateService);

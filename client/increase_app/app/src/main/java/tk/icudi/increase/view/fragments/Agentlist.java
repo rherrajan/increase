@@ -2,7 +2,7 @@ package tk.icudi.increase.view.fragments;
 
 import java.util.List;
 
-import tk.icudi.Player;
+import tk.icudi.increase.Player;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;

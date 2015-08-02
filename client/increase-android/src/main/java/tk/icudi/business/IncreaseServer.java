@@ -14,8 +14,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-import tk.icudi.CaughtPlayer;
-import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.CaughtPlayer;
+import tk.icudi.increase.NearbyPlayer;
 import android.location.Location;
 import android.util.Log;
 

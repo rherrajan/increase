@@ -2,7 +2,7 @@ package tk.icudi.business;
 
 import java.util.List;
 
-import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.NearbyPlayer;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.util.Log;

@@ -1,16 +1,11 @@
 package tk.icudi.increase.view.fragments;
 
-import android.app.Activity;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.internal.widget.AdapterViewCompat;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,12 +16,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import tk.icudi.CaughtPlayer;
-import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.NearbyPlayer;
 import tk.icudi.increase.R;
-import tk.icudi.increase.logic.IncreaseAdapter;
-import tk.icudi.increase.logic.IncreaseListener;
-import tk.icudi.increase.logic.UpdateService;
+import tk.icudi.increase.nearby.IncreaseAdapter;
+import tk.icudi.increase.nearby.IncreaseListener;
+import tk.icudi.increase.nearby.UpdateService;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
 

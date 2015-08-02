@@ -6,6 +6,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import tk.icudi.increase.Direction;
+import tk.icudi.increase.Point;
+
 public class PointTest {
 
 	@Test

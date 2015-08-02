@@ -2,7 +2,7 @@ package tk.icudi.view;
 
 import java.util.List;
 
-import tk.icudi.Player;
+import tk.icudi.increase.Player;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;

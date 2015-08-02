@@ -28,6 +28,11 @@
             android:launchMode="singleTop" >
         </activity>
 
+        <receiver
+            android:name="tk.icudi.increase.view.activities.AlarmReceiver"
+            android:enabled="true" >
+        </receiver>
+
     </application>
 
 </manifest>

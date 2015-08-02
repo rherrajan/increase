@@ -2,8 +2,8 @@ package tk.icudi.increase.view.fragments;
 
 import java.util.List;
 
-import tk.icudi.Faction;
-import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.Faction;
+import tk.icudi.increase.NearbyPlayer;
 import tk.icudi.increase.R;
 import android.content.Context;
 import android.content.SharedPreferences;

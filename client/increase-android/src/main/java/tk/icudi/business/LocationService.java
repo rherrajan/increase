@@ -3,7 +3,7 @@ package tk.icudi.business;
 import java.util.HashSet;
 import java.util.Set;
 
-import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.NearbyPlayer;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;

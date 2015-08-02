@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import tk.icudi.CaughtPlayer;
-import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.CaughtPlayer;
+import tk.icudi.increase.NearbyPlayer;
 import android.content.Context;
 import android.location.Location;
 import android.provider.Settings.Secure;

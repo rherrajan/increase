@@ -1,7 +1,7 @@
 package tk.icudi.business;
 
-import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
+import tk.icudi.increase.NearbyPlayer;
 import android.app.Notification;
 import android.app.Notification.Builder;
 import android.app.NotificationManager;

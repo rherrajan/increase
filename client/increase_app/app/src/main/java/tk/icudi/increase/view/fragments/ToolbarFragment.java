@@ -17,16 +17,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import java.util.List;
 
-import tk.icudi.CaughtPlayer;
-import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.NearbyPlayer;
 import tk.icudi.increase.R;
-import tk.icudi.increase.logic.IncreaseAdapter;
-import tk.icudi.increase.logic.IncreaseListener;
-import tk.icudi.increase.logic.UpdateService;
+import tk.icudi.increase.nearby.IncreaseAdapter;
+import tk.icudi.increase.nearby.IncreaseListener;
+import tk.icudi.increase.nearby.UpdateService;
 import tk.icudi.increase.view.activities.ConfigurationActivity;
 
 

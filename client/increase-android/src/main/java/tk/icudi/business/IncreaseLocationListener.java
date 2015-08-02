@@ -2,7 +2,7 @@ package tk.icudi.business;
 
 import java.util.List;
 
-import tk.icudi.CaughtPlayer;
+import tk.icudi.increase.CaughtPlayer;
 import android.location.Location;
 
 public interface IncreaseLocationListener {

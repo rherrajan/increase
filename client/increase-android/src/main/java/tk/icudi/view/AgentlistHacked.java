@@ -2,8 +2,8 @@ package tk.icudi.view;
 
 import java.util.List;
 
-import tk.icudi.CaughtPlayer;
 import tk.icudi.R;
+import tk.icudi.increase.CaughtPlayer;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;

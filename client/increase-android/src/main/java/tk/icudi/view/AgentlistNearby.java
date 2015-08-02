@@ -2,9 +2,9 @@ package tk.icudi.view;
 
 import java.util.List;
 
-import tk.icudi.Faction;
-import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
+import tk.icudi.increase.Faction;
+import tk.icudi.increase.NearbyPlayer;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;

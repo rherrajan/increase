@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import roboguice.fragment.RoboListFragment;
-import tk.icudi.CaughtPlayer;
-import tk.icudi.NearbyPlayer;
 import tk.icudi.R;
 import tk.icudi.business.IncreaseListener;
 import tk.icudi.business.UpdateService;
+import tk.icudi.increase.CaughtPlayer;
+import tk.icudi.increase.NearbyPlayer;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;

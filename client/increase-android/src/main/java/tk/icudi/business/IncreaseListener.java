@@ -2,8 +2,8 @@ package tk.icudi.business;
 
 import java.util.List;
 
-import tk.icudi.CaughtPlayer;
-import tk.icudi.NearbyPlayer;
+import tk.icudi.increase.CaughtPlayer;
+import tk.icudi.increase.NearbyPlayer;
 
 public interface IncreaseListener extends IncreaseLocationListener {
 

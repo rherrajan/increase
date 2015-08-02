@@ -1,6 +1,6 @@
 package tk.icudi.business;
 
-import tk.icudi.CaughtPlayer;
+import tk.icudi.increase.CaughtPlayer;
 import android.os.AsyncTask;
 
 abstract class AddNearbyPlayersTask extends AsyncTask<CaughtPlayer, Integer, Boolean> {
