@@ -125,27 +125,8 @@ public class ToolbarFragment extends Fragment {
 
             case R.id.action_burger:
 
-                PopupMenu popup = new PopupMenu(getActivity(), toolbar.findViewById(item.getItemId()));
-                popup.getMenuInflater().inflate(R.menu.burger_menu, popup.getMenu());
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-
-                    public boolean onMenuItemClick(MenuItem item) {
-
-                        switch (item.getItemId()) {
-
-                            case R.id.action_settings:
-                                Intent intent = new Intent(getActivity(), ConfigurationActivity.class);
-                                startActivity(intent);
-                                break;
-
-                        }
-
-                        return true;
-                    }
-                });
-
-
-                popup.show();
+                Intent intent = new Intent(getActivity(), ConfigurationActivity.class);
+                startActivity(intent);
                 return true;
 
             default:
