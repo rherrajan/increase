@@ -27,6 +27,12 @@
 			<artifactId>increase-api</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>tk.icudi.increase</groupId>
+			<artifactId>increase-nearby</artifactId>
+			<version>0.0.1</version>
+			<type>aar</type>
+		</dependency>
 		<!-- 
 		<dependency>
 			<groupId>tk.icudi.durandal</groupId>
@@ -83,7 +89,7 @@
 				<artifactId>android-maven-plugin</artifactId>
 				<configuration>
 					<sdk>
-						<platform>24</platform>
+						<platform>22</platform>
 					</sdk>
 				</configuration>
 			</plugin>

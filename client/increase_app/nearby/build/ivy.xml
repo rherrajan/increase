@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="increase_app" module="nearby" revision="unspecified" status="integration" publication="20150802125448">
+  <info organisation="increase_app" module="nearby" revision="unspecified" status="integration" publication="20150802133536">
     <description/>
   </info>
   <configurations>
@@ -52,7 +52,6 @@
     <artifact name="nearby" type="aar" ext="aar" conf="archives,default"/>
   </publications>
   <dependencies>
-    <dependency org="com.android.support" name="appcompat-v7" rev="22.2.1" conf="compile-&gt;default"/>
     <dependency org="tk.icudi" name="increase-api" rev="0.0.2-SNAPSHOT" conf="compile-&gt;default"/>
     <dependency org="com.google.code.gson" name="gson" rev="1.7.1" conf="compile-&gt;default"/>
   </dependencies>
