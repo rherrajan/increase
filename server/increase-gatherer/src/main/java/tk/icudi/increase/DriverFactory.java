@@ -62,7 +62,14 @@ public class DriverFactory {
 //		htmlUnitDriver.setProxy("220.132.54.171", 80);	
 //		htmlUnitDriver.setProxy("115.29.151.135", 8080);	
 //		htmlUnitDriver.setProxy("218.92.227.172", 23685);	
-		htmlUnitDriver.setProxy("218.92.227.168", 17130);	
+//		htmlUnitDriver.setProxy("218.92.227.168", 17130);	
+		htmlUnitDriver.setProxy("50.19.217.103", 60088);	
+		
+		
+		
+//		htmlUnitDriver.setProxy("50.16.7.84", 80);	
+		
+		
 		
 		
 		

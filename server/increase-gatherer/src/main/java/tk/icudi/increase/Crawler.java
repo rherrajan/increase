@@ -15,18 +15,28 @@ public class Crawler {
 
 		this.driver = DriverFactory.getInstance().getHTMLUnitDriver();
 
+//		 driver.get("http://www.google.de");
 		driver.get("https://www.ingress.com/intel");
+		
+
 		
 //		driver.get("http://tomatoproxy.eu/browse.php?u=https%3A%2F%2Fwww.ingress.com%2Fintel&b=28&f=norefer");
 		
 			
 		//driver.get("https://duckduckgo.com/?q=Permission+denied");
 		// driver.get("http://duckduckgo.com:80");
+
+		
+			
 		// driver.get("https://www.google.de");
 		// driver.get("http://www.google.de");
 
-		System.out.println(" --- driver: " + driver.getCurrentUrl());
 
+		System.out.println(" --- url: " + driver.getCurrentUrl());
+		System.out.println(" --- pagesource: " + driver.getPageSource());
+		
+		
+		
 		// page instances init()
 		// loginPage = PageFactory.initElements(driver, LoginPage.class);
 		// homePage = PageFactory.initElements(driver, FacebookUserPage.class);
