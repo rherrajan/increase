@@ -1,12 +1,14 @@
 package tk.icudi.increase;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.openqa.selenium.support.PageFactory;
 
 import tk.icudi.increase.DriverFactory.HTMLDriver;
 
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class Crawler {
 
@@ -47,11 +49,14 @@ public class Crawler {
 
 
 
-	public void openPostUrl(String url) throws FailingHttpStatusCodeException, IOException {
+	public void openPostUrl(String url, Map<String, String> requestParameter, String postBody) throws FailingHttpStatusCodeException, IOException {
 		
-		driver.getPost(url);
+		HtmlPage page = driver.getPost(url, requestParameter, postBody);
 		
-
+		
+		System.out.println(" --- asText: " + page.asText());
+		System.out.println(" --- asXml: " + page.asXml());
+		
 	}
 
 }

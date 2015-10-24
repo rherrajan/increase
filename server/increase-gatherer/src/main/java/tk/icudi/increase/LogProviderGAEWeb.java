@@ -1,48 +1,53 @@
 package tk.icudi.increase;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.zip.GZIPInputStream;
 
 import tk.icudi.LogProviderWeb;
 import tk.icudi.RequestData;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
+import com.gargoylesoftware.htmlunit.HttpMethod;
+import com.gargoylesoftware.htmlunit.Page;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.WebRequest;
+
 public class LogProviderGAEWeb extends LogProviderWeb {
+
+	private WebClient webClient;
 
 	public LogProviderGAEWeb(RequestData data) {
 		super(data);
-//		this.crawler = new Crawler();
+
+		webClient = new WebClient(BrowserVersion.getDefault(),"176.31.99.80", 2222);
 	}
+
 
 	@Override
 	protected InputStream provideLogs(String plextURL, Map<String, String> requestParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
+		Page page = openPage(plextURL, requestParameter, postBody);
 
-		// TODO: Make able for sandbox use
-		
-		URL plexts = new URL(plextURL);
-		HttpURLConnection connection = (HttpURLConnection) plexts.openConnection();
-		connection.setRequestMethod("POST");
-		connection.setUseCaches(false);
-		connection.setDoInput(true);
-		connection.setDoOutput(true);
+		return page.getWebResponse().getContentAsStream();
+	}
+	
+
+	  
+	private Page openPage(String urlString, Map<String, String> requestParameter, String requestBody) throws FailingHttpStatusCodeException, IOException {
+
+		WebRequest requestSettings = new WebRequest(new URL(urlString), HttpMethod.POST);
 
 		for (Entry<String, String> entry : requestParameter.entrySet()) {
-			connection.setRequestProperty(entry.getKey(), entry.getValue());
+			requestSettings.setAdditionalHeader(entry.getKey(), entry.getValue());
 		}
 
-		DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-
-		wr.writeBytes(postBody);
-		wr.flush();
-		wr.close();
-
-		return new GZIPInputStream(connection.getInputStream());
+		requestSettings.setRequestBody(requestBody);
+				
+		return webClient.<Page>getPage(requestSettings);
 	}
 }
