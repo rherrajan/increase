@@ -25,7 +25,8 @@ public class LogProviderGAEWeb extends LogProviderWeb {
 	public LogProviderGAEWeb(RequestData data) {
 		super(data);
 
-		webClient = new WebClient(BrowserVersion.getDefault(),"176.31.99.80", 2222);
+		webClient = new WebClient(BrowserVersion.getDefault());
+//		webClient = new WebClient(BrowserVersion.getDefault(),"176.31.99.80", 2222);
 	}
 
 

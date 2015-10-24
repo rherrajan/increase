@@ -33,7 +33,7 @@ public class CrawlerSystemTest {
 
 
 	@Test
-	public void should_get_plexus_logs_from_credentials_in_GEA() throws Exception {
+	public void should_get_plexus_logs_from_credentials_in_GAE() throws Exception {
 
 		List<LogEntry> logs = GatherInformationServlet.getLogsFromProvider(new LogProviderGAEWeb(new RequestDataRherrajan()));
 

@@ -12,20 +12,15 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class Crawler {
 
-
-
 	private HTMLDriver driver;
 
 	public Crawler() {
-
 		this.driver = DriverFactory.getInstance().getHTMLUnitDriver();
 	}
-	
-	
 
 	public void updateData() {
-		// TODO Auto-generated method stub
-
+		// driver.get("https://www.ingress.com/intel");
+		driver.get("http://lienz.lima.zone/intel");
 	}
 
 	public String getSourcecode() {
@@ -36,27 +31,20 @@ public class Crawler {
 		return PageFactory.initElements(driver, LoginPage.class);
 	}
 
-
-
 	public void openUrl(String url) {
 
 		driver.get(url);
 
 		System.out.println(" --- url: " + driver.getCurrentUrl());
 		System.out.println(" --- pagesource: " + driver.getPageSource());
-
 	}
 
-
-
 	public void openPostUrl(String url, Map<String, String> requestParameter, String postBody) throws FailingHttpStatusCodeException, IOException {
-		
+
 		HtmlPage page = driver.getPost(url, requestParameter, postBody);
-		
-		
+
 		System.out.println(" --- asText: " + page.asText());
 		System.out.println(" --- asXml: " + page.asXml());
-		
 	}
 
 }
