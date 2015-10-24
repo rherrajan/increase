@@ -4,6 +4,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.URL;
 import java.util.zip.GZIPInputStream;
 
@@ -43,16 +45,24 @@ public class LogProviderWeb implements LogProvider {
 
 		assertInputComplete();
 
+		// String userPassword = "vpn" + ":" + "vpn";
+		// String encoding = Base64.encode(userPassword.getBytes());
+		//
+
+		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("176.31.99.80", 2222));
+
 		String cookie = "csrftoken=" + data.csrftoken
 				+ "; __utma=24037858.253737590.1413652003.1416056245.1416650976.48; __utmc=24037858; __utmz=24037858.1413652003.1.1.utmcsr=duckduckgo.com|utmccn=(referral)|utmcmd=referral|utmcct=/; "
 				+ "SACSID=" + data.sacsid + "; " + "ingress.intelmap.lat=50.1025584721709; ingress.intelmap.lng=8.663159608840942; ingress.intelmap.zoom=17";
 
 		URL plexts = new URL("https://www.ingress.com/r/getPlexts");
-		HttpURLConnection connection = (HttpURLConnection) plexts.openConnection();
+		HttpURLConnection connection = (HttpURLConnection) plexts.openConnection(proxy);
 		connection.setRequestMethod("POST");
 		connection.setUseCaches(false);
 		connection.setDoInput(true);
 		connection.setDoOutput(true);
+
+		// connection.setRequestProperty("Authorization", "Basic " + encoding);
 
 		connection.setRequestProperty("origin", "https://www.ingress.com");
 		connection.setRequestProperty("referer", "https://www.ingress.com/intel");

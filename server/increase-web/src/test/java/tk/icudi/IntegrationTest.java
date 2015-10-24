@@ -35,7 +35,7 @@ public class IntegrationTest {
 	}
 
 	@Test
-	public void test_parse() throws Exception {
+	public void should_get_plexus_logs_from_credentials() throws Exception {
 
 		List<LogEntry> logs = getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
 

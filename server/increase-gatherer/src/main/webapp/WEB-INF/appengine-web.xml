@@ -3,7 +3,8 @@
 	<application>increase-gatherer</application>
 	<version>1</version>
 	<threadsafe>false</threadsafe>
-
+	<vm>false</vm>
+	
 	<system-properties>
 		<property name="java.util.logging.config.file" value="WEB-INF/logging.properties" />
 		<property name="file.encoding" value="UTF-8" />

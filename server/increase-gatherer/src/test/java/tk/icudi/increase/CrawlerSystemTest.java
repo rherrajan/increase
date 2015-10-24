@@ -35,18 +35,5 @@ public class CrawlerSystemTest {
 		assertThat(loginButton.toString(), containsString("ingress.com"));
 	}
 
-	@Test
-	public void should_get_plexus_logs_from_credentials() throws Exception {
-		
-		List<LogEntry> logs = getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
 
-		assertThat(logs.size(), is(50));
-	}
-	
-	private List<LogEntry> getLogsFromProvider(LogProvider provider) throws IOException {
-		PlextParser parser = new PlextParser(provider);
-		parser.updateLogs();
-		List<LogEntry> logs = parser.extractLogEntries();
-		return logs;
-	}
 }
