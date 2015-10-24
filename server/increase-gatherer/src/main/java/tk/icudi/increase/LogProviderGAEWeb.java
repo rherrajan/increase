@@ -12,6 +12,7 @@ import tk.icudi.LogProviderWeb;
 import tk.icudi.RequestData;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.CookieManager;
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.HttpMethod;
 import com.gargoylesoftware.htmlunit.Page;
@@ -27,23 +28,46 @@ public class LogProviderGAEWeb extends LogProviderWeb {
 
 		webClient = new WebClient(BrowserVersion.getDefault());
 //		webClient = new WebClient(BrowserVersion.getDefault(),"176.31.99.80", 2222);
+		
+		webClient.getOptions().setUseInsecureSSL(true);
+		webClient.getOptions().setJavaScriptEnabled(false);
+		webClient.setCookieManager(new CookieManager() {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected int getPort(java.net.URL url) {
+				final int r = super.getPort(url);
+				return r != -1 ? r : 80;
+			}
+
+		});
 	}
 
 
 	@Override
-	protected InputStream provideLogs(String plextURL, Map<String, String> requestParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
-		Page page = openPage(plextURL, requestParameter, postBody);
+	protected InputStream provideLogs(Map<String, String> headerParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
+		
+//		String urlString = "https://www.ingress.com/r/getPlexts";
+		//String urlString = "https://lienz.lima.zone/r/getPlexts";
+		//String urlString = "https://lienz.lima.zone/yxorp.php?url=https://www.ingress.com/r/getPlexts/";
+
+		String urlString = "https://lienz.lima.zone/yxorp3.php/https://www.ingress.com/r/getPlexts";
+
+
+		Page page = openPage(urlString, headerParameter, postBody);
 
 		return page.getWebResponse().getContentAsStream();
 	}
 	
 
-	  
-	private Page openPage(String urlString, Map<String, String> requestParameter, String requestBody) throws FailingHttpStatusCodeException, IOException {
+
+	
+	private Page openPage(String urlString, Map<String, String> headerParameter, String requestBody) throws FailingHttpStatusCodeException, IOException {
 
 		WebRequest requestSettings = new WebRequest(new URL(urlString), HttpMethod.POST);
 
-		for (Entry<String, String> entry : requestParameter.entrySet()) {
+		for (Entry<String, String> entry : headerParameter.entrySet()) {
 			requestSettings.setAdditionalHeader(entry.getKey(), entry.getValue());
 		}
 

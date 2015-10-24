@@ -20,11 +20,11 @@ public class GatherInformationServlet extends AbstractServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		super.doGet(req, resp);
 
-		Crawler crawler = new Crawler();
-		crawler.updateData();
-		Object result = crawler.getSourcecode();
+//		Crawler crawler = new Crawler();
+//		crawler.updateData();
+//		Object result = crawler.getSourcecode();
 		
-//		Object result = getLogsFromProvider(new LogProviderGAEWeb(new RequestDataRherrajan()));
+		Object result = getLogsFromProvider(new LogProviderGAEWeb(new RequestDataRherrajan()));
 
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"" + result +"\"");

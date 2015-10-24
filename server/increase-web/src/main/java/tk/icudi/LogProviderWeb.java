@@ -48,16 +48,15 @@ public class LogProviderWeb implements LogProvider {
 
 		assertInputComplete();
 
-		String plextURL = "https://www.ingress.com/r/getPlexts";
 		Map<String, String> requestParameter = getRequestParameter();
 		String postBody = getOutputParameters();
 
-		return provideLogs(plextURL, requestParameter, postBody);
+		return provideLogs(requestParameter, postBody);
 	}
 
-	protected InputStream provideLogs(String plextURL, Map<String, String> requestParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
+	protected InputStream provideLogs(Map<String, String> requestParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
 
-		URL plexts = new URL(plextURL);
+		URL plexts = new URL(getPlextURL());
 		HttpURLConnection connection = (HttpURLConnection) plexts.openConnection();
 		connection.setRequestMethod("POST");
 		connection.setUseCaches(false);
@@ -75,6 +74,13 @@ public class LogProviderWeb implements LogProvider {
 		wr.close();
 
 		return new GZIPInputStream(connection.getInputStream());
+	}
+
+	private String getPlextURL() {
+		// String urlString =
+		// "https://lienz.lima.zone/yxorp3.php/https://www.ingress.com/r/getPlexts";
+		String urlString = "https://www.ingress.com/r/getPlexts";
+		return urlString;
 	}
 
 	private String getOutputParameters() {
