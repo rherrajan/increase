@@ -9,10 +9,8 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import tk.icudi.LogProvider;
 import tk.icudi.LogProviderWeb;
 import tk.icudi.LogProviderWebProxy;
-import tk.icudi.PlextParser;
 import tk.icudi.RequestDataRherrajan;
 
 public class SendInformationServlet extends AbstractServlet {
