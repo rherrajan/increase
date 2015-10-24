@@ -4,27 +4,16 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
-
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>cron</web-resource-name>
-			<url-pattern>/player/delete</url-pattern>
-		</web-resource-collection>
-		<auth-constraint>
-			<role-name>admin</role-name>
-		</auth-constraint>
-	</security-constraint>
-
+		
 	<servlet>
-		<servlet-name>GatherInformationServlet</servlet-name>
-		<servlet-class>tk.icudi.increase.GatherInformationServlet</servlet-class>
+		<servlet-name>SendInformationServlet</servlet-name>
+		<servlet-class>tk.icudi.increase.SendInformationServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>GatherInformationServlet</servlet-name>
-		<url-pattern>/player/gather</url-pattern>
+		<servlet-name>SendInformationServlet</servlet-name>
+		<url-pattern>/player/send</url-pattern>
 	</servlet-mapping>
-
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

@@ -15,7 +15,7 @@ import tk.icudi.LogProviderWebProxy;
 import tk.icudi.PlextParser;
 import tk.icudi.RequestDataRherrajan;
 
-public class GatherInformationServlet extends AbstractServlet {
+public class SendInformationServlet extends AbstractServlet {
 
 	private static final long serialVersionUID = 1L;
 
