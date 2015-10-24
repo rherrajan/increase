@@ -62,7 +62,11 @@ public class LogProviderWeb implements LogProvider {
 	}
 
 	protected HttpURLConnection createInputStream(Map<String, String> requestParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
-		URL plexts = new URL(getPlextURL());
+		return createInputStream(getPlextURL(), requestParameter, postBody);
+	}
+
+	public static HttpURLConnection createInputStream(String url, Map<String, String> requestParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
+		URL plexts = new URL(url);
 		HttpURLConnection connection = (HttpURLConnection) plexts.openConnection();
 		connection.setRequestMethod("POST");
 		connection.setUseCaches(false);

@@ -112,4 +112,15 @@ public class PlextParser {
 		return log;
 	}
 
+	public String getRawLogs() {
+		return rawLogs;
+	}
+
+	public static List<LogEntry> getLogsFromProvider(LogProvider provider) throws IOException {
+		PlextParser parser = new PlextParser(provider);
+		parser.updateLogs();
+		List<LogEntry> logs = parser.extractLogEntries();
+		return logs;
+	}
+
 }

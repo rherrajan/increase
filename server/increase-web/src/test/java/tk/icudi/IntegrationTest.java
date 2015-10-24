@@ -4,7 +4,6 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.junit.Test;
@@ -27,17 +26,10 @@ public class IntegrationTest {
 
 	}
 
-	private List<LogEntry> getLogsFromProvider(LogProvider provider) throws IOException {
-		PlextParser parser = new PlextParser(provider);
-		parser.updateLogs();
-		List<LogEntry> logs = parser.extractLogEntries();
-		return logs;
-	}
-
 	@Test
 	public void should_get_plexus_logs_from_credentials() throws Exception {
 
-		List<LogEntry> logs = getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
+		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
 
 		assertThat(logs.size(), is(50));
 	}
@@ -45,7 +37,7 @@ public class IntegrationTest {
 	@Test
 	public void should_get_plexus_logs_from_proxy() throws Exception {
 
-		List<LogEntry> logs = getLogsFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));
+		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));
 
 		assertThat(logs.size(), is(50));
 	}

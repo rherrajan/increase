@@ -1,14 +1,17 @@
 package tk.icudi.increase;
 
 import java.io.IOException;
-import java.util.List;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import tk.icudi.LogEntry;
 import tk.icudi.LogProvider;
 import tk.icudi.LogProviderWeb;
+import tk.icudi.LogProviderWebProxy;
 import tk.icudi.PlextParser;
 import tk.icudi.RequestDataRherrajan;
 
@@ -24,19 +27,28 @@ public class GatherInformationServlet extends AbstractServlet {
 //		crawler.updateData();
 //		Object result = crawler.getSourcecode();
 		
-		Object result = getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
+		String logs = getLogStringFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));
 
+		int statusCode = sendLogs(logs);
+		
 		resp.getWriter().println("{");
-		resp.getWriter().println("\"result\": \"" + result +"\"");
+		resp.getWriter().println("\"result\": \"" + statusCode +"\"");
 		resp.getWriter().println("}");
 	}
 
-	public static List<LogEntry> getLogsFromProvider(LogProvider provider) throws IOException {
+	private int sendLogs(String logs) throws MalformedURLException, ProtocolException, IOException {
+		String url = "https://sylvan-dragon-772.appspot.com/feeder";
+		HttpURLConnection connection = LogProviderWeb.createInputStream(url, new HashMap<String, String>(), logs);
+
+		return connection.getResponseCode();
+	}
+
+	public static String getLogStringFromProvider(LogProvider provider) throws IOException {
 		PlextParser parser = new PlextParser(provider);
 		parser.updateLogs();
-		List<LogEntry> logs = parser.extractLogEntries();
-		return logs;
+		return parser.getRawLogs();
 	}
+
 	
 
 
