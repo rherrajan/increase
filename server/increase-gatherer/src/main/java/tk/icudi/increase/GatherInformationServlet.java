@@ -24,7 +24,7 @@ public class GatherInformationServlet extends AbstractServlet {
 //		crawler.updateData();
 //		Object result = crawler.getSourcecode();
 		
-		Object result = getLogsFromProvider(new LogProviderGAEWeb(new RequestDataRherrajan()));
+		Object result = getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
 
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"" + result +"\"");

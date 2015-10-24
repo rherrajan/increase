@@ -103,7 +103,8 @@ public class DriverFactory {
 			private static final long serialVersionUID = 1L;
 
 			public boolean hasFeature(BrowserVersionFeatures property) {
-				return BrowserVersion.FIREFOX_38.hasFeature(property);
+//				return BrowserVersion.FIREFOX_38.hasFeature(property);
+				return BrowserVersion.getDefault().hasFeature(property);
 			}
 		};
 

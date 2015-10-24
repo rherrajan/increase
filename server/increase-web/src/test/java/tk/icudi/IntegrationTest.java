@@ -43,6 +43,14 @@ public class IntegrationTest {
 	}
 
 	@Test
+	public void should_get_plexus_logs_from_proxy() throws Exception {
+
+		List<LogEntry> logs = getLogsFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));
+
+		assertThat(logs.size(), is(50));
+	}
+
+	@Test
 	public void test_players() throws Exception {
 
 		LogProvider provider = new LogProviderWeb(new RequestDataRherrajan());

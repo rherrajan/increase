@@ -14,7 +14,7 @@ import java.util.zip.GZIPInputStream;
 
 public class LogProviderWeb implements LogProvider {
 
-	private RequestData data;
+	protected RequestData data;
 
 	public LogProviderWeb() {
 	}
@@ -56,6 +56,12 @@ public class LogProviderWeb implements LogProvider {
 
 	protected InputStream provideLogs(Map<String, String> requestParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
 
+		HttpURLConnection connection = createInputStream(requestParameter, postBody);
+
+		return new GZIPInputStream(connection.getInputStream());
+	}
+
+	protected HttpURLConnection createInputStream(Map<String, String> requestParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
 		URL plexts = new URL(getPlextURL());
 		HttpURLConnection connection = (HttpURLConnection) plexts.openConnection();
 		connection.setRequestMethod("POST");
@@ -72,20 +78,18 @@ public class LogProviderWeb implements LogProvider {
 		wr.writeBytes(postBody);
 		wr.flush();
 		wr.close();
-
-		return new GZIPInputStream(connection.getInputStream());
+		return connection;
 	}
 
-	private String getPlextURL() {
-		// String urlString =
-		// "https://lienz.lima.zone/yxorp3.php/https://www.ingress.com/r/getPlexts";
-		String urlString = "https://www.ingress.com/r/getPlexts";
-		return urlString;
+	protected String getPlextURL() {
+		return "https://www.ingress.com/r/getPlexts";
 	}
 
 	private String getOutputParameters() {
 		String urlParameters = "{\"minLatE6\":50100453,\"minLngE6\":8654147,\"maxLatE6\":50104664,\"maxLngE6\":8672172,\"minTimestampMs\":-1,\"maxTimestampMs\":-1,\"tab\":\"all\",\"v\":\"" + data.v
 				+ "\",\"b\":\"" + data.b + "\",\"c\":\"" + data.c + "\"}";
+
+		System.out.println(" --- body: " + urlParameters);
 		return urlParameters;
 	}
 
@@ -93,6 +97,8 @@ public class LogProviderWeb implements LogProvider {
 		String cookie = "csrftoken=" + data.csrftoken
 				+ "; __utma=24037858.253737590.1413652003.1416056245.1416650976.48; __utmc=24037858; __utmz=24037858.1413652003.1.1.utmcsr=duckduckgo.com|utmccn=(referral)|utmcmd=referral|utmcct=/; "
 				+ "SACSID=" + data.sacsid + "; " + "ingress.intelmap.lat=50.1025584721709; ingress.intelmap.lng=8.663159608840942; ingress.intelmap.zoom=17";
+
+		System.out.println(" --- cookie: " + cookie);
 
 		Map<String, String> requestParameter = new HashMap<String, String>();
 		requestParameter.put("origin", "https://www.ingress.com");
