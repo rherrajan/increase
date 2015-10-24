@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import tk.icudi.LogProvider;
 import tk.icudi.LogProviderWebProxy;
 import tk.icudi.PlextParser;
-import tk.icudi.RequestDataRherrajan;
+import tk.icudi.RequestDataPrivate;
 
 public class GatherInformationServlet extends AbstractServlet {
 
@@ -19,7 +19,7 @@ public class GatherInformationServlet extends AbstractServlet {
 		super.doGet(req, resp);
 
 
-		String logs = getLogStringFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));		
+		String logs = getLogStringFromProvider(new LogProviderWebProxy(new RequestDataPrivate()));		
 		resp.getWriter().println(logs);
 	}
 

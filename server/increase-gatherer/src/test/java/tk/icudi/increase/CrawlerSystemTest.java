@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import tk.icudi.LogEntry;
 import tk.icudi.PlextParser;
-import tk.icudi.RequestDataRherrajan;
+import tk.icudi.RequestDataPrivate;
 
 public class CrawlerSystemTest {
 
@@ -36,7 +36,7 @@ public class CrawlerSystemTest {
 	@Test
 	public void should_get_plexus_logs_from_credentials_in_GAE() throws Exception {
 
-		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderGAEWeb(new RequestDataRherrajan()));
+		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderGAEWeb(new RequestDataPrivate()));
 
 		assertThat(logs.size(), is(50));
 	}

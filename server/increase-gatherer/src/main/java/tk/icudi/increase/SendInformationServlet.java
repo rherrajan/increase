@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import tk.icudi.LogProviderWeb;
 import tk.icudi.LogProviderWebProxy;
-import tk.icudi.RequestDataRherrajan;
+import tk.icudi.RequestDataPrivate;
 
 public class SendInformationServlet extends AbstractServlet {
 
@@ -25,7 +25,7 @@ public class SendInformationServlet extends AbstractServlet {
 //		crawler.updateData();
 //		Object result = crawler.getSourcecode();
 		
-		String logs = GatherInformationServlet.getLogStringFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));
+		String logs = GatherInformationServlet.getLogStringFromProvider(new LogProviderWebProxy(new RequestDataPrivate()));
 
 		int statusCode = sendLogs(logs);
 		

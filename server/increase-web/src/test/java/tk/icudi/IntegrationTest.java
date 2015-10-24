@@ -29,7 +29,7 @@ public class IntegrationTest {
 	@Test
 	public void should_get_plexus_logs_from_credentials() throws Exception {
 
-		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
+		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderWeb(new RequestDataPrivate()));
 
 		assertThat(logs.size(), is(50));
 	}
@@ -37,7 +37,7 @@ public class IntegrationTest {
 	@Test
 	public void should_get_plexus_logs_from_proxy() throws Exception {
 
-		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));
+		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderWebProxy(new RequestDataPrivate()));
 
 		assertThat(logs.size(), is(50));
 	}
@@ -45,7 +45,7 @@ public class IntegrationTest {
 	@Test
 	public void test_players() throws Exception {
 
-		LogProvider provider = new LogProviderWeb(new RequestDataRherrajan());
+		LogProvider provider = new LogProviderWeb(new RequestDataPrivate());
 		Game game = new Game();
 		GameUpdater updater = new GameUpdater(game, provider);
 		updater.update();
