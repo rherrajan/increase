@@ -20,7 +20,7 @@ public class GatherInformationServlet extends AbstractServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		super.doGet(req, resp);
 
-		List<LogEntry> logs = getLogsFromProvider(new LogProviderWeb(new RequestDataRherrajan()));
+		List<LogEntry> logs = getLogsFromProvider(new LogProviderGAEWeb(new RequestDataRherrajan()));
 
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"" + logs +"\"");
