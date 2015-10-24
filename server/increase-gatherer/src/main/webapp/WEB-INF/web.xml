@@ -10,6 +10,16 @@
 		<servlet-class>tk.icudi.increase.SendInformationServlet</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>GatherInformationServlet</servlet-name>
+		<servlet-class>tk.icudi.increase.GatherInformationServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GatherInformationServlet</servlet-name>
+		<url-pattern>/player/gather</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>SendInformationServlet</servlet-name>
 		<url-pattern>/player/send</url-pattern>

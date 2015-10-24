@@ -27,7 +27,7 @@ public class SendInformationServlet extends AbstractServlet {
 //		crawler.updateData();
 //		Object result = crawler.getSourcecode();
 		
-		String logs = getLogStringFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));
+		String logs = GatherInformationServlet.getLogStringFromProvider(new LogProviderWebProxy(new RequestDataRherrajan()));
 
 		int statusCode = sendLogs(logs);
 		
@@ -42,14 +42,6 @@ public class SendInformationServlet extends AbstractServlet {
 
 		return connection.getResponseCode();
 	}
-
-	public static String getLogStringFromProvider(LogProvider provider) throws IOException {
-		PlextParser parser = new PlextParser(provider);
-		parser.updateLogs();
-		return parser.getRawLogs();
-	}
-
-	
 
 
 }

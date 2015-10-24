@@ -17,4 +17,4 @@ cd ../increase-gatherer
 mvn clean appengine:update
 check_errs $? "error in increase-gatherer"
 
-curl http://increase-gatherer.appspot.com/player/gather
+curl http://increase-gatherer.appspot.com/player/send
