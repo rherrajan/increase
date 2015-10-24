@@ -27,20 +27,13 @@ public class GatherInformationServlet extends AbstractServlet {
 		resp.getWriter().println("}");
 	}
 
-	private List<LogEntry> getLogsFromProvider(LogProvider provider) throws IOException {
+	public static List<LogEntry> getLogsFromProvider(LogProvider provider) throws IOException {
 		PlextParser parser = new PlextParser(provider);
 		parser.updateLogs();
 		List<LogEntry> logs = parser.extractLogEntries();
 		return logs;
 	}
 	
-//	private void useCrawler(HttpServletResponse resp) throws IOException {
-//		Crawler crawler = new Crawler();
-//		crawler.updateData();
-//		
-//		resp.getWriter().println("{");
-//		resp.getWriter().println("\"result\": \"" + crawler.getSourcecode() +"\"");
-//		resp.getWriter().println("}");
-//	}
+
 
 }

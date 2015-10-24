@@ -81,7 +81,6 @@ public class DriverFactory {
 			// Then we set the request parameters
 			requestSettings.setRequestParameters(requestParams);
 
-
 //			Email=igorschrempf80@gmail.com
 //					GALX=l0f1BToRogY
 //					Passwd=escape01
