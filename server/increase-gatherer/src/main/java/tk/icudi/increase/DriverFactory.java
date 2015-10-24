@@ -1,16 +1,21 @@
 package tk.icudi.increase;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.BrowserVersionFeatures;
 import com.gargoylesoftware.htmlunit.CookieManager;
 import com.gargoylesoftware.htmlunit.DefaultCredentialsProvider;
+import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
+import com.gargoylesoftware.htmlunit.HttpMethod;
 import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.WebRequest;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.util.NameValuePair;
 
 public class DriverFactory {
@@ -18,9 +23,9 @@ public class DriverFactory {
 	private static DriverFactory instance = new DriverFactory();
 	private HTMLDriver htmlUnitDriver;
 
-	private static class HTMLDriver extends HtmlUnitDriver {
+	public static class HTMLDriver extends HtmlUnitDriver {
 
-		private WebClient client;
+		private WebClient webClient;
 
 		public HTMLDriver(BrowserVersion browser) {
 			super(browser);
@@ -29,7 +34,7 @@ public class DriverFactory {
 		@Override
 		protected WebClient modifyWebClient(WebClient client) {
 
-			this.client = client;
+			this.webClient = client;
 			client.setCookieManager(new CookieManager() {
 
 				private static final long serialVersionUID = 1L;
@@ -57,32 +62,48 @@ public class DriverFactory {
 			
 			super.get(fullUrl);
 			
-			List<NameValuePair> response = client.getCurrentWindow().getEnclosedPage().getWebResponse().getResponseHeaders();
+			List<NameValuePair> response = webClient.getCurrentWindow().getEnclosedPage().getWebResponse().getResponseHeaders();
+			System.out.println(" --- response: " + response);
 			for (NameValuePair header : response) {
 			     System.out.println("  --- " + header.getName() + " = " + header.getValue());
 			 }
-			
-//			System.out.println(" --- origin: " + fullUrl.getHost());
-//			
-//			if(fullUrl.getHost().contains("ingress.com") == false && fullUrl.getHost().contains("google.com") == false){
-//				super.get(fullUrl);
-//				return;
-//			}
-//			
-//			
-//			try {
-//				URL newURL = new URL(fullUrl.getProtocol(), "lienz.lima.zone" , fullUrl.getPort(), fullUrl.getFile());
-//				System.out.println(" --- newURL: " + newURL);
-//				super.get(newURL);
-//				
-//			} catch (MalformedURLException e) {
-//				
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				super.get(fullUrl);
-//			}
-			
+						
 		}
+
+		public void getPost(String urlString) throws FailingHttpStatusCodeException, IOException {
+
+			// Instead of requesting the page directly we create a WebRequestSettings object
+			WebRequest requestSettings = new WebRequest(new URL(urlString), HttpMethod.POST);
+
+			List<NameValuePair> requestParams = new ArrayList<NameValuePair>();
+			requestParams.add(new NameValuePair("Email", "igorschrempf80@gmail.com"));
+			
+			// Then we set the request parameters
+			requestSettings.setRequestParameters(requestParams);
+
+
+//			Email=igorschrempf80@gmail.com
+//					GALX=l0f1BToRogY
+//					Passwd=escape01
+//					PersistentCookie=yes
+//					_utf8=☃
+//					bgresponse=!vL9CaZuJ8MAx8qpE_2LECXQfKkoCAAABc1IAAAA0KgDp-Ubi-Y751jw25oTfKkDfHeh4hEvVfUcDacggBMXyNFTxHaEtSRZPxzr1svfh1vv7y8o-9_60mXdBNh0Lp4-NfXDxAQNii9LLgJH3RkFgzhNyhRcKkvyoGjhXVuie8lhU2OPE2eJdj7kXO6SmD7foLq-WSv1rrfsh4cRjIqjURh1rLCUE5v1XnkOrRriEXwkuGnwvHWBLsYKgAkv7nG6S_BNEfZLpvFKfw7_hGUBEI3_mqLNFDpsVhoxFG3dAUCVHSS7rLlwkNIw-u7yhqXx6njW02ZAKnh741nzohTk0F-7dBxXWEciD0UE
+//					checkConnection=youtube:589:1
+//					checkedDomains=youtube
+//					continue=https://appengine.google.com/_ah/conflogin?continue=https://www.ingress.com/intel
+//					dnConn=
+//					ltmpl=gm
+//					pstMsg=1
+//					service=ah
+//					shdf=ChMLEgZhaG5hbWUaB0luZ3Jlc3MMEgJhaCIUDxXHTvPWkR39qgc9Ntp6RlMnsagoATIUG3HUffbxSU31LjICBdNoinuaikg
+//					signIn=Anmelden
+					
+
+			// Finally, we can get the page
+			HtmlPage page = webClient.getPage(requestSettings);
+		}
+		
+		
 	}
 
 	public DriverFactory() {
@@ -107,15 +128,15 @@ public class DriverFactory {
 
 		htmlUnitDriver.setProxy("176.31.99.80", 2222);
 		
-		System.out.println(" --- Proxy Config: " + htmlUnitDriver.client.getOptions().getProxyConfig().getProxyHost());
-		System.out.println(" --- isSocksProxy: " + htmlUnitDriver.client.getOptions().getProxyConfig().isSocksProxy());
+		System.out.println(" --- Proxy Config: " + htmlUnitDriver.webClient.getOptions().getProxyConfig().getProxyHost());
+		System.out.println(" --- isSocksProxy: " + htmlUnitDriver.webClient.getOptions().getProxyConfig().isSocksProxy());
 	}
 
 	public static DriverFactory getInstance() {
 		return instance;
 	}
 
-	public WebDriver getHTMLUnitDriver() {
+	public HTMLDriver getHTMLUnitDriver() {
 		return htmlUnitDriver;
 	}
 

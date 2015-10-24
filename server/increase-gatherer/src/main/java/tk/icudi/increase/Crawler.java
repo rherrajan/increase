@@ -1,15 +1,18 @@
 package tk.icudi.increase;
 
-import org.openqa.selenium.WebDriver;
+import java.io.IOException;
+
 import org.openqa.selenium.support.PageFactory;
 
-import com.gargoylesoftware.htmlunit.WebClient;
+import tk.icudi.increase.DriverFactory.HTMLDriver;
+
+import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 
 public class Crawler {
 
 
 
-	private WebDriver driver;
+	private HTMLDriver driver;
 
 	public Crawler() {
 
@@ -39,6 +42,15 @@ public class Crawler {
 
 		System.out.println(" --- url: " + driver.getCurrentUrl());
 		System.out.println(" --- pagesource: " + driver.getPageSource());
+
+	}
+
+
+
+	public void openPostUrl(String url) throws FailingHttpStatusCodeException, IOException {
+		
+		driver.getPost(url);
+		
 
 	}
 

@@ -29,20 +29,12 @@ public class LogProviderWeb implements LogProvider {
 		}
 
 		if (data.sacsid == null) {
-			throw new IllegalArgumentException("Input-Parameter is missing: cookie");
+			throw new IllegalArgumentException("Input-Parameter is missing: sacsid");
 		}
 
 		if (data.v == null) {
 			throw new IllegalArgumentException("Input-Parameter is missing: v");
 		}
-
-		// if (b == null) {
-		// throw new IllegalArgumentException("Input-Parameter is missing: b");
-		// }
-
-		// if (c == null) {
-		// throw new IllegalArgumentException("Input-Parameter is missing: c");
-		// }
 
 	}
 
@@ -77,6 +69,7 @@ public class LogProviderWeb implements LogProvider {
 
 		String urlParameters = "{\"minLatE6\":50100453,\"minLngE6\":8654147,\"maxLatE6\":50104664,\"maxLngE6\":8672172,\"minTimestampMs\":-1,\"maxTimestampMs\":-1,\"tab\":\"all\",\"v\":\"" + data.v
 				+ "\",\"b\":\"" + data.b + "\",\"c\":\"" + data.c + "\"}";
+
 		wr.writeBytes(urlParameters);
 		wr.flush();
 		wr.close();

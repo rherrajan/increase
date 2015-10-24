@@ -7,10 +7,9 @@ import static org.junit.Assert.fail;
 import java.io.IOException;
 import java.util.List;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
-@Ignore("curls ingress. not to be used often")
+//@Ignore("curls ingress. not to be used often")
 public class IntegrationTest {
 
 	@Test

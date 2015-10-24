@@ -10,6 +10,11 @@ check_errs() {
   fi
 }
 
-mvn appengine:update
+cd ../increase-web
+mvn install 
+check_errs $? "error in increase-web"
+cd ../increase-gatherer
+mvn clean appengine:update
 check_errs $? "error in increase-gatherer"
 
+curl http://increase-gatherer.appspot.com/player/gather
