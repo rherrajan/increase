@@ -20,4 +20,4 @@ mvn clean appengine:update
 check_errs $? "error in increase-appengine"
 
 echo "http://increase-agents.appspot.com/player/nearby?lat=50651379&lng=87419097"
-curl http://increase-agents.appspot.com/player/nearby?lat=50651379&lng=87419097
+curl "http://increase-agents.appspot.com/player/nearby?lat=50651379&lng=87419097"
