@@ -29,6 +29,7 @@ public class SendInformationServlet extends AbstractServlet {
 
 		int statusCode = sendLogs(logs);
 		
+
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"" + statusCode +"\"");
 		resp.getWriter().println("}");
@@ -38,7 +39,13 @@ public class SendInformationServlet extends AbstractServlet {
 		String url = "https://increase-agents.appspot.com/feeder";
 		HttpURLConnection connection = LogProviderWeb.createInputStream(url, new HashMap<String, String>(), logs);
 
-		return connection.getResponseCode();
+		int statusCode = connection.getResponseCode();
+		
+		if(statusCode != 200){
+			System.err.println("statusCode '"+statusCode+"' for " + url);
+		}
+		
+		return statusCode;
 	}
 
 

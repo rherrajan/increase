@@ -11,6 +11,11 @@ import java.util.List;
 
 import org.junit.Test;
 
+import tk.icudi.increase.Faction;
+import tk.icudi.increase.NearbyPlayer;
+import tk.icudi.increase.Point;
+import tk.icudi.increase.Unit;
+
 public class PlayerTest extends AbstractGameTest {
 
 	@Test

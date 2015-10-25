@@ -11,11 +11,13 @@ check_errs() {
 }
 
 
-mvn --projects increase-web --also-make install 
+mvn clean install 
 check_errs $? "error in increase-web"
 
-mvn --projects increase-appengine appengine:update
+cd increase-appengine
+mvn appengine:update
 check_errs $? "error in increase-appengine"
+cd ..
 
 cd increase-gatherer
 mvn clean appengine:update

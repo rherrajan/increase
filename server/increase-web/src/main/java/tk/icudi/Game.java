@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Map;
 
 import tk.icudi.Database.Schema;
+import tk.icudi.increase.CaughtPlayer;
+import tk.icudi.increase.NearbyPlayer;
+import tk.icudi.increase.Point;
+import tk.icudi.increase.Unit;
 
 public class Game {
 

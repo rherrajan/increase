@@ -4,6 +4,9 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
 
+import tk.icudi.increase.Location;
+import tk.icudi.increase.Unit;
+
 import com.google.gson.Gson;
 
 public class FeederTest extends AbstractGameTest {

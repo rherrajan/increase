@@ -6,6 +6,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import tk.icudi.increase.CaughtPlayer;
+
 public class PlayerAddServlet extends AbstractServlet {
 
 	private static final long serialVersionUID = 1L;

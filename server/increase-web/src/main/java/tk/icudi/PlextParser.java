@@ -11,6 +11,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import tk.icudi.increase.Faction;
+import tk.icudi.increase.Point;
+
 public class PlextParser {
 
 	private LogProvider provider;

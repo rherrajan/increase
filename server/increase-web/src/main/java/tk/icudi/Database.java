@@ -2,6 +2,8 @@ package tk.icudi;
 
 import java.util.List;
 
+import tk.icudi.increase.Identifyable;
+
 public interface Database {
 
 	static enum Schema {

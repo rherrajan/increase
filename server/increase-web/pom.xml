@@ -4,7 +4,7 @@
 	<groupId>tk.icudi</groupId>
 	<artifactId>increase-web</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>increase-web</name>
 	<url>http://maven.apache.org</url>
 
@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>tk.icudi</groupId>
 			<artifactId>increase-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.3-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>

@@ -4,6 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
+import tk.icudi.increase.Faction;
+import tk.icudi.increase.Location;
+import tk.icudi.increase.Unit;
+
 public class LogEntry {
 
 	private String playerName;

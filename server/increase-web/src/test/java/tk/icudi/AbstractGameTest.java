@@ -2,6 +2,8 @@ package tk.icudi;
 
 import java.io.IOException;
 
+import tk.icudi.increase.Point;
+
 public abstract class AbstractGameTest {
 
 	protected Game getGame(String file) throws IOException {

@@ -4,10 +4,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>war</packaging>
-	<version>1.0</version>
 
 	<groupId>tk.icudi</groupId>
 	<artifactId>increase-appengine</artifactId>
+	<version>0.0.3-SNAPSHOT</version>
 
 	<pluginRepositories>
 		<pluginRepository>
@@ -52,7 +52,7 @@
 		<dependency>
 			<groupId>tk.icudi</groupId>
 			<artifactId>increase-web</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.3-SNAPSHOT</version>
 		</dependency>
 
 		<!-- test scope -->

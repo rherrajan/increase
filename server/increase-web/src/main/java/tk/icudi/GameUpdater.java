@@ -3,6 +3,9 @@ package tk.icudi;
 import java.io.IOException;
 import java.util.Date;
 
+import tk.icudi.increase.Point;
+import tk.icudi.increase.Unit;
+
 public class GameUpdater implements Runnable {
 
 	private Game game;

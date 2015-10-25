@@ -18,7 +18,6 @@ public class GatherInformationServlet extends AbstractServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		super.doGet(req, resp);
 
-
 		String logs = getLogStringFromProvider(new LogProviderWebProxy(new RequestDataPrivate()));		
 		resp.getWriter().println(logs);
 	}

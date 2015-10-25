@@ -2,6 +2,8 @@ package tk.icudi;
 
 import java.io.IOException;
 
+import tk.icudi.increase.Point;
+
 public class NearbyAgentsServlet extends UnitServlet {
 
 	private static final long serialVersionUID = 1L;

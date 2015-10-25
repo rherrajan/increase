@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import tk.icudi.increase.Identifyable;
+import tk.icudi.increase.Unit;
+
 public class InMemoryDatabase implements Database {
 
 	private Map<String, Unit> agents = new HashMap<String, Unit>();
