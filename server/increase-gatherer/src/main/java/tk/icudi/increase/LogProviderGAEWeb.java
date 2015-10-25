@@ -48,10 +48,6 @@ public class LogProviderGAEWeb extends LogProviderWeb {
 	@Override
 	protected InputStream provideLogs(Map<String, String> headerParameter, String postBody) throws MalformedURLException, IOException, ProtocolException {
 		
-//		String urlString = "https://www.ingress.com/r/getPlexts";
-		//String urlString = "https://lienz.lima.zone/r/getPlexts";
-		//String urlString = "https://lienz.lima.zone/yxorp.php?url=https://www.ingress.com/r/getPlexts/";
-
 		String urlString = "https://lienz.lima.zone/yxorp3.php/https://www.ingress.com/r/getPlexts";
 
 
