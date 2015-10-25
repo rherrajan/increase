@@ -40,7 +40,11 @@ public class IntegrationTest {
 	@Test
 	public void should_get_plexus_logs_from_proxy() throws Exception {
 
-		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderWebProxy(new RequestDataPrivate()));
+		Point userLoc = new Point();
+		userLoc.setLat(50651379);
+		userLoc.setLng(87419097);
+
+		List<LogEntry> logs = PlextParser.getLogsFromProvider(new LogProviderWebProxy(new RequestDataPrivate(), userLoc));
 
 		assertThat(logs.size(), is(50));
 	}

@@ -1,14 +1,22 @@
 <?php
 
-
 $version = $_GET['version'];
 $csrftoken = $_GET['csrftoken'];
 $sacsid = $_GET['sacsid'];
+$lat_min = $_GET['lat'] - 20000;
+$lat_max = $_GET['lat'] + 20000;
+$lng_min = $_GET['lng'] - 20000;
+$lng_max = $_GET['lng'] + 20000;
+
+
 
 
 $url = "https://www.ingress.com/r/getPlexts";
 $cookie = "csrftoken=$csrftoken; __utma=24037858.253737590.1413652003.1416056245.1416650976.48; __utmc=24037858; __utmz=24037858.1413652003.1.1.utmcsr=duckduckgo.com|utmccn=(referral)|utmcmd=referral|utmcct=/; SACSID=$sacsid; ingress.intelmap.lat=50.1025584721709; ingress.intelmap.lng=8.663159608840942; ingress.intelmap.zoom=17";
-$postdata ='{"minLatE6":50100453,"minLngE6":8654147,"maxLatE6":50104664,"maxLngE6":8672172,"minTimestampMs":-1,"maxTimestampMs":-1,"tab":"all","v":"'. $version . '","b":"null","c":"null"}';
+//$postdata ='{"minLatE6":50100453,"minLngE6":8654147,"maxLatE6":50104664,"maxLngE6":8672172,"minTimestampMs":-1,"maxTimestampMs":-1,"tab":"all","v":"'. $version . '","b":"null","c":"null"}';
+$postdata ='{"minLatE6":'.$lat_min.',"minLngE6":'.$lng_min.',"maxLatE6":'.$lat_max.',"maxLngE6":'.$lng_max.',"minTimestampMs":-1,"maxTimestampMs":-1,"tab":"all","v":"'. $version . '","b":"null","c":"null"}';
+
+
 $htmlHeader = array(
     'origin: https://www.ingress.com',
     'referer: https://www.ingress.com/intel',

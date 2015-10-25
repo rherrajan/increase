@@ -12,7 +12,7 @@ public class NearbyAgentsServlet extends UnitServlet {
 	protected Object getResult(Game game, Point userLoc, final long time) {
 		
 		try {
-			game.appendLogsFrom(new LogProviderWebProxy(new RequestDataPrivate()));
+			game.appendLogsFrom(new LogProviderWebProxy(new RequestDataPrivate(), userLoc));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
