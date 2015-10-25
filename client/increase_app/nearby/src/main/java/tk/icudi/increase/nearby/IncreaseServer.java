@@ -24,7 +24,7 @@ import com.google.gson.reflect.TypeToken;
 
 public class IncreaseServer {
 
-	private static final String baseURL = "http://sylvan-dragon-772.appspot.com";
+	private static final String baseURL = "http://increase-agents.appspot.com";
 
 	public List<NearbyPlayer> getNearbyPlayers(Location userLocation) throws IOException {
 

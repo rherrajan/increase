@@ -8,5 +8,6 @@
 .project
 .classpath
 target/
+build/
 bin/
 .idea/
