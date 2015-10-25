@@ -12,8 +12,12 @@ check_errs() {
 
 
 cd ..
-mvn --projects increase-web --also-make install 
+mvn clean install --projects increase-web
 check_errs $? "error in increase-web"
-mvn --projects increase-appengine appengine:update
+
+cd increase-appengine
+mvn clean appengine:update
 check_errs $? "error in increase-appengine"
 
+echo "http://increase-agents.appspot.com/player/nearby?lat=50651379&lng=87419097"
+curl http://increase-agents.appspot.com/player/nearby?lat=50651379&lng=87419097

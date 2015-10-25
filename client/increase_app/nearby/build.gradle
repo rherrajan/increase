@@ -20,7 +20,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'tk.icudi:increase-api:0.0.2-SNAPSHOT'
+    compile 'tk.icudi:increase-api:0.0.3-SNAPSHOT'
     compile 'com.google.code.gson:gson:1.7.1'
 }
 
@@ -33,7 +33,7 @@ uploadArchives {
             repository(url: "file://${System.properties['user.home']}/.m2/repository")
             pom.groupId = 'tk.icudi.increase'
             pom.artifactId = 'increase-nearby'
-            pom.version = '0.0.1'
+            pom.version = '0.0.3'
         }
 
     }

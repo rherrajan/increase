@@ -16,6 +16,8 @@ public class LogProviderWebProxy extends RequestDataProvider implements LogProvi
 
 		String plextUrl = "http://lienz.lima.zone/plext.php?version=" + data.v + "&csrftoken=" + data.csrftoken + "&sacsid=" + data.sacsid;
 
+		System.out.println(" --- plextUrl: " + plextUrl);
+
 		HttpURLConnection connection = (HttpURLConnection) new URL(plextUrl).openConnection();
 		return connection.getInputStream();
 	}
