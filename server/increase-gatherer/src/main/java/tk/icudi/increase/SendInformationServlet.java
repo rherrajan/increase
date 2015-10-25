@@ -35,7 +35,7 @@ public class SendInformationServlet extends AbstractServlet {
 	}
 
 	private int sendLogs(String logs) throws MalformedURLException, ProtocolException, IOException {
-		String url = "https://sylvan-dragon-772.appspot.com/feeder";
+		String url = "https://increase-agents.appspot.com/feeder";
 		HttpURLConnection connection = LogProviderWeb.createInputStream(url, new HashMap<String, String>(), logs);
 
 		return connection.getResponseCode();

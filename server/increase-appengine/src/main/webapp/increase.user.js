@@ -4,8 +4,8 @@
 // @category       Layer
 // @version    	   0.0.6
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @updateURL      https://sylvan-dragon-772.appspot.com/increase.user.js
-// @downloadURL    https://sylvan-dragon-772.appspot.com/increase.user.js
+// @updateURL      https://increase-agents.appspot.com/increase.user.js
+// @downloadURL    https://increase-agents.appspot.com/increase.user.js
 // @description    
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
@@ -44,7 +44,7 @@ window.plugin.increase.feeder.handleData = function(data) {
       return;
   }
   
-    var url = "https://sylvan-dragon-772.appspot.com/feeder";
+    var url = "https://increase-agents.appspot.com/feeder";
     var inputData = JSON.stringify(data.raw);
     var jqxhr = $.post(url, inputData);
     
