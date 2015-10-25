@@ -5,7 +5,9 @@ public abstract class RequestDataProvider {
 	protected RequestData data;
 
 	public RequestDataProvider(RequestData data) {
-		setData(data);
+		if (data != null) {
+			setData(data);
+		}
 	}
 
 	public void setData(RequestData data) {

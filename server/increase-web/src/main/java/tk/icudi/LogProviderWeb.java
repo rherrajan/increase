@@ -12,41 +12,14 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.zip.GZIPInputStream;
 
-public class LogProviderWeb implements LogProvider {
-
-	protected RequestData data;
-
-	public LogProviderWeb() {
-	}
+public class LogProviderWeb extends RequestDataProvider implements LogProvider {
 
 	public LogProviderWeb(RequestData data) {
-		this.data = data;
-	}
-
-	private void assertInputComplete() {
-
-		if (data == null) {
-			throw new IllegalArgumentException("All Input-Parameters are missing");
-		}
-
-		if (data.csrftoken == null) {
-			throw new IllegalArgumentException("Input-Parameter is missing: csrftoken");
-		}
-
-		if (data.sacsid == null) {
-			throw new IllegalArgumentException("Input-Parameter is missing: sacsid");
-		}
-
-		if (data.v == null) {
-			throw new IllegalArgumentException("Input-Parameter is missing: v");
-		}
-
+		super(data);
 	}
 
 	@Override
 	public InputStream provideLogs() throws IOException {
-
-		assertInputComplete();
 
 		Map<String, String> requestParameter = getRequestParameter();
 		String postBody = getOutputParameters();
@@ -113,10 +86,6 @@ public class LogProviderWeb implements LogProvider {
 		requestParameter.put("content-type", "application/json; charset=UTF-8");
 		requestParameter.put("cookie", cookie);
 		return requestParameter;
-	}
-
-	public void setData(RequestData data) {
-		this.data = data;
 	}
 
 }

@@ -17,7 +17,7 @@ public class IntegrationTest {
 	@Test
 	public void test_provide_not() throws Exception {
 
-		LogProviderWeb provider = new LogProviderWeb();
+		LogProviderWeb provider = new LogProviderWeb(null);
 
 		try {
 			PlextParser.streamToString(provider.provideLogs());
