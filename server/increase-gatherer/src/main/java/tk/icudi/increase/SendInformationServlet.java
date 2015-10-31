@@ -10,26 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import tk.icudi.LogProviderWeb;
-import tk.icudi.LogProviderWebProxy;
-import tk.icudi.RequestDataPrivate;
 
-public class SendInformationServlet extends AbstractServlet {
+public class SendInformationServlet extends GatherInformationServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		super.doGet(req, resp);
-
-//		Crawler crawler = new Crawler();
-//		crawler.updateData();
-//		Object result = crawler.getSourcecode();
+		modifyResponse(resp);
 		
-		String logs = GatherInformationServlet.getLogStringFromProvider(new LogProviderWebProxy(new RequestDataPrivate()));
-
-		int statusCode = sendLogs(logs);
+		int statusCode = sendLogs(gatherLogs());
 		
-
 		resp.getWriter().println("{");
 		resp.getWriter().println("\"result\": \"" + statusCode +"\"");
 		resp.getWriter().println("}");
@@ -47,6 +38,8 @@ public class SendInformationServlet extends AbstractServlet {
 		
 		return statusCode;
 	}
+	
+
 
 
 }

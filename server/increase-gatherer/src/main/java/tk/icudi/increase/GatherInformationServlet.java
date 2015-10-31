@@ -18,14 +18,26 @@ public class GatherInformationServlet extends AbstractServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		super.doGet(req, resp);
 
-		String logs = getLogStringFromProvider(new LogProviderWebProxy(new RequestDataPrivate()));		
+		String logs = gatherLogs();		
 		resp.getWriter().println(logs);
 	}
 
-	public static String getLogStringFromProvider(LogProvider provider) throws IOException {
+	protected String gatherLogs() throws IOException {
+		return getLogStringFromProvider(new LogProviderWebProxy(new RequestDataPrivate(), getPortalMainStation()));
+	}
+
+	private String getLogStringFromProvider(LogProvider provider) throws IOException {
 		PlextParser parser = new PlextParser(provider);
 		parser.updateLogs();
 		return parser.getRawLogs();
+	}
+	
+	private Point getPortalMainStation() {
+		Point userLoc = new Point();
+		userLoc.setLat(50107356);
+		userLoc.setLng(8664123);
+
+		return userLoc;
 	}
 
 }

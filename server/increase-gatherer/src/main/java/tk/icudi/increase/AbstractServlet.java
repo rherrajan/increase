@@ -20,7 +20,7 @@ public class AbstractServlet extends HttpServlet {
 		modifyResponse(resp);	
 	}
 	
-	private void modifyResponse(HttpServletResponse resp) {
+	protected void modifyResponse(HttpServletResponse resp) {
 		resp.setHeader("Access-Control-Allow-Origin", "*"); //cross domain request/CORS
 		resp.setContentType("application/json; charset=UTF-8");
 	}
