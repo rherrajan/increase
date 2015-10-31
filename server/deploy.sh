@@ -23,5 +23,5 @@ cd increase-gatherer
 mvn clean appengine:update
 check_errs $? "error in increase-gatherer"
 
-echo "http://increase-gather.appspot.com/player/send"
+echo "curl http://increase-gather.appspot.com/player/send"
 curl http://increase-gather.appspot.com/player/send
